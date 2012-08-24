@@ -1398,7 +1398,7 @@ qq.extend(qq.UploadHandlerXhr.prototype, {
 		params[this._options.inputName] = name;
 		var queryString = qq.obj2url(params, this._options.action);
 
-		xhr.open("POST", queryString, true);
+		xhr.open("GET", queryString, true);
 		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 		xhr.setRequestHeader("X-File-Name", encodeURIComponent(name));
 		if (this._options.encoding == 'multipart') {
