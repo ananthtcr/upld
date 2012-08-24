@@ -41,3 +41,7 @@ DIV.example ul {
 A {
     color: green;
 }
+
+A.decorate {
+    text-decoration: underline;
+}
