@@ -24,4 +24,15 @@ $(document).ready(function() {
         action: "failure.html",
         demoMode: true
     });
+
+
+    var uploader4 = new qq.FileUploader({
+        element: $('#uploadWithVariousOptionsExample')[0],
+        action: "success.html",
+        demoMode: true,
+        multiple: false,
+        allowedExtensions: ['jpeg', 'jpg', 'txt'],
+        sizeLimit: 50000,
+        uploadButtonText: "Click Or Drop"
+    });
 });
