@@ -45,3 +45,9 @@ A {
 A.decorate {
     text-decoration: underline;
 }
+
+#disqus_thread {
+    margin: 10px;
+    padding: 20px;
+    background: #fff;
+}
