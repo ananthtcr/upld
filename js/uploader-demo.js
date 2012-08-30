@@ -11,7 +11,8 @@ $(document).ready(function() {
         element: $('#manualUploadModeExample')[0],
         action: "success.html",
         autoUpload: false,
-        demoMode: true
+        demoMode: true,
+        uploadButtonText: "Select Files"
     });
 
     $('#triggerUpload').click(function() {
