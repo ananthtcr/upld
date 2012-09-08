@@ -2,3 +2,5 @@
 Thumbs.db
 !.gitignore
 *.iml
+uploads/
+*.ipr
