@@ -24,6 +24,7 @@ $(document).ready(function() {
         element: $('#basicUploadFailureExample')[0],
         action: "failure.html",
         demoMode: true,
+        debug: true,
         failedUploadTextDisplay: {
             mode: 'custom',
             maxChars: 40,
