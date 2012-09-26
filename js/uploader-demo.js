@@ -23,7 +23,13 @@ $(document).ready(function() {
     var uploader3 = new qq.FileUploader({
         element: $('#basicUploadFailureExample')[0],
         action: "failure.html",
-        demoMode: true
+        demoMode: true,
+        failedUploadTextDisplay: {
+            mode: 'custom',
+            maxChars: 40,
+            responseProperty: 'error',
+            enableTooltip: true
+        }
     });
 
 
