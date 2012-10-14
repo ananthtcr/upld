@@ -2,7 +2,7 @@ $(document).ready(function() {
     var uploader = new qq.FileUploader({
         element: $('#basicUploadSuccessExample')[0],
         action: "success.html",
-        demoMode: true
+        demoMode: true //DO NOT USE THIS OPTION IN PRODUCTION CODE - FORCES GET REQUESTS INSTEAD OF POST - ONLY FOR THE FINE-UPLOADER DEMO
     });
 
 
@@ -11,7 +11,7 @@ $(document).ready(function() {
         element: $('#manualUploadModeExample')[0],
         action: "success.html",
         autoUpload: false,
-        demoMode: true,
+        demoMode: true, //DO NOT USE THIS OPTION IN PRODUCTION CODE - FORCES GET REQUESTS INSTEAD OF POST - ONLY FOR THE FINE-UPLOADER DEMO
         uploadButtonText: "Select Files"
     });
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
         element: $('#basicUploadFailureExample')[0],
         action: "failure.html",
         demoMode: true,
-        debug: true,
+        debug: true, //DO NOT USE THIS OPTION IN PRODUCTION CODE - FORCES GET REQUESTS INSTEAD OF POST - ONLY FOR THE FINE-UPLOADER DEMO
         failedUploadTextDisplay: {
             mode: 'custom',
             maxChars: 40,
@@ -37,7 +37,7 @@ $(document).ready(function() {
     var uploader4 = new qq.FileUploader({
         element: $('#uploadWithVariousOptionsExample')[0],
         action: "success.html",
-        demoMode: true,
+        demoMode: true, //DO NOT USE THIS OPTION IN PRODUCTION CODE - FORCES GET REQUESTS INSTEAD OF POST - ONLY FOR THE FINE-UPLOADER DEMO
         multiple: false,
         allowedExtensions: ['jpeg', 'jpg', 'txt'],
         sizeLimit: 50000,
