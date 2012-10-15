@@ -25,12 +25,15 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active">
-                                <a href="./index.html">Home</a>
+                                <a href="./">Home</a>
                             </li>
                             <li>
-                                <a href="./index.html#demo">Take me to the demo</a>
+                                <a href="./#demo">Default demo</a>
                             </li>
                             <li>
+                                <a href="./#bootstrap-demo">Default Bootstrapped demo</a>
+                            </li>
+                            <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">More demos <b class="caret" style="border-top-color: #ccc; border-bottom-color: #ccc;"></b></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                                     <li><a href="./fine-uploader-demo.html">Fine Uploader</a></li>
@@ -137,14 +140,14 @@
                         <pre class="prettyprint linenums">&lt;div id="fine-uploader">&lt;/div>
 
 &lt;script>
-    function createUploader() {
-        var uploader = new qq.FileUploader({
-            element: document.getElementById('fine-uploader'),
-            action: 'client/do-nothing.htm'
-        });
-    }
-    
-    window.onload = createUploader;
+  function createUploader() {
+    var uploader = new qq.FileUploader({
+      element: document.getElementById('fine-uploader'),
+      action: 'client/do-nothing.htm'
+    });
+  }
+  
+  window.onload = createUploader;
 &lt/script></pre>
                     </div>
                 </div>
@@ -164,38 +167,38 @@
                         <pre class="prettyprint linenums">&lt;div id="bootstrapped-fine-uploader">&lt;/div>
 
 &lt;script>
-    function createUploader() {
-        var uploader = new qq.FileUploader({
-            element: document.getElementById('bootstrapped-fine-uploader'),
-            action: 'client/do-nothing.htm',
-            uploadButtonText: '&lt;i class="icon-upload icon-white">&lt;/i> Test me now and upload a file',
-            template:   '&lt;div class="qq-uploader span12">' +
-                            '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragText}&lt;/span>&lt;/pre>' +
-                            '&lt;div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}&lt;/div>' +
-                            '&lt;ul class="qq-upload-list" style="margin-top: 10px; text-align: center;">&lt;/ul>' +
-                        '&lt;/div>',
-            classes: {
-                button: 'qq-upload-button',
-                drop: 'qq-upload-drop-area',
-                dropActive: 'qq-upload-drop-area-active',
-                dropDisabled: 'qq-upload-drop-area-disabled',
-                list: 'qq-upload-list',
-                progressBar: 'qq-progress-bar',
-                file: 'qq-upload-file',
-                spinner: 'qq-upload-spinner',
-                finished: 'qq-upload-finished',
-                size: 'qq-upload-size',
-                cancel: 'qq-upload-cancel',
-                failText: 'qq-upload-failed-text',
-                success: 'alert alert-success',
-                fail: 'alert alert-error',
-                successIcon: null,
-                failIcon: null
-            }
-        });
-    }
-    
-    window.onload = createUploader;
+  function createUploader() {
+    var uploader = new qq.FileUploader({
+      element: document.getElementById('bootstrapped-fine-uploader'),
+      action: 'client/do-nothing.htm',
+      uploadButtonText: '&lt;i class="icon-upload icon-white">&lt;/i> Test me now and upload a file',
+      template: '&lt;div class="qq-uploader span12">' +
+              '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragText}&lt;/span>&lt;/pre>' +
+              '&lt;div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}&lt;/div>' +
+              '&lt;ul class="qq-upload-list" style="margin-top: 10px; text-align: center;">&lt;/ul>' +
+            '&lt;/div>',
+      classes: {
+        button: 'qq-upload-button',
+        drop: 'qq-upload-drop-area',
+        dropActive: 'qq-upload-drop-area-active',
+        dropDisabled: 'qq-upload-drop-area-disabled',
+        list: 'qq-upload-list',
+        progressBar: 'qq-progress-bar',
+        file: 'qq-upload-file',
+        spinner: 'qq-upload-spinner',
+        finished: 'qq-upload-finished',
+        size: 'qq-upload-size',
+        cancel: 'qq-upload-cancel',
+        failText: 'qq-upload-failed-text',
+        success: 'alert alert-success',
+        fail: 'alert alert-error',
+        successIcon: null,
+        failIcon: null
+      }
+    });
+  }
+  
+  window.onload = createUploader;
 &lt/script></pre>
                     </div>
                 </div>
