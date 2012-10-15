@@ -6,9 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
+        <link href="client/fileuploader.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
+        <link href="css/prettify.css" rel="stylesheet">
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -26,10 +28,14 @@
                                 <a href="./index.html">Home</a>
                             </li>
                             <li>
-                                <a href="./fine-uploader-demo.html">Fine Uploader</a>
+                                <a href="./index.html#demo">Take me to the demo</a>
                             </li>
                             <li>
-                                <a href="./fine-uploader-basic-demo.html">Fine Uploader Basic</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More demos <b class="caret" style="border-top-color: #ccc; border-bottom-color: #ccc;"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                    <li><a href="./fine-uploader-demo.html">Fine Uploader</a></li>
+                                    <li><a href="./fine-uploader-basic-demo.html">Fine Uploader Basic</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <i class="icon-heart icon-white" style="margin: 0 -15px 0 15px;"></i>
@@ -47,13 +53,11 @@
                 <h2>a.k.a Valums’ Ajax File Uploader</h2>
                 <p>Ajax file upload without the hassle.</p>
                 <p>
-                    <a href="" class="btn btn-success btn-large">
-                        Fine Uploader
-                        <br><span class="legend">The all-in-one drag-and-drop uploader</span>
+                    <a href="https://github.com/valums/file-uploader/zipball/master" class="btn btn-success btn-large">
+                        Download <i class="icon-download-alt icon-white" style="margin-top: 7px;"></i>
                     </a>
-                    <a href="" class="btn btn-primary btn-large">
-                        Fine Uploader Basic
-                        <br><span class="legend">Only the basic form uploader. You're in control!</span>
+                    <a href="#demo" class="btn btn-primary btn-large">
+                        Demo <i class="icon-chevron-down icon-white" style="margin-top: 7px;"></i>
                     </a>
                 </p>
                 <ul class="masthead-links">
@@ -93,40 +97,127 @@
         </div>
 
         <div class="container">
-        
             <div class="marketing">
-        
                 <h1>Introducing Fine Uploader</h1>
-        
                 <p class="marketing-byline">Free your code with this standalone Javascript script</p>
-        
                 <div class="row-fluid">
                     <div class="span3">
                         <h2>Welcome</h2>
-
                         <p>This project attempts to achieve a user-friendly file-uploading experience over the web. It's built as a Javascript plugin for developers looking to incorporate file-uploading into their website.</p>
                     </div>
 
                     <div class="span3">
                         <h2>Browser support</h2>
-
                         <p>Tested in IE7+ (not IE10 yet), Firefox, Safari (OS X), and Chrome. Safari for Windows is not supported, nor is IE6 or earlier. It does not use Flash, jQuery, or any external libraries.</p>
                     </div>
 
                     <div class="span3">
                         <h2>How it works</h2>
-
                         <p>Uses an XMLHttpRequest (AJAX) for uploading multiple files with a progress-bar in FF3.6+, Safari4+, Chrome, and falls back to hidden-iframe-based upload in other browsers (namely IE), providing good user experience everywhere.</p>
                     </div>
 
                     <div class="span3">
                         <h2>Server support</h2>
-
                         <p>You can use any server technology (ColdFusion, Java, Python, PHP…).</p>
                     </div>
                 </div>
+
+                <hr class="soften" id="demo">
+
+                <h1>100% default demo</h1>
+                <p class="marketing-byline">The out-of-the-box demo. Below you can see the <a href="#bootstrap-demo">bootstrapped demo</a>.</p>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h2>Simple demo with drag & drop</h2>
+                        <div id="fine-uploader"></div>
+                    </div>
+
+                    <div class="span6">
+                        <h2>The code</h2>
+                        <pre class="prettyprint linenums">&lt;div id="fine-uploader">&lt;/div>
+
+&lt;script>
+    function createUploader() {
+        var uploader = new qq.FileUploader({
+            element: document.getElementById('fine-uploader'),
+            action: 'client/do-nothing.htm'
+        });
+    }
+    
+    window.onload = createUploader;
+&lt/script></pre>
+                    </div>
+                </div>
+
+                <hr class="soften" id="bootstrap-demo">
+
+                <h1>Bootstrapped Demo</h1>
+                <p class="marketing-byline">Includes support for Twitter Bootstrap. You can also see <a href="#more">more demos</a>.</p>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h2>Simple demo with drag & drop</h2>
+                        <div id="bootstrapped-fine-uploader"></div>
+                    </div>
+
+                    <div class="span6">
+                        <h2>The code</h2>
+                        <pre class="prettyprint linenums">&lt;div id="bootstrapped-fine-uploader">&lt;/div>
+
+&lt;script>
+    function createUploader() {
+        var uploader = new qq.FileUploader({
+            element: document.getElementById('bootstrapped-fine-uploader'),
+            action: 'client/do-nothing.htm',
+            uploadButtonText: '&lt;i class="icon-upload icon-white">&lt;/i> Test me now and upload a file',
+            template:   '&lt;div class="qq-uploader span12">' +
+                            '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragText}&lt;/span>&lt;/pre>' +
+                            '&lt;div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}&lt;/div>' +
+                            '&lt;ul class="qq-upload-list" style="margin-top: 10px; text-align: center;">&lt;/ul>' +
+                        '&lt;/div>',
+            classes: {
+                button: 'qq-upload-button',
+                drop: 'qq-upload-drop-area',
+                dropActive: 'qq-upload-drop-area-active',
+                dropDisabled: 'qq-upload-drop-area-disabled',
+                list: 'qq-upload-list',
+                progressBar: 'qq-progress-bar',
+                file: 'qq-upload-file',
+                spinner: 'qq-upload-spinner',
+                finished: 'qq-upload-finished',
+                size: 'qq-upload-size',
+                cancel: 'qq-upload-cancel',
+                failText: 'qq-upload-failed-text',
+                success: 'alert alert-success',
+                fail: 'alert alert-error',
+                successIcon: null,
+                failIcon: null
+            }
+        });
+    }
+    
+    window.onload = createUploader;
+&lt/script></pre>
+                    </div>
+                </div>
+
+                <hr class="soften" id="more">
+
+                <h1>More demos</h1>
+                <p class="marketing-byline">Includes more features, and also shows how to customize Fine Uploader Basic.</p>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="./fine-uploader-demo.html" class="btn btn-success btn-large">
+                            Fine Uploader
+                            <br><span class="legend">The all-in-one drag-and-drop uploader</span>
+                        </a>
+                        <a href="./fine-uploader-basic-demo.html" class="btn btn-primary btn-large">
+                            Fine Uploader Basic
+                            <br><span class="legend">Only the basic form uploader. You're in control!</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div>        
 
         <footer class="footer">
             <div class="container">
@@ -147,8 +238,61 @@
             </div>
         </footer>
 
-        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        <script src="client/fileuploader.js"></script>
+        <script>
+            function createUploader() {
+                var uploader = new qq.FileUploader({
+                    element: document.getElementById('fine-uploader'),
+                    action: 'client/do-nothing.htm',
+                    debug: true
+                });
+
+                var btuploader = new qq.FileUploader({
+                    element: document.getElementById('bootstrapped-fine-uploader'),
+                    action: 'client/do-nothing.htm',
+                    debug: true,
+                    uploadButtonText: '<i class="icon-upload icon-white"></i> Test me now and upload a file',
+                    template:   '<div class="qq-uploader span12">' +
+                                    '<pre class="qq-upload-drop-area span12"><span>{dragText}</span></pre>' +
+                                    '<div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}</div>' +
+                                    '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
+                                '</div>',
+                    classes: {
+                        // used to get elements from templates
+                        button: 'qq-upload-button',
+                        drop: 'qq-upload-drop-area',
+                        dropActive: 'qq-upload-drop-area-active',
+                        dropDisabled: 'qq-upload-drop-area-disabled',
+                        list: 'qq-upload-list',
+                        progressBar: 'qq-progress-bar',
+                        file: 'qq-upload-file',
+                        spinner: 'qq-upload-spinner',
+                        finished: 'qq-upload-finished',
+                        size: 'qq-upload-size',
+                        cancel: 'qq-upload-cancel',
+                        failText: 'qq-upload-failed-text',
+            
+                        // added to list item <li> when upload completes
+                        // used in css to hide progress spinner
+                        success: 'alert alert-success',
+                        fail: 'alert alert-error',
+            
+                        successIcon: null,
+                        failIcon: null
+                    }
+                });
+            }
+
+            window.onload = createUploader;
+        </script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-dropdown.js"></script>
+        <script src="js/prettify.js"></script>
+        <script>
+            window.prettyPrint && prettyPrint();
+            $('.dropdown-toggle').dropdown();
+        </script>
     </body>
 </html>
