@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>More demos - Fine Uploader a.k.a Valums’ Ajax Uploader</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="client/fileuploader.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/prettify.css" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target="#demoList">
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#menu .nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="./index.html">Fine Uploader</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="./">Home</a>
+                            </li>
+                            <li>
+                                <a href="./#setup">Setup</a>
+                            </li>
+                            <li>
+                                <a href="./#demo">Out-of-the-box demo</a>
+                            </li>
+                            <li>
+                                <a href="./#bootstrap-demo">Bootstrapped demo</a>
+                            </li>
+                            <li class="active dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More demos <b class="caret" style="border-top-color: #ccc; border-bottom-color: #ccc;"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                    <li class="active"><a href="./fine-uploader-demo.html">Fine Uploader</a></li>
+                                    <li><a href="./fine-uploader-basic-demo.html">Fine Uploader Basic</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="icon-heart icon-white" style="margin: 0 -15px 0 15px;"></i>
+                                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=6ZMVZSC4DBRVN&lc=US&item_name=Fine%20Uploader&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" style="display:inline-block;" target="_blank">Donate</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="jumbotron" class="jumbotron subhead">
+            <div class="container">
+                <h1>More demos</h1>
+                <p>Want more that basic stuff? See here!</p>
+            </div>
+        </div>
+
+        <div id="demoList" class="navbar" style="width: 100%; margin-bottom: 0; left: 0; z-index: 100;">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#demoList .nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#">More demos</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="#demo1">Manual Trigger</a></li>
+                            <li><a href="#demo2">todo</a></li>
+                            <li><a href="#demo3">todo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row span12">
+                <section id="demo1">
+                    <h1>Manually Trigger Uploads</h1>
+                    <p class="lead">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling uploadStoredFiles() on your Fine Uploader instance.</p>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div id="manual-fine-uploader"></div>
+                            <div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;"><i class="icon-upload icon-white"></i> Upload now</div>
+                        </div>
+    
+                        <div class="span8">
+                            <pre class="prettyprint linenums">&lt;div id="manual-fine-uploader">&lt;/div>
+&lt;div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">&lt;i class="icon-upload icon-white">&lt;/i> Upload now&lt;/div>
+
+&lt;script>
+  $(document).ready(function() {
+    var manualuploader = new qq.FileUploader({
+      element: document.getElementById('manual-fine-uploader'),
+      action: 'client/do-nothing.htm',
+      autoUpload: false,
+      debug: true,
+      uploadButtonText: '&lt;i class="icon-plus icon-white">&lt;/i> Select Files',
+      template: '&lt;div class="qq-uploader span12">' +
+                  '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragText}&lt;/span>&lt;/pre>' +
+                  '&lt;div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}&lt;/div>' +
+                  '&lt;ul class="qq-upload-list" style="margin-top: 10px; text-align: center;">&lt;/ul>' +
+                '&lt;/div>',
+      fileTemplate: '&lt;li class="alert">' +
+                      '&lt;div class="qq-progress-bar">&lt;/div>' +
+                      '&lt;span class="qq-upload-spinner">&lt;/span>' +
+                      '&lt;span class="qq-upload-finished">&lt;/span>' +
+                      '&lt;span class="qq-upload-file">&lt;/span>' +
+                      '&lt;span class="qq-upload-size">&lt;/span>' +
+                      '&lt;a class="qq-upload-cancel" href="#">{cancelButtonText}&lt;/a>' +
+                      '&lt;span class="qq-upload-failed-text">{failUploadtext}&lt;/span>' +
+                    '&lt;/li>',
+      classes: {
+          button: 'qq-upload-button',
+          drop: 'qq-upload-drop-area',
+          dropActive: 'qq-upload-drop-area-active',
+          dropDisabled: 'qq-upload-drop-area-disabled',
+          list: 'qq-upload-list',
+          progressBar: 'qq-progress-bar',
+          file: 'qq-upload-file',
+          spinner: 'qq-upload-spinner',
+          finished: 'qq-upload-finished',
+          size: 'qq-upload-size',
+          cancel: 'qq-upload-cancel',
+          failText: 'qq-upload-failed-text',
+          success: 'alert-success',
+          fail: 'alert-error',
+          successIcon: null,
+          failIcon: null
+      }
+    });
+
+    $('#triggerUpload').click(function() {
+      manualuploader.uploadStoredFiles();
+    });
+  }
+&lt/script></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="demo2">
+                    <h1>todo</h1>
+                    <p class="lead">todo.</p>
+                </section>
+
+                <section id="demo3">
+                    <h1>todo</h1>
+                    <p class="lead">todo.</p>
+                </section>
+            </div>        
+        </div>        
+
+        <footer class="footer">
+            <div class="container">
+                <p>Developed by <a href="http://github.com/valums/" target="_blank">valums</a>.</p>
+                <p>Maintained by <a href="http://github.com/rnicholus/" target="_blank">rnicholus</a>.</p>
+                <p>Code open sourced under <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>, <a href="http://www.gnu.org/licenses/gpl-2.0.txt" target="_blank">GNU GPL 2</a> or later and <a href="http://www.gnu.org/licenses/lgpl-2.0.txt" target="_blank">GNU LGPL 2</a> or later.</p>
+                <p>Icons from <a href="http://glyphicons.com" target="_blank">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                <p>Webpage designed by <a href="http://github.com/tellibus" target="_blank">tellibus</a>.</p>
+                <p>Powered by <a href="http://github.com/valums/file-uploader/" target="_blank">Fine Uploader</a>, <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, <a href="http://code.google.com/p/google-code-prettify/" target="_blank">Prettify</a>, and <a href="http://jquery.com/" target="_blank">jQuery</a>.</p>
+                <ul class="footer-links">
+                    <li>
+                        <a href="http://groups.google.com/forum/#!forum/fineuploader" target="_blank">Fine Uploader on Google Groups</a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/valums/file-uploader/issues/new" target="_blank">Submit issues</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="client/fileuploader.js"></script>
+        <script>
+            var manualuploader;
+            function createUploader() {
+                manualuploader = new qq.FileUploader({
+                    element: document.getElementById('manual-fine-uploader'),
+                    action: 'client/do-nothing.htm',
+                    autoUpload: false,
+                    debug: true,
+                    uploadButtonText: '<i class="icon-plus icon-white"></i> Select Files',
+                    template:   '<div class="qq-uploader span12">' +
+                                    '<pre class="qq-upload-drop-area span12"><span>{dragText}</span></pre>' +
+                                    '<div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}</div>' +
+                                    '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
+                                '</div>',
+                    fileTemplate:   '<li class="alert">' +
+                                        '<div class="qq-progress-bar"></div>' +
+                                        '<span class="qq-upload-spinner"></span>' +
+                                        '<span class="qq-upload-finished"></span>' +
+                                        '<span class="qq-upload-file"></span>' +
+                                        '<span class="qq-upload-size"></span>' +
+                                        '<a class="qq-upload-cancel" href="#">{cancelButtonText}</a>' +
+                                        '<span class="qq-upload-failed-text">{failUploadtext}</span>' +
+                                    '</li>',
+                    classes: {
+                        // used to get elements from templates
+                        button: 'qq-upload-button',
+                        drop: 'qq-upload-drop-area',
+                        dropActive: 'qq-upload-drop-area-active',
+                        dropDisabled: 'qq-upload-drop-area-disabled',
+                        list: 'qq-upload-list',
+                        progressBar: 'qq-progress-bar',
+                        file: 'qq-upload-file',
+                        spinner: 'qq-upload-spinner',
+                        finished: 'qq-upload-finished',
+                        size: 'qq-upload-size',
+                        cancel: 'qq-upload-cancel',
+                        failText: 'qq-upload-failed-text',
+            
+                        // added to list item <li> when upload completes
+                        // used in css to hide progress spinner
+                        success: 'alert-success',
+                        fail: 'alert-error',
+            
+                        successIcon: null,
+                        failIcon: null
+                    }
+                });
+            }
+
+            window.onload = createUploader;
+        </script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/prettify.js"></script>
+        <script>
+            window.prettyPrint && prettyPrint();
+            $('.dropdown-toggle').dropdown();
+
+            $(document).ready(function() {
+                $('#triggerUpload').click(function() {
+                    manualuploader.uploadStoredFiles();
+                });
+
+                var offset, aboveHeight;
+                var $menu = $('#menu');
+                var $jumbotron = $('#jumbotron');
+                var $demoList = $('#demoList');
+
+                function offsetSubMenu() {
+                    if ($menu.css('position') == 'fixed') {
+                        offset = $menu.outerHeight();
+                        aboveHeight = $jumbotron.outerHeight() - 10;
+                    } else {
+                        offset = 0;
+                        aboveHeight = $menu.outerHeight() + $jumbotron.outerHeight();
+                    }
+                    if ($(window).scrollTop() > aboveHeight){
+                        $demoList.css({"position": "fixed", "top": offset + "px"});
+                    } else {
+                        $demoList.css({"position": "relative", "top": "0"});
+                    }
+                }
+
+                offsetSubMenu();
+
+                $(window).resize(function() {
+                    offsetSubMenu();
+                });
+
+                $(window).scroll(function() {
+                    offsetSubMenu();
+                });
+            });
+        </script>
+    </body>
+</html>
