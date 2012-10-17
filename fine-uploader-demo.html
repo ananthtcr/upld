@@ -74,6 +74,8 @@
                             <li><a href="#demo1">Manual Trigger</a></li>
                             <li><a href="#demo2">Server Failure</a></li>
                             <li><a href="#demo3">Various Options</a></li>
+                            <li><a href="#demo4">Image Thumbnails</a></li>
+                            <li><a href="#demo5">File Number Limit</a></li>
                         </ul>
                     </div>
                 </div>
@@ -180,6 +182,84 @@
                         </div>
                     </div>
                 </section>
+
+                <section id="demo4">
+                    <h1>Display Image Thumbnails</h1>
+                    <p class="lead">In this demo, we've used the onComplete callback to display thumbnails of the uploaded images. The uploader is also restricted in size (50 kB), in concurrent donwloads (only one at once), and in allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>).</p>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div id="thumbnail-fine-uploader"></div>
+                        </div>
+    
+                        <div class="span8">
+                            <pre class="prettyprint linenums">&lt;div id="thumbnail-fine-uploader">&lt;/div>
+
+&lt;script>
+  $(document).ready(function() {
+    var thumbnailuploader = new qq.FileUploader({
+      element: $('#thumbnail-fine-uploader')[0],
+      action: 'do-nothing.htm',
+      debug: true,
+      multiple: false,
+      allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+      sizeLimit: 51200,
+      onComplete: function(id, fileName, responseJSON) {
+        if (responseJSON.success) {
+          $('#thumbnail-fine-uploader').append('&lt;img src="img/success.jpg" alt="' + fileName + '">');
+        }
+      }
+    });
+  }
+&lt/script></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="demo5">
+                    <h1>Limit Number of Uploaded Files</h1>
+                    <p class="lead">In this demo, we've used both the onSubmit and the onComplete callbacks to handle a file counter. The uploader is also restricted in size (50 kB), , and in allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>).</p>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <p>If you're yet to process the uploads (to store in a database for instance), it's quite easy to customize it even more in order to provide handles to delete a given uploaded file. In fact, it wouldn't hard delete the file on the server, just delete the link in the DOM…</p>
+                            <div id="filelimit-fine-uploader"></div>
+                        </div>
+    
+                        <div class="span8">
+                            <pre class="prettyprint linenums">&lt;div id="filelimit-fine-uploader">&lt;/div>
+
+&lt;script>
+  var fileLimit = 3;
+
+  $(document).ready(function() {
+    var filelimituploader = new qq.FileUploader({
+      element: $('#filelimit-fine-uploader')[0],
+      action: 'do-nothing.htm',
+      debug: true,
+      allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+      sizeLimit: 51200,
+      onSubmit: function(id, fileName){
+        fileCount ++;
+        if(fileCount > fileLimit) {
+          $('#filelimit-fine-uploader .qq-upload-button').hide();
+          $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+          return false;
+        }
+      },
+      onComplete: function(id, fileName, responseJSON) {
+        if (responseJSON.success) {
+          addedFiles ++;
+          if(addedFiles >= fileLimit) {
+            $('#filelimit-fine-uploader .qq-upload-button').hide();
+            $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+          }
+        }
+      }
+    });
+  }
+&lt/script></pre>
+                        </div>
+                    </div>
+                </section>
             </div>        
         </div>        
 
@@ -205,6 +285,9 @@
         <script src="client/fileuploader.js"></script>
         <script>
             var manualuploader;
+            var fileCount = 0;
+            var addedFiles = 0;
+            var fileLimit = 3;
 
             function createUploader() {
                 manualuploader = new qq.FileUploader({
@@ -216,7 +299,7 @@
                     uploadButtonText: '<i class="icon-plus icon-white"></i> Select Files'
                 });
 
-                faileduploader = new qq.FileUploader({
+                var faileduploader = new qq.FileUploader({
                     element: document.getElementById('failed-fine-uploader'),
                     action: 'failure.html',
                     debug: true,
@@ -229,7 +312,7 @@
                     }
                 });
 
-                restricteduploader = new qq.FileUploader({
+                var restricteduploader = new qq.FileUploader({
                     // If we're using jQuery, there's another way of selecting the DOM node
                     element: $('#restricted-fine-uploader')[0],
                     action: 'client/do-nothing.htm',
@@ -242,6 +325,47 @@
                     showMessage: function(message) {
                         // Using Bootstrap's classes and jQuery selector and DOM manipulation
                         $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
+                    }
+                });
+
+                var thumbnailuploader = new qq.FileUploader({
+                    element: $('#thumbnail-fine-uploader')[0],
+                    action: 'client/do-nothing.htm',
+                    debug: true,
+                    demoMode: true,
+                    multiple: false,
+                    allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+                    sizeLimit: 51200,
+                    onComplete: function(id, fileName, responseJSON) {
+                        if (responseJSON.success) {
+                            $('#thumbnail-fine-uploader').append('<img src="img/success.jpg" alt="' + fileName + '">');
+                        }
+                    }
+                });
+
+                var filelimituploader = new qq.FileUploader({
+                    element: $('#filelimit-fine-uploader')[0],
+                    action: 'client/do-nothing.htm',
+                    debug: true,
+                    demoMode: true,
+                    allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+                    sizeLimit: 51200,
+                    onSubmit: function(id, fileName){
+                        fileCount ++;
+                        if(fileCount > fileLimit) {
+                            $('#filelimit-fine-uploader .qq-upload-button').hide();
+                            $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+                            return false;
+                        }
+                    },
+                    onComplete: function(id, fileName, responseJSON) {
+                        if (responseJSON.success) {
+                            addedFiles ++;
+                            if(addedFiles >= fileLimit) {
+                                $('#filelimit-fine-uploader .qq-upload-button').hide();
+                                $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+                            }
+                        }
                     }
                 });
             }
