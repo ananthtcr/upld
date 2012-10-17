@@ -75,6 +75,7 @@
                             <pre class="prettyprint linenums">&lt;div id="fine-uploader-basic" class="btn btn-success">
   &lt;i class="icon-upload icon-white">&lt;/i> Click to upload
 &lt;/div>
+&lt;div id="messages">&lt;/div>
 
 &lt;script>
   $(document).ready(function() {
@@ -97,13 +98,13 @@
                               '“' + fileName + '”');
       },
       onProgress: function(id, fileName, loaded, total) {
-        if (loaded &lt; total) {
+        if (loaded < total) {
           progress = Math.round(loaded / total * 100) + '% of ' + Math.round(total / 1024) + ' kB';
           $('#file-' + id).removeClass('alert-info')
                           .html('&lt;img src="client/loading.gif" alt="In progress. Please hold."> ' +
+                                'Uploading ' +
                                 '“' + fileName + '” ' +
-                                progress /*+
-                                ' &lt;span class="btn btn-warning">&lt;i class="icon-remove">&lt;/i>&lt;/span>'*/);
+                                progress);
         } else {
           $('#file-' + id).addClass('alert-info')
                           .html('&lt;img src="client/loading.gif" alt="Saving. Please hold."> ' +
@@ -173,7 +174,6 @@
                     button: $fub[0],
                     action: 'client/do-nothing.htm',
                     debug: true,
-                    demoMode: true,
                     allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
                     sizeLimit: 204800, // 200 kB = 200 * 1024 bytes
                     onSubmit: function(id, fileName) {
@@ -190,6 +190,7 @@
                             progress = Math.round(loaded / total * 100) + '% of ' + Math.round(total / 1024) + ' kB';
                             $('#file-' + id).removeClass('alert-info')
                                             .html('<img src="client/loading.gif" alt="In progress. Please hold."> ' +
+                                                  'Uploading ' +
                                                   '“' + fileName + '” ' +
                                                   progress /*+
                                                   ' <span class="btn btn-warning"><i class="icon-remove"></i></span>'*/);
