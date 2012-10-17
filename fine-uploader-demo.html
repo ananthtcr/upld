@@ -239,12 +239,19 @@
       debug: true,
       allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
       sizeLimit: 51200,
-      onSubmit: function(id, fileName){
+      onSubmit: function(id, fileName) {
         fileCount ++;
         if(fileCount > fileLimit) {
           $('#filelimit-fine-uploader .qq-upload-button').hide();
           $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
           return false;
+        }
+      },
+      onCancel: function(id, fileName) {
+        fileCount --;
+        if(fileCount <= fileLimit) {
+          $('#filelimit-fine-uploader .qq-upload-button').show();
+          $('#filelimit-fine-uploader .qq-upload-drop-area').show();
         }
       },
       onComplete: function(id, fileName, responseJSON) {
@@ -352,12 +359,19 @@
                     demoMode: true,
                     allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
                     sizeLimit: 51200,
-                    onSubmit: function(id, fileName){
+                    onSubmit: function(id, fileName) {
                         fileCount ++;
                         if(fileCount > fileLimit) {
                             $('#filelimit-fine-uploader .qq-upload-button').hide();
                             $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
                             return false;
+                        }
+                    },
+                    onCancel: function(id, fileName) {
+                        fileCount --;
+                        if(fileCount <= fileLimit) {
+                            $('#filelimit-fine-uploader .qq-upload-button').show();
+                            $('#filelimit-fine-uploader .qq-upload-drop-area').show();
                         }
                     },
                     onComplete: function(id, fileName, responseJSON) {
