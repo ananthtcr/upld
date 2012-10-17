@@ -212,6 +212,7 @@
                     action: 'client/do-nothing.htm',
                     autoUpload: false,
                     debug: true,
+                    demoMode: true,
                     uploadButtonText: '<i class="icon-plus icon-white"></i> Select Files'
                 });
 
@@ -219,6 +220,7 @@
                     element: document.getElementById('failed-fine-uploader'),
                     action: 'failure.html',
                     debug: true,
+                    demoMode: true,
                     failedUploadTextDisplay: {
                         mode: 'custom',
                         maxChars: 40,
@@ -232,6 +234,7 @@
                     element: $('#restricted-fine-uploader')[0],
                     action: 'client/do-nothing.htm',
                     debug: true,
+                    demoMode: true,
                     multiple: false,
                     allowedExtensions: ['jpeg', 'jpg', 'txt'],
                     sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
