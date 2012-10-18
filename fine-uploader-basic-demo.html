@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Fine Uploader Basic “FUB” demo - Fine Uploader a.k.a Valums’ Ajax Uploader</title>
+        <title>Fine Uploader Basic demo - Fine Uploader a.k.a valums file-uploader</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -13,45 +13,7 @@
         <link href="css/prettify.css" rel="stylesheet">
     </head>
     <body data-spy="scroll" data-target="#demoList">
-        <div id="menu" class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#menu .nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="./index.html">Fine Uploader</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li>
-                                <a href="./">Home</a>
-                            </li>
-                            <li>
-                                <a href="./#setup">Setup</a>
-                            </li>
-                            <li>
-                                <a href="./#demo">Out-of-the-box demo</a>
-                            </li>
-                            <li>
-                                <a href="./#bootstrap-demo">Bootstrapped demo</a>
-                            </li>
-                            <li class="active dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More demos <b class="caret" style="border-top-color: #ccc; border-bottom-color: #ccc;"></b></a>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                    <li><a href="./fine-uploader-demo.html">Fine Uploader</a></li>
-                                    <li class="active"><a href="./fine-uploader-basic-demo.html">Fine Uploader Basic</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <i class="icon-heart icon-white" style="margin: 0 -15px 0 15px;"></i>
-                                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=6ZMVZSC4DBRVN&lc=US&item_name=Fine%20Uploader&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" style="display:inline-block;" target="_blank">Donate</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="navbar"></div>
 
         <div id="jumbotron" class="jumbotron subhead">
             <div class="container">
@@ -140,12 +102,12 @@
 
         <footer class="footer">
             <div class="container">
-                <p>Developed by <a href="http://github.com/valums/" target="_blank">valums</a>.</p>
-                <p>Maintained by <a href="http://github.com/rnicholus/" target="_blank">rnicholus</a>.</p>
+                <p>Created by <a href="http://github.com/valums/" target="_blank">Andrew Valums</a>.</p>
+                <p>Maintained by <a href="http://github.com/rnicholus/" target="_blank">Ray Nicholus</a>.</p>
                 <p>Code open sourced under <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>, <a href="http://www.gnu.org/licenses/gpl-2.0.txt" target="_blank">GNU GPL 2</a> or later and <a href="http://www.gnu.org/licenses/lgpl-2.0.txt" target="_blank">GNU LGPL 2</a> or later.</p>
                 <p>Icons from <a href="http://glyphicons.com" target="_blank">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
                 <p>Webpage designed by <a href="http://github.com/tellibus" target="_blank">tellibus</a>.</p>
-                <p>Powered by <a href="http://github.com/valums/file-uploader/" target="_blank">Fine Uploader</a>, <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, <a href="http://code.google.com/p/google-code-prettify/" target="_blank">Prettify</a>, and <a href="http://jquery.com/" target="_blank">jQuery</a>.</p>
+                <p>Powered by <a href="http://github.com/valums/file-uploader/" target="_blank">Fine Uploader</a>, <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, <a href="http://code.google.com/p/google-code-prettify/" target="_blank">Prettify</a>, and <a href="http://jquery.com/" target="_blank">jQuery</a>.</p>
                 <ul class="footer-links">
                     <li>
                         <a href="http://groups.google.com/forum/#!forum/fineuploader" target="_blank">Fine Uploader on Google Groups</a>
@@ -228,6 +190,9 @@
         <script>
             window.prettyPrint && prettyPrint();
             $('.dropdown-toggle').dropdown();
+        </script>
+        <script>
+            $.get('/navbar.html', function(data) { $('#navbar').html(data); });
         </script>
     </body>
 </html>

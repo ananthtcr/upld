@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>More demos - Fine Uploader a.k.a Valums’ Ajax Uploader</title>
+        <title>Fine Uploader Basic demo - Fine Uploader a.k.a valums file-uploader</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -13,45 +13,7 @@
         <link href="css/prettify.css" rel="stylesheet">
     </head>
     <body data-spy="scroll" data-target="#demoList">
-        <div id="menu" class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#menu .nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="./index.html">Fine Uploader</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li>
-                                <a href="./">Home</a>
-                            </li>
-                            <li>
-                                <a href="./#setup">Setup</a>
-                            </li>
-                            <li>
-                                <a href="./#demo">Out-of-the-box demo</a>
-                            </li>
-                            <li>
-                                <a href="./#bootstrap-demo">Bootstrapped demo</a>
-                            </li>
-                            <li class="active dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More demos <b class="caret" style="border-top-color: #ccc; border-bottom-color: #ccc;"></b></a>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                    <li class="active"><a href="./fine-uploader-demo.html">Fine Uploader</a></li>
-                                    <li><a href="./fine-uploader-basic-demo.html">Fine Uploader Basic</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <i class="icon-heart icon-white" style="margin: 0 -15px 0 15px;"></i>
-                                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=6ZMVZSC4DBRVN&lc=US&item_name=Fine%20Uploader&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" style="display:inline-block;" target="_blank">Donate</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="navbar"></div>
 
         <div id="jumbotron" class="jumbotron subhead">
             <div class="container">
@@ -439,6 +401,9 @@
                     offsetSubMenu();
                 });
             });
+        </script>
+        <script>
+            $.get('/navbar.html', function(data) { $('#navbar').html(data); });
         </script>
     </body>
 </html>
