@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Fine Uploader demo</title>
+        <title>Fine Uploader with Optional jQuery Wrapper demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Fine Uploader demo">
+        <meta name="description" content="Fine Uploader with Optional jQuery Wrapper demo">
         <meta name="author" content="A. Bennouna, tellibus">
         <link href="client/fineuploader.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -68,10 +68,10 @@
 
 &lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
 &lt;script src="client/fineuploader.js">&lt;/script>
+&lt;script src="client/js/jquery-plugin.js">&lt;/script>
 &lt;script>
   $(document).ready(function() {
-    var manualuploader = new qq.FineUploader({
-      element: $('#manual-fine-uploader')[0],
+    var manualuploader = $('#manual-fine-uploader').fineUploader({
       request: {
         endpoint: 'server/handleUploads',
       },
@@ -83,7 +83,7 @@
     });
 
     $('#triggerUpload').click(function() {
-      manualuploader.uploadStoredFiles();
+      manualuploader.fineUploader('uploadStoredFiles');
     });
   });
 &lt;/script></pre>
@@ -102,11 +102,12 @@
                         <div class="span8">
                             <pre class="prettyprint linenums">&lt;div id="failed-fine-uploader">&lt;/div>
 
+&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
 &lt;script src="client/fineuploader.js">&lt;/script>
+&lt;script src="client/js/jquery-plugin.js">&lt;/script>
 &lt;script>
-  function createUploader() {
-    var faileduploader = new qq.FineUploader({
-      element: document.getElementById('failed-fine-uploader'),
+  $(document).ready(function() {
+    $('#failed-fine-uploader').fineUploader({
       request: {
         endpoint: 'server/handleUploads',
       },
@@ -118,9 +119,7 @@
       },
       debug: true
     });
-  }
-
-  window.onload = createUploader;
+  });
 &lt;/script></pre>
                         </div>
                     </div>
@@ -147,13 +146,12 @@
 
 &lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
 &lt;script src="client/fineuploader.js">&lt;/script>
+&lt;script src="client/js/jquery-plugin.js">&lt;/script>
 &lt;script>
   $(document).ready(function() {
-    var restricteduploader = new qq.FineUploader({
-      // Since we're using jQuery, use the jQuery way to select the HTML element
-      element: $('#restricted-fine-uploader')[0],
+    $('#restricted-fine-uploader').fineUploader({
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/success.html',
       },
       multiple: false,
       validation: {
@@ -164,7 +162,7 @@
         uploadButton: 'Click or Drop',
       },
       showMessage: function(message) {
-        // Using Twitter Bootstrap's classes and jQuery selector and method
+        // Using Bootstrap's classes
         $('#restricted-fine-uploader').append('&lt;div class="alert alert-error">' + message + '&lt;/div>');
       },
       debug: true
@@ -195,26 +193,26 @@
 
 &lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
 &lt;script src="client/fineuploader.js">&lt;/script>
+&lt;script src="client/js/jquery-plugin.js">&lt;/script>
 &lt;script>
   $(document).ready(function() {
-    var thumbnailuploader = new qq.FineUploader({
-      element: $('#thumbnail-fine-uploader')[0],
+    $('#thumbnail-fine-uploader').fineUploader({
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/success.html',
       },
       multiple: false,
       validation: {
         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
         sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
       },
-      callbacks: {
-        onComplete: function(id, fileName, responseJSON) {
-          if (responseJSON.success) {
-            $('#thumbnail-fine-uploader').append('&lt;img src="img/success.jpg" alt="' + fileName + '">');
-          }
-        }
+      text: {
+        uploadButton: 'Click or Drop',
       },
       debug: true
+    }).on('complete', function(event, id, fileName, responseJSON) {
+      if (responseJSON.success) {
+        $(this).append('&lt;img src="img/success.jpg" alt="' + fileName + '">');
+      }
     });
   });
 &lt;/script></pre>
@@ -239,47 +237,44 @@
                         <div class="span8">
                             <pre class="prettyprint linenums">&lt;div id="filelimit-fine-uploader">&lt;/div>
 
+&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
+&lt;script src="client/fineuploader.js">&lt;/script>
+&lt;script src="client/js/jquery-plugin.js">&lt;/script>
 &lt;script>
   var fileCount = 0;
   var addedFiles = 0;
   var fileLimit = 3;
 
   $(document).ready(function() {
-    var filelimituploader = new qq.FineUploader({
-      element: $('#filelimit-fine-uploader')[0],
+    $('#filelimit-fine-uploader').fineUploader({
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/success.html',
       },
       validation: {
         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
         sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
       },
-      callbacks: {
-        onSubmit: function(id, fileName) {
-          fileCount ++;
-          if(fileCount > fileLimit) {
-            $('#filelimit-fine-uploader .qq-upload-button').hide();
-            $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-            return false;
-          }
-        },
-        onCancel: function(id, fileName) {
-          fileCount --;
-          if(fileCount <= fileLimit) {
-            $('#filelimit-fine-uploader .qq-upload-button').show();
-          }
-        },
-        onComplete: function(id, fileName, responseJSON) {
-          if (responseJSON.success) {
-            addedFiles ++;
-            if(addedFiles >= fileLimit) {
-              $('#filelimit-fine-uploader .qq-upload-button').hide();
-              $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-            }
-          }
-        },
-      },
       debug: true
+    }).on('submit', function(event, id, fileName) {
+      fileCount ++;
+      if(fileCount > fileLimit) {
+        $('#filelimit-fine-uploader .qq-upload-button').hide();
+        $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+        return false;
+      }
+    }).on('cancel', function(event, id, fileName) {
+      fileCount --;
+      if(fileCount <= fileLimit) {
+        $('#filelimit-fine-uploader .qq-upload-button').show();
+      }
+    }).on('complete', function(event, id, fileName, responseJSON) {
+      if (responseJSON.success) {
+        addedFiles ++;
+        if(addedFiles >= fileLimit) {
+          $('#filelimit-fine-uploader .qq-upload-button').hide();
+          $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+        }
+      }
     });
   });
 &lt;/script></pre>
@@ -291,126 +286,6 @@
 
         <div id="footer"></div>
 
-        <script src="client/fineuploader.js"></script>
-        <script>
-            var manualuploader;
-            var fileCount = 0;
-            var addedFiles = 0;
-            var fileLimit = 3;
-
-            function createUploader() {
-                manualuploader = new qq.FineUploader({
-                    element: $('#manual-fine-uploader')[0],
-                    request: {
-                        endpoint: 'server/success.html',
-                    },
-                    autoUpload: false,
-                    text: {
-                        uploadButton: '<i class="icon-plus icon-white"></i> Select Files',
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-
-                var faileduploader = new qq.FineUploader({
-                    element: document.getElementById('failed-fine-uploader'),
-                    request: {
-                        endpoint: 'server/failure.html',
-                    },
-                    failedUploadTextDisplay: {
-                        mode: 'custom',
-                        maxChars: 40,
-                        responseProperty: 'error',
-                        enableTooltip: true,
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-
-                var restricteduploader = new qq.FineUploader({
-                    // If we're using jQuery, there's another way of selecting the DOM node
-                    element: $('#restricted-fine-uploader')[0],
-                    request: {
-                        endpoint: 'server/success.html',
-                    },
-                    multiple: false,
-                    validation: {
-                        allowedExtensions: ['jpeg', 'jpg', 'txt'],
-                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
-                    },
-                    text: {
-                        uploadButton: 'Click or Drop',
-                    },
-                    showMessage: function(message) {
-                        // Using Bootstrap's classes and jQuery selector and DOM manipulation
-                        $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-
-                var thumbnailuploader = new qq.FineUploader({
-                    element: $('#thumbnail-fine-uploader')[0],
-                    request: {
-                        endpoint: 'server/success.html',
-                    },
-                    multiple: false,
-                    validation: {
-                        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
-                    },
-                    callbacks: {
-                        onComplete: function(id, fileName, responseJSON) {
-                            if (responseJSON.success) {
-                                $('#thumbnail-fine-uploader').append('<img src="img/success.jpg" alt="' + fileName + '">');
-                            }
-                        },
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-
-                var filelimituploader = new qq.FineUploader({
-                    element: $('#filelimit-fine-uploader')[0],
-                    request: {
-                        endpoint: 'server/success.html',
-                    },
-                    validation: {
-                        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
-                    },
-                    callbacks: {
-                        onSubmit: function(id, fileName) {
-                            fileCount ++;
-                            if(fileCount > fileLimit) {
-                                $('#filelimit-fine-uploader .qq-upload-button').hide();
-                                $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-                                return false;
-                            }
-                        },
-                        onCancel: function(id, fileName) {
-                            fileCount --;
-                            if(fileCount <= fileLimit) {
-                                $('#filelimit-fine-uploader .qq-upload-button').show();
-                            }
-                        },
-                        onComplete: function(id, fileName, responseJSON) {
-                            if (responseJSON.success) {
-                                addedFiles ++;
-                                if(addedFiles >= fileLimit) {
-                                    $('#filelimit-fine-uploader .qq-upload-button').hide();
-                                    $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-                                }
-                            }
-                        },
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-            }
-
-            window.onload = createUploader;
-        </script>
         <script src="http://platform.twitter.com/widgets.js"></script>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
@@ -419,16 +294,12 @@
             $.get('./navbar.html', function(data) {
                 $('#navbar').html(data);
                 $('#navbar').find('li.dropdown').addClass('active')
-                                                .find('li').eq(0).addClass('active');
+                                                .find('li').eq(1).addClass('active');
 
                 window.prettyPrint && prettyPrint();
                 $('.dropdown-toggle').dropdown();
 
                 $(document).ready(function() {
-                    $('#triggerUpload').click(function() {
-                        manualuploader.uploadStoredFiles();
-                    });
-
                     /* Inspiration from:
                        -----------------
                        http://www.mybloggerlab.com/2012/03/make-your-old-site-navigation-bar.html */
@@ -465,6 +336,117 @@
                 });
             });
 
+        </script>
+        <script src="client/fineuploader.js"></script>
+        <script src="client/js/jquery-plugin.js"></script>
+        <script>
+            $(document).ready(function () {
+                var manualuploader = $('#manual-fine-uploader').fineUploader({
+                    request: {
+                        endpoint: 'server/success.html',
+                    },
+                    autoUpload: false,
+                    text: {
+                        uploadButton: '<i class="icon-plus icon-white"></i> Select Files',
+                    },
+                    debug: true,
+                    demoMode: true // Undocumented -> Only for the gh-pages demo website
+                });
+
+                $('#triggerUpload').click(function() {
+                    manualuploader.fineUploader('uploadStoredFiles');
+                });
+
+                $('#failed-fine-uploader').fineUploader({
+                    request: {
+                        endpoint: 'server/failure.html',
+                    },
+                    failedUploadTextDisplay: {
+                        mode: 'custom',
+                        maxChars: 40,
+                        responseProperty: 'error',
+                        enableTooltip: true,
+                    },
+                    debug: true,
+                    demoMode: true // Undocumented -> Only for the gh-pages demo website
+                });
+
+                $('#restricted-fine-uploader').fineUploader({
+                    request: {
+                        endpoint: 'server/success.html',
+                    },
+                    multiple: false,
+                    validation: {
+                        allowedExtensions: ['jpeg', 'jpg', 'txt'],
+                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+                    },
+                    text: {
+                        uploadButton: 'Click or Drop',
+                    },
+                    showMessage: function(message) {
+                        // Using Bootstrap's classes and jQuery selector and DOM manipulation
+                        $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
+                    },
+                    debug: true,
+                    demoMode: true // Undocumented -> Only for the gh-pages demo website
+                });
+
+                $('#thumbnail-fine-uploader').fineUploader({
+                    request: {
+                        endpoint: 'server/success.html',
+                    },
+                    multiple: false,
+                    validation: {
+                        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+                    },
+                    text: {
+                        uploadButton: 'Click or Drop',
+                    },
+                    debug: true,
+                    demoMode: true // Undocumented -> Only for the gh-pages demo website
+                }).on('complete', function(event, id, fileName, responseJSON) {
+                    if (responseJSON.success) {
+                        $(this).append('<img src="img/success.jpg" alt="' + fileName + '">');
+                    }
+                });
+
+                var fileCount = 0;
+                var addedFiles = 0;
+                var fileLimit = 3;
+
+                $('#filelimit-fine-uploader').fineUploader({
+                    request: {
+                        endpoint: 'server/success.html',
+                    },
+                    validation: {
+                        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+                    },
+                    debug: true,
+                    demoMode: true // Undocumented -> Only for the gh-pages demo website
+                }).on('submit', function(event, id, fileName) {
+                    fileCount ++;
+                    if(fileCount > fileLimit) {
+                        $('#filelimit-fine-uploader .qq-upload-button').hide();
+                        $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+                        return false;
+                    }
+                }).on('cancel', function(event, id, fileName) {
+                    fileCount --;
+                    if(fileCount <= fileLimit) {
+                        $('#filelimit-fine-uploader .qq-upload-button').show();
+                    }
+                }).on('complete', function(event, id, fileName, responseJSON) {
+                    if (responseJSON.success) {
+                        addedFiles ++;
+                        if(addedFiles >= fileLimit) {
+                            $('#filelimit-fine-uploader .qq-upload-button').hide();
+                            $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+                        }
+                    }
+                });
+            });
         </script>
         <script>
             $.get('./footer.html', function(data) { $('#footer').html(data); });
