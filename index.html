@@ -12,6 +12,21 @@
         <link href="css/custom.css" rel="stylesheet">
         <link href="css/prettify.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <script src="js/prettify.js"></script>
+        <script src="js/jquery.tipsy.min.js"></script>
+        <script src="client/js/header.js"></script>
+        <script src="client/js/util.js"></script>
+        <script src="client/js/button.js"></script>
+        <script src="client/js/handler.base.js"></script>
+        <script src="client/js/handler.form.js"></script>
+        <script src="client/js/handler.xhr.js"></script>
+        <script src="client/js/uploader.basic.js"></script>
+        <script src="client/js/uploader.js"></script>
+        <script src="client/js/jquery-plugin.js"></script>
     </head>
     <body>
         <div id="navbar"></div>
@@ -23,10 +38,13 @@
                 <p>File uploading <b>without</b> the hassle.</p>
                 <p>
                     <a href="https://github.com/valums/file-uploader/wiki/Releases" class="btn btn-success btn-large">
-                        Download <i class="icon-download-alt icon-white" style="margin-top: 7px;"></i>
+                        Downloads <i class="icon-download-alt icon-white" style="margin-top: 7px;"></i>
                     </a>
                     <a href="#demo" class="btn btn-primary btn-large">
                         Demos <i class="icon-chevron-down icon-white" style="margin-top: 7px;"></i>
+                    </a>
+                    <a href="https://github.com/valums/file-uploader/blob/master/readme.md" class="btn btn-info btn-large">
+                        Docs <i class="icon-book icon-white" style="margin-top: 7px;"></i>
                     </a>
                 </p>
                 <ul class="masthead-links">
@@ -77,7 +95,7 @@
 
                     <div class="span3">
                         <h2>Browser support</h2>
-                        <p>Tested in IE7+ (not IE10 yet), Firefox, Safari (OS X), and Chrome. Safari for Windows is not supported, nor is IE6 or earlier. It does not use Flash, jQuery, or any external libraries.</p>
+                        <p>IE7+ (including IE10), Firefox, Safari (OS X), and Chrome are supported. Safari for Windows is not supported, nor is IE6 or earlier. It does not use Flash, jQuery, or any external libraries.</p>
                     </div>
 
                     <div class="span3">
@@ -131,7 +149,7 @@
           // if it's different from the default “/server/upload”
           request: {
             endpoint: 'server/handleUploads'
-          },
+          }
         });
       }
     
@@ -161,7 +179,7 @@
     var uploader = new qq.FineUploader({
       element: document.getElementById('fine-uploader'),
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/handleUploads'
       },
       debug: true
     });
@@ -221,10 +239,10 @@
         var uploader = new qq.FineUploader({
           element: document.getElementById('bootstrapped-fine-uploader'),
           request: {
-            endpoint: 'server/handleUploads',
+            endpoint: 'server/handleUploads'
           },
           text: {
-            uploadButton: '&lt;i class="icon-upload icon-white">&lt;/i> Test me now and upload a file',
+            uploadButton: '&lt;i class="icon-upload icon-white">&lt;/i> Test me now and upload a file'
           },
           template: '&lt;div class="qq-uploader span12">' +
                       '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragZoneText}&lt;/span>&lt;/pre>' +
@@ -233,7 +251,7 @@
                     '&lt;/div>',
           classes: {
             success: 'alert alert-success',
-            fail: 'alert alert-error',
+            fail: 'alert alert-error'
           },
           debug: true
         });
@@ -274,7 +292,7 @@
       $(document).ready(function () {
         $('#jquery-wrapped-fine-uploader').fineUploader({
           request: {
-            endpoint: 'server/handleUploads',
+            endpoint: 'server/handleUploads'
           },
           debug: true
         });
@@ -302,13 +320,12 @@
 
         <div id="footer"></div>
 
-        <script src="client/fineuploader.js"></script>
         <script>
             function createUploader() {
                 var uploader = new qq.FineUploader({
                     element: document.getElementById('fine-uploader'),
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website
@@ -317,10 +334,10 @@
                 var btuploader = new qq.FineUploader({
                     element: document.getElementById('bootstrapped-fine-uploader'),
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     text: {
-                        uploadButton: '<i class="icon-upload icon-white"></i> Test me now and upload a file',
+                        uploadButton: '<i class="icon-upload icon-white"></i> Test me now and upload a file'
                     },
                     template:   '<div class="qq-uploader span12">' +
                                     '<pre class="qq-upload-drop-area span12"><span>{dragZoneText}</span></pre>' +
@@ -329,7 +346,7 @@
                                 '</div>',
                     classes: {
                         success: 'alert alert-success',
-                        fail: 'alert alert-error',
+                        fail: 'alert alert-error'
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website
@@ -338,12 +355,6 @@
 
             window.onload = createUploader;
         </script>
-        <script src="http://platform.twitter.com/widgets.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
-        <script src="js/prettify.js"></script>
-        <script src="js/jquery.tipsy.min.js"></script>
-        <script src="client/js/jquery-plugin.js"></script>
         <script>
             window.prettyPrint && prettyPrint();
             $('.dropdown-toggle').dropdown();
@@ -369,7 +380,7 @@
 
                 $('#jquery-wrapped-fine-uploader').fineUploader({
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website

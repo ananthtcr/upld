@@ -12,6 +12,19 @@
         <link href="css/custom.css" rel="stylesheet">
         <link href="css/prettify.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <script src="js/prettify.js"></script>
+        <script src="client/js/header.js"></script>
+        <script src="client/js/util.js"></script>
+        <script src="client/js/button.js"></script>
+        <script src="client/js/handler.base.js"></script>
+        <script src="client/js/handler.form.js"></script>
+        <script src="client/js/handler.xhr.js"></script>
+        <script src="client/js/uploader.basic.js"></script>
+        <script src="client/js/uploader.js"></script>
     </head>
     <body data-spy="scroll" data-target="#demoList">
         <div id="navbar"></div>
@@ -73,11 +86,11 @@
     var manualuploader = new qq.FineUploader({
       element: $('#manual-fine-uploader')[0],
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/handleUploads'
       },
       autoUpload: false,
       text: {
-        uploadButton: '&lt;i class="icon-plus icon-white">&lt;/i> Select Files',
+        uploadButton: '&lt;i class="icon-plus icon-white">&lt;/i> Select Files'
       },
       debug: true
     });
@@ -108,13 +121,13 @@
     var faileduploader = new qq.FineUploader({
       element: document.getElementById('failed-fine-uploader'),
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/handleUploads'
       },
       failedUploadTextDisplay: {
         mode: 'custom',
         maxChars: 40,
         responseProperty: 'error',
-        enableTooltip: true,
+        enableTooltip: true
       },
       debug: true
     });
@@ -153,15 +166,15 @@
       // Since we're using jQuery, use the jQuery way to select the HTML element
       element: $('#restricted-fine-uploader')[0],
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/handleUploads'
       },
       multiple: false,
       validation: {
         allowedExtensions: ['jpeg', 'jpg', 'txt'],
-        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
       },
       text: {
-        uploadButton: 'Click or Drop',
+        uploadButton: 'Click or Drop'
       },
       showMessage: function(message) {
         // Using Twitter Bootstrap's classes and jQuery selector and method
@@ -200,12 +213,12 @@
     var thumbnailuploader = new qq.FineUploader({
       element: $('#thumbnail-fine-uploader')[0],
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/handleUploads'
       },
       multiple: false,
       validation: {
         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
       },
       callbacks: {
         onComplete: function(id, fileName, responseJSON) {
@@ -213,7 +226,7 @@
             $('#thumbnail-fine-uploader').append('&lt;img src="img/success.jpg" alt="' + fileName + '">');
           }
         }
-      },
+      }
       debug: true
     });
   });
@@ -248,11 +261,11 @@
     var filelimituploader = new qq.FineUploader({
       element: $('#filelimit-fine-uploader')[0],
       request: {
-        endpoint: 'server/handleUploads',
+        endpoint: 'server/handleUploads'
       },
       validation: {
         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
       },
       callbacks: {
         onSubmit: function(id, fileName) {
@@ -277,7 +290,7 @@
               $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
             }
           }
-        },
+        }
       },
       debug: true
     });
@@ -291,7 +304,6 @@
 
         <div id="footer"></div>
 
-        <script src="client/fineuploader.js"></script>
         <script>
             var manualuploader;
             var fileCount = 0;
@@ -302,11 +314,11 @@
                 manualuploader = new qq.FineUploader({
                     element: $('#manual-fine-uploader')[0],
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     autoUpload: false,
                     text: {
-                        uploadButton: '<i class="icon-plus icon-white"></i> Select Files',
+                        uploadButton: '<i class="icon-plus icon-white"></i> Select Files'
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website
@@ -315,13 +327,13 @@
                 var faileduploader = new qq.FineUploader({
                     element: document.getElementById('failed-fine-uploader'),
                     request: {
-                        endpoint: 'server/failure.html',
+                        endpoint: 'server/failure.html'
                     },
                     failedUploadTextDisplay: {
                         mode: 'custom',
                         maxChars: 40,
                         responseProperty: 'error',
-                        enableTooltip: true,
+                        enableTooltip: true
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website
@@ -364,7 +376,7 @@
                             if (responseJSON.success) {
                                 $('#thumbnail-fine-uploader').append('<img src="img/success.jpg" alt="' + fileName + '">');
                             }
-                        },
+                        }
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website
@@ -373,7 +385,7 @@
                 var filelimituploader = new qq.FineUploader({
                     element: $('#filelimit-fine-uploader')[0],
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
@@ -402,7 +414,7 @@
                                     $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
                                 }
                             }
-                        },
+                        }
                     },
                     debug: true,
                     demoMode: true // Undocumented -> Only for the gh-pages demo website
@@ -411,10 +423,6 @@
 
             window.onload = createUploader;
         </script>
-        <script src="http://platform.twitter.com/widgets.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
-        <script src="js/prettify.js"></script>
         <script>
             $.get('./navbar.html', function(data) {
                 $('#navbar').html(data);
