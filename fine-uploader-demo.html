@@ -343,15 +343,15 @@
                     // If we're using jQuery, there's another way of selecting the DOM node
                     element: $('#restricted-fine-uploader')[0],
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     multiple: false,
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'txt'],
-                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+                        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
                     },
                     text: {
-                        uploadButton: 'Click or Drop',
+                        uploadButton: 'Click or Drop'
                     },
                     showMessage: function(message) {
                         // Using Bootstrap's classes and jQuery selector and DOM manipulation
@@ -364,12 +364,12 @@
                 var thumbnailuploader = new qq.FineUploader({
                     element: $('#thumbnail-fine-uploader')[0],
                     request: {
-                        endpoint: 'server/success.html',
+                        endpoint: 'server/success.html'
                     },
                     multiple: false,
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+                        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
                     },
                     callbacks: {
                         onComplete: function(id, fileName, responseJSON) {
@@ -389,7 +389,7 @@
                     },
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-                        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
+                        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
                     },
                     callbacks: {
                         onSubmit: function(id, fileName) {
