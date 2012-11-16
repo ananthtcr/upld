@@ -207,7 +207,7 @@ hr.soften {
     color: #5a5a5a;
 }
 .marketing h1 {
-    margin: 60px 0 10px;
+    margin: 40px 0 10px;
     font-size: 60px;
     font-weight: 200;
     line-height: 1;
@@ -231,6 +231,9 @@ hr.soften {
 .marketing img {
     display: block;
     margin: 0 auto 30px;
+}
+.progressBar {
+    margin-top: 35px !important;
 }
 
 /* Footer
