@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Fine Uploader Basic Demo">
         <meta name="author" content="A. Bennouna, tellibus">
-        <link href="client/fineuploader.css" rel="stylesheet">
+        <link href="master/client/fineuploader.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
@@ -16,14 +16,14 @@
         <script src="http://platform.twitter.com/widgets.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
         <script src="js/prettify.js"></script>
-        <script src="client/js/header.js"></script>
-        <script src="client/js/util.js"></script>
-        <script src="client/js/button.js"></script>
-        <script src="client/js/handler.base.js"></script>
-        <script src="client/js/handler.form.js"></script>
-        <script src="client/js/handler.xhr.js"></script>
-        <script src="client/js/uploader.basic.js"></script>
-        <script src="client/js/uploader.js"></script>
+        <script src="master/client/js/header.js"></script>
+        <script src="master/client/js/util.js"></script>
+        <script src="master/client/js/button.js"></script>
+        <script src="master/client/js/handler.base.js"></script>
+        <script src="master/client/js/handler.form.js"></script>
+        <script src="master/client/js/handler.xhr.js"></script>
+        <script src="master/client/js/uploader.basic.js"></script>
+        <script src="master/client/js/uploader.js"></script>
     </head>
     <body data-spy="scroll" data-target="#demoList">
         <div id="navbar"></div>
@@ -141,7 +141,7 @@
                         },
                         onUpload: function(id, fileName) {
                             $('#file-' + id).addClass('alert-info')
-                                            .html('<img src="client/loading.gif" alt="Initializing. Please hold."> ' +
+                                            .html('<img src="master/client/loading.gif" alt="Initializing. Please hold."> ' +
                                                   'Initializing ' +
                                                   '“' + fileName + '”');
                         },
@@ -149,14 +149,14 @@
                             if (loaded < total) {
                                 progress = Math.round(loaded / total * 100) + '% of ' + Math.round(total / 1024) + ' kB';
                                 $('#file-' + id).removeClass('alert-info')
-                                                .html('<img src="client/loading.gif" alt="In progress. Please hold."> ' +
+                                                .html('<img src="master/client/loading.gif" alt="In progress. Please hold."> ' +
                                                       'Uploading ' +
                                                       '“' + fileName + '” ' +
                                                       progress /*+
                                                       ' <span class="btn btn-warning"><i class="icon-remove"></i></span>'*/);
                             } else {
                                 $('#file-' + id).addClass('alert-info')
-                                                .html('<img src="client/loading.gif" alt="Saving. Please hold."> ' +
+                                                .html('<img src="master/client/loading.gif" alt="Saving. Please hold."> ' +
                                                       'Saving ' +
                                                       '“' + fileName + '”');
                             }
