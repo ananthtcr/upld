@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Fine Uploader</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Fine Uploader (3.1) a.k.a valums/file-uploader. A dependency-free, native browser upload tool.">
+        <meta name="description" content="Fine Uploader (3.0) a.k.a valums/file-uploader. A dependency-free, native browser upload tool.">
         <meta name="author" content="A. Bennouna, tellibus">
         <link href="master/client/fineuploader.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,6 @@
         <script src="master/client/js/handler.form.js"></script>
         <script src="master/client/js/handler.xhr.js"></script>
         <script src="master/client/js/uploader.basic.js"></script>
-        <script src="master/client/js/dnd.js"></script>
         <script src="master/client/js/uploader.js"></script>
         <script src="master/client/js/jquery-plugin.js"></script>
     </head>
@@ -33,7 +32,7 @@
 
         <div class="jumbotron masthead">
             <div class="container">
-                <h1>Fine Uploader 3.1<img src="img/starburst.png" alt="Fine Uploader 3.1 now with optional jQuery wrapper" width="105" height="105" style="vertical-align: super; margin: 10px 0 -15px -25px"></h1>
+                <h1>Fine Uploader 3.0<img src="img/starburst.png" alt="Fine Uploader 3.0 now with optional jQuery wrapper" width="105" height="105" style="vertical-align: super; margin: 10px 0 -15px -25px"></h1>
                 <p>File uploading <b>without</b> the hassle.</p>
                 <p>
                     <a href="https://github.com/valums/file-uploader/wiki/Releases" class="btn btn-success btn-large">
@@ -50,7 +49,7 @@
                     <li>
                         <a href="http://github.com/valums/file-uploader/" target="_blank">GitHub project</a>
                     </li>
-                    <li>Version 3.1</li>
+                    <li>Version 3.0</li>
                 </ul>
             </div>
         </div>
@@ -116,16 +115,16 @@
                 <h1>Features</h1>
                 
                 <div class="row-fluid" style="text-align: left;">
-                    <div class="span3">
+                    <div class="span4">
                         <ul class="features">
                             <li>Multiple file select, progress-bar in Firefox, Chrome, Safari, and IE 10</li>
                             <li>Drag-and-drop file select in FF, Chrome, Safari, and IE 10</li>
                             <li>Uploads are cancelable</li>
-                            <li>No required external dependencies</li>
+                            <li>No required external dependencies.</li>
                         </ul>
                     </div>
 
-                    <div class="span3">
+                    <div class="span4">
                         <ul class="features">
                             <li>Tested in IE7+, Firefox, Safari (OS X), Chrome, IOS6, and various versions of Android. IE10 is now also supported!</li>
                             <li>Ability to upload files as soon as they are selected, or "queue" them for uploading at user's request later</li>
@@ -134,19 +133,11 @@
                         </ul>
                     </div>
 
-                    <div class="span3">
+                    <div class="span4">
                         <ul class="features">
                             <li>Create your own file validator and/or use default included validators</li>
                             <li>Receive callbacks at various stages of the upload process</li>
-                            <li>Send any parameters server-side along with each file</li>
-                            <li>Upload directories via drag and drop (Chrome 21+)</li>
-                        </ul>
-                    </div>
-
-                    <div class="span3">
-                        <ul class="features">
-                            <li>Include parameters in the query string OR the request body</li>
-                            <li>Submit files to be uploaded via the API</li>
+                            <li>Send any parameters server-side along with each file.</li>
                             <li>Any many more!</li>
                         </ul>
                     </div>
@@ -289,7 +280,6 @@
           template: '&lt;div class="qq-uploader span12">' +
                       '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragZoneText}&lt;/span>&lt;/pre>' +
                       '&lt;div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}&lt;/div>' +
-                      '&lt;span class="qq-drop-processing">&lt;span>{dropProcessingText}&lt;/span>&lt;span class="qq-drop-processing-spinner">&lt;/span>&lt;/span>' +
                       '&lt;ul class="qq-upload-list" style="margin-top: 10px; text-align: center;">&lt;/ul>' +
                     '&lt;/div>',
           classes: {
@@ -385,7 +375,6 @@
                     template:   '<div class="qq-uploader span12">' +
                                     '<pre class="qq-upload-drop-area span12"><span>{dragZoneText}</span></pre>' +
                                     '<div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}</div>' +
-                                    '<span class="qq-drop-processing"><span>{dropProcessingText}</span><span class="qq-drop-processing-spinner"></span></span>' +
                                     '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
                                 '</div>',
                     classes: {
