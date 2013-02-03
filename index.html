@@ -187,6 +187,7 @@
 
                     <div class="span8">
                         <script src="https://gist.github.com/4700477.js"></script>
+                        <script src="js/demo/minimal.js"></script>
                     </div>
                 </div>
 
@@ -203,6 +204,7 @@
 
                     <div class="span8">
                         <script src="https://gist.github.com/4700482.js"></script>
+                        <script src="js/demo/bootstrapped-minimal.js"></script>
                     </div>
                 </div>
 
@@ -218,6 +220,7 @@
 
                     <div class="span8">
                         <script src="https://gist.github.com/4700506.js"></script>
+                        <script src="js/demo/jquery-minimal.js"></script>
                     </div>
                 </div>
 
@@ -239,42 +242,6 @@
         <div id="footer"></div>
 
         <script>
-            function createUploader() {
-                var uploader = new qq.FineUploader({
-                    element: document.getElementById('fine-uploader'),
-                    request: {
-                        endpoint: 'server/success.html'
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-
-                var btuploader = new qq.FineUploader({
-                    element: document.getElementById('bootstrapped-fine-uploader'),
-                    request: {
-                        endpoint: 'server/success.html'
-                    },
-                    text: {
-                        uploadButton: '<div><i class="icon-upload icon-white"></i> Test me now and upload a file</div>'
-                    },
-                    template:   '<div class="qq-uploader span12">' +
-                                    '<pre class="qq-upload-drop-area span12"><span>{dragZoneText}</span></pre>' +
-                                    '<div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}</div>' +
-                                    '<span class="qq-drop-processing"><span>{dropProcessingText}</span><span class="qq-drop-processing-spinner"></span></span>' +
-                                    '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
-                                '</div>',
-                    classes: {
-                        success: 'alert alert-success',
-                        fail: 'alert alert-error'
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-            }
-
-            window.onload = createUploader;
-        </script>
-        <script>
             window.prettyPrint && prettyPrint();
             $('.dropdown-toggle').dropdown();
             $.get('./navbar.html', function(data) {
@@ -286,25 +253,6 @@
                 }
             });
             $.get('./footer.html', function(data) { $('#footer').html(data); });
-
-            $(document).ready(function () {
-                $(document).on('click', '#navbar a', function() {
-                    if ($(this).attr('href').indexOf('./#') == 0) {
-                        $('#navbar li').removeClass('active');
-                        $(this).parent().addClass('active');
-                    }
-                });
-
-                $('a.tip').tipsy();
-
-                $('#jquery-wrapped-fine-uploader').fineUploader({
-                    request: {
-                        endpoint: 'server/success.html'
-                    },
-                    debug: true,
-                    demoMode: true // Undocumented -> Only for the gh-pages demo website
-                });
-            });
         </script>
     </body>
 </html>
