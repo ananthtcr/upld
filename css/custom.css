@@ -465,7 +465,7 @@ hr.soften {
     
     /* Do our best to make tables work in narrow viewports */
     table code {
-        white-space: normal;
+        white-space: nowrap;
         word-wrap: break-word;
         word-break: break-all;
     }
@@ -511,6 +511,14 @@ li.alert-error {
 
 .alert-error .qq-upload-failed-text {
     display: inline;
+}
+
+.gist {
+    text-align: left;
+}
+
+.gist PRE {
+    white-space: pre;
 }
 
 

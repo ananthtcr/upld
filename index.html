@@ -170,36 +170,7 @@
                     </div>
 
                     <div class="span8">
-                        <pre class="prettyprint linenums">&lt;!DOCTYPE html>
-&lt;html>
-  &lt;head>
-    &lt;meta charset="utf-8">
-    &lt;title>Fine Uploader Demo&lt;/title>
-    &lt;link href="client/fineuploader.css" rel="stylesheet">
-  &lt;/head>
-  &lt;body>
-    &lt;div id="fine-uploader">&lt;/div>
-
-    &lt;script src="client/fineuploader.js">&lt;/script>
-    &lt;script>
-      function createUploader() {
-        var uploader = new qq.FineUploader({
-          // Pass the HTML element here
-          element: document.getElementById('fine-uploader'),
-          // or, if using jQuery
-          // element: $('#fine-uploader')[0],
-          // Use the relevant server script url here
-          // if it's different from the default “/server/upload”
-          request: {
-            endpoint: 'server/handleUploads'
-          }
-        });
-      }
-    
-      window.onload = createUploader;
-    &lt/script>
-  &lt;/body>
-&lt;/html></pre>
+                        <script src="https://gist.github.com/4700463.js"></script>
                     </div>
                 </div>
 
@@ -215,21 +186,7 @@
                     </div>
 
                     <div class="span8">
-                        <pre class="prettyprint linenums">&lt;div id="fine-uploader">&lt;/div>
-
-&lt;script>
-  function createUploader() {
-    var uploader = new qq.FineUploader({
-      element: document.getElementById('fine-uploader'),
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      debug: true
-    });
-  }
-  
-  window.onload = createUploader;
-&lt;/script></pre>
+                        <script src="https://gist.github.com/4700477.js"></script>
                     </div>
                 </div>
 
@@ -245,66 +202,7 @@
                     </div>
 
                     <div class="span8">
-                        <pre class="prettyprint linenums">&lt;!DOCTYPE html>
-&lt;html>
-  &lt;head>
-    &lt;meta charset="utf-8">
-    &lt;title>Fine Uploader - Boostrapped Minimal Demo&lt;/title>
-    &lt;link href="client/fineuploader.css" rel="stylesheet">
-    &lt;link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
-    &lt;style>
-      /* Fine Uploader
-      -------------------------------------------------- */
-      .qq-upload-list {
-        text-align: left;
-      }
-
-      /* For the bootstrapped demos */
-      li.alert-success {
-        background-color: #DFF0D8;
-      }
-
-      li.alert-error {
-        background-color: #F2DEDE;
-      }
-
-      .alert-error .qq-upload-failed-text {
-        display: inline;
-      }
-    &lt;/style>
-  &lt;/head>
-  &lt;body>
-    &lt;div id="bootstrapped-fine-uploader">&lt;/div>
-
-    &lt;script src="client/fineuploader.js">&lt;/script>
-    &lt;script>
-      function createUploader() {
-        var uploader = new qq.FineUploader({
-          element: document.getElementById('bootstrapped-fine-uploader'),
-          request: {
-            endpoint: 'server/handleUploads'
-          },
-          text: {
-            uploadButton: '&lt;i class="icon-upload icon-white">&lt;/i> Test me now and upload a file'
-          },
-          template: '&lt;div class="qq-uploader span12">' +
-                      '&lt;pre class="qq-upload-drop-area span12">&lt;span>{dragZoneText}&lt;/span>&lt;/pre>' +
-                      '&lt;div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}&lt;/div>' +
-                      '&lt;span class="qq-drop-processing">&lt;span>{dropProcessingText}&lt;/span>&lt;span class="qq-drop-processing-spinner">&lt;/span>&lt;/span>' +
-                      '&lt;ul class="qq-upload-list" style="margin-top: 10px; text-align: center;">&lt;/ul>' +
-                    '&lt;/div>',
-          classes: {
-            success: 'alert alert-success',
-            fail: 'alert alert-error'
-          },
-          debug: true
-        });
-      }
-        
-      window.onload = createUploader;
-    &lt/script>
-  &lt;/body>
-&lt;/html></pre>
+                        <script src="https://gist.github.com/4700482.js"></script>
                     </div>
                 </div>
 
@@ -319,31 +217,7 @@
                     </div>
 
                     <div class="span8">
-                        <pre class="prettyprint linenums">&lt;!DOCTYPE html>
-&lt;html>
-  &lt;head>
-    &lt;meta charset="utf-8">
-    &lt;title>Fine Uploader - jQuery Wrapper Minimal Demo&lt;/title>
-    &lt;link href="client/fineuploader.css" rel="stylesheet">
-  &lt;/head>
-  &lt;body>
-    &lt;div id="jquery-wrapped-fine-uploader">&lt;/div>
-
-    &lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
-    &lt;script src="client/fineuploader.js">&lt;/script>
-    &lt;script src="client/js/jquery-plugin.js">&lt;/script>
-    &lt;script>
-      $(document).ready(function () {
-        $('#jquery-wrapped-fine-uploader').fineUploader({
-          request: {
-            endpoint: 'server/handleUploads'
-          },
-          debug: true
-        });
-      });
-    &lt/script>
-  &lt;/body>
-&lt;/html></pre>
+                        <script src="https://gist.github.com/4700506.js"></script>
                     </div>
                 </div>
 

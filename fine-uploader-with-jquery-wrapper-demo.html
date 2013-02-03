@@ -75,32 +75,7 @@
                         </div>
     
                         <div class="span8">
-                            <pre class="prettyprint linenums">&lt;div id="manual-fine-uploader">&lt;/div>
-&lt;div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
-  &lt;i class="icon-upload icon-white">&lt;/i> Upload now
-&lt;/div>
-
-&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
-&lt;script src="client/fineuploader.js">&lt;/script>
-&lt;script src="client/js/jquery-plugin.js">&lt;/script>
-&lt;script>
-  $(document).ready(function() {
-    var manualuploader = $('#manual-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      autoUpload: false,
-      text: {
-        uploadButton: '&lt;i class="icon-plus icon-white">&lt;/i> Select Files'
-      },
-      debug: true
-    });
-
-    $('#triggerUpload').click(function() {
-      manualuploader.fineUploader('uploadStoredFiles');
-    });
-  });
-&lt;/script></pre>
+                            <script src="https://gist.github.com/4700531.js"></script>
                         </div>
                     </div>
                 </section>
@@ -114,27 +89,7 @@
                         </div>
     
                         <div class="span8">
-                            <pre class="prettyprint linenums">&lt;div id="failed-fine-uploader">&lt;/div>
-
-&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
-&lt;script src="client/fineuploader.js">&lt;/script>
-&lt;script src="client/js/jquery-plugin.js">&lt;/script>
-&lt;script>
-  $(document).ready(function() {
-    $('#failed-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      failedUploadTextDisplay: {
-        mode: 'custom',
-        maxChars: 40,
-        responseProperty: 'error',
-        enableTooltip: true
-      },
-      debug: true
-    });
-  });
-&lt;/script></pre>
+                            <script src="https://gist.github.com/4700534.js"></script>
                         </div>
                     </div>
                 </section>
@@ -156,33 +111,7 @@
                         </div>
     
                         <div class="span8">
-                            <pre class="prettyprint linenums">&lt;div id="restricted-fine-uploader">&lt;/div>
-
-&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
-&lt;script src="client/fineuploader.js">&lt;/script>
-&lt;script src="client/js/jquery-plugin.js">&lt;/script>
-&lt;script>
-  $(document).ready(function() {
-    $('#restricted-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/success.html'
-      },
-      multiple: false,
-      validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'txt'],
-        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
-      },
-      text: {
-        uploadButton: 'Click or Drop'
-      },
-      showMessage: function(message) {
-        // Using Bootstrap's classes
-        $('#restricted-fine-uploader').append('&lt;div class="alert alert-error">' + message + '&lt;/div>');
-      },
-      debug: true
-    });
-  });
-&lt;/script></pre>
+                            <script src="https://gist.github.com/4700537.js"></script>
                         </div>
                     </div>
                 </section>
@@ -203,33 +132,7 @@
                         </div>
     
                         <div class="span8">
-                            <pre class="prettyprint linenums">&lt;div id="thumbnail-fine-uploader">&lt;/div>
-
-&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
-&lt;script src="client/fineuploader.js">&lt;/script>
-&lt;script src="client/js/jquery-plugin.js">&lt;/script>
-&lt;script>
-  $(document).ready(function() {
-    $('#thumbnail-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/success.html'
-      },
-      multiple: false,
-      validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
-      },
-      text: {
-        uploadButton: 'Click or Drop'
-      },
-      debug: true
-    }).on('complete', function(event, id, fileName, responseJSON) {
-      if (responseJSON.success) {
-        $(this).append('&lt;img src="img/success.jpg" alt="' + fileName + '">');
-      }
-    });
-  });
-&lt;/script></pre>
+                            <script src="https://gist.github.com/4700540.js"></script>
                         </div>
                     </div>
                 </section>
@@ -249,49 +152,7 @@
                         </div>
     
                         <div class="span8">
-                            <pre class="prettyprint linenums">&lt;div id="filelimit-fine-uploader">&lt;/div>
-
-&lt;script src="http://code.jquery.com/jquery-latest.js">&lt;/script>
-&lt;script src="client/fineuploader.js">&lt;/script>
-&lt;script src="client/js/jquery-plugin.js">&lt;/script>
-&lt;script>
-  var fileCount = 0;
-  var addedFiles = 0;
-  var fileLimit = 3;
-
-  $(document).ready(function() {
-    $('#filelimit-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/success.html'
-      },
-      validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
-      },
-      debug: true
-    }).on('submit', function(event, id, fileName) {
-      fileCount ++;
-      if(fileCount > fileLimit) {
-        $('#filelimit-fine-uploader .qq-upload-button').hide();
-        $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-        return false;
-      }
-    }).on('cancel', function(event, id, fileName) {
-      fileCount --;
-      if(fileCount <= fileLimit) {
-        $('#filelimit-fine-uploader .qq-upload-button').show();
-      }
-    }).on('complete', function(event, id, fileName, responseJSON) {
-      if (responseJSON.success) {
-        addedFiles ++;
-        if(addedFiles >= fileLimit) {
-          $('#filelimit-fine-uploader .qq-upload-button').hide();
-          $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-        }
-      }
-    });
-  });
-&lt;/script></pre>
+                            <script src="https://gist.github.com/4700548.js"></script>
                         </div>
                     </div>
                 </section>

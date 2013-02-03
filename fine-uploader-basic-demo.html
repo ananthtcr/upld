@@ -31,7 +31,7 @@
 
         <div id="jumbotron" class="jumbotron subhead">
             <div class="container">
-                <h1>Fine Uploader Basic a.k.a “FUB” demos</h1>
+                <h1>Fine Uploader Basic mode demos</h1>
                 <p>Want to have total control? See here!</p>
             </div>
         </div>
@@ -48,72 +48,7 @@
                         </div>
     
                         <div class="span8">
-                            <pre class="prettyprint linenums">&lt;div id="fine-uploader-basic" class="btn btn-success">
-  &lt;i class="icon-upload icon-white">&lt;/i> Click to upload
-&lt;/div>
-&lt;div id="messages">&lt;/div>
-
-&lt;script>
-  $(document).ready(function() {
-    $fub = $('#fine-uploader-basic');
-    $messages = $('#messages');
-
-    var uploader = new qq.FineUploaderBasic({
-      button: $fub[0],
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 204800 // 200 kB = 200 * 1024 bytes
-      },
-      callbacks: {
-        onSubmit: function(id, fileName) {
-          $messages.append('&lt;div id="file-' + id + '" class="alert" style="margin: 20px 0 0">&lt;/div>');
-        },
-        onUpload: function(id, fileName) {
-          $('#file-' + id).addClass('alert-info')
-                          .html('&lt;img src="client/loading.gif" alt="Initializing. Please hold."> ' +
-                                'Initializing ' +
-                                '“' + fileName + '”');
-        },
-        onProgress: function(id, fileName, loaded, total) {
-          if (loaded < total) {
-            progress = Math.round(loaded / total * 100) + '% of ' + Math.round(total / 1024) + ' kB';
-            $('#file-' + id).removeClass('alert-info')
-                            .html('&lt;img src="client/loading.gif" alt="In progress. Please hold."> ' +
-                                  'Uploading ' +
-                                  '“' + fileName + '” ' +
-                                  progress);
-          } else {
-            $('#file-' + id).addClass('alert-info')
-                            .html('&lt;img src="client/loading.gif" alt="Saving. Please hold."> ' +
-                                  'Saving ' +
-                                  '“' + fileName + '”');
-          }
-        },
-        onComplete: function(id, fileName, responseJSON) {
-          if (responseJSON.success) {
-            $('#file-' + id).removeClass('alert-info')
-                            .addClass('alert-success')
-                            .html('&lt;i class="icon-ok">&lt;/i> ' +
-                                  'Successfully saved ' +
-                                  '“' + fileName + '”' +
-                                  '&lt;br>&lt;img src="img/success.jpg" alt="' + fileName + '">');
-          } else {
-            $('#file-' + id).removeClass('alert-info')
-                            .addClass('alert-error')
-                            .html('&lt;i class="icon-exclamation-sign">&lt;/i> ' +
-                                  'Error with ' +
-                                  '“' + fileName + '”: ' +
-                                  responseJSON.error);
-          }
-        }
-      },
-      debug: true
-    });
-  });
-&lt;/script></pre>
+                            <script src="https://gist.github.com/4700554.js"></script>
                         </div>
                     </div>
                 </section>
