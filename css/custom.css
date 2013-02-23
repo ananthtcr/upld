@@ -521,6 +521,12 @@ li.alert-error {
     white-space: pre;
 }
 
+UL.features LI IMG {
+    display: inline;
+    margin: 0px;
+    padding-right: 5px;
+}
+
 
 /* tipsy
 -------------------------------------------------- */
