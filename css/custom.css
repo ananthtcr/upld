@@ -3,6 +3,7 @@
 body {
     position: relative;
     padding-top: 30px;
+    font-size: 14px;
 }
 
 /* Tweak navbar brand link to be super sleek
@@ -113,6 +114,33 @@ hr.soften {
     transition: none;
 }
 
+.jumbotron-small {
+    position: relative;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+    background: #003;
+    background: -moz-linear-gradient(45deg, #003 0%, #0ff 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#003), color-stop(100%,#0ff));
+    background: -webkit-linear-gradient(45deg, #003 0%,#0ff 100%);
+    background: -o-linear-gradient(45deg, #003 0%,#0ff 100%);
+    background: -ms-linear-gradient(45deg, #003 0%,#0ff 100%);
+    background: linear-gradient(45deg, #003 0%,#0ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003', endColorstr='#0ff',GradientType=1 );
+    -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+}
+
+.jumbotron-small a {
+    color: #fff;
+    color: rgba(255,255,255,.5);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
 
 /* Masthead (docs home)
 ------------------------- */
@@ -199,7 +227,7 @@ hr.soften {
   display: none;
 }
 
-/* Marketing section of Overview
+/* marketing section of Overview
 -------------------------------------------------- */
 
 .marketing {
@@ -547,3 +575,61 @@ UL.features LI IMG {
 .tipsy-se .tipsy-arrow{bottom:0;right:10px;border-top-style:solid;border-bottom:none;border-left-color:transparent;border-right-color:transparent}
 .tipsy-e .tipsy-arrow{right:0;top:50%;margin-top:-5px;border-left-style:solid;border-right:none;border-top-color:transparent;border-bottom-color:transparent}
 .tipsy-w .tipsy-arrow{left:0;top:50%;margin-top:-5px;border-right-style:solid;border-left:none;border-top-color:transparent;border-bottom-color:transparent}
+
+/* Downloads Page */
+.box {
+     padding: 10px 20px 10px 20px;
+     background-color: #ECF5FC;
+     border: 1px solid #C7D1D8;
+     -moz-border-radius: 15px;
+     -webkit-border-radius: 15px;
+     border-radius: 15px;
+     text-align: left;
+ }
+
+.purchase {
+    background-color: #F5FFF9;
+}
+
+.open-source {
+    background-color: #FFF5F5;
+}
+
+.submit {
+    padding: 6px 8px 6px 8px;
+}
+
+.licensing-info {
+    padding: 20px;
+    float:left;
+    width: 50%;
+    text-align:left;
+}
+
+.licensing-purchase {
+    padding-bottom: 30px;
+    width: 25%;
+    float:right;
+    margin-top: 30px;
+}
+
+.discernment {
+    width: 60%;
+    margin:auto;
+}
+
+.small-link {
+    font-size: 12px;
+}
+
+.float-left {
+    float:left;
+}
+
+
+
+
+
+
+
+
