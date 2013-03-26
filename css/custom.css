@@ -578,13 +578,13 @@ UL.features LI IMG {
 
 /* Downloads Page */
 .box {
-     padding: 10px 20px 10px 20px;
+     padding: 10px 20px 20px 20px;
      background-color: #ECF5FC;
      border: 1px solid #C7D1D8;
      -moz-border-radius: 15px;
      -webkit-border-radius: 15px;
      border-radius: 15px;
-     text-align: left;
+     text-align: center;
  }
 
 .purchase {
@@ -614,16 +614,34 @@ UL.features LI IMG {
 }
 
 .discernment {
-    width: 60%;
-    margin:auto;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
 }
 
 .small-link {
     font-size: 12px;
 }
 
-.float-left {
-    float:left;
+
+.download-container {
+    width: 60%;
+    margin: auto;
+}
+
+.nodependency-download {
+    float: right;
+    width: 40%;
+}
+
+.jquery-download {
+    float: left;
+    width:40%;
+}
+
+.blink {
+    text-align:left;
+    margin-top: 25px;
 }
 
 
