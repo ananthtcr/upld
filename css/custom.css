@@ -599,20 +599,6 @@ UL.features LI IMG {
     padding: 6px 8px 6px 8px;
 }
 
-.licensing-info {
-    padding: 20px;
-    float:left;
-    width: 50%;
-    text-align:left;
-}
-
-.licensing-purchase {
-    padding-bottom: 30px;
-    width: 25%;
-    float:right;
-    margin-top: 30px;
-}
-
 .discernment {
     width: 100%;
     margin: auto;
@@ -644,7 +630,43 @@ UL.features LI IMG {
     margin-top: 25px;
 }
 
+/* Terms and Conditions */
 
+.terms-conditions-copy {
+    width:60%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: justify;
+    color: #333;
+}
+
+.terms-conditions-copy h1, h2, h3 {
+   text-align: center;
+   color: #555;
+}
+
+.terms-conditions-copy h4, h5, h6 {
+    text-align:left;
+    color: #444;
+}
+
+.terms-conditions-copy ol{
+    list-style: decimal;
+}
+
+.terms-conditions-copy ol p{
+    text-align: justify;
+}
+
+.uppercase-bold {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #444;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
 
 
 
