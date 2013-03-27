@@ -640,12 +640,12 @@ UL.features LI IMG {
     color: #333;
 }
 
-.terms-conditions-copy h1, h2, h3 {
+.terms-conditions-copy h1 {
    text-align: center;
    color: #555;
 }
 
-.terms-conditions-copy h4, h5, h6 {
+.terms-conditions-copy h4 {
     text-align:left;
     color: #444;
 }
