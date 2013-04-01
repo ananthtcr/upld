@@ -144,8 +144,8 @@
                 </section>
 
                 <section id="demo5">
-                    <h1>Limit Number of Uploaded Files</h1>
-                    <p class="lead">In this demo, we are using both the onSubmit and the onComplete callbacks to handle a file counter.</p>
+                    <h1>Limit Number of Uploaded Items</h1>
+                    <p class="lead">In this demo, we are using the <code>itemLimit</code> validation option to enforce a maximum item limit.</p>
                     <div class="row-fluid">
                         <div class="span4">
                             <p>This uploader is also restricted in</p>
@@ -153,12 +153,11 @@
                                 <li>size (50 kB)</li>
                                 <li>in allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>)</li>
                             </ul>
-                            <p>If you're yet to process the uploads (to store in a database for instance), it's quite easy to customize it even more in order to provide handles to delete a given uploaded file. In fact, it wouldn't hard delete the file on the server, just delete the link in the DOM.</p>
                             <div id="filelimit-fine-uploader"></div>
                         </div>
     
                         <div class="span8">
-                            <script src="https://gist.github.com/4700527.js"></script>
+                            <script src="https://gist.github.com/5282977.js"></script>
                             <script src="js/demo/limit-files.js"></script>
                         </div>
                     </div>
