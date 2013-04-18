@@ -3,7 +3,112 @@
 body {
     position: relative;
     padding-top: 30px;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 14px;
+}
+.container
+{
+    width: 75%;
+}
+/* Header
+-------------------------------------------------- */
+.header
+{
+    position:relative;
+    padding:10px 0px 30px 0px;
+    z-index: -1;
+}
+.top-nav
+{
+    position:relative;
+    display:inline;
+    float:right;
+}
+.top-nav .navbar-inner
+{
+    background-color:#7c858c !important;
+    background-image:none;
+    border:none;
+}
+.top-nav .navbar .nav > li > a
+{
+    color:#fff;
+    text-shadow:none;
+}
+.top-nav .navbar .nav > li > a:hover
+{
+    color:#66ccdd;
+}
+.top-nav .navbar .nav > li > img
+{
+    display:inline;
+    margin-left:5px;
+}
+
+/* Main Nav */
+.main-nav
+{
+    position:relative;
+    top:0;
+    margin-left: -35px;
+}
+.main-nav .navbar-inner
+{
+    background:transparent !important;
+    background-image:none;
+    border:none;
+    box-shadow:none;
+}
+.main-nav .navbar .nav > li > a
+{
+    font-size:14px;
+    font-weight:bold;
+    color:#6c6c6c;
+    text-shadow:none;
+}
+.main-nav .navbar .nav > li > a:hover
+{
+    color:#00859b;
+}
+.main-nav .navbar .nav .dropdown-menu > li > a
+{
+    color:#525252;
+    text-shadow:none;
+}
+.main-nav .navbar .nav .dropdown-menu > li > a:hover
+{
+    background-image:none;
+    background-color: #f87436;
+    color:#FFF;
+    text-shadow:none;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle
+{
+    background-color: #f87436;
+    color:#fff;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover
+{
+    color: #7c858c;
+    background-color:transparent;
+    box-shadow:none;
+}
+.navbar-inner
+{
+   z-index:1;
+}
+.navbar .btn-navbar
+{
+    background-image: -moz-linear-gradient(center top , #66ccdd, #00859b);
+}
+.navbar .btn-navbar:hover,
+.navbar .btn-navbar:active,
+.navbar .btn-navbar .active,
+.navbar .btn-navbar .disabled,
+.navbar .btn-navbar[disabled],
+{
+    background-image: -moz-linear-gradient(center top , #00859b, #66ccdd);
 }
 
 /* Tweak navbar brand link to be super sleek
@@ -17,7 +122,6 @@ body > .navbar .brand {
     margin-left: 20px;
     font-weight: bold;
     color: #ccc;
-    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     transition: all .2s linear;
@@ -66,27 +170,29 @@ hr.soften {
 ------------------------- */
 .jumbotron {
     position: relative;
-    padding: 40px 0;
+    padding: 0px 0px 40px 0px;
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-    background: #003;
-    background: -moz-linear-gradient(45deg, #003 0%, #0ff 100%);
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#003), color-stop(100%,#0ff));
-    background: -webkit-linear-gradient(45deg, #003 0%,#0ff 100%);
-    background: -o-linear-gradient(45deg, #003 0%,#0ff 100%);
-    background: -ms-linear-gradient(45deg, #003 0%,#0ff 100%);
-    background: linear-gradient(45deg, #003 0%,#0ff 100%);
+
+    background: #000000; /* fallback for non-supporting browsers */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#fff), to(#00abc7) ); /* old WebKit Syntax */
+    background-image: -webkit-radial-gradient(center center, circle contain, #fff 0%, #00abc7 100%); /* New WebKit syntax */
+    background-image: -moz-radial-gradient(400px 25px, circle contain, #ddf3f7 0%, #00abc7 3000%);
+    background-image: -ms-radial-gradient(center center, circle contain, #fff 0%, #00abc7 100%); /* IE10+ */
+    background-image: -o-radial-gradient(center center, circle contain, #fff 0%, #00abc7 100%); /* Opera (13?) */
+
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003', endColorstr='#0ff',GradientType=1 );
     -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 }
 .jumbotron h1 {
-    font-size: 80px;
-    font-weight: bold;
+    font-size: 100px;
+    font-weight: normal;
     letter-spacing: -1px;
     line-height: 1;
+    color: #00859b;
 }
 .jumbotron p {
     font-size: 24px;
@@ -116,7 +222,7 @@ hr.soften {
 
 .jumbotron-small {
     position: relative;
-    padding: 40px 0;
+    padding: 0px 0;
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
@@ -145,19 +251,24 @@ hr.soften {
 /* Masthead (docs home)
 ------------------------- */
 .masthead {
-    padding: 70px 0 50px;
+    padding: 40px 0 50px;
     margin-bottom: 0;
     color: #fff;
 }
 .masthead h1 {
-    font-size: 80px;
+    font-size: 5em;
+    font-weight:bold;
     line-height: 1;
     letter-spacing: -2px;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.35), -1px -1px rgba(0, 0, 0, 0.25);
+    color:#00abc7;
+    clear:both;
 }
-.masthead p {
+.masthead h2 {
     font-size: 36px;
-    font-weight: 200;
+    font-weight: normal;
     line-height: 1.25;
+    text-align:right;
 }
 
 /* Textual links in masthead */
@@ -307,6 +418,23 @@ hr.soften {
     .bs-docs-sidenav {
         width: 258px;
     }
+    .top-nav{
+        margin-top:-35px;
+    }
+    .main-nav{
+        margin-top:-35px;
+    }
+}
+@media (min-width: 981px)
+{
+    .top-nav
+    {
+        margin-top:-35px;
+    }
+    .main-nav
+    {
+        margin-top:-35px;
+    }
 }
 
 /* Desktop
@@ -332,6 +460,10 @@ hr.soften {
         margin-top: 30px;
         margin-right: 0;
     }
+    .top-nav
+    {
+        margin-top:-5px;
+    }
 }
 
 /* Tablet to desktop
@@ -344,7 +476,10 @@ hr.soften {
 
     /* Widen masthead and social buttons to fill body padding */
     .jumbotron {
-        margin-top: -20px; /* Offset bottom margin on .navbar */
+        margin-top: -10px; /* Offset bottom margin on .navbar */
+    }
+    .masthead{
+        padding:0;
     }
 
     /* Adjust sidenav width */
@@ -368,9 +503,12 @@ hr.soften {
     /* Widen masthead and social buttons to fill body padding */
     .jumbotron {
         padding: 40px 20px;
-        margin-top:   -20px; /* Offset bottom margin on .navbar */
+        margin-top:   -10px; /* Offset bottom margin on .navbar */
         margin-right: -20px;
         margin-left:  -20px;
+    }
+    .masthead{
+        padding:0;
     }
 
     .masthead h1 {
@@ -425,6 +563,10 @@ hr.soften {
     }
     .footer p {
         margin-bottom: 9px;
+    }
+    .main-nav
+    {
+        margin-left:-20px;
     }
 }
 
@@ -656,6 +798,7 @@ UL.features LI IMG {
 
 .terms-conditions-copy ol p{
     text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .uppercase-bold {
@@ -666,6 +809,10 @@ UL.features LI IMG {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.orange{
+    color: #f87436;
 }
 
 
