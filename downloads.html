@@ -34,11 +34,79 @@
     </head>
 
     <body>
-        <div id="navbar"></div>
-
-        <div class="jumbotron-small">
+    <div id="header"></div>
+        <div class="jumbotron masthead">
             <div class="container">
-                <h1>Downloads</h1>
+                <div id="navbar"></div>
+
+                <div class="jquery-ribbon">
+                    <div class="square">
+                        <p>now with <span>jQuery</span> wrapper</p>
+                    </div>
+                    <div class="arrow-down"></div>
+                </div>
+
+                <div class="clear">
+                    <h1 class="inner-shadow">Fine Uploader <span class="orange">3.4.1</span></h1>
+                    <h2>File uploading <b>without</b> the hassle.</h2>
+                    <div class="row-fluid" style="margin-top: 30px;">
+                        <div class="span4">
+                            <h3>Get Started</h3>
+                            <p>Please provide an email address below to download
+                                a 45-day commercial evaluation of Fine Uploader.</p>
+
+                            <form id="form4" name="form4" class="wufoo topLabel page" autocomplete="off" enctype="multipart/form-data" method="post"
+                                  novalidate action="https://widen.wufoo.com/forms/r7x2z1/#public">
+
+                                <input id="Field1" name="Field1" type="email" spellcheck="false" class="field text medium" placeholder="example@yourdomain.com" value="" maxlength="255" tabindex="1"
+                                       required="required" style="width:75%;"/>
+
+                                <div style="height:15px;"></div>
+                                <fieldset>
+                                    <![if !IE | (gte IE 8)]>
+                                    <legend id="title2" class="desc"></legend>
+                                    <![endif]>
+
+                                    <!--[if lt IE 8]>
+                                    <label id="title2" class="desc"></label>
+                                    <![endif]-->
+                                </fieldset>
+
+                                <div>
+                                    <input id="saveForm" name="saveForm" class="btn btn-success btn-small submit"
+                                           type="submit" value="Download Trial"/>
+                                </div>
+
+                                <ul>
+                                    <li class="hide">
+                                        <label classfor="comment">Do Not Fill This Out</label>
+                                        <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                                        <input type="hidden" id="idstamp" name="idstamp" value="QUofb00wEBibJG9LZzvrSlXaSYwvOcCjKQ2OtC07sGw=" />
+                                    </li>
+                                </ul>
+                            </form>
+
+                        </div>
+
+                        <div class="span4">
+                            <h3>Purchase a License</h3>
+                            <p>Fine Uploader commercial license(s) are available for purchase right from our website.</p>
+                            <a class="btn btn-info btn-small" href="https://widen.wufoo.com/forms/purchase-commercial-license/">Purchase</a>
+                            <p><a href="licensing.html" class="small-link">Terms and Conditions</a></p>
+
+                        </div>
+
+                        <div class="span4">
+                            <h3>Open Source?</h3>
+                            <p>Fine Uploader is also available under the GPLv3 for open source projects, which may require the release of your code.</p>
+                            <a class="btn btn-primary btn-small" href="download-fine-uploader.html">Download</a>
+                            <p><a href="http://en.wikipedia.org/wiki/GNU_General_Public_License" target="_blank" style="font-size:12px;">Does my project fit the requirements?</a></p>
+                        </div>
+                    </div>
+
+                   <p class="blink">Licensing questions?  <a href="mailto:licensing@fineuploader.com" target="_blank">Email us!</a></p>
+                   <p class="blink"><a href="http://blog.fineuploader.com/2013/03/fine-uploader-34.html" target="_blank">Read about new features and bugfixes in 3.4.1.</a></p>
+                </div>
             </div>
         </div>
 
@@ -62,12 +130,11 @@
 
         <div class="container">
             <div class="marketing">
-                <p class="blink"><a href="http://blog.fineuploader.com/2013/03/fine-uploader-34.html" target="_blank">Read about new features and bugfixes in 3.4.1.</a></p>
                 <div class="row-fluid" style="margin-top: 30px;">
-                    <div class="box span3" style="width:39%;">
-                        <h2>Get Started</h2>
+                    <div class="span4">
+                        <h3>Get Started</h3>
                         <p>Please provide an email address below to download
-                           a 45-day commercial evaluation of Fine Uploader.</p>
+                            a 45-day commercial evaluation of Fine Uploader.</p>
 
                         <form id="form4" name="form4" class="wufoo topLabel page" autocomplete="off" enctype="multipart/form-data" method="post"
                               novalidate action="https://widen.wufoo.com/forms/r7x2z1/#public">
@@ -76,15 +143,15 @@
                                    required="required" style="width:75%;"/>
 
                             <div style="height:15px;"></div>
-                                <fieldset>
-                                    <![if !IE | (gte IE 8)]>
-                                        <legend id="title2" class="desc"></legend>
-                                    <![endif]>
+                            <fieldset>
+                                <![if !IE | (gte IE 8)]>
+                                <legend id="title2" class="desc"></legend>
+                                <![endif]>
 
-                                    <!--[if lt IE 8]>
-                                       <label id="title2" class="desc"></label>
-                                    <![endif]-->
-                                </fieldset>
+                                <!--[if lt IE 8]>
+                                <label id="title2" class="desc"></label>
+                                <![endif]-->
+                            </fieldset>
 
                             <div>
                                 <input id="saveForm" name="saveForm" class="btn btn-success btn-small submit"
@@ -102,23 +169,25 @@
 
                     </div>
 
-                    <div class="span3 box purchase" style="width:25%;">
-                        <h2>Purchase a License</h2>
+                    <div class="span4">
+                        <h3>Purchase a License</h3>
                         <p>Fine Uploader commercial license(s) are available for purchase right from our website.</p>
                         <a class="btn btn-info btn-small" href="https://widen.wufoo.com/forms/purchase-commercial-license/">Purchase</a>
                         <p><a href="licensing.html" class="small-link">Terms and Conditions</a></p>
 
                     </div>
 
-                    <div class="span3 box open-source" style="width:30%;">
-                        <h2>Working in Open Source?</h2>
+                    <div class="span4">
+                        <h3>Open Source?</h3>
                         <p>Fine Uploader is also available under the GPLv3 for open source projects, which may require the release of your code.</p>
                         <a class="btn btn-primary btn-small" href="download-fine-uploader.html">Download</a>
                         <p><a href="http://en.wikipedia.org/wiki/GNU_General_Public_License" target="_blank" style="font-size:12px;">Does my project fit the requirements?</a></p>
                     </div>
                 </div>
+
+                <p class="blink">Licensing questions?  <a href="mailto:licensing@fineuploader.com" target="_blank">Email us!</a></p>
+                <p class="blink"><a href="http://blog.fineuploader.com/2013/03/fine-uploader-34.html" target="_blank">Read about new features and bugfixes in 3.4.1.</a></p>
             </div>
-            <p class="blink">Licensing questions?  <a href="mailto:licensing@fineuploader.com" target="_blank">Email us!</a></p>
         </div>
 
         <div id="footer"></div>
@@ -135,6 +204,10 @@
                 }
             });
             $.get('./footer.html', function(data) { $('#footer').html(data); });
+
+            $.get('./header.html', function(data) {
+                $('#header').html(data);
+            });
         </script>
     </body>
 </html>

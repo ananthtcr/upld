@@ -10,13 +10,33 @@ body {
 {
     width: 75%;
 }
+h3
+{
+    font-size: 20px;
+}
 /* Header
 -------------------------------------------------- */
 .header
 {
+    clear:both;
     position:relative;
-    padding:10px 0px 30px 0px;
-    z-index: -1;
+    margin:0px 0px 30px 0px;
+}
+.header img
+{
+    margin:-20px 0px 0px 0px;
+}
+.github-head
+{
+    float:right;
+}
+.bs-docs-social-buttons li
+{
+    margin: 0px -20px 10px 0px;
+}
+#navbar
+{
+    float:left;
 }
 .top-nav
 {
@@ -27,6 +47,7 @@ body {
 .top-nav .navbar-inner
 {
     background-color:#7c858c !important;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false); /*IE remove bootstrap filter */
     background-image:none;
     border:none;
 }
@@ -49,31 +70,32 @@ body {
 .main-nav
 {
     position:relative;
-    top:0;
     margin-left: -35px;
 }
 .main-nav .navbar-inner
 {
     background:transparent !important;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false); /*IE remove bootstrap filter */
     background-image:none;
     border:none;
     box-shadow:none;
 }
 .main-nav .navbar .nav > li > a
 {
-    font-size:14px;
+    font-size:13px;
     font-weight:bold;
     color:#6c6c6c;
     text-shadow:none;
 }
 .main-nav .navbar .nav > li > a:hover
 {
-    color:#00859b;
+    color:#f87436;
 }
 .main-nav .navbar .nav .dropdown-menu > li > a
 {
     color:#525252;
     text-shadow:none;
+    font-weight:bold;
 }
 .main-nav .navbar .nav .dropdown-menu > li > a:hover
 {
@@ -96,19 +118,59 @@ body {
 }
 .navbar-inner
 {
-   z-index:1;
+   z-index:2;
 }
 .navbar .btn-navbar
 {
+    background-image: -webkit-gradient(linear, center top, 0, center center, 141, from(#66ccdd), to(#00859b) ); /* old WebKit Syntax */
+    background-image: -webkit-linear-gradient( top , #66ccdd 0%, #00859b 100%); /* New WebKit syntax */
     background-image: -moz-linear-gradient(center top , #66ccdd, #00859b);
+    background-image: -ms-linear-gradient(center top , #66ccdd 0%, #00859b 100%); /* IE10+ */
+    background-image: -o-linear-gradient(center top , #66ccdd, #00859b); /* Opera (13?) */
+    background-color: #66ccdd;
+    box-shadow:none;
+    border:none;
 }
 .navbar .btn-navbar:hover,
 .navbar .btn-navbar:active,
 .navbar .btn-navbar .active,
 .navbar .btn-navbar .disabled,
-.navbar .btn-navbar[disabled],
+.navbar .btn-navbar[disabled]
 {
-    background-image: -moz-linear-gradient(center top , #00859b, #66ccdd);
+    background-color: #00859b;
+    background-position: 0px -15px;
+    transition: background-position 0.1s linear 0s;
+}
+.jquery-ribbon
+{
+    display:inline-block;
+    position:relative;
+    float:right;
+    text-align: center;
+}
+.jquery-ribbon p span
+{
+    font-size:20px;
+    font-weight:bold;
+}
+.jquery-ribbon .square a
+{
+    display:block;
+    text-decoration:none;
+}
+.square
+{
+    padding: 8px 10px 2px 10px;
+    position:relative;
+    width: 100px;
+    height:75px;
+    background-color:#f87436;
+    box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.4);
+}
+.arrow-down {
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 40px solid #f87436;
 }
 
 /* Tweak navbar brand link to be super sleek
@@ -172,54 +234,97 @@ hr.soften {
     position: relative;
     padding: 0px 0px 40px 0px;
     color: #fff;
-    text-align: center;
+    text-align: left;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
 
-    background: #000000; /* fallback for non-supporting browsers */
-    background-image: -webkit-gradient(radial, center center, 0, center center, 141, from(#fff), to(#00abc7) ); /* old WebKit Syntax */
-    background-image: -webkit-radial-gradient(center center, circle contain, #fff 0%, #00abc7 100%); /* New WebKit syntax */
-    background-image: -moz-radial-gradient(400px 25px, circle contain, #ddf3f7 0%, #00abc7 3000%);
-    background-image: -ms-radial-gradient(center center, circle contain, #fff 0%, #00abc7 100%); /* IE10+ */
-    background-image: -o-radial-gradient(center center, circle contain, #fff 0%, #00abc7 100%); /* Opera (13?) */
+    background: #66ccdd; /* fallback for non-supporting browsers */
+    background-image: -webkit-gradient(radial, 33% 25px, 0, center center, 141, from(#ddf3f7), to(#00abc7) ); /* old WebKit Syntax */
+    background-image: -webkit-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* New WebKit syntax */
+    background-image: -moz-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%);
+    background-image: -ms-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* IE10+ */
+    background-image: -o-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* Opera (13?) */
 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003', endColorstr='#0ff',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1F8FF', endColorstr='#00859b',GradientType=0 );
+
     -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 }
 .jumbotron h1 {
-    font-size: 100px;
+    font-size: 7em;
     font-weight: normal;
     letter-spacing: -1px;
     line-height: 1;
     color: #00859b;
+    text-align:left;
+}
+.jumbotron h3
+{
+    margin: -8px 0px 5px 0px;
 }
 .jumbotron p {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 130%;
     margin-bottom: 30px;
 }
 
 .jumbotron a {
     color: #fff;
-    color: rgba(255,255,255,.5);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+    margin: 0px auto 20px auto;
+    text-shadow:none;
+    text-decoration:underline;
+}
+.jumbotron h3 > a {
+    color: #fff;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-shadow:0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+    text-decoration:none;
+}
+.jumbotron h3 > a:hover
+{
+    color: #fff;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    text-shadow: 1 1 3px rgba(255,255,255,.1.0);
+    text-decoration:underline;
 }
 .jumbotron a:hover {
     color: #fff;
     text-shadow: 0 0 10px rgba(255,255,255,.25);
 }
-
 .masthead .btn {
     color: #fff; /* redeclare to override the `.jumbotron a` */
     -webkit-transition: none;
     -moz-transition: none;
     transition: none;
 }
-
+.btn
+{
+    background-color: #f87436;
+    background-image: -moz-linear-gradient(center top , #f88d5a, #f87436);
+    color:#fff;
+    text-shadow:none;
+}
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled]
+{
+    background-color: #f87436;
+    color:#fff;
+}
+.btn a:hover
+{
+    color:#fff;
+}
 .jumbotron-small {
     position: relative;
     padding: 0px 0;
@@ -238,7 +343,6 @@ hr.soften {
     -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 }
-
 .jumbotron-small a {
     color: #fff;
     color: rgba(255,255,255,.5);
@@ -246,17 +350,37 @@ hr.soften {
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
-
+ /* Jumbotron Icons
+------------------------- */
+.lg_icon
+{
+    height:55px;
+    width:55px;
+    float:left;
+    margin: 0px 10px 0px -6px;
+}
+.support_icon
+{
+    background-image:url('/img/support_icon.png');
+}
+.documentation_icon
+{
+    background-image:url('/img/documentation_icon.png');
+}
+.downloads_icon
+{
+    background-image:url('/img/download_icon_lg.png');
+}
 
 /* Masthead (docs home)
 ------------------------- */
 .masthead {
-    padding: 40px 0 50px;
+    padding: 0px 0 50px 0;
     margin-bottom: 0;
     color: #fff;
 }
 .masthead h1 {
-    font-size: 5em;
+    font-size: 82px;
     font-weight:bold;
     line-height: 1;
     letter-spacing: -2px;
@@ -342,8 +466,8 @@ hr.soften {
 -------------------------------------------------- */
 
 .marketing {
-    text-align: center;
-    color: #5a5a5a;
+    text-align: left;
+    color: ##525252;
 }
 .marketing h1 {
     margin: 40px 0 10px;
@@ -351,10 +475,19 @@ hr.soften {
     font-weight: 200;
     line-height: 1;
     letter-spacing: -1px;
+    color: #00abc7;
 }
 .marketing h2 {
     font-weight: 200;
     margin-bottom: 5px;
+    color: #00abc7;
+}
+.marketing h3 {
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size: 18px;
+    line-height: 40px;
+    color: #00abc7;
 }
 .marketing p {
     font-size: 16px;
@@ -365,7 +498,7 @@ hr.soften {
     font-size: 20px;
     font-weight: 300;
     line-height: 25px;
-    color: #999;
+    color: #525252;
 }
 .marketing img {
     display: block;
@@ -391,11 +524,12 @@ hr.soften {
   padding: 70px 0;
   margin-top: 70px;
   border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
+  background-color: #525252;
+    color :#eee;
 }
 .footer p {
   margin-bottom: 0;
-  color: #777;
+  color: #eee;
 }
 .footer-links {
   margin: 10px 0;
@@ -403,6 +537,14 @@ hr.soften {
 .footer-links li {
   display: inline;
   margin-right: 10px;
+}
+.footer a{
+    color: #66ccdd;
+}
+.widenIcon
+{
+    margin: -2px 0px 0px 2px;
+
 }
 
 
@@ -421,8 +563,13 @@ hr.soften {
     .top-nav{
         margin-top:-35px;
     }
-    .main-nav{
-        margin-top:-35px;
+    .container
+    {
+        max-width: 1024px;
+    }
+    .masthead h1
+    {
+        margin-top:80px;
     }
 }
 @media (min-width: 981px)
@@ -431,9 +578,9 @@ hr.soften {
     {
         margin-top:-35px;
     }
-    .main-nav
+    .masthead h1
     {
-        margin-top:-35px;
+        margin-top:80px;
     }
 }
 
@@ -464,6 +611,10 @@ hr.soften {
     {
         margin-top:-5px;
     }
+    .masthead h1
+    {
+        text-align:center;
+    }
 }
 
 /* Tablet to desktop
@@ -490,6 +641,31 @@ hr.soften {
     .bs-docs-sidenav.affix {
         top: 0;
     }
+
+    .main-nav
+    {
+        max-width: 450px;
+    }
+    .lg_icon
+    {
+        float:none;
+    }
+    .jumbotron h3
+    {
+        font-size:18px;
+    }
+    .support_icon
+    {
+        background-image:url('/img/support_icon_small.png');
+    }
+    .documentation_icon
+    {
+        background-image:url('/img/documentation_icon_small.png');
+    }
+    .downloads_icon
+    {
+        background-image:url('/img/download_icon_small.png');
+    }
 }
 
 /* Tablet
@@ -512,11 +688,16 @@ hr.soften {
     }
 
     .masthead h1 {
-        font-size: 80px;
+        font-size: 5em;
+        text-align:center;
+    }
+    .masthead h2 {
+        font-size: 32px;
+        text-align:center;
     }
     .masthead p,
     .masthead .btn {
-        font-size: 24px;
+        font-size: 16px;
     }
 
     .legend {
@@ -567,6 +748,15 @@ hr.soften {
     .main-nav
     {
         margin-left:-20px;
+        max-width:300px;
+    }
+    .top-nav
+    {
+        margin-right:-15px;
+    }
+    .github-head
+    {
+        display: none;
     }
 }
 
@@ -584,16 +774,19 @@ hr.soften {
     }
     
     /* Downsize the jumbotrons */
-    .jumbotron h1 {
-        font-size: 60px;
+    .masthead h1 {
+        font-size: 54px;
+    }
+    .masthead h2{
+        font-size: 22px;
     }
     .jumbotron p,
     .jumbotron .btn {
-        font-size: 20px;
+        font-size: 16px;
     }
     .jumbotron .btn {
         display: block;
-        margin: 0 auto;
+        margin: 20px auto;
     }
 
     .legend {
@@ -616,6 +809,7 @@ hr.soften {
     /* Marketing on home */
     .marketing h1 {
         font-size: 40px;
+        color: #00abc7;
     }
     
     /* center example sites */
@@ -652,6 +846,12 @@ hr.soften {
     /* Unfloat the back to top in footer to prevent odd text wrapping */
     .footer .pull-right {
         float: none;
+    }
+}
+@media (max-width: 550px) {
+    .jquery-ribbon
+    {
+        display:none;
     }
 }
 
@@ -811,8 +1011,17 @@ UL.features LI IMG {
     text-transform: uppercase;
 }
 
+
+/* Global */
 .orange{
     color: #f87436;
+}
+
+.mt60{
+    margin-top: 60px;
+}
+.clear{
+    clear:both;
 }
 
 
