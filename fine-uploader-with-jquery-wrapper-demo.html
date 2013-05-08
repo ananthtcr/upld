@@ -8,6 +8,15 @@
         <meta name="author" content="A. Bennouna, tellibus">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="master/client/fineuploader.css" rel="stylesheet">
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+        <![endif]-->
+
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
@@ -32,16 +41,16 @@
         <script src="master/client/js/jquery-plugin.js"></script>
     </head>
     <body data-spy="scroll" data-target="#demoList">
-        <div id="navbar"></div>
+        <div id="header"></div>
 
-        <div id="jumbotron" class="jumbotron subhead">
+
+        <div class="jumbotron masthead">
             <div class="container">
-                <h1>More demos</h1>
-                <p>Want more than basic stuff? See here!</p>
+                <div id="navbar"></div>
             </div>
         </div>
 
-        <div id="demoList" class="navbar" style="width: 100%; margin-bottom: 0; left: 0; z-index: 100;">
+        <div id="demoList" class="navbar" style="width: 100%;">
             <div class="navbar-inner">
                 <div class="container">
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#demoList .nav-collapse">
@@ -63,19 +72,19 @@
             </div>
         </div>
         
-        <div class="container">
-            <div class="row span12">
+        <div class="container marketing">
+            <div class="row-fluid">
                 <section id="demo1">
                     <h1>Manually Trigger Uploads</h1>
-                    <p class="lead">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling <code>uploadStoredFiles()</code> on your Fine Uploader instance.</p>
+                    <p class="marketing-byline">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling <code>uploadStoredFiles()</code> on your Fine Uploader instance.</p>
                     <div class="row-fluid">
                         <div class="span4">
-                            <p>Since we need to catch click events on an HTML element, we will be using jQuery to handle events and selectors for the sake of simplicity.</p>
-                            <p>You can obviously take it further with the <a href="./fine-uploader-with-jquery-wrapper-demo.html">optional jQuery wrapper demos</a>.</p>
                             <div id="manual-fine-uploader"></div>
-                            <div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
+                            <div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px; margin-bottom:20px;">
                                 <i class="icon-upload icon-white"></i> Upload now
                             </div>
+                            <p>Since we need to catch click events on an HTML element, we will be using jQuery to handle events and selectors for the sake of simplicity.</p>
+                            <p>You can obviously take it further with the <a href="./fine-uploader-with-jquery-wrapper-demo.html">optional jQuery wrapper demos</a>.</p>
                         </div>
     
                         <div class="span8">
@@ -85,9 +94,11 @@
                     </div>
                 </section>
 
+                <hr id="demo" class="soften">
+
                 <section id="demo2">
                     <h1>See Server Failure Messages</h1>
-                    <p class="lead">If your server returns a response that includes a reason property, such as <code>{"error": "unsupported file type"}</code> you can display the error message next to the failed file.</p>
+                    <p class="marketing-byline">If your server returns a response that includes a reason property, such as <code>{"error": "unsupported file type"}</code> you can display the error message next to the failed file.</p>
                     <div class="row-fluid">
                         <div class="span4">
                             <div id="failed-fine-uploader"></div>
@@ -100,11 +111,14 @@
                     </div>
                 </section>
 
+                <hr id="demo" class="soften">
+
                 <section id="demo3">
                     <h1>Various Options</h1>
-                    <p class="lead">There are various options available to you when using Fine Uploader. In this demo, we've used a small subset of these options. To see all available options and their usage, please refer to <a href="http://github.com/Widen/fine-uploader/">Fine Uploader documentation</a> on the Github repository.</p>
+                    <p class="marketing-byline">There are various options available to you when using Fine Uploader. In this demo, we've used a small subset of these options. To see all available options and their usage, please refer to <a href="http://github.com/Widen/fine-uploader/">Fine Uploader documentation</a> on the Github repository.</p>
                     <div class="row-fluid">
                         <div class="span4">
+                            <div id="restricted-fine-uploader" style="margin-bottom:20px;"></div>
                             <p>We are implementing the following options in this demo:</p>
                             <ul>
                                 <li>custom upload button text,</li>
@@ -113,7 +127,6 @@
                                 <li>restriction to a maximum file size of 50 kB,</li>
                                 <li>custom error display handler instead of the default alert box.</li>
                             </ul>
-                            <div id="restricted-fine-uploader"></div>
                         </div>
     
                         <div class="span8">
@@ -123,11 +136,14 @@
                     </div>
                 </section>
 
+                <hr id="demo" class="soften">
+
                 <section id="demo4">
                     <h1>Display Image Thumbnails</h1>
-                    <p class="lead">In this demo, we've used the onComplete callback to display thumbnails of the uploaded images after they have been uploaded to the server.</p>
+                    <p class="marketing-byline">In this demo, we've used the onComplete callback to display thumbnails of the uploaded images after they have been uploaded to the server.</p>
                     <div class="row-fluid">
                         <div class="span4">
+                            <div id="thumbnail-fine-uploader" style="margin-bottom:20px;"></div>
                             <p>Since the demos do not actually upload your files, the thumbnail is fake. We hope you like it though :)</p>
                             <p>This uploader is also restricted in</p>
                             <ul>
@@ -135,7 +151,6 @@
                                 <li>in concurrent downloads (only one at once),</li>
                                 <li>in allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>)</li>
                             </ul>
-                            <div id="thumbnail-fine-uploader"></div>
                         </div>
     
                         <div class="span8">
@@ -145,17 +160,19 @@
                     </div>
                 </section>
 
+                <hr id="demo" class="soften">
+
                 <section id="demo5">
                     <h1>Limit Number of Uploaded Files</h1>
-                    <p class="lead">In this demo, we are using the <code>itemLimit</code> validation option to enforce a maximum item limit.</p>
+                    <p class="marketing-byline">In this demo, we are using the <code>itemLimit</code> validation option to enforce a maximum item limit.</p>
                     <div class="row-fluid">
                         <div class="span4">
+                            <div id="filelimit-fine-uploader" style="margin-bottom:20px;"></div>
                             <p>This uploader is also restricted in</p>
                             <ul>
                                 <li>size (50 kB)</li>
                                 <li>in allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>)</li>
                             </ul>
-                            <div id="filelimit-fine-uploader"></div>
                         </div>
     
                         <div class="span8">
@@ -217,6 +234,9 @@
 
         </script>
         <script>
+            $.get('./header.html', function(data) {
+                $('#header').html(data);
+            });
             $.get('./footer.html', function(data) { $('#footer').html(data); });
         </script>
     </body>

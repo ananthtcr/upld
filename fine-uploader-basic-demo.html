@@ -8,6 +8,15 @@
         <meta name="author" content="A. Bennouna, tellibus">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="master/client/fineuploader.css" rel="stylesheet">
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+        <![endif]-->
+
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
@@ -31,32 +40,39 @@
         <script src="master/client/js/uploader.js"></script>
     </head>
     <body data-spy="scroll" data-target="#demoList">
-        <div id="navbar"></div>
+        <div id="header"></div>
 
-        <div id="jumbotron" class="jumbotron subhead">
+        <div class="jumbotron masthead">
             <div class="container">
-                <h1>Fine Uploader Basic mode demos</h1>
-                <p>Want to have total control? See here!</p>
+                <div id="navbar"></div>
+
             </div>
         </div>
 
-        <div class="container">
-            <div class="row span12">
+        <div class="container marketing">
+
+            <h1>Fine Uploader Basic mode demos</h1>
+            <p class="marketing-byline">Want to have total control? See here!</p>
+
+            <div class="row-fluid">
                 <section>
-                    <p class="lead">While File Uploader has a full set of pre-programmed callbacks and full file and CSS templates, File Uploader <em>Basic</em> provides just the callback handlers and leave it all to the developer.</p>
+                    <p class="marketing-byline">While File Uploader has a full set of pre-programmed callbacks and full file and CSS templates, File Uploader <em>Basic</em> provides just the callback handlers and leave it all to the developer.</p>
                     <div class="row-fluid">
                         <div class="span4">
+                            <div id="fine-uploader-basic" class="btn btn-success" style="margin-bottom:20px;"><div><i class="icon-upload icon-white"></i>Click to upload</div></div>
                             <p>For this demo, we're using the Bootstrap CSS classes.</p>
-                            <div id="fine-uploader-basic" class="btn btn-success"><div><i class="icon-upload icon-white"></i>Click to upload</div></div>
+
                             <div id="messages"></div>
                         </div>
-    
+
                         <div class="span8">
                             <script src="https://gist.github.com/4700554.js"></script>
                             <script src="js/demo/basic.js"></script>
                         </div>
                     </div>
+
                 </section>
+
             </div>        
         </div>        
 
@@ -70,6 +86,9 @@
                 $('#navbar').html(data);
                 $('#navbar').find('li.dropdown').addClass('active')
                                                 .find('li').eq(2).addClass('active');
+            });
+            $.get('./header.html', function(data) {
+                $('#header').html(data);
             });
             $.get('./footer.html', function(data) { $('#footer').html(data); });
         </script>

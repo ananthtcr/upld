@@ -1,0 +1,33 @@
+/* Fixes styles in Internet Explorer 7 and lower */
+
+.main-nav .navbar .nav > li > a
+{
+    font-size:13px;
+    font-weight:bold;
+    color:#6c6c6c;
+}
+
+.jumbotron
+{
+    border-top:1px solid #ccc;
+}
+
+.top-nav
+{
+    margin-top:-35px;
+    width:460px;
+}
+
+.jquery-ribbon
+{
+  margin-top:-80px;
+}
+/*.main-nav
+{
+    margin-left:-370px;
+} */
+.jumbotron .container .navbar
+{
+    margin-left:-170px;
+}
+

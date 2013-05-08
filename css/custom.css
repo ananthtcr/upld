@@ -5,14 +5,12 @@ body {
     padding-top: 30px;
     font-family: 'Maven Pro', sans-serif;
     font-size: 14px;
+    background-color:#FCFCFA;
+    color:#525252 !important;
 }
 .container
 {
     width: 75%;
-}
-h3
-{
-    font-size: 20px;
 }
 /* Header
 -------------------------------------------------- */
@@ -25,10 +23,6 @@ h3
 .header img
 {
     margin:-20px 0px 0px 0px;
-}
-.github-head
-{
-    float:right;
 }
 .bs-docs-social-buttons li
 {
@@ -56,14 +50,16 @@ h3
     color:#fff;
     text-shadow:none;
 }
-.top-nav .navbar .nav > li > a:hover
+.top-nav .navbar .nav > li > a:hover,
+.navbar .nav > li > a:hover
 {
     color:#66ccdd;
 }
-.top-nav .navbar .nav > li > img
+.top-nav .navbar .nav > li > a > img
 {
     display:inline;
-    margin-left:5px;
+    margin-left:0px;
+    margin-top:-3px;
 }
 
 /* Main Nav */
@@ -96,6 +92,7 @@ h3
     color:#525252;
     text-shadow:none;
     font-weight:bold;
+    margin: 0px auto 8px auto;
 }
 .main-nav .navbar .nav .dropdown-menu > li > a:hover
 {
@@ -104,9 +101,18 @@ h3
     color:#FFF;
     text-shadow:none;
 }
-.navbar .nav li.dropdown.open > .dropdown-toggle
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle
 {
     background-color: #f87436;
+    color:#fff !important;
+}
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover
+{
+    background-color: #f87436;
+    background-image:none;
     color:#fff;
 }
 .navbar .nav > .active > a,
@@ -146,28 +152,38 @@ h3
     display:inline-block;
     position:relative;
     float:right;
-    text-align: center;
+    text-align:center;
 }
 .jquery-ribbon p span
 {
     font-size:20px;
     font-weight:bold;
+    line-height:26px;
 }
 .jquery-ribbon .square a
 {
     display:block;
     text-decoration:none;
 }
+.jquery-ribbon .square a:hover
+{
+    color:#75EBFF;
+}
 .square
 {
-    padding: 8px 10px 2px 10px;
+    line-height:120%;
+    padding: 15px 10px 2px 10px;
     position:relative;
     width: 100px;
-    height:75px;
+    height:65px;
     background-color:#f87436;
     box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.4);
 }
-.arrow-down {
+.square a{
+    line-height: 120%;
+}
+.arrow-down
+{
     border-left: 60px solid transparent;
     border-right: 60px solid transparent;
     border-top: 40px solid #f87436;
@@ -202,9 +218,6 @@ body > .navbar .brand:hover {
 -------------------------------------------------- */
 
 /* padding for in-page bookmarks and fixed navbar */
-section {
-  padding-top: 100px;
-}
 section > .page-header,
 section > .lead {
   color: #5a5a5a;
@@ -221,7 +234,7 @@ section > ul li {
 /* Faded out hr */
 hr.soften {
   height: 1px;
-  margin: 70px 0;
+  margin: 60px 0;
 }
 
 
@@ -260,15 +273,14 @@ hr.soften {
 }
 .jumbotron h3
 {
-    margin: -8px 0px 5px 0px;
+    text-align:center;
+    margin: -20px 0px 0px 0px;
 }
 .jumbotron p {
     font-size: 16px;
-    font-weight: 300;
     line-height: 130%;
     margin-bottom: 30px;
 }
-
 .jumbotron a {
     color: #fff;
     -webkit-transition: all .2s ease-in-out;
@@ -309,6 +321,10 @@ hr.soften {
 {
     background-color: #f87436;
     background-image: -moz-linear-gradient(center top , #f88d5a, #f87436);
+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f88d5a), to(#f87436));
+    background-image: -webkit-linear-gradient(top, #f88d5a, #f87436);
+
     color:#fff;
     text-shadow:none;
 }
@@ -354,24 +370,11 @@ hr.soften {
 ------------------------- */
 .lg_icon
 {
+    display:block;
     height:55px;
     width:55px;
-    float:left;
-    margin: 0px 10px 0px -6px;
+    margin: 0 auto;
 }
-.support_icon
-{
-    background-image:url('/img/support_icon.png');
-}
-.documentation_icon
-{
-    background-image:url('/img/documentation_icon.png');
-}
-.downloads_icon
-{
-    background-image:url('/img/download_icon_lg.png');
-}
-
 /* Masthead (docs home)
 ------------------------- */
 .masthead {
@@ -386,6 +389,7 @@ hr.soften {
     letter-spacing: -2px;
     text-shadow: 1px 1px rgba(255, 255, 255, 0.35), -1px -1px rgba(0, 0, 0, 0.25);
     color:#00abc7;
+    margin-left:-5px;
     clear:both;
 }
 .masthead h2 {
@@ -470,7 +474,7 @@ hr.soften {
     color: ##525252;
 }
 .marketing h1 {
-    margin: 40px 0 10px;
+    margin: 40px 0 10px -4px;
     font-size: 60px;
     font-weight: 200;
     line-height: 1;
@@ -486,7 +490,7 @@ hr.soften {
     text-transform:uppercase;
     font-weight:bold;
     font-size: 18px;
-    line-height: 40px;
+    line-height: 22px;
     color: #00abc7;
 }
 .marketing p {
@@ -506,7 +510,8 @@ hr.soften {
 }
 
 .progressBar {
-    margin-top: 35px !important;
+    margin-top: 0px !important;
+    float:left;
 }
 
 .features {
@@ -543,7 +548,7 @@ hr.soften {
 }
 .widenIcon
 {
-    margin: -2px 0px 0px 2px;
+    margin: -3px 0px 0px 4px;
 
 }
 
@@ -553,6 +558,23 @@ hr.soften {
 
 /* Desktop large
 ------------------------- */
+@media (min-width: 1281px) {
+    .openSource > .btn
+    {
+        margin-top: 3px !important;
+    }
+    .top-nav{
+        margin-top:-35px;
+    }
+    .container
+    {
+        max-width: 1024px;
+    }
+    .masthead h1
+    {
+        margin-top:80px;
+    }
+}
 @media (min-width: 1200px) {
     .bs-docs-container {
         max-width: 970px;
@@ -571,8 +593,30 @@ hr.soften {
     {
         margin-top:80px;
     }
+
+    /*Aligning Buttons on Downloads Page*/
+    .purchase > .btn
+    {
+        margin-top:27px;
+        margin-bottom:0px;
+    }
+    .openSource > .btn
+    {
+        margin-top: 27px;
+    }
+    .jQueryDownload .btn
+    {
+        margin-top:22px;
+    }
 }
-@media (min-width: 981px)
+@media (min-width: 1024px)
+{
+    .top-nav
+    {
+        margin-top:-35px;
+    }
+}
+@media (min-width: 981px) and (max-width: 1024px)
 {
     .top-nav
     {
@@ -581,6 +625,16 @@ hr.soften {
     .masthead h1
     {
         margin-top:80px;
+    }
+
+    /*Aligning Buttons on Downloads Page*/
+    .purchase > .btn
+    {
+        margin-top:27px;
+    }
+    .openSource > .btn
+    {
+        margin-top: 9px;
     }
 }
 
@@ -652,20 +706,27 @@ hr.soften {
     }
     .jumbotron h3
     {
-        font-size:18px;
+        font-size:20px;
     }
-    .support_icon
+
+    /* Aligning Buttons on Downloads Page */
+    .purchase > .btn
     {
-        background-image:url('/img/support_icon_small.png');
+        margin-top:2px;
     }
-    .documentation_icon
+    .openSource > .btn
     {
-        background-image:url('/img/documentation_icon_small.png');
+        margin-top: 8px;
     }
-    .downloads_icon
+    .getStarted input.btn.btn-small[type="submit"]
     {
-        background-image:url('/img/download_icon_small.png');
+        margin-top: 20px;
     }
+    .getStarted > form
+    {
+        margin-top:40px;
+    }
+
 }
 
 /* Tablet
@@ -684,7 +745,7 @@ hr.soften {
         margin-left:  -20px;
     }
     .masthead{
-        padding:0;
+        padding:0px 0px 40px 0px;
     }
 
     .masthead h1 {
@@ -754,9 +815,32 @@ hr.soften {
     {
         margin-right:-15px;
     }
-    .github-head
+    .terms-conditions-copy
     {
-        display: none;
+        width:100% !important;
+    }
+    .p8
+    {
+        padding-bottom:30px !important;
+    }
+    .purchase
+    {
+        border-right:none !important;
+        border-bottom:1px solid #ddd;
+    }
+    .getStarted
+    {
+        border-right:none !important;
+        border-bottom:1px solid #ddd;
+    }
+    .jQueryDownload
+    {
+        border-right:none !important;
+        border-bottom: 1px solid #ddd;
+    }
+    .push
+    {
+        margin-bottom:30px !important;
     }
 }
 
@@ -847,11 +931,21 @@ hr.soften {
     .footer .pull-right {
         float: none;
     }
+    .terms-conditions-copy
+    {
+        width:100% !important;
+        text-align:left !important;
+    }
 }
 @media (max-width: 550px) {
     .jquery-ribbon
     {
         display:none;
+    }
+
+    .terms-conditions-copy
+    {
+        text-align:left !important;
     }
 }
 
@@ -919,94 +1013,61 @@ UL.features LI IMG {
 .tipsy-w .tipsy-arrow{left:0;top:50%;margin-top:-5px;border-right-style:solid;border-left:none;border-top-color:transparent;border-bottom-color:transparent}
 
 /* Downloads Page */
-.box {
+.box
+{
      padding: 10px 20px 20px 20px;
-     background-color: #ECF5FC;
+     background-color: #fff;
      border: 1px solid #C7D1D8;
      -moz-border-radius: 15px;
      -webkit-border-radius: 15px;
      border-radius: 15px;
-     text-align: center;
  }
-
-.purchase {
-    background-color: #F5FFF9;
+.submit
+{
+    padding: 5px 8px 4px 8px;
 }
-
-.open-source {
-    background-color: #FFF5F5;
+input, button, select, textarea {
+    font-family: 'Maven Pro', sans-serif;
 }
-
-.submit {
-    padding: 6px 8px 6px 8px;
-}
-
-.discernment {
-    width: 100%;
-    margin: auto;
-    margin-top: 30px;
-}
-
-.small-link {
+.small-link
+{
     font-size: 12px;
+    margin-top:14px;
+    display:block
 }
-
-
-.download-container {
-    width: 60%;
-    margin: auto;
-}
-
-.nodependency-download {
-    float: right;
-    width: 40%;
-}
-
-.jquery-download {
-    float: left;
-    width:40%;
-}
-
 .blink {
     text-align:left;
     margin-top: 25px;
 }
 
 /* Terms and Conditions */
-
 .terms-conditions-copy {
-    width:60%;
+    width:70%;
     margin: auto;
     margin-top: 30px;
     text-align: justify;
-    color: #333;
 }
-
 .terms-conditions-copy h1 {
    text-align: center;
-   color: #555;
+   color: #00ABC7;
 }
-
 .terms-conditions-copy h4 {
     text-align:left;
     color: #444;
 }
-
 .terms-conditions-copy ol{
     list-style: decimal;
 }
-
-.terms-conditions-copy ol p{
+.terms-conditions-copy  p{
     text-align: justify;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.uppercase-bold {
+.uppercase-bold
+{
     text-transform: uppercase;
     font-weight: bold;
     color: #444;
 }
-
 .uppercase {
     text-transform: uppercase;
 }
@@ -1022,6 +1083,15 @@ UL.features LI IMG {
 }
 .clear{
     clear:both;
+}
+.p8 {
+    padding:0px 20px 10px 20px;
+}
+.lead {
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-bottom: 20px;
 }
 
 

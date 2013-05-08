@@ -7,6 +7,15 @@
         <meta name="description" content="Support portal for Fine Uploader">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+        <![endif]-->
+
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link href="css/prettify.css" rel="stylesheet">
@@ -18,30 +27,45 @@
         <script src="js/jquery.tipsy.min.js"></script>
     </head>
     <body>
-        <div id="navbar"></div>
+        <div id="header"> </div>
 
-        <div class="jumbotron-small">
-            <h1>Support</h1>
+
+        <div class="jumbotron">
+            <div class="container">
+                <div id="navbar"></div>
+            </div>
         </div>
 
-        <div class="container" style="margin-top: 40px; font-size: 16px; line-height: 2;">
-            <p>
-                <b>For technical support questions</b>, please use Stack Overflow.  The Fine Uploader development team monitors the <a href="http://stackoverflow.com/questions/tagged/fine-uploader">"fine-uploader"
-                tag</a> for new questions, and will provide assistance shortly after you post your question.  Please look for <a href="http://stackoverflow.com/questions/tagged/fine-uploader">existing questions
-                under the "fine-uploader" tag</a> that match your question.  If you don't find any, please <a href="http://stackoverflow.com/questions/ask?tags=fine-uploader">post a new question tagged with
-                "fine-uploader"</a>.
-            </p>
-            <br/>
-            <p>
-                You may also want to take a peek at the now-closed Fine Uploader support forum on <a href="https://getsatisfaction.com/fineuploader">GetSatisfaction</a> for a match to your question.
-                Again, if no match is found in GetSatisfaction or on <a href="http://stackoverflow.com/questions/tagged/fine-uploader">Stack Overflow</a>, please post a new question on <a href="http://stackoverflow.com/questions/ask?tags=fine-uploader">Stack Overflow tagged with
-                "fine-uploader"</a>.  Questions that do not directly relate to Fine Uploader (such as general javascript, CSS, HTML, HTTP, or
-                server-side language questions) can also be posted in Stack Overflow, but not with the "fine-uploader" tag.
-            </p>
-            <br/>
-            <p>
-                <b>Only bugs and feature requests</b> should be reported in the <a href="https://github.com/Widen/fine-uploader/issues">Fine Uploader Github project's issue tracker</a>.
-            </p>
+        <div class="container marketing">
+            <h1>Support</h1>
+            </br>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="p8">
+                    <p>
+                        <b>For technical support questions</b>, please use Stack Overflow.  The Fine Uploader development team monitors the <a href="http://stackoverflow.com/questions/tagged/fine-uploader">"fine-uploader"
+                        tag</a> for new questions, and will provide assistance shortly after you post your question.</p>
+                        <p>Please look for <a href="http://stackoverflow.com/questions/tagged/fine-uploader">existing questions
+                        under the "fine-uploader" tag</a> that match your question.  If you don't find any, please <a href="http://stackoverflow.com/questions/ask?tags=fine-uploader">post a new question tagged with
+                        "fine-uploader"</a>.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <div class="p8">
+                    <p>
+                        You may also want to take a peek at the now-closed Fine Uploader support forum on <a href="https://getsatisfaction.com/fineuploader">GetSatisfaction</a> for a match to your question.
+                        Again, if no match is found in GetSatisfaction or on <a href="http://stackoverflow.com/questions/tagged/fine-uploader">Stack Overflow</a>, please post a new question on <a href="http://stackoverflow.com/questions/ask?tags=fine-uploader">Stack Overflow tagged with
+                        "fine-uploader"</a>.  Questions that do not directly relate to Fine Uploader (such as general javascript, CSS, HTML, HTTP, or
+                        server-side language questions) can also be posted in Stack Overflow, but not with the "fine-uploader" tag.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <p style="clear:both;"><b>Only bugs and feature requests</b> should be reported in the <a href="https://github.com/Widen/fine-uploader/issues">
+                Fine Uploader Github project's issue tracker</a>.</p>
         </div>
 
         <div id="footer"></div>
@@ -56,7 +80,10 @@
                 } else {
                     $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
                 }
+            }); $.get('./header.html', function(data) {
+                $('#header').html(data);
             });
+
             $.get('./footer.html', function(data) { $('#footer').html(data); });
 
             $(document).ready(function () {

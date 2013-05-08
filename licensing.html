@@ -34,35 +34,18 @@
     </head>
 
     <body>
-        <div id="navbar"></div>
+    <div id="header"></div>
 
-        <div class="jumbotron-small">
+        <div class="jumbotron">
             <div class="container">
-                <h1>Licensing</h1>
+                <div id="navbar"></div>
             </div>
         </div>
 
-        <div class="bs-docs-social">
-            <div class="container">
-                <ul class="bs-docs-social-buttons">
-                    <li>
-                        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=Widen&repo=fine-uploader&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0"
-                                width="100px" height="20px"></iframe>
-                    </li>
-                    <li>
-                        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=Widen&repo=fine-uploader&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0"
-                                width="100px" height="20px"></iframe>
-                    </li>
-                    <li class="follow-btn">
-                        <a href="http://twitter.com/fineuploader" class="twitter-follow-button" data-show-count="false">Follow @fineuploader</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="container">
+        <div class="container marketing">
             <div class="terms-conditions-copy" >
-
+                <h1>License Agreement</h1>
+                <hr id="demo" class="soften">
                 <p>This <b>Fine Uploader Subscription and Support Agreement</b> (the “<b>SSA</b>”) is entered into
                     between Widen Enterprises, Inc., a Wisconsin corporation having its principal United
                     States offices at 6911 Mangrove Lane, Monona, WI 53713 (“<b>Widen</b>”), and the individual,
@@ -455,6 +438,9 @@
                 } else {
                     $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
                 }
+            });
+            $.get('./header.html', function(data) {
+                $('#header').html(data);
             });
             $.get('./footer.html', function(data) { $('#footer').html(data); });
         </script>

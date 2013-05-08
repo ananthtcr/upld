@@ -7,8 +7,6 @@
         <meta name="description" content="Fine Uploader (3.4.1). A dependency-free, native browser upload tool.">
         <meta name="author" content="A. Bennouna, tellibus">
 
-
-
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="master/client/fineuploader.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -17,8 +15,12 @@
         <link href="css/prettify.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-        <!--[if lt IE 9]>
-        <link rel="stylesheet" type="text/css" href="css/ie.css" >
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -49,7 +51,7 @@
 
                 <div class="jquery-ribbon">
                     <div class="square">
-                        <p><a href="fine-uploader-with-jquery-wrapper-demo.html">now with optional <span>jQuery</span> wrapper</a></p>
+                        <p><a href="fine-uploader-with-jquery-wrapper-demo.html">optional <span>jQuery</span> wrapper</a></p>
                     </div>
                     <div class="arrow-down"></div>
                 </div>
@@ -59,100 +61,101 @@
 
                 <div class="row-fluid mt60">
                     <div class="span4">
-                        <div class="downloads_icon lg_icon"></div>
-                        <h3><a href="downloads.html">Downloads</a></h3>
-                        <p>This project attempts to achieve a user-friendly file-uploading experience over the web. It's built as a Javascript plugin for
-                            developers looking to incorporate file-uploading into their website.</p>
+                        <a class="lg_icon" href="./downloads.html"><img src="img/download_icon_lg.png" /></a>
+                        <h3 class="push"><a href="downloads.html">Downloads</a></h3>
                     </div>
 
                     <div class="span4">
-                        <div class="documentation_icon lg_icon"></div>
-                        <h3><a href="https://github.com/Widen/fine-uploader/blob/master/readme.md">Documentation</a></h3>
-                        <p>IE7+ (including IE10), Firefox, Safari (OS X), Chrome, IOS6, and Android are supported.  Does NOT require Flash, jQuery, or any external libraries.</p>
+                        <a class="lg_icon" href="https://github.com/Widen/fine-uploader/blob/master/readme.md"><img src="img/documentation_icon.png" /></a>
+                        <h3 class="push"><a href="https://github.com/Widen/fine-uploader/blob/master/readme.md">Documentation</a></h3>
                     </div>
 
                     <div class="span4">
-                        <div class="support_icon lg_icon"></div>
+                        <a class="lg_icon" href="./support.html"><img src="img/support_icon.png" /></a>
                         <h3><a href="support.html">Support</a></h3>
-                        <p>IE7+ (including IE10), Firefox, Safari (OS X), Chrome, IOS6, and Android are supported.  Does NOT require Flash, jQuery, or any external libraries..</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bs-docs-social"></div>
-
         <div class="container">
             <div class="marketing">
                 <h1>Introducing Fine Uploader</h1>
-                <p class="marketing-byline">Free your code with this standalone Javascript library</p>
+                <p class="marketing-byline">Javascript plugin tool to give your users a smooth experience when uploading files to your website. </p>
                 <div class="row-fluid">
-                    <div class="span3">
-                        <h3>Welcome</h3>
-                        <p>This project attempts to achieve a user-friendly file-uploading experience over the web. It's built as a Javascript plugin for developers looking to incorporate file-uploading into their website.</p>
-                    </div>
 
-                    <div class="span3">
-                        <h3>Browser support</h3>
-                        <p>IE7+ (including IE10), Firefox, Safari (OS X), Chrome, IOS6, and Android are supported.  Does NOT require Flash, jQuery, or any external libraries.</p>
-                    </div>
-
-                    <div class="span3">
+                    <div class="span4 p8">
                         <h3>How it works</h3>
-                        <p>Uses an XMLHttpRequest (AJAX) for uploading multiple files with a progress-bar in FF3.6+, Safari4+, Chrome, and falls back to hidden-iframe-based upload in other browsers (namely IE), providing good user experience everywhere.</p>
+                        <p>Displays progress bar while uploading files through XMLHttpRequest (AJAX) in FF3.6+, Safari4+, Chrome.  For other browsers, falls back to hidden-iframe-based uploads.</p>
                     </div>
 
-                    <div class="span3">
+                    <div class="span4 p8">
+                        <h3>Browser support</h3>
+                        <p>Does NOT require Flash, jQuery, or any external libraries.</p>
+                        <ul>
+                            <li>IE7+ (including IE10)</li>
+                            <li>Firefox</li>
+                            <li>Safari (OS X)</li>
+                            <li>Chrome</li>
+                            <li>IOS6</li>
+                            <li>Android</li>
+                        </ul>
+                    </div>
+
+                    <div class="span4 p8">
                         <h3>Server support</h3>
-                        <p>You can use any server technology. We have already seen implementations with:</p>
-                        <p>ASP.NET <i class="icon-star"></i> ColdFusion <i class="icon-star"></i> Java <i class="icon-star"></i> Node.js <i class="icon-star"></i> Perl <i class="icon-star"></i> PHP <i class="icon-star"></i> Python</p>
+                        <p>Any available server technology. Common implementations with:</p>
+                        <ul>
+                            <li>ASP.NET</li>
+                            <li>ColdFusion</li>
+                            <li>Java</li>
+                            <li>Node.js</li>
+                            <li>Perl</li>
+                            <li>PHP</li>
+                            <li>Python</li>
+                            <li>Erlang</li>
+                            <li>Rails</li>
+                        </ul>
                     </div>
                 </div>
 
-                <img class="progressBar" src="img/progress-bar.png" alt="Fine Uploader in action" width="522" height="141"/>
-
-                <hr class="soften" id="features">
+                <hr class="soften" id="features" style="margin-top:15px;">
 
                 <h1>Features</h1>
                 
                 <div class="row-fluid" style="text-align: left;">
-                    <div class="span3">
+                    <div class="span4 p8">
                         <ul class="features">
                             <li>Multiple file select, progress-bar in Firefox, Chrome, Safari, and IE 10</li>
                             <li>Drag-and-drop file select in FF, Chrome, Safari, and IE 10</li>
-                            <li>Uploads are cancelable</li>
-                            <li>No required external dependencies</li>
-                            <li>Tested in IE7+, Firefox, Safari (OS X), Chrome, IOS6, and various versions of Android. IE10 is now also supported!</li>
-                        </ul>
-                    </div>
-
-                    <div class="span3">
-                        <ul class="features">
-                            <li>Ability to upload files as soon as they are selected, or "queue" them for uploading at user's request later</li>
-                            <li>Display specific error messages from server on upload failure</li>
+                            <li>Cancel uploads</li>
+                            <li>External dependencies not required</li>
+                            <li>Upload files immediately or queue them for later</li>
+                            <li>Customizable upload failure error messages from server</li>
                             <li>Auto or manual retry for failed uploads</li>
-                            <li>Create your own file validator and/or use default included validators</li>
-                            <li>Receive callbacks at various stages of the upload process</li>
                         </ul>
                     </div>
 
-                    <div class="span3">
+                    <div class="span4 p8">
                         <ul class="features">
-                            <li>Send any parameters server-side along with each file</li>
+                            <li>Customize file validation if necessary</li>
+                            <li>Callbacks available during the upload process</li>
+                            <li>Send parameters server-side along with each file</li>
                             <li>Upload directories via drag and drop (Chrome 21+)</li>
                             <li>Include parameters in the query string OR the request body</li>
                             <li>Submit files to be uploaded via the API</li>
-                            <li>Split up a file into multiple requests (file chunking/partitioning)</li>
                         </ul>
                     </div>
 
-                    <div class="span3">
+                    <div class="span4 p8">
                         <ul class="features">
+                            <li>Split up a file into multiple requests (file chunking/partitioning)</li>
                             <li>Resume failed/stopped uploads from previous sessions</li>
                             <li>Delete uploaded files</li>
                             <li>CORS/XSS (cross-domain request) support</li>
-                            <li><img src="img/new.png">Upload images via paste</li>
-                            <li><img src="img/new.png">Easily set a maximum upload limit</li>
+                            <li>Upload images via paste</li>
+                            <li>Customize file upload and size limits</li>
+                            <li><img src="img/new.png" alt="New Feature" />I'm a new feature.</li>
                         </ul>
                     </div>
                 </div>
@@ -184,9 +187,12 @@
                 <p class="marketing-byline">Here we use default settings and default styles. Below you can see the <a href="#bootstrap-demo">bootstrapped demo</a> and <a href="#jquery-wrapper-demo">jQuery wrapper demo</a>.</p>
                 <div class="row-fluid">
                     <div class="span4" style="text-align: left;">
-                        <p>You can have a minimal setup without using neither jQuery nor Twitter Boostrap. You simply use the <a href="#setup">minimal HTML markup</a> above. The relevant HTML tag and Javascript code for this demo are extracted on the right.</p>
-                        <p>Here for the demo purposes, we active the debug mode (which defaults to false). You can see the logs in real time in your browser’s JavaScript console.</p>
+                        <i class="icon-arrow-down" style="margin-top:3px;"></i>
+                        <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
                         <div id="fine-uploader"></div>
+                        </br></br>
+                        <p>You can have a minimal setup without using neither jQuery nor Twitter Bootstrap. You simply use the <a href="#setup">minimal HTML markup</a> above. The relevant HTML tag and Javascript code for this demo are extracted on the right.</p>
+                        <p>Here for the demo purposes, we active the debug mode (which defaults to false). You can see the logs in real time in your browser’s JavaScript console.</p>
                     </div>
 
                     <div class="span8">
@@ -201,9 +207,9 @@
                 <p class="marketing-byline">Default settings, but we include support for Twitter Bootstrap. You can also see the <a href="#jquery-wrapper-demo">jQuery wrapper demo</a>, and <a href="#more">even more demos</a> below.</p>
                 <div class="row-fluid">
                     <div class="span4" style="text-align: left;">
-                        <p>In order to style your uploader’s look, you can customize the template classes as you like.</p>
-                        <p>We use here both Fine Uploader and Twitter Bootstrap’s CSS and add some styling reset.</p>
                         <div id="bootstrapped-fine-uploader"></div>
+                        <p style="margin-top:70px;">In order to style your uploader’s look, you can customize the template classes as you like.</p>
+                        <p>We use here both Fine Uploader and Twitter Bootstrap’s CSS and add some styling reset.</p>
                     </div>
 
                     <div class="span8">
@@ -218,8 +224,9 @@
                 <p class="marketing-byline">Here we use default settings and default styles, this time with Fine Uploader’s jQuery optional wrapper plugin. Above you can see the <a href="#bootstrap-demo">bootstrapped demo</a>.</p>
                 <div class="row-fluid">
                     <div class="span4" style="text-align: left;">
-                        <p>In addition to the <a href="#demo">minimal out-of-the-box demo</a>, we include here Fine Uploader’s jQuery wrapper.</p>
                         <div id="jquery-wrapped-fine-uploader"></div>
+                        </br></br>
+                        <p>In addition to the <a href="#demo">minimal out-of-the-box demo</a>, we include here Fine Uploader’s jQuery wrapper.</p>
                     </div>
 
                     <div class="span8">
@@ -233,11 +240,11 @@
                 <h1>More demos</h1>
                 <p class="marketing-byline">Includes more features, and also shows how to customize Fine Uploader Basic.</p>
                 <div class="row-fluid">
-                    <div class="span12">
-                        <p>Head over one of the following pages to see how to customize further Fine Uploader.</p>
+                    <p>Head over one of the following pages to see how to customize further Fine Uploader.</p>
+                    <div class="span12" style="text-align:center; margin-top:20px;">
                         <a href="./fine-uploader-demo.html" class="btn btn-large tip" title="The all-in-one drag-and-drop uploader">Fine Uploader<span class="legend"><br>The all-in-one drag-and-drop uploader</span></a>
-                        <a href="./fine-uploader-with-jquery-wrapper-demo.html" class="btn btn-large tip" title="Leveraging the optional jQuery Wrapper">jQuery Optional Wrapper<span class="legend"><br>Leveraging the optional jQuery Wrapper</span></a>
                         <a href="./fine-uploader-basic-demo.html" class="btn btn-large tip" title="Only the basic form uploader. You're in control!">Fine Uploader Basic<span class="legend"><br>Only the basic form uploader. You're in control!</span></a>
+                        <a href="./fine-uploader-with-jquery-wrapper-demo.html" class="btn btn-large tip" title="Leveraging the optional jQuery Wrapper">jQuery Optional Wrapper<span class="legend"><br>Leveraging the optional jQuery Wrapper</span></a>
                     </div>
                 </div>
             </div>
