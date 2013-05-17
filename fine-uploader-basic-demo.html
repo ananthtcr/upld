@@ -5,14 +5,13 @@
         <title>Fine Uploader Basic demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Fine Uploader Basic Demo">
-        <meta name="author" content="A. Bennouna, tellibus">
+        <meta name="author" content="Widen">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="master/client/fineuploader.css" rel="stylesheet">
 
         <!--[if IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie8.css" >
         <![endif]-->
-
         <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
@@ -39,18 +38,17 @@
         <script src="master/client/js/dnd.js"></script>
         <script src="master/client/js/uploader.js"></script>
     </head>
+
     <body data-spy="scroll" data-target="#demoList">
         <div id="header"></div>
 
-        <div class="jumbotron masthead">
+        <div class="jumbotron-small">
             <div class="container">
                 <div id="navbar"></div>
-
             </div>
         </div>
 
         <div class="container marketing">
-
             <h1>Fine Uploader Basic mode demos</h1>
             <p class="marketing-byline">Want to have total control? See here!</p>
 
@@ -61,7 +59,6 @@
                         <div class="span4">
                             <div id="fine-uploader-basic" class="btn btn-success" style="margin-bottom:20px;"><div><i class="icon-upload icon-white"></i>Click to upload</div></div>
                             <p>For this demo, we're using the Bootstrap CSS classes.</p>
-
                             <div id="messages"></div>
                         </div>
 
@@ -70,9 +67,7 @@
                             <script src="js/demo/basic.js"></script>
                         </div>
                     </div>
-
                 </section>
-
             </div>        
         </div>        
 
@@ -90,7 +85,9 @@
             $.get('./header.html', function(data) {
                 $('#header').html(data);
             });
-            $.get('./footer.html', function(data) { $('#footer').html(data); });
+            $.get('./footer.html', function(data) {
+                $('#footer').html(data);
+            });
         </script>
     </body>
 </html>

@@ -5,14 +5,13 @@
         <title>Fine Uploader with Optional jQuery Wrapper demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Fine Uploader with Optional jQuery Wrapper demo">
-        <meta name="author" content="A. Bennouna, tellibus">
+        <meta name="author" content="Widen">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="master/client/fineuploader.css" rel="stylesheet">
 
         <!--[if IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie8.css" >
         <![endif]-->
-
         <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
@@ -40,11 +39,11 @@
         <script src="master/client/js/uploader.js"></script>
         <script src="master/client/js/jquery-plugin.js"></script>
     </head>
+
     <body data-spy="scroll" data-target="#demoList">
         <div id="header"></div>
 
-
-        <div class="jumbotron masthead">
+        <div class="jumbotron-small">
             <div class="container">
                 <div id="navbar"></div>
             </div>
@@ -77,11 +76,12 @@
                 <section id="demo1">
                     <h1>Manually Trigger Uploads</h1>
                     <p class="marketing-byline">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling <code>uploadStoredFiles()</code> on your Fine Uploader instance.</p>
+
                     <div class="row-fluid">
                         <div class="span4">
                             <div id="manual-fine-uploader"></div>
                             <div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px; margin-bottom:20px;">
-                                <i class="icon-upload icon-white"></i> Upload now
+                                Upload now
                             </div>
                             <p>Since we need to catch click events on an HTML element, we will be using jQuery to handle events and selectors for the sake of simplicity.</p>
                             <p>You can obviously take it further with the <a href="./fine-uploader-with-jquery-wrapper-demo.html">optional jQuery wrapper demos</a>.</p>
@@ -237,7 +237,9 @@
             $.get('./header.html', function(data) {
                 $('#header').html(data);
             });
-            $.get('./footer.html', function(data) { $('#footer').html(data); });
+            $.get('./footer.html', function(data) {
+                $('#footer').html(data);
+            });
         </script>
     </body>
 </html>

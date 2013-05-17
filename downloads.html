@@ -4,15 +4,14 @@
         <title>Fine Uploader | Downloads</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Fine Uploader (3.4.1). A dependency-free, native browser upload tool.">
-        <meta name="author" content="A. Bennouna, tellibus">
+        <meta name="description" content="Fine Uploader (3.5). A dependency-free, native browser upload tool.">
+        <meta name="author" content="Widen">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="master/client/fineuploader.css" rel="stylesheet">
 
         <!--[if IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie8.css" >
         <![endif]-->
-
         <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
@@ -43,8 +42,9 @@
     </head>
 
     <body>
-    <div id="header"></div>
-        <div class="jumbotron masthead">
+        <div id="header"></div>
+
+        <div class="jumbotron-small">
             <div class="container">
                 <div id="navbar"></div>
             </div>
@@ -53,11 +53,9 @@
         <div class="container">
             <div class="marketing">
                 <h1>Downloads</h1>
-                <hr id="demo" class="soften" style="margin:30px 0px 10px 0px;">
-
 
                 <div class="row-fluid" style="margin:30px 0px;">
-                    <div class="span4 p8 getStarted" style="border-right:1px solid #eee; padding-bottom:0px;">
+                    <div class="span4 p8 getStarted" style="border-right:1px solid #eee; padding-bottom:0px; padding-left:0px;">
                         <h3>Get Started</h3>
                         <p>Please provide an email address below to download
                             a 45-day commercial evaluation of Fine Uploader.</p>
@@ -91,26 +89,25 @@
                                 </li>
                             </ul>
                         </form>
-
                     </div>
 
                     <div class="span4 p8 purchase" style="border-right:1px solid #eee;">
                         <h3>Purchase a License</h3>
                         <p>Fine Uploader commercial licenses are available for purchase right from our website.
-                        Licensing questions?  <a href="mailto:licensing@fineuploader.com" target="_blank">Email us!</a></p>
+                        Licensing questions?  <br> <a href="mailto:licensing@fineuploader.com" target="_blank">Email us!</a></p>
                         <p><a href="licensing.html" class="small-link">Terms and Conditions</a></p>
-                        <a class="btn btn-info btn-small" href="https://widen.wufoo.com/forms/purchase-commercial-license/">Purchase</a>
+                        <a class="btn btn-info btn-small" href="https://widen.wufoo.com/forms/purchase-commercial-license/">Purchase License</a>
                     </div>
 
                     <div class="span4 p8 openSource">
                         <h3>Open Source?</h3>
                         <p>Fine Uploader is also available under the GPLv3 for open source projects, which may require the release of your code.</p>
                         <p><a href="http://en.wikipedia.org/wiki/GNU_General_Public_License" target="_blank" class="small-link">Does my project fit the requirements?</a></p>
-                        <a class="btn btn-primary btn-small" href="download-fine-uploader.html">Download</a>
+                        <a class="btn btn-primary btn-small" href="download-fine-uploader.html">Download Source</a>
                     </div>
                 </div>
 
-                <p class="blink"><a href="http://blog.fineuploader.com/2013/03/fine-uploader-34.html" target="_blank">Read about new features and bugfixes in 3.4.1.</a></p>
+                <p><a href="http://blog.fineuploader.com/2013/04/fine-uploader-35.html" target="_blank">Read about new features and bugfixes in 3.5.</a></p>
             </div>
         </div>
 
@@ -127,7 +124,9 @@
                     $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
                 }
             });
-            $.get('./footer.html', function(data) { $('#footer').html(data); });
+            $.get('./footer.html', function(data) {
+                $('#footer').html(data);
+            });
 
             $.get('./header.html', function(data) {
                 $('#header').html(data);

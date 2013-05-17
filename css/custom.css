@@ -1,6 +1,7 @@
 /* Body and structure
 -------------------------------------------------- */
-body {
+body
+{
     position: relative;
     padding-top: 30px;
     font-family: 'Maven Pro', sans-serif;
@@ -12,6 +13,7 @@ body {
 {
     width: 75%;
 }
+
 /* Header
 -------------------------------------------------- */
 .header
@@ -32,6 +34,10 @@ body {
 {
     float:left;
 }
+.navbar
+{
+    margin-bottom:0;
+}
 .top-nav
 {
     position:relative;
@@ -49,6 +55,9 @@ body {
 {
     color:#fff;
     text-shadow:none;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 .top-nav .navbar .nav > li > a:hover,
 .navbar .nav > li > a:hover
@@ -89,6 +98,7 @@ body {
 }
 .main-nav .navbar .nav .dropdown-menu > li > a
 {
+    display:block;
     color:#525252;
     text-shadow:none;
     font-weight:bold;
@@ -96,8 +106,9 @@ body {
 }
 .main-nav .navbar .nav .dropdown-menu > li > a:hover
 {
-    background-image:none;
     background-color: #f87436;
+    background-image:none;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false); /*IE remove bootstrap filter */
     color:#FFF;
     text-shadow:none;
 }
@@ -111,8 +122,9 @@ body {
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover
 {
-    background-color: #f87436;
+    background-color: transparent;
     background-image:none;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false); /*IE remove bootstrap filter */
     color:#fff;
 }
 .navbar .nav > .active > a,
@@ -179,7 +191,8 @@ body {
     background-color:#f87436;
     box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.4);
 }
-.square a{
+.square a
+{
     line-height: 120%;
 }
 .arrow-down
@@ -188,27 +201,36 @@ body {
     border-right: 60px solid transparent;
     border-top: 40px solid #f87436;
 }
+.btn-small
+{
+    font-size:13px;
+}
 
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
-body > .navbar {
+body > .navbar
+{
     font-size: 13px;
 }
+
 /* Change the docs' brand */
-body > .navbar .brand {
-    padding-left: 0;
-    margin-left: 20px;
+body > .navbar .brand
+{
+    padding-left: 0px;
+    margin-left: 0px;
     font-weight: bold;
     color: #ccc;
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     transition: all .2s linear;
 }
-body > .navbar-fixed-top .brand {
+body > .navbar-fixed-top .brand
+{
     padding-right: 0;
     float: right;
 }
-body > .navbar .brand:hover {
+body > .navbar .brand:hover
+{
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
@@ -219,20 +241,24 @@ body > .navbar .brand:hover {
 
 /* padding for in-page bookmarks and fixed navbar */
 section > .page-header,
-section > .lead {
+section > .lead
+{
   color: #5a5a5a;
 }
-section > ul li {
+section > ul li
+{
   margin-bottom: 5px;
 }
 
 /* Separators (hr) */
-.bs-docs-separator {
+.bs-docs-separator
+{
   margin: 40px 0 39px;
 }
 
 /* Faded out hr */
-hr.soften {
+hr.soften
+{
   height: 1px;
   margin: 60px 0;
 }
@@ -243,7 +269,8 @@ hr.soften {
 
 /* Base class
 ------------------------- */
-.jumbotron {
+.jumbotron
+{
     position: relative;
     padding: 0px 0px 40px 0px;
     color: #fff;
@@ -263,7 +290,8 @@ hr.soften {
     -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 }
-.jumbotron h1 {
+.jumbotron h1
+{
     font-size: 7em;
     font-weight: normal;
     letter-spacing: -1px;
@@ -276,12 +304,14 @@ hr.soften {
     text-align:center;
     margin: -20px 0px 0px 0px;
 }
-.jumbotron p {
+.jumbotron p
+{
     font-size: 16px;
     line-height: 130%;
     margin-bottom: 30px;
 }
-.jumbotron a {
+.jumbotron a
+{
     color: #fff;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -290,7 +320,8 @@ hr.soften {
     text-shadow:none;
     text-decoration:underline;
 }
-.jumbotron h3 > a {
+.jumbotron h3 > a
+{
     color: #fff;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -307,11 +338,13 @@ hr.soften {
     text-shadow: 1 1 3px rgba(255,255,255,.1.0);
     text-decoration:underline;
 }
-.jumbotron a:hover {
+.jumbotron a:hover
+{
     color: #fff;
     text-shadow: 0 0 10px rgba(255,255,255,.25);
 }
-.masthead .btn {
+.masthead .btn
+{
     color: #fff; /* redeclare to override the `.jumbotron a` */
     -webkit-transition: none;
     -moz-transition: none;
@@ -321,10 +354,9 @@ hr.soften {
 {
     background-color: #f87436;
     background-image: -moz-linear-gradient(center top , #f88d5a, #f87436);
-
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f88d5a), to(#f87436));
     background-image: -webkit-linear-gradient(top, #f88d5a, #f87436);
-
+    background-image: -ms-linear-gradient(top, #f88d5a, #f87436);
     color:#fff;
     text-shadow:none;
 }
@@ -341,31 +373,33 @@ hr.soften {
 {
     color:#fff;
 }
-.jumbotron-small {
+.jumbotron-small
+{
     position: relative;
     padding: 0px 0;
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-    background: #003;
-    background: -moz-linear-gradient(45deg, #003 0%, #0ff 100%);
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#003), color-stop(100%,#0ff));
-    background: -webkit-linear-gradient(45deg, #003 0%,#0ff 100%);
-    background: -o-linear-gradient(45deg, #003 0%,#0ff 100%);
-    background: -ms-linear-gradient(45deg, #003 0%,#0ff 100%);
-    background: linear-gradient(45deg, #003 0%,#0ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003', endColorstr='#0ff',GradientType=1 );
+    background: #66ccdd; /* fallback for non-supporting browsers */
+    background-image: -webkit-gradient(radial, 25% 25px, 0, center center, 141, from(#ddf3f7), to(#00abc7) ); /* old WebKit Syntax */
+    background-image: -webkit-radial-gradient(25% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* New WebKit syntax */
+    background-image: -moz-radial-gradient(25% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%);
+    background-image: -ms-radial-gradient(25% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* IE10+ */
+    background-image: -o-radial-gradient(25% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* Opera (13?) */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1F8FF', endColorstr='#3fc1d7',GradientType=0 );
     -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
     box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 }
-.jumbotron-small a {
+.jumbotron-small a
+{
     color: #fff;
     color: rgba(255,255,255,.5);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+
  /* Jumbotron Icons
 ------------------------- */
 .lg_icon
@@ -375,14 +409,17 @@ hr.soften {
     width:55px;
     margin: 0 auto;
 }
+
 /* Masthead (docs home)
 ------------------------- */
-.masthead {
+.masthead
+{
     padding: 0px 0 50px 0;
     margin-bottom: 0;
     color: #fff;
 }
-.masthead h1 {
+.masthead h1
+{
     font-size: 82px;
     font-weight:bold;
     line-height: 1;
@@ -392,88 +429,53 @@ hr.soften {
     margin-left:-5px;
     clear:both;
 }
-.masthead h2 {
+.masthead h2
+{
     font-size: 36px;
     font-weight: normal;
     line-height: 1.25;
     text-align:right;
 }
 
-/* Textual links in masthead */
-.masthead-links {
-    margin: 0;
-    list-style: none;
-}
-.masthead-links li {
-    display: inline;
-    padding: 0 10px;
-    color: rgba(255,255,255,.25);
-}
-
-/* Social proof buttons from GitHub & Twitter */
-.bs-docs-social {
-    padding: 15px 0;
-    text-align: center;
-    background-color: #f5f5f5;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Quick links on Home */
-.bs-docs-social-buttons {
-    margin-left: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-}
-.bs-docs-social-buttons li {
-    display: inline-block;
-    padding: 5px 8px;
-    line-height: 1;
-    *display: inline;
-    *zoom: 1;
-}
-
-.btn-large {
+.btn-large
+{
     font-size: 24px;
 }
 
-.legend {
+.legend
+{
     display: none;
 }
 
-
-/* Starburst
-------------------------- */
-#starburst {
-  text-align: left;
-}
-
-
 /* Subhead (other pages)
 ------------------------- */
-.subhead {
+.subhead
+{
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-.subhead h1 {
+.subhead h1
+{
   font-size: 60px;
 }
-.subhead p {
+.subhead p
+{
   margin-bottom: 20px;
 }
-.subhead .navbar {
+.subhead .navbar
+{
   display: none;
 }
 
 /* marketing section of Overview
 -------------------------------------------------- */
-
-.marketing {
+.marketing
+{
     text-align: left;
     color: ##525252;
 }
-.marketing h1 {
+.marketing h1
+{
     margin: 40px 0 10px -4px;
     font-size: 60px;
     font-weight: 200;
@@ -481,43 +483,49 @@ hr.soften {
     letter-spacing: -1px;
     color: #00abc7;
 }
-.marketing h2 {
+.marketing h2
+{
     font-weight: 200;
     margin-bottom: 5px;
     color: #00abc7;
 }
-.marketing h3 {
+.marketing h3
+{
     text-transform:uppercase;
     font-weight:bold;
     font-size: 18px;
     line-height: 22px;
     color: #00abc7;
 }
-.marketing p {
+.marketing p
+{
     font-size: 16px;
     line-height: 1.5;
 }
-.marketing .marketing-byline {
+.marketing .marketing-byline
+{
     margin-bottom: 40px;
     font-size: 20px;
     font-weight: 300;
     line-height: 25px;
     color: #525252;
 }
-.marketing img {
+.marketing img
+{
     display: block;
     margin: 0 auto 30px;
 }
-
-.progressBar {
+.progressBar
+{
     margin-top: 0px !important;
     float:left;
 }
-
-.features {
+.features
+{
     margin-top: 35px;
 }
-.features li {
+.features li
+{
     margin: 10px 0;
     font-size: 16px;
 }
@@ -525,33 +533,36 @@ hr.soften {
 /* Footer
 -------------------------------------------------- */
 
-.footer {
+.footer
+{
   padding: 70px 0;
   margin-top: 70px;
   border-top: 1px solid #e5e5e5;
   background-color: #525252;
     color :#eee;
 }
-.footer p {
+.footer p
+{
   margin-bottom: 0;
   color: #eee;
 }
-.footer-links {
+.footer-links
+{
   margin: 10px 0;
 }
-.footer-links li {
+.footer-links li
+{
   display: inline;
   margin-right: 10px;
 }
-.footer a{
+.footer a
+{
     color: #66ccdd;
 }
 .widenIcon
 {
     margin: -3px 0px 0px 4px;
-
 }
-
 
 /* Responsive
 -------------------------------------------------- */
@@ -573,6 +584,14 @@ hr.soften {
     .masthead h1
     {
         margin-top:80px;
+    }
+    .getStarted > form
+    {
+        margin-top:0px !important;
+    }
+    .noDependency .btn
+    {
+        margin-top:22px !important;
     }
 }
 @media (min-width: 1200px) {
@@ -597,12 +616,12 @@ hr.soften {
     /*Aligning Buttons on Downloads Page*/
     .purchase > .btn
     {
-        margin-top:27px;
+        margin-top:3px;
         margin-bottom:0px;
     }
     .openSource > .btn
     {
-        margin-top: 27px;
+        margin-top:27px;
     }
     .jQueryDownload .btn
     {
@@ -614,6 +633,10 @@ hr.soften {
     .top-nav
     {
         margin-top:-35px;
+    }
+    .getStarted > form
+    {
+        margin-top:34px;
     }
 }
 @media (min-width: 981px) and (max-width: 1024px)
@@ -630,7 +653,7 @@ hr.soften {
     /*Aligning Buttons on Downloads Page*/
     .purchase > .btn
     {
-        margin-top:27px;
+        margin-top:3px;
     }
     .openSource > .btn
     {
@@ -712,7 +735,7 @@ hr.soften {
     /* Aligning Buttons on Downloads Page */
     .purchase > .btn
     {
-        margin-top:2px;
+        margin-top:3px;
     }
     .openSource > .btn
     {
@@ -747,7 +770,6 @@ hr.soften {
     .masthead{
         padding:0px 0px 40px 0px;
     }
-
     .masthead h1 {
         font-size: 5em;
         text-align:center;
@@ -760,18 +782,11 @@ hr.soften {
     .masthead .btn {
         font-size: 16px;
     }
-
     .legend {
         font-size: small;
         font-style: italic;
         display: inline;
     }
-
-    #starburst {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
     .marketing .span4 {
         margin-bottom: 40px;
     }
@@ -822,6 +837,7 @@ hr.soften {
     .p8
     {
         padding-bottom:30px !important;
+        padding-left:0px !important;
     }
     .purchase
     {
@@ -837,10 +853,6 @@ hr.soften {
     {
         border-right:none !important;
         border-bottom: 1px solid #ddd;
-    }
-    .push
-    {
-        margin-bottom:30px !important;
     }
 }
 
@@ -877,11 +889,6 @@ hr.soften {
         font-size: small;
         font-style: italic;
         display: inline;
-    }
-
-    #starburst {
-        text-align: center;
-        margin-bottom: 20px;
     }
     
     /* center align subhead text like the masthead */
@@ -960,37 +967,38 @@ hr.soften {
 
 /* Fine Uploader
 -------------------------------------------------- */
-.qq-upload-list {
+.qq-upload-list
+{
     text-align: left;
 }
 
 /* For the bootstrapped demos */
-li.alert-success {
+li.alert-success
+{
     background-color: #DFF0D8;
 }
-
-li.alert-error {
+li.alert-error
+{
     background-color: #F2DEDE;
 }
-
-.alert-error .qq-upload-failed-text {
+.alert-error .qq-upload-failed-text
+{
     display: inline;
 }
-
-.gist {
+.gist
+{
     text-align: left;
 }
-
-.gist PRE {
+.gist PRE
+{
     white-space: pre;
 }
-
-UL.features LI IMG {
+UL.features LI IMG
+{
     display: inline;
     margin: 0px;
     padding-right: 5px;
 }
-
 
 /* tipsy
 -------------------------------------------------- */
@@ -1013,20 +1021,12 @@ UL.features LI IMG {
 .tipsy-w .tipsy-arrow{left:0;top:50%;margin-top:-5px;border-right-style:solid;border-left:none;border-top-color:transparent;border-bottom-color:transparent}
 
 /* Downloads Page */
-.box
-{
-     padding: 10px 20px 20px 20px;
-     background-color: #fff;
-     border: 1px solid #C7D1D8;
-     -moz-border-radius: 15px;
-     -webkit-border-radius: 15px;
-     border-radius: 15px;
- }
 .submit
 {
     padding: 5px 8px 4px 8px;
 }
-input, button, select, textarea {
+input, button, select, textarea
+{
     font-family: 'Maven Pro', sans-serif;
 }
 .small-link
@@ -1035,30 +1035,30 @@ input, button, select, textarea {
     margin-top:14px;
     display:block
 }
-.blink {
-    text-align:left;
-    margin-top: 25px;
-}
-
 /* Terms and Conditions */
-.terms-conditions-copy {
+.terms-conditions-copy
+{
     width:70%;
     margin: auto;
     margin-top: 30px;
     text-align: justify;
 }
-.terms-conditions-copy h1 {
+.terms-conditions-copy h1
+{
    text-align: center;
    color: #00ABC7;
 }
-.terms-conditions-copy h4 {
+.terms-conditions-copy h4
+{
     text-align:left;
     color: #444;
 }
-.terms-conditions-copy ol{
+.terms-conditions-copy ol
+{
     list-style: decimal;
 }
-.terms-conditions-copy  p{
+.terms-conditions-copy  p
+{
     text-align: justify;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -1068,30 +1068,23 @@ input, button, select, textarea {
     font-weight: bold;
     color: #444;
 }
-.uppercase {
+.uppercase
+{
     text-transform: uppercase;
 }
 
-
 /* Global */
-.orange{
+.orange
+{
     color: #f87436;
 }
-
-.mt60{
+.mt60
+{
     margin-top: 60px;
 }
-.clear{
-    clear:both;
-}
-.p8 {
+.p8
+{
     padding:0px 20px 10px 20px;
-}
-.lead {
-    font-size: 21px;
-    font-weight: 200;
-    line-height: 30px;
-    margin-bottom: 20px;
 }
 
 
