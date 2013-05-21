@@ -20,9 +20,9 @@
     </head>
 
     <body>
-    <div id="header"></div>
+        <div id="header"></div>
 
-        <div class="jumbotron">
+        <div class="jumbotron-small">
             <div class="container">
                 <div id="navbar"></div>
             </div>
@@ -428,7 +428,9 @@
             $.get('./header.html', function(data) {
                 $('#header').html(data);
             });
-            $.get('./footer.html', function(data) { $('#footer').html(data); });
+            $.get('./footer.html', function(data) {
+                $('#footer').html(data);
+            });
         </script>
     </body>
 </html>

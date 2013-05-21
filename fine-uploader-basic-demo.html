@@ -12,7 +12,6 @@
         <!--[if IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie8.css" >
         <![endif]-->
-
         <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
@@ -43,10 +42,9 @@
     <body data-spy="scroll" data-target="#demoList">
         <div id="header"></div>
 
-        <div class="jumbotron masthead">
+        <div class="jumbotron-small">
             <div class="container">
                 <div id="navbar"></div>
-
             </div>
         </div>
 
@@ -71,9 +69,7 @@
                             <script src="js/demo/basic.js"></script>
                         </div>
                     </div>
-
                 </section>
-
             </div>        
         </div>        
 
@@ -91,7 +87,9 @@
             $.get('./header.html', function(data) {
                 $('#header').html(data);
             });
-            $.get('./footer.html', function(data) { $('#footer').html(data); });
+            $.get('./footer.html', function(data) {
+                $('#footer').html(data);
+            });
         </script>
     </body>
 </html>
