@@ -53,6 +53,15 @@ $(document).ready(function() {
                                           '“' + fileName + '”: ' +
                                           responseJSON.error);
                 }
+            },
+            onError: function(id, name, reason, xhr) {
+                $('#fubErrorAlert .message').text(reason);
+
+                $('#fubErrorAlert button').click(function() {
+                    $('#fubErrorAlert').hide();
+                });
+
+                $('#fubErrorAlert').show();
             }
         },
         debug: true,
