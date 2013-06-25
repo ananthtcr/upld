@@ -956,15 +956,6 @@ hr.soften
     }
 }
 
-/* In addition to Prettify
--------------------------------------------------- */
-.prettyprint {
-    text-align: left !important;
-    overflow-x: auto;
-    word-wrap: normal !important;
-    white-space: pre !important;
-}
-
 /* Fine Uploader
 -------------------------------------------------- */
 .qq-upload-list
@@ -984,14 +975,6 @@ li.alert-error
 .alert-error .qq-upload-failed-text
 {
     display: inline;
-}
-.gist
-{
-    text-align: left;
-}
-.gist PRE
-{
-    white-space: pre;
 }
 UL.features LI IMG
 {
@@ -1085,6 +1068,26 @@ input, button, select, textarea
 .p8
 {
     padding:0px 20px 10px 20px;
+}
+
+pre
+{
+    border: none;
+    background-color: inherit;
+    margin-top: -15px;
+    padding: 0;
+}
+
+pre code
+{
+    overflow-x: auto;
+    word-wrap: normal !important;
+    white-space: pre !important;
+}
+
+pre code.example .javascript, pre code.example .css
+{
+    opacity: 1;
 }
 
 

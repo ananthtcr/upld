@@ -59,6 +59,23 @@
         var google_remarketing_only = true;
         /* ]]> */
     </script>
+    <script>
+        $('pre code.example').each(function() {
+            var $demoCode = $(this);
+            $.get('/js/demo/display/' + $demoCode.data('demo') + ".partial", function(data) {
+                var jsFile = "/js/demo/" + $demoCode.data('demo') + ".js",
+                    jsScriptTag = $('<script>');
+
+                $demoCode.text(data);
+                hljs.highlightBlock($demoCode[0]);
+
+                if (!$demoCode.hasClass('noCode')) {
+                    jsScriptTag.attr('src', jsFile);
+                    $demoCode.after(jsScriptTag);
+                }
+            });
+        });
+    </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
     </script>
     <noscript>

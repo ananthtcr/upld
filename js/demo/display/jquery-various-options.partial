@@ -1,0 +1,25 @@
+<div id="restricted-fine-uploader"></div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="jquery.fineuploader-{VERSION}.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#restricted-fine-uploader').fineUploader({
+      request: {
+        endpoint: 'server/success.html'
+      },
+      multiple: false,
+      validation: {
+        allowedExtensions: ['jpeg', 'jpg', 'txt'],
+        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
+      },
+      text: {
+        uploadButton: 'Click or Drop'
+      },
+      showMessage: function(message) {
+        // Using Bootstrap's classes
+        $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
+      }
+    });
+  });
+</script>
