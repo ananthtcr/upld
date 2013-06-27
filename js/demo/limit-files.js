@@ -1,11 +1,9 @@
 var filelimituploader = new qq.FineUploader({
-    element: $('#filelimit-fine-uploader')[0],
+    element: document.getElementById('filelimit-fine-uploader'),
     request: {
         endpoint: 'server/success.html'
     },
     validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
         itemLimit: 3
     },
     debug: true,

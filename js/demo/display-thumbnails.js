@@ -3,10 +3,8 @@ var thumbnailuploader = new qq.FineUploader({
     request: {
         endpoint: 'server/success.html'
     },
-    multiple: false,
     validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
+        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
     },
     callbacks: {
         onComplete: function(id, fileName, responseJSON) {

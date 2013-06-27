@@ -3,8 +3,6 @@ $('#filelimit-fine-uploader').fineUploader({
         endpoint: 'server/success.html'
     },
     validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-        sizeLimit: 51200, // 50 kB = 50 * 1024 bytes
         itemLimit: 3
     },
     debug: true,
