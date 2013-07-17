@@ -47,15 +47,15 @@
             <form method='post' action='http://fineuploader.foxycart.com/cart' class="form">
                 <!-- Licensing Options -->
                 <label class="radio">
-                    <input type="radio" name="__license" value="Single,34.30,1" checked>
+                    <input type="radio" name="__license" value="Single,34.30,1,1" checked>
                     $49 - 30% = <b>$34.30</b> - Single Hostname Server (e.g. uploader.example.com)
                 </label>
                 <label class="radio">
-                    <input type="radio" name="__license" value="Wildcard,343.00,2">
+                    <input type="radio" name="__license" value="Wildcard,343.00,2,1">
                     $490 - 30% = <b>$343.00</b> - Wildcard Single Domain (e.g. *.example.com)
                 </label>
                 <label class="radio">
-                    <input type="radio" name="__license" value="SaaS,623.00,3">
+                    <input type="radio" name="__license" value="SaaS,623.00,3,1">
                     $890 - 30% = <b>$623.00</b> - Single Software-as-a-Service Application (unlimited domain)
                 </label>
                 <input type="hidden" name="name" value="">
@@ -76,7 +76,7 @@
                     toggle_license();
                 });
 
-                var $name, $price, $code;
+                var $name, $price, $code, $quantity;
                 $name = $("input").filter(function () {
                     return this.name.match(/name*/);
                 });
@@ -86,6 +86,9 @@
                 $code= $("input").filter(function () {
                     return this.name.match(/code*/);
                 });
+                $quantity= $("input").filter(function () {
+                    return this.name.match(/quantity*/);
+                });
 
                 // HMAC format:
                 // code + name.value + value.value
@@ -93,23 +96,28 @@
                     'Single': {
                         'name': 'b6d219c2dcd1252b9f5d83c0c9e03a03837e5824ad88e0a6f3126e1f72f627cd',
                         'price': '1cc4e614ffae88922f864ead8185849a0ef9678a84c24f14dcdcc3f2ef49feca',
-                        'code': '5382f83802c3ba569b5c0e7ee41ab05438270277f9d458fcb0abd5e18c2c2eb8'
+                        'code': '5382f83802c3ba569b5c0e7ee41ab05438270277f9d458fcb0abd5e18c2c2eb8',
+                        'quantity': 'dbb3083eaab99560c0f5b0bdb92ef81c2649c0a833ae540ad745653d1ec5993a'
                     },
                     'Wildcard': {
                         'name': '5156a75bfecb5a3172220aa33598adc83bd827f129508dc5df57716de131787c',
                         'price': '7d55664f44c97b8439ed7c028bd1a99e4391bd3c0751b074cda6f5d2972c47e3',
-                        'code': '2ff07ae838d221592ee36ace3a43c28b04c13f56858830beff997ca6fa18258a'
+                        'code': '2ff07ae838d221592ee36ace3a43c28b04c13f56858830beff997ca6fa18258a',
+                        'quantity': '5b5bcdba5d760ec3b032c5c169c0f1ae9a97b3771a131176a80e48bedfa31466'
+
                     },
                     'SaaS': {
                         'name': '2c4f65c4ced3c3f212799f602a23e03d9fa35ec9776ea87b21e16be6c890c3ec',
                         'price': '1a7d32279db63d0a64334cdb391c0beb9568e34475abfa454ea93e626e37321b',
-                        'code': '2c15bdf86d41f363f4d36087611e42953e6592ad860124b5c25f20fafcc70943'
+                        'code': '2c15bdf86d41f363f4d36087611e42953e6592ad860124b5c25f20fafcc70943',
+                        'quantity': '5db3f7b6d393bb79b91a558ddd8ce873d7fc5357b2ffbfb5c74c5722074607c1'
                     }
                 }
 
                 var name = "Single";
                 var price = "34.30";
                 var code = "1";
+                var quantity = 1;
                 var hmac = hmacs[name];
                 $name.attr('name', 'name'+"||"+hmac.name);
                 $name.val(name);
@@ -117,12 +125,15 @@
                 $price.val(price);
                 $code.attr('name', 'code'+"||"+hmac.code);
                 $code.val(code);
+                $quantity.attr('name', 'quantity'+"||"+hmac.quantity);
+                $quantity.val(quantity);
 
                 function toggle_license() {
                     var cur_license = $("input[name=__license]:checked").val().split(',');
                     var name = cur_license[0];
                     var price = cur_license[1];
                     var code = cur_license[2];
+                    var quantity = cur_license[3];
                     var hmac = hmacs[name]
                     if (price > 0) {
                         $name.val(name);
@@ -131,6 +142,8 @@
                         $price.attr('name', 'price'+"||"+hmac.price);
                         $code.val(code);
                         $code.attr('name', 'code'+"||"+hmac.code);
+                        $quantity.val(quantity);
+                        $quantity.attr('name', 'quantity'+"||"+hmac.quantity);
                     } else {
                         $name.val("");
                         $name.attr('name', '')
@@ -138,6 +151,8 @@
                         $price.attr('name', 0);
                         $code.val("0");
                         $code.attr('name', '');
+                        $quantity.val("0");
+                        $quantity.attr('name', '');
                     }
                 }
             });
