@@ -63,8 +63,8 @@
                 $demoCode.text(data);
                 hljs.highlightBlock($demoCode[0]);
 
-                jsScriptTag.attr('src', jsFile);
                 $demoCode.after(jsScriptTag);
+                jsScriptTag.attr('src', jsFile);
             });
         });
     </script>
