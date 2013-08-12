@@ -1,19 +1,25 @@
 $('#s3-demo-container').fineUploaderS3({
     request: {
-        // REQUIRED: We are using a custom domain for our S3 bucket, in this case.
+        // REQUIRED: We are using a custom domain
+        // for our S3 bucket, in this case.
         endpoint: "upload.fineuploader.com",
 
-        // REQUIRED: The AWS public key for the client-side user we provisioned.
+        // REQUIRED: The AWS public key for the client-side user
+        // we provisioned.
         accessKey: "AKIAJB6BSMFWTAXC5M2Q",
 
-        // REQUIRED: Path to our local server where requests can be signed. */
+        // REQUIRED: Path to our local server where requests
+        // can be signed.
         signatureEndpoint: "http://s3-demo.fineuploader.com/s3demo.php",
 
-        // OPTIONAL: An endopint for Fine Uploader to POST to after the file has been successfully uploaded.
-        // Server-side, we can declare this upload a failure if something is wrong with the file.
+        // OPTIONAL: An endopint for Fine Uploader to POST to
+        // after the file has been successfully uploaded.
+        // Server-side, we can declare this upload a failure
+        // if something is wrong with the file.
         successEndpoint: "http://s3-demo.fineuploader.com/s3demo.php?success",
 
-        // USUALLY REQUIRED: Blank file on the same domain as this page, for IE9 and older support.
+        // USUALLY REQUIRED: Blank file on the same domain
+        // as this page, for IE9 and older support.
         successRedirectEndpoint: "/server/success.html"
     },
     // Only required if working in a cross-origin environment
