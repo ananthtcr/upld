@@ -8,9 +8,9 @@
         <meta name="author" content="Widen">
 
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-        <link href="source/fineuploader-3.7.1.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="source/fineuploader-3.8.0.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
@@ -27,7 +27,7 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
-        <script src="source/jquery.fineuploader-3.7.1.min.js"></script>
+        <script src="source/all.fineuploader-3.8.0.min.js"></script>
     </head>
     <body>
         <div id="header"></div>
@@ -152,7 +152,7 @@
                 <h1>Minimal No-Dependency Demo</h1>
                 <p class="marketing-byline">You need only to include a CSS file and a JavaScript file, and handle the uploads on the server side according to the technology you are using. There are absolutely no other dependencies.</p>
                 <div class="row-fluid">
-                    <div class="span4" style="text-align: left;">
+                    <div class="span6" style="text-align: left;">
                         <p>You can quickly set up an HTML page in order to use Fine Uploader:</p>
                         <ol>
                             <li>Download and unpack the <a href="downloads.html">latest version of Fine Uploader</a>.</li>
@@ -167,7 +167,7 @@
                         <div id="fine-uploader"></div>
                     </div>
 
-                    <div class="span8">
+                    <div class="span6">
                         <pre>
                             <code class="example" data-demo="minimal"></code>
                         </pre>
@@ -179,37 +179,59 @@
                 <h1>Minimal jQuery Demo</h1>
                 <p class="marketing-byline">Here we use default settings, default styles, and Fine Uploader’s optional jQuery wrapper.</p>
                 <div class="row-fluid">
-                    <div class="span4" style="text-align: left;">
+                    <div class="span6" style="text-align: left;">
                         <div id="jquery-wrapped-fine-uploader"></div>
                         </br></br>
                         <p>In addition to the <a href="#demo">minimal out-of-the-box demo</a>, we include here Fine Uploader’s jQuery wrapper.</p>
                     </div>
 
-                    <div class="span8">
+                    <div class="span6">
                         <pre>
                             <code class="example" data-demo="jquery-minimal"></code>
                         </pre>
                     </div>
                 </div>
 
-                <hr class="soften" id="edit-file-demo">
+                <hr class="soften" id="s3-demo">
 
-                <h1>Edit File Names (Pre-Upload)</h1>
-                <p class="marketing-byline">Want to allow your users to edit file names before they are uploaded, in all browsers?  No problem!</p>
+                <h1>Upload Files Directly to S3</h1>
+                <p class="marketing-byline">Remove the complexity and inefficiency  of handling uploads on your local server.  Upload files directly to Amazon's Simple Storage Service from the browser!</p>
                 <div class="row-fluid">
-                    <div class="span4" style="text-align: left;">
-                        <div id="edit-file-uploader"></div>
-
-                        <div id="edit-file-upload-trigger" class="btn btn-primary" style="margin-top: 10px;">
-                            <i class="icon-upload icon-white"></i> Upload now
-                        </div>
-
+                    <div class="span6" style="text-align: left;">
+                        <div id="s3-demo-container"></div>
                         </br></br>
+                        <p>
+                            This is a fully-functional live demo.  Here, you can try out Fine Uploader S3 by sending
+                            files to one of our S3 buckets!  You can also view the file after a successful upload.
+                        </p>
+                        <p>
+                            This example demonstrates:
+                            <ul>
+                                <li>Use of a custom domain for an S3 bucket</li>
+                                <li>Working in a cross-origin environment</li>
+                                <li>Sending an ajax request to your server when the file is in S3</li>
+                                <li>Enabling advanced features, such as
+                                    <ul>
+                                        <li>Retry of failed uploads</li>
+                                        <li>Chunking</li>
+                                        <li>Auto-resume of interrupted uploads</li>
+                                        <li>Deleting an uploaded file</li>
+                                        <li>Validation rules</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            The server-side code for this demo was written in PHP.  You can view the actual server-side
+                            code for this example in the <a href="https://github.com/Widen/fine-uploader-server/blob/3.8/php/s3/s3demo.php" target="_blank">
+                            Fine Uploader Server Github repository</a>.
+                        </p>
+                        <p>Please read the <a href="about:blank" target="_blank">blog post on the Fine Uploader S3 module for more details</a>.</p>
                     </div>
 
-                    <div class="span8">
+                    <div class="span6">
                         <pre>
-                            <code class="example" data-demo="edit-file"></code>
+                            <code class="example" data-demo="s3-demo"></code>
                         </pre>
                     </div>
                 </div>
@@ -219,13 +241,13 @@
                 <h1>Bootstrapped Minimal Demo</h1>
                 <p class="marketing-byline">Default settings, but we include support for Twitter Bootstrap.</p>
                 <div class="row-fluid">
-                    <div class="span4" style="text-align: left;">
+                    <div class="span6" style="text-align: left;">
                         <div id="bootstrapped-fine-uploader"></div>
                         <p style="margin-top:70px;">In order to style your uploader’s look, you can customize the template classes as you like.</p>
                         <p>We use here both Fine Uploader and Twitter Bootstrap’s CSS and add some styling reset.</p>
                     </div>
 
-                    <div class="span8">
+                    <div class="span6">
                         <pre>
                             <code class="example" data-demo="bootstrapped-minimal"></code>
                         </pre>
