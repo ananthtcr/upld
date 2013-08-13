@@ -39,6 +39,9 @@ $('#s3-demo-container').fineUploaderS3({
     validation: {
         itemLimit: 5,
         sizeLimit: 15000000
+    },
+    messages: {
+        unsupportedBrowser: "<h3>This demo is not functional in IE7 as IE7 has no support for CORS!</h3>"
     }
 })
     .on('complete', function(event, id, name, response, xhr) {
