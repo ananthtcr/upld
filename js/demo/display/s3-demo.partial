@@ -24,8 +24,7 @@ $('#s3-demo-container').fineUploaderS3({
     },
     // Only required if working in a cross-origin environment
     cors: {
-        expected: true,
-        allowXdr: true
+        expected: true
     },
 
     // optional feature

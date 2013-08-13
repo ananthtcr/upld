@@ -20,8 +20,7 @@ $('#s3-demo-container').fineUploaderS3({
         '<span class="qq-upload-status-text">{statusText}</span>' +
         '</li>',
     cors: {
-        expected: true,
-        allowXdr: true
+        expected: true
     },
     retry: {
         showButton: true
