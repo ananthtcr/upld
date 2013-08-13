@@ -1,7 +1,8 @@
 $('#s3-demo-container').fineUploaderS3({
     request: {
         // REQUIRED: We are using a custom domain
-        // for our S3 bucket, in this case.
+        // for our S3 bucket, in this case.  You can
+        // use any valid URL that points to your bucket.
         endpoint: "upload.fineuploader.com",
 
         // REQUIRED: The AWS public key for the client-side user
