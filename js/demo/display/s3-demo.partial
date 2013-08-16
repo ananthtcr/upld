@@ -7,22 +7,29 @@ $('#s3-demo-container').fineUploaderS3({
 
         // REQUIRED: The AWS public key for the client-side user
         // we provisioned.
-        accessKey: "AKIAJB6BSMFWTAXC5M2Q",
-
-        // REQUIRED: Path to our local server where requests
-        // can be signed.
-        signatureEndpoint: "http://s3-demo.fineuploader.com/s3demo.php",
-
-        // OPTIONAL: An endopint for Fine Uploader to POST to
-        // after the file has been successfully uploaded.
-        // Server-side, we can declare this upload a failure
-        // if something is wrong with the file.
-        successEndpoint: "http://s3-demo.fineuploader.com/s3demo.php?success",
-
-        // USUALLY REQUIRED: Blank file on the same domain
-        // as this page, for IE9 and older support.
-        successRedirectEndpoint: "/server/success.html"
+        accessKey: "AKIAJB6BSMFWTAXC5M2Q"
     },
+
+    // REQUIRED: Path to our local server where requests
+    // can be signed.
+    signature: {
+        endpoint: "http://s3-demo.fineuploader.com/s3demo.php",
+    },
+
+    // OPTIONAL: An endopint for Fine Uploader to POST to
+    // after the file has been successfully uploaded.
+    // Server-side, we can declare this upload a failure
+    // if something is wrong with the file.
+    uploadSuccess: {
+        endpoint: "http://s3-demo.fineuploader.com/s3demo.php?success"
+    },
+
+    // USUALLY REQUIRED: Blank file on the same domain
+    // as this page, for IE9 and older support.
+    iframeSupport: {
+        localBlankPagePath: "/server/success.html"
+    },
+
     // Only required if working in a cross-origin environment
     cors: {
         expected: true

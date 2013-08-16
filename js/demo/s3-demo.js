@@ -2,11 +2,19 @@ $('#s3-demo-container').fineUploaderS3({
     debug: true,
     request: {
         endpoint: "upload.fineuploader.com",
-        accessKey: "AKIAJB6BSMFWTAXC5M2Q",
-        signatureEndpoint: "http://s3-demo.fineuploader.com/s3demo.php",
-        successEndpoint: "http://s3-demo.fineuploader.com/s3demo.php?success",
-        successRedirectEndpoint: "/server/success.html",
+        accessKey: "AKIAJB6BSMFWTAXC5M2Q"
+    },
+    objectProperties: {
         acl: "public-read"
+    },
+    signature: {
+        endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
+    },
+    uploadSuccess: {
+        endpoint: "http://s3-demo.fineuploader.com/s3demo.php?success"
+    },
+    iframeSupport: {
+        localBlankPagePath: "/server/success.html"
     },
     fileTemplate: '<li>' +
         '<div class="qq-progress-bar"></div>' +
