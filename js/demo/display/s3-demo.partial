@@ -1,65 +1,83 @@
-$('#s3-demo-container').fineUploaderS3({
-    request: {
-        // REQUIRED: We are using a custom domain
-        // for our S3 bucket, in this case.  You can
-        // use any valid URL that points to your bucket.
-        endpoint: "upload.fineuploader.com",
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fine Uploader - jQuery Wrapper Minimal Demo</title>
+    <link href="fineuploader-{VERSION}.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="fineuploader-s3"></div>
 
-        // REQUIRED: The AWS public key for the client-side user
-        // we provisioned.
-        accessKey: "AKIAJB6BSMFWTAXC5M2Q"
-    },
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="s3.jquery.fineuploader-{VERSION}.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('#fineuploader-s3').fineUploaderS3({
+              request: {
+                  // REQUIRED: We are using a custom domain
+                  // for our S3 bucket, in this case.  You can
+                  // use any valid URL that points to your bucket.
+                  endpoint: "upload.fineuploader.com",
 
-    // REQUIRED: Path to our local server where requests
-    // can be signed.
-    signature: {
-        endpoint: "http://s3-demo.fineuploader.com/s3demo.php",
-    },
+                  // REQUIRED: The AWS public key for the client-side user
+                  // we provisioned.
+                  accessKey: "AKIAJB6BSMFWTAXC5M2Q"
+              },
 
-    // OPTIONAL: An endopint for Fine Uploader to POST to
-    // after the file has been successfully uploaded.
-    // Server-side, we can declare this upload a failure
-    // if something is wrong with the file.
-    uploadSuccess: {
-        endpoint: "http://s3-demo.fineuploader.com/s3demo.php?success"
-    },
+              // REQUIRED: Path to our local server where requests
+              // can be signed.
+              signature: {
+                  endpoint: "http://s3-demo.fineuploader.com/s3demo.php",
+              },
 
-    // USUALLY REQUIRED: Blank file on the same domain
-    // as this page, for IE9 and older support.
-    iframeSupport: {
-        localBlankPagePath: "/server/success.html"
-    },
+              // OPTIONAL: An endopint for Fine Uploader to POST to
+              // after the file has been successfully uploaded.
+              // Server-side, we can declare this upload a failure
+              // if something is wrong with the file.
+              uploadSuccess: {
+                  endpoint: "http://s3-demo.fineuploader.com/s3demo.php?success"
+              },
 
-    // Only required if working in a cross-origin environment
-    cors: {
-        expected: true
-    },
+              // USUALLY REQUIRED: Blank file on the same domain
+              // as this page, for IE9 and older support.
+              iframeSupport: {
+                  localBlankPagePath: "/server/success.html"
+              },
 
-    // optional feature
-    retry: {
-        showButton: true
-    },
+              // Only required if working in a cross-origin environment
+              cors: {
+                  expected: true
+              },
 
-    // optional feature
-    chunking: {
-        enabled: true
-    },
+              // optional feature
+              retry: {
+                  showButton: true
+              },
 
-    // optional feature
-    resume: {
-        enabled: true
-    },
+              // optional feature
+              chunking: {
+                  enabled: true
+              },
 
-    // optional feature
-    deleteFile: {
-        enabled: true,
-        method: "POST",
-        endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
-    },
+              // optional feature
+              resume: {
+                  enabled: true
+              },
 
-    // optional feature
-    validation: {
-        itemLimit: 5,
-        sizeLimit: 15000000
-    }
-});
+              // optional feature
+              deleteFile: {
+                  enabled: true,
+                  method: "POST",
+                  endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
+              },
+
+              // optional feature
+              validation: {
+                  itemLimit: 5,
+                  sizeLimit: 15000000
+              }
+          });
+      });
+    </script>
+  </body>
+</html>
