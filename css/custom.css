@@ -472,7 +472,7 @@ hr.soften
 .marketing
 {
     text-align: left;
-    color: ##525252;
+    color: #525252;
 }
 .marketing h1
 {
@@ -1088,6 +1088,11 @@ pre code
 pre code.example .javascript, pre code.example .css
 {
     opacity: 1;
+}
+
+code.example
+{
+    max-height: 600px;
 }
 
 
