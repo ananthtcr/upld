@@ -4,9 +4,6 @@ $('#s3-demo-container').fineUploaderS3({
         endpoint: "upload.fineuploader.com",
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"
     },
-    objectProperties: {
-        acl: "public-read"
-    },
     signature: {
         endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
     },
@@ -55,12 +52,11 @@ $('#s3-demo-container').fineUploaderS3({
     .on('complete', function(event, id, name, response, xhr) {
         var key = $(this).fineUploaderS3("getKey", id),
             $fileEl = $(this).fineUploaderS3("getItemByFileId", id),
-            fileUrl = "http://upload.fineuploader.com/" + key,
             $viewBtn = $("<a>View</a>");
 
         if (response.success) {
             $viewBtn.addClass("btn btn-small");
-            $viewBtn.attr("href", fileUrl);
+            $viewBtn.attr("href", response.tempLink);
             $viewBtn.attr("target", "_blank");
 
             $fileEl.find(".qq-upload-status-text").before($viewBtn);
