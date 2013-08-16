@@ -147,11 +147,67 @@
                     </div>
                 </div>
 
+                <hr class="soften" id="s3-demo">
+
+                <h1>Upload Files Directly to Amazon S3</h1>
+                <p class="marketing-byline">Fine Uploader has always supported uploading to your own server.
+                    Now you can remove the complexity and inefficiency of handling uploads on your local server by
+                    delegating to Amazon.  Upload files directly to Amazon's Simple Storage Service from your browser!</p>
+                <div class="row-fluid">
+                    <div class="span6" style="text-align: left;">
+                        <p>
+                            This is a fully-functional live demo.  Here, you can try out Fine Uploader S3 by sending
+                            files to one of our S3 buckets!  You can also view the file after a successful upload.
+                        </p>
+                        <p>
+                            This example demonstrates:
+                            <ul>
+                                <li>Use of a custom domain for an S3 bucket</li>
+                                <li>Working in a cross-origin environment</li>
+                                <li>Sending an ajax request to your server when the file is in S3</li>
+                                <li>Enabling advanced features, such as
+                                    <ul>
+                                        <li>Retry of failed uploads</li>
+                                        <li>Chunking</li>
+                                        <li>Auto-resume of interrupted uploads</li>
+                                        <li>Deleting an uploaded file</li>
+                                        <li>Validation rules
+                                            <ul>
+                                                <li>Limit 5 "net" files per session</li>
+                                                <li>Max file size of 15 MB</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            The server-side code for this demo was written in PHP.  You can view the actual server-side
+                            code for this example in the <a href="https://github.com/Widen/fine-uploader-server/blob/3.8/php/s3/s3demo.php" target="_blank">
+                            Fine Uploader Server Github repository</a>.
+                        </p>
+                        <p>Please read the <a href="http://wp.me/p3FpYP-3r" target="_blank">blog post on the Fine Uploader S3 module</a> for more details.</p>
+
+                        <br/>
+                        <i class="icon-arrow-down" style="margin-top:3px;"></i>
+                        <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
+                        <div id="s3-demo-container"></div>
+                    </div>
+
+                    <div class="span6">
+                        <pre>
+                            <code class="example" data-demo="s3-demo"></code>
+                        </pre>
+                    </div>
+                </div>
+
                 <hr class="hide" id="setup">
                 <hr class="soften" id="no-dep">
 
                 <h1>Minimal No-Dependency Demo</h1>
-                <p class="marketing-byline">You need only to include a CSS file and a JavaScript file, and handle the uploads on the server side according to the technology you are using. There are absolutely no other dependencies.</p>
+                <p class="marketing-byline">Want to upload files to your own server?  You need only to include a CSS file,
+                    a JavaScript file, and handle the uploads on the server side according to the technology you are using.
+                    There are absolutely no other dependencies.</p>
                 <div class="row-fluid">
                     <div class="span6" style="text-align: left;">
                         <p>You can quickly set up an HTML page in order to use Fine Uploader:</p>
@@ -163,8 +219,6 @@
                         </ol>
 
                         </br>
-                        <i class="icon-arrow-down" style="margin-top:3px;"></i>
-                        <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
                         <div id="fine-uploader"></div>
                     </div>
 
@@ -189,50 +243,6 @@
                     <div class="span6">
                         <pre>
                             <code class="example" data-demo="jquery-minimal"></code>
-                        </pre>
-                    </div>
-                </div>
-
-                <hr class="soften" id="s3-demo">
-
-                <h1>Upload Files Directly to S3</h1>
-                <p class="marketing-byline">Remove the complexity and inefficiency  of handling uploads on your local server.  Upload files directly to Amazon's Simple Storage Service from the browser!</p>
-                <div class="row-fluid">
-                    <div class="span6" style="text-align: left;">
-                        <div id="s3-demo-container"></div>
-                        </br></br>
-                        <p>
-                            This is a fully-functional live demo.  Here, you can try out Fine Uploader S3 by sending
-                            files to one of our S3 buckets!  You can also view the file after a successful upload.
-                        </p>
-                        <p>
-                            This example demonstrates:
-                            <ul>
-                                <li>Use of a custom domain for an S3 bucket</li>
-                                <li>Working in a cross-origin environment</li>
-                                <li>Sending an ajax request to your server when the file is in S3</li>
-                                <li>Enabling advanced features, such as
-                                    <ul>
-                                        <li>Retry of failed uploads</li>
-                                        <li>Chunking</li>
-                                        <li>Auto-resume of interrupted uploads</li>
-                                        <li>Deleting an uploaded file</li>
-                                        <li>Validation rules</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </p>
-                        <p>
-                            The server-side code for this demo was written in PHP.  You can view the actual server-side
-                            code for this example in the <a href="https://github.com/Widen/fine-uploader-server/blob/3.8/php/s3/s3demo.php" target="_blank">
-                            Fine Uploader Server Github repository</a>.
-                        </p>
-                        <p>Please read the <a href="about:blank" target="_blank">blog post on the Fine Uploader S3 module</a> for more details.</p>
-                    </div>
-
-                    <div class="span6">
-                        <pre>
-                            <code class="example" data-demo="s3-demo"></code>
                         </pre>
                     </div>
                 </div>
