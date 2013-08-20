@@ -5,10 +5,10 @@ $('#s3-demo-container').fineUploaderS3({
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"
     },
     signature: {
-        endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
+        endpoint: "http://s3-demo.fineuploader.com/s3demo-cors.php"
     },
     uploadSuccess: {
-        endpoint: "http://s3-demo.fineuploader.com/s3demo.php?success"
+        endpoint: "http://s3-demo.fineuploader.com/s3demo-cors.php?success"
     },
     iframeSupport: {
         localBlankPagePath: "/server/success.html"
@@ -39,7 +39,7 @@ $('#s3-demo-container').fineUploaderS3({
     deleteFile: {
         enabled: true,
         method: "POST",
-        endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
+        endpoint: "http://s3-demo.fineuploader.com/s3demo-cors.php"
     },
     validation: {
         itemLimit: 5,

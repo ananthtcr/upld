@@ -27,7 +27,7 @@
               // REQUIRED: Path to our local server where requests
               // can be signed.
               signature: {
-                  endpoint: "http://s3-demo.fineuploader.com/s3demo.php",
+                  endpoint: "/s3demo.php"
               },
 
               // OPTIONAL: An endopint for Fine Uploader to POST to
@@ -35,18 +35,13 @@
               // Server-side, we can declare this upload a failure
               // if something is wrong with the file.
               uploadSuccess: {
-                  endpoint: "http://s3-demo.fineuploader.com/s3demo.php?success"
+                  endpoint: "/s3demo.php?success"
               },
 
               // USUALLY REQUIRED: Blank file on the same domain
               // as this page, for IE9 and older support.
               iframeSupport: {
                   localBlankPagePath: "/server/success.html"
-              },
-
-              // Only required if working in a cross-origin environment
-              cors: {
-                  expected: true
               },
 
               // optional feature
@@ -68,7 +63,7 @@
               deleteFile: {
                   enabled: true,
                   method: "POST",
-                  endpoint: "http://s3-demo.fineuploader.com/s3demo.php"
+                  endpoint: "/s3demo.php"
               },
 
               // optional feature
