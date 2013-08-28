@@ -2,14 +2,86 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>^^store_name^^ Receipt</title>
-    <link rel="stylesheet" href="https://^^store_domain^^/themes/standard/styles.css" type="text/css" media="screen" charset="utf-8" />
+    <title>{{ store_name|raw }} Receipt</title>
+    {# if you plan to customize your template, use the "text" theme instead of the "standard" one. #}
+    {# <link rel="stylesheet" href="https://{{ store_domain }}/themes/text/styles.css" type="text/css" media="screen" charset="utf-8" /> #}
+    <link rel="stylesheet" href="https://{{ store_domain }}/themes/standard/styles.css" type="text/css" media="screen" charset="utf-8" />
+
+<style>
+.download-link {
+box-sizing: content-box;
+clear: left;
+color: rgb(68, 68, 68);
+display: block;
+float: left;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 32px;
+height: 217px;
+line-height: 14px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 22.5px;
+margin-top: 72px;
+padding-bottom: -68px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+width: 352.5px;
+zoom: 1;
+}
+</style>
 </head>
 
 <body id="checkout">
-<div id="pageContainer" style="width:760px; margin:0px auto;">
-    ^^cart^^
-    ^^receipt^^
-</div>
+    <div id="pageContainer" style="width:760px; margin:0px auto;">
+
+
+
+    {% if not is_updateinfo %}
+    <div id="fc_checkout_cart">
+        {% use 'cart.inc.twig' %}
+        {{ block('cart') }}
+    </div>
+    {% endif %}
+
+
+    {% use 'receipt.inc.twig' %}
+ 
+    {% block receipt %}
+    <h2><a class='download-link' href="http://fineuploader.com/thanks.html">Download</a></h2>
+    <div id="fc_receipt_container"><div id="fc_receipt_container_inner">
+        <h1 id="fc_receipt_heading">Receipt</h1>
+
+        {{ block('messaging') }}{# UpdateInfo, Subscription Cancel #}
+        {{ block('downloadable_links') }}{# Downloadable product links #}
+
+        {{ block('general_information') }}{# Processor response and date #}
+        {{ block('order_information') }}{# Order total costs, subtotals, and payment info #}
+        {{ block('billing_information') }}{# Billing name and address #}
+
+        {% if not has_multiship %}
+            {% if use_alternate_shipping_address or has_shippable_products %}
+                 {{ block('shipping_address') }}
+            {% endif %}
+        {% else %}
+            {{ block('multiship_addresses') }}
+        {% endif %}
+
+        {{ block('custom_fields') }}
+
+    </div><span class="fc_clear">&nbsp;</span></div><!-- #fc_receipt_container_inner, #fc_receipt_container -->
+
+    {{ block('receipt_links') }}{# print, continue links #}
+
+    {% if first_receipt_display %}
+        {# If you have a system (affiliate, analytics) that doesn't handle duplicating data well, put that code in here #}
+        ^^receipt_only^^
+    {% endif %}
+
+    {% endblock receipt %}
+
+
+
+    </div>
 </body>
 </html>
