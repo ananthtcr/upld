@@ -500,7 +500,7 @@ hr.soften
 .marketing p
 {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 .marketing .marketing-byline
 {
@@ -1064,10 +1064,27 @@ input, button, select, textarea
 }
 .team-image
 {
-    float:right;
     border-radius:4px;
-    box-shadow:2px 2px 4px #ccc;
-    margin-left:30px !important;
+    margin:20px auto !important;
+
+
+}
+.team ul
+{
+    list-style: none;
+    margin-left:0px;
+    text-align:center;
+}
+@media (max-width: 767px)
+{
+    .team-image
+    {
+        margin-left: 0px !important;
+    }
+    .team ul
+    {
+        text-align:left;
+    }
 }
 
 /* Global */
