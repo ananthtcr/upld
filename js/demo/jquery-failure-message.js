@@ -1,4 +1,5 @@
 $('#failed-fine-uploader').fineUploader({
+    multiple: !qq.ios7(),
     request: {
         endpoint: 'server/failure.html'
     },

@@ -1,4 +1,5 @@
 var btuploader = new qq.FineUploader({
+    multiple: !qq.ios7(),
     element: document.getElementById('bootstrapped-fine-uploader'),
     request: {
         endpoint: 'server/success.html'

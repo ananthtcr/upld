@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('a.tip').tipsy();
 
     $('#jquery-wrapped-fine-uploader').fineUploader({
+        multiple: !qq.ios7(),
         request: {
             endpoint: 'server/success.html'
         },

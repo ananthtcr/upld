@@ -1,4 +1,5 @@
 var thumbnailuploader = new qq.FineUploader({
+    multiple: !qq.ios7(),
     element: $('#thumbnail-fine-uploader')[0],
     request: {
         endpoint: 'server/success.html'

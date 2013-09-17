@@ -1,4 +1,5 @@
 var faileduploader = new qq.FineUploader({
+    multiple: !qq.ios7(),
     element: document.getElementById('failed-fine-uploader'),
     request: {
         endpoint: 'server/failure.html'

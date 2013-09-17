@@ -1,5 +1,7 @@
 $('#s3-demo-container').fineUploaderS3({
+    multiple: !qq.ios7(),
     debug: true,
+    multiple: !qq.ios7(),
     request: {
         endpoint: "upload.fineuploader.com",
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"

@@ -1,4 +1,5 @@
 var restricteduploader = new qq.FineUploader({
+    multiple: !qq.ios7(),
     // If we're using jQuery, there's another way of selecting the DOM node
     element: $('#restricted-fine-uploader')[0],
     request: {
