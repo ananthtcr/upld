@@ -18,7 +18,7 @@ $(document).ready(function() {
             },
             onUpload: function(id, fileName) {
                 $('#file-' + id).addClass('alert-info')
-                                .html('<img src="master/client/loading.gif" alt="Initializing. Please hold."> ' +
+                                .html('<img src="/source/loading.gif" alt="Initializing. Please hold."> ' +
                                       'Initializing ' +
                                       '“' + fileName + '”');
             },
@@ -26,14 +26,14 @@ $(document).ready(function() {
                 if (loaded < total) {
                     progress = Math.round(loaded / total * 100) + '% of ' + Math.round(total / 1024) + ' kB';
                     $('#file-' + id).removeClass('alert-info')
-                                    .html('<img src="master/client/loading.gif" alt="In progress. Please hold."> ' +
+                                    .html('<img src="/source/loading.gif" alt="In progress. Please hold."> ' +
                                           'Uploading ' +
                                           '“' + fileName + '” ' +
                                           progress /*+
                                           ' <span class="btn btn-warning"><i class="icon-remove"></i></span>'*/);
                 } else {
                     $('#file-' + id).addClass('alert-info')
-                                    .html('<img src="master/client/loading.gif" alt="Saving. Please hold."> ' +
+                                    .html('<img src="/source/loading.gif" alt="Saving. Please hold."> ' +
                                           'Saving ' +
                                           '“' + fileName + '”');
                 }
