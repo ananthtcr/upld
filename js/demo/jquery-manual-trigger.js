@@ -4,9 +4,7 @@ var manualuploader = $('#manual-fine-uploader').fineUploader({
         endpoint: 'server/success.html'
     },
     autoUpload: false,
-    text: {
-        uploadButton: '<i class="icon-plus icon-white"></i> Select Files'
-    },
+    template: "qq-template-manual-noedit",
     debug: true,
     demoMode: true // Undocumented -> Only for the gh-pages demo website
 });

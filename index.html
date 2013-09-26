@@ -10,7 +10,7 @@
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="source/fineuploader-3.9.0-3.min.css" rel="stylesheet">
+        <link href="source/fineuploader-4.0.0-0.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
@@ -27,7 +27,66 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
-        <script src="source/all.fineuploader-3.9.0-3.min.js"></script>
+        <script src="source/all.fineuploader-4.0.0-0.min.js"></script>
+
+        <script type="text/template" id="qq-template">
+            <div class="qq-uploader-selector qq-uploader">
+                <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                    <span>Drop files here to upload</span>
+                </div>
+                <div class="qq-upload-button-selector qq-upload-button">
+                    <div>Upload a file</div>
+                </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+                <ul class="qq-upload-list-selector qq-upload-list">
+                    <li>
+                        <div class="qq-progress-bar-container-selector">
+                            <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                        </div>
+                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                        <span class="qq-upload-file-selector qq-upload-file"></span>
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <span class="qq-upload-size-selector qq-upload-size"></span>
+                        <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                        <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+                        <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+                        <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                    </li>
+                </ul>
+            </div>
+        </script>
+
+        <script type="text/template" id="qq-template-bootstrap">
+            <div class="qq-uploader-selector qq-uploader span12">
+                <div class="qq-upload-drop-area-selector qq-upload-drop-area span12" qq-hide-dropzone>
+                    <span>Drop files here to upload</span>
+                </div>
+                <div class="qq-upload-button-selector qq-upload-button btn btn-success" style="width: auto;">
+                    <div><i class="icon-upload icon-white"></i> Test me now and upload a file</div>
+                </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+                <ul class="qq-upload-list-selector qq-upload-list" style="margin-top: 10px; text-align: center;">
+                    <li>
+                        <div class="qq-progress-bar-container-selector">
+                            <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                        </div>
+                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                        <span class="qq-upload-file-selector qq-upload-file"></span>
+                        <span class="qq-upload-size-selector qq-upload-size"></span>
+                        <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                        <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                    </li>
+                </ul>
+            </div>
+        </script>
+
     </head>
     <body>
         <div id="header"></div>
@@ -43,7 +102,7 @@
                     <div class="arrow-down"></div>
                 </div>
 
-                <h1 class="inner-shadow">Fine Uploader <span class="orange">3.9</span></h1>
+                <h1 class="inner-shadow">Fine Uploader <span class="orange">4.0</span></h1>
                 <h2>File uploading <b>without</b> the hassle.</h2>
 
                 <div class="row-fluid mt60">
@@ -148,7 +207,8 @@
                             <li><a href="http://blog.fineuploader.com/2013/05/09/upload-directly-via-a-camera-on-mobile-devices/" target="_blank">Upload from mobile camera</a></li>
                             <li><a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/" target="_blank">Edit file names</a></li>
                             <li><a href="#s3-demo">Upload directly to Amazon S3</a></li>
-                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/extra-buttons.html">Multiple upload buttons</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/extra-buttons.html">Multiple upload buttons</a></li>
+                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/styling.html">Flexible templating system</a></li>
                         </ul>
                     </div>
                 </div>
@@ -200,6 +260,9 @@
                             watch Fine Uploader pick up from where it left off!
                         </ul></p>
 
+                        <p>This demo uses the default template bundled with Fine Uploader UI.
+                            For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
+
                         <br/>
                         <i class="icon-arrow-down" style="margin-top:3px;"></i>
                         <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
@@ -223,6 +286,9 @@
                         <div id="jquery-wrapped-fine-uploader"></div>
                         </br></br>
                         <p>In addition to the <a href="#demo">minimal out-of-the-box demo</a>, we include here Fine Uploader’s jQuery wrapper.</p>
+
+                        <p>This demo uses the default template bundled with Fine Uploader UI.
+                            For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
                     </div>
 
                     <div class="span6">
@@ -247,6 +313,9 @@
                             <li>Setup your HTML and javascript.</li>
                             <li>Upload!</li>
                         </ol>
+
+                        <p>This demo uses the default template bundled with Fine Uploader UI.
+                            For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
 
                         </br>
                         <div id="fine-uploader"></div>

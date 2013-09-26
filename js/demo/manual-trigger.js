@@ -1,17 +1,15 @@
 manualuploader = new qq.FineUploader({
     multiple: !qq.ios7(),
-    element: $('#manual-fine-uploader')[0],
+    element: document.getElementById("manual-fine-uploader"),
     request: {
         endpoint: 'server/success.html'
     },
+    template: "qq-template-manual-noedit",
     autoUpload: false,
-    text: {
-        uploadButton: '<i class="icon-plus icon-white"></i> Select Files'
-    },
     debug: true,
     demoMode: true // Undocumented -> Only for the gh-pages demo website
 });
 
-$('#triggerUpload').click(function() {
+qq(document.getElementById("triggerUpload")).attach("click", function() {
     manualuploader.uploadStoredFiles();
 });
