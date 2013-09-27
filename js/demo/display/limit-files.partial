@@ -1,0 +1,15 @@
+<div id="filelimit-fine-uploader"></div>
+
+<script>
+  $(document).ready(function() {
+    var filelimituploader = new qq.FineUploader({
+      element: document.getElementById('filelimit-fine-uploader'),
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      validation: {
+        itemLimit: 3
+      }
+    });
+  });
+</script>

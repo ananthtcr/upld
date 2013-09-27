@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fine Uploader - jQuery Wrapper Minimal Demo</title>
+    <link href="fineuploader-{VERSION}.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="jquery-wrapped-fine-uploader"></div>
+
+    <div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
+        <i class="icon-upload icon-white"></i> Upload now
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="jquery.fineuploader-{VERSION}.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#myFineUploader').fineUploader({
+            request: {
+                endpoint: 'server/handleUploads'
+            },
+            editFilename: {
+                enabled: true
+            },
+            autoUpload: false
+        });
+
+        $('#triggerUpload').click(function() {
+            $('#myFineuploader').fineUploader('uploadStoredFiles');
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,303 @@
+<!--
+    This template taken from www.campaignmonitor.com
+    They provide great mailing list services, and have
+    an API for integration with FoxyCart (coming soon
+    at http://wiki.foxycart.com).
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <style type="text/css" media="screen">
+
+            /* common
+            --------------------------------------------------*/
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            color: #666;
+            background: #e5e0c9;
+        }
+        * #BodyImposter {
+            color: #666;
+            background: #e5e0c9;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        * #BodyImposter li,
+        * #BodyImposter p,
+        * #BodyImposter td {
+            font-size: 12px;
+            line-height: 1.5em;
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: justify;
+        }
+        * #BodyImposter p,
+        * #BodyImposter ol,
+        * #BodyImposter ul {
+            margin: 0em 0em 1em 0em;
+        }
+        * #BodyImposter img {
+            border: 0px;
+        }
+        * #Primary img {
+            float: right;
+            margin: 5px 0px 15px 15px;
+            border: 1px solid #d3d3d3;
+            padding: 6px;
+        }
+        * #BodyImposter small {
+            font-size: 10px;
+            line-height: 1.3em;
+        }
+        * #BodyImposter ol {
+            padding-left: 1em;
+        }
+        * #Primary ul {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+        * #BodyImposter ol li {
+            margin: 0px;
+            padding: 0px;
+        }
+        * #BodyImposter ul li {
+            padding: 0px 0px 0px 8px;
+            margin: 0px;
+            list-style: square outside;
+        }
+
+            /* links
+            --------------------------------------------------*/
+
+        * #BodyImposter a {
+            text-decoration: underline;
+        }
+        * #Primary a:link,
+        * #Primary a:visited {
+            color: #000;
+            background: #fff;
+        }
+        * #Helpful a:link,
+        * #Helpful a:visited,
+        * #Legal a:link,
+        * #Legal a:visited {
+            color: #666;
+            background: transparent;
+        }
+        * #BodyImposter a:hover {
+            text-decoration: none;
+        }
+        * #BodyImposter a:active {
+            color: #000;
+            background: #fff;
+            text-decoration: none;
+        }
+
+            /* heads
+            --------------------------------------------------*/
+
+        * #BodyImposter h1,
+        * #BodyImposter h2 {
+            color: #945620;
+            background: #fff;
+            font-family: Georgia, Palatino, serif;
+            font-weight: normal;
+            line-height: normal;
+            margin: 0em 0em 0.5em 0em;
+            padding: 0px;
+            text-align: left;
+        }
+        * #Masthead h1 {
+            font-size: 28px;
+            color: #fff;
+            background: #333;
+            margin: 0px;
+        }
+        * #Primary h2,
+        * #Primary p.fc_heading {
+            color: #945620;
+            font-size: 22px;
+            font-family: Georgia, Palatino, serif;
+            padding-top: 35px;
+            text-align: left;
+        }
+
+            /* boxes
+            --------------------------------------------------*/
+
+        * #Box {
+            color: #666;
+            background: #fff;
+            border: 1px solid #d3d3d3;
+            margin: 0px auto;
+        }
+        * #Content {
+            border: 1px solid #d3d3d3;
+        }
+        * #Helpful,
+        * #Legal {
+            margin: 0px auto;
+        }
+        * #Helpful p,
+        * #Legal p {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        * #Masthead {
+            color: #fff;
+            background: #333;
+        }
+        * #Masthead h1,
+        * #Masthead p {
+            text-align: left;
+        }
+        * #Masthead p {
+            font-size: 14px;
+            margin: 0px;
+        }
+        * #Masthead p #Date {
+            float: right;
+        }
+        * #Masthead {
+            width: 100%;
+            text-align: center;
+        }
+            /*
+            The asterisks preceding every selector ensure styles are rendered in Dot Mac.
+            The inline styles in headlines are for Outlook 2007.
+            */
+
+        #fc_purchasing_information_billing_address,
+        #fc_purchasing_information_shipping_address {
+            width:50%;
+            float:left;
+        }
+        p.fc_heading {
+            margin:10px 0px 0px;
+            border-top:2px solid #ccc;
+        }
+        #fc_purchasing_information_billing_address span.fc_item_label,
+        #fc_purchasing_information_shipping_address span.fc_item_label {
+            padding:4px;
+            background:#E5E0C9;
+            color:#000;
+        }
+        #fc_cart_table {
+            width:100%;
+            margin-bottom:20px;
+        }
+        #fc_cart_head th {
+            background:#E5E0C9 !important;
+            color:#000;
+        }
+        #fc_cart_foot_total_row td {
+            background:#eee !important;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="BodyImposter" style="color: #666; background-color: #e5e0c9;">
+    <table id="Box" cellspacing="0" cellpadding="15" width="580" style="color: #666; background-color: #fff;">
+        <tr>
+            <td>
+                <table id="Masthead" cellspacing="0" cellpadding="20" width="580">
+                    <tr>
+                        <td style="color: #fff; background: #333; font-family: Helvetica, Arial, sans-serif;">
+                            ^^store_logo^^
+                        </td>
+                    </tr>
+                </table>
+                <table id="Content" cellspacing="0" cellpadding="20" width="580" style="color: #666; background-color: #fff;">
+                    <tr valign="top">
+                        <td id="Primary" style="font-family: Helvetica, Arial, sans-serif;">
+                            <p>Hello there,</p>
+
+                            <p>Thanks for your purchase of a commercial license for Fine Uploader.
+                            Your license is valid for 1 year from the date of purchase.  During this
+                            time, you are entitled to download any and all updates to the library and
+                            use them in your live web application without being restricted by the GPL v3
+                            license.  After your license expires, you will be eligible to renew it at a
+                            discounted rate.  Your purchase helps Widen Enterprises continue to evolve and
+                            support Fine Uploader.</p>
+
+                            <p>If you have any questions regarding this license, feel free to send us an <a href="mailto:licensing@fineuploader.com">email</a>.
+                            Fine Uploader staff are always here to answer your questions.
+                            If you have any technical questions regarding use of Fine Uploader, please see
+                            the <a href="http://fineuploader.com/support.html">support</a> page. The support forum is constantly monitored by Fine Uploader
+                            developers.  If you find any bugs, or have a suggestion/request for a new
+                            feature, please post in the Fine Uploader Github project's <a href="https://github.com/Widen/fine-uploader/issues">issue tracker</a>.
+                            The issue tracker is also constantly monitored by the Fine Uploader development
+                            team.</p>
+
+                            <p>Please note that you can always stay up-to-date with the latest progress in
+                            Fine Uploader by checking the <a href="http://blog.fineuploader.com">blog</a> and the <a href="https://twitter.com/fineuploader">twitter feed</a>, as well as the latest
+                            commits in the <a href="https://github.com/Widen/fine-uploader">Github repository.</a></p>
+
+                            <p>Happy uploading,
+                            The Fine Uploader Team at Widen Enterprises</p>
+
+                            <p>P.S. -- We are in the process of compiling a list of web applications that
+                            utilize Fine Uploader. Eventually, we would like to display a list on
+                            fineuploader.com with links to the respective apps. If you would like your
+                            app listed, please respond to this email with specifics about your application.
+                            </p>
+                            ^^order_begin^^
+                            <h3 style="font-family: Georgia, Palatino, serif;">Your Receipt</h3>
+                            <p>Thank you for your order. Please retain this receipt for your records. If you would like to update your payment card for future transactions, please <a href="https://^^store_domain^^/cart?cart=updateinfo">click here to update your billing information</a>.</p>
+                            ^^receipt^^
+                            <div style="float:none; clear:both;"></div>
+                            ^^cart^^
+                            <div style="float:none; clear:both;"></div>
+                            ^^order_end^^
+
+                            <div style="float:none; clear:both;"></div>
+
+                            ^^updateinfo_begin^^
+                            <h3 style="font-family: Georgia, Palatino, serif;">Your Billing Information has been Updated</h3>
+                            <p>Your billing information has been updated as displayed below.</p>
+                            ^^receipt^^
+                            ^^updateinfo_end^^
+
+                            <div style="float:none; clear:both;"></div>
+
+                            ^^subscription_cancel_begin^^
+                            <h3 style="font-family: Georgia, Palatino, serif;">Your Subscription has been Cancelled</h3>
+                            <p>This email is confirmation that the subscription listed below will be cancelled and not billed further.</p>
+                            ^^receipt^^
+                            ^^cart^^
+                            ^^subscription_cancel_end^^
+
+                            ^^subscription_modification_begin^^
+                            <h3 style="font-family: Georgia, Palatino, serif;">Your Subscription has been Modified</h3>
+                            <p>This email is confirmation that the subscription listed below has been modified.</p>
+                            ^^receipt^^
+                            ^^cart^^
+                            ^^subscription_modification_end^^
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table id="Legal" cellspacing="0" cellpadding="15" width="610">
+
+        <tr>
+            <td style="font-family: Helvetica, Arial, sans-serif;">
+                <p>^^store_name^^</p>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

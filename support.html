@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <title>Fine Uploader | Support</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Support portal for Fine Uploader">
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+        <![endif]-->
+
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/prettify.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <script src="js/prettify.js"></script>
+        <script src="js/jquery.tipsy.min.js"></script>
+    </head>
+    <body>
+        <div id="header"> </div>
+
+
+        <div class="jumbotron-small">
+            <div class="container">
+                <div id="navbar"></div>
+            </div>
+        </div>
+
+        <div class="container marketing">
+            <h1>Support</h1>
+            </br>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="p8">
+                    <p>
+                        <b>For technical support questions, please use Stack Overflow</b>.
+                    </p>
+
+                    <p>
+                        <a href="http://stackoverflow.com/users/486979/ray-nicholus">Ray Nicholus</a> and
+                        <a href="http://stackoverflow.com/users/2405667/mfeltner">Mark Feltner</a> personally monitor the
+                        <a href="http://stackoverflow.com/questions/tagged/fine-uploader">"fine-uploader"
+                        tag</a> for new questions, and will provide assistance shortly after you post your question.
+                    </p>
+
+                    <p>
+                        Please look for <a href="http://stackoverflow.com/questions/tagged/fine-uploader">existing questions
+                        under the "fine-uploader" tag</a> that match your question.  If you don't find any, please <a href="http://stackoverflow.com/questions/ask?tags=fine-uploader">post a new question tagged with
+                        "fine-uploader"</a>.
+                    </p>
+
+                    <p>
+                        Please do not post licensing questions, feature requests, or comments about Fine Uploader on
+                        Stack Overflow.  These types of posts will be removed by the moderators.  Questions that
+                        do not include enough information to troubleshoot your issue will also be removed.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <div class="p8">
+                    <p>
+                        <b>For bug reports or feature requests, please use the Github project's issue tracker</b>.
+                    </p>
+
+                    <p>
+                        If you are confident that you have uncovered a bug in Fine Uploader, please provide specific details
+                        about the bug, your version of Fine Uploader, your OS and browser, along with console messages from
+                        Fine Uploader.  You may then open up a bug request in the <a href="https://github.com/Widen/fine-uploader/issues">issue tracker</a>.
+                    </p>
+
+                    <p>
+                        If you would like to see a specific new feature added to a future version of Fine Uploader, the
+                        <a href="https://github.com/Widen/fine-uploader/issues">issue tracker</a> is also the appropriate place to post such a request.  Be sure to explain your
+                        request clearly and provide details regarding the intended use of such a feature.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <p style="clear:both;">Please do not email Widen Enterprises with questions related to Fine Uploader.  If you have licensing
+            questions, please email <a href="mailto:licensing@fineuploader.com">licensing@fineuploader.com</a>.  Otherwise, please see the above sections if you need to report a
+            bug, request a feature, or obtain technical support.</p>
+        </div>
+
+        <div id="footer"></div>
+
+        <script>
+            window.prettyPrint && prettyPrint();
+            $('.dropdown-toggle').dropdown();
+            $.get('./navbar.html', function(data) {
+                $('#navbar').html(data);
+                if (window.location.hash == '') {
+                    $('#navbar').find('li').eq(0).addClass('active');
+                } else {
+                    $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
+                }
+            }); $.get('./header.html', function(data) {
+                $('#header').html(data);
+            });
+
+            $.get('./footer.html', function(data) { $('#footer').html(data); });
+
+            $(document).ready(function () {
+                $(document).on('click', '#navbar a', function() {
+                    if ($(this).attr('href').indexOf('./#') == 0) {
+                        $('#navbar li').removeClass('active');
+                        $(this).parent().addClass('active');
+                    }
+                });
+
+                $('a.tip').tipsy();
+            });
+        </script>
+    </body>
+</html>

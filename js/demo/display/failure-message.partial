@@ -1,0 +1,21 @@
+<div id="failed-fine-uploader"></div>
+
+<script src="fineuploader-{VERSION}.js"></script>
+<script>
+  function createUploader() {
+    var faileduploader = new qq.FineUploader({
+      element: document.getElementById('failed-fine-uploader'),
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      failedUploadTextDisplay: {
+        mode: 'custom',
+        maxChars: 40,
+        responseProperty: 'error',
+        enableTooltip: true
+      }
+    });
+  }
+
+  window.onload = createUploader;
+</script>

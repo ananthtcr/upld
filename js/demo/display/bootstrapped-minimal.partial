@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fine Uploader - Boostrapped Minimal Demo</title>
+    <link href="fineuploader-{VERSION}.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .qq-upload-list {
+        text-align: left;
+      }
+
+      /* For the bootstrapped demos */
+      li.alert-success {
+        background-color: #DFF0D8;
+      }
+
+      li.alert-error {
+        background-color: #F2DEDE;
+      }
+
+      .alert-error .qq-upload-failed-text {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bootstrapped-fine-uploader"></div>
+
+    <script src="fineuploader-{VERSION}.js"></script>
+    <script>
+      function createUploader() {
+        var uploader = new qq.FineUploader({
+          element: document.getElementById('bootstrapped-fine-uploader'),
+          request: {
+            endpoint: 'server/handleUploads'
+          },
+          text: {
+            uploadButton: '<div><i class="icon-upload icon-white"></i> Test me now and upload a file</div>'
+          },
+          template: '<div class="qq-uploader span12">' +
+                      '<pre class="qq-upload-drop-area span12"><span>{dragZoneText}</span></pre>' +
+                      '<div class="qq-upload-button btn btn-success" style="width: auto;">{uploadButtonText}</div>' +
+                      '<span class="qq-drop-processing"><span>{dropProcessingText}</span><span class="qq-drop-processing-spinner"></span></span>' +
+                      '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
+                    '</div>',
+          classes: {
+            success: 'alert alert-success',
+            fail: 'alert alert-error'
+          }
+        });
+      }
+
+      window.onload = createUploader;
+    </script>
+  </body>
+</html>
