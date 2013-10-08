@@ -1125,15 +1125,6 @@ code.example
 {
     max-height: 700px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.strike {
+    text-decoration: line-through;
+}

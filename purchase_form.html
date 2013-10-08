@@ -63,17 +63,22 @@
             <form method='post' action='https://store.fineuploader.com/cart' class="form">
                 <!-- Licensing Options -->
                 <label class="radio">
-                    <input type="radio" name="__license" value="Single,49.00,1,1" checked>
-                    <b>$49</b> - Single Hostname Server (e.g. uploader.example.com) - 1 year
+                    <input type="radio" name="__license" value="Single,24.00,1,1" checked>
+                    <b>$24</b> <b class="strike">$49</b> - Single Hostname Server (e.g. uploader.example.com) - 1 year
                 </label>
                 <label class="radio">
-                    <input type="radio" name="__license" value="Wildcard,490.00,2,1">
+                    <input type="radio" name="__license" value="SaaS,480.00,3,1">
+                    <b>$480</b> - Single Software-as-a-Service or Installed Application (unlimited domain) - 1 year
+                </label>
+                <label class="radio strike">
+                    <input type="radio" name="__license" value="SaaS,490.00,3,1" disabled>
                     <b>$490</b> - Wildcard Single Domain (e.g. *.example.com) - 1 year
                 </label>
-                <label class="radio">
-                    <input type="radio" name="__license" value="SaaS,890.00,3,1">
-                    <b>$890</b> - Single Software-as-a-Service Application (unlimited domain) - 1 year
+                <label class="radio strike">
+                    <input type="radio" name="__license" value="SaaS,890.00,3,1" disabled>
+                    <b>$890</b> - Single Software-as-a-Service or Installed Application (unlimited domain) - 1 year
                 </label>
+
                 <input type="hidden" name="name" value="">
                 <input type="hidden" name="price" value="0">
                 <input type="hidden" name="code" value="">
@@ -122,26 +127,28 @@
                 var hmacs = {
                     'Single': {
                         'name': 'b6d219c2dcd1252b9f5d83c0c9e03a03837e5824ad88e0a6f3126e1f72f627cd',
-                        'price': '4426508b4cb04c1de8ed30863c890da238176f99279aa74bec99243cadb41ed1',
+                        'price': 'c0ce950875815639f3889dd8a552f3639ffb174f3ffa58278d072b335c200e85',
                         'code': '5382f83802c3ba569b5c0e7ee41ab05438270277f9d458fcb0abd5e18c2c2eb8',
                         'quantity': 'dbb3083eaab99560c0f5b0bdb92ef81c2649c0a833ae540ad745653d1ec5993a'
                     },
+                    /*
                     'Wildcard': {
                         'name': '5156a75bfecb5a3172220aa33598adc83bd827f129508dc5df57716de131787c',
                         'price': 'c9c81a4bf3116924af2dcf238962f6c49846405767cbc5a75e9da469dd9be508',
                         'code': '2ff07ae838d221592ee36ace3a43c28b04c13f56858830beff997ca6fa18258a',
                         'quantity': '5b5bcdba5d760ec3b032c5c169c0f1ae9a97b3771a131176a80e48bedfa31466'
                     },
+                    */
                     'SaaS': {
                         'name': '2c4f65c4ced3c3f212799f602a23e03d9fa35ec9776ea87b21e16be6c890c3ec',
-                        'price': 'c0604a280300b713619d08f785b0b2d4f8ac1e51730152476f41c7a318b56528',
+                        'price': 'c4f19d4a9e17f1cd2b31118fa0782704785685db4a89b62e8dbed2d1f19b5b8f',
                         'code': '2c15bdf86d41f363f4d36087611e42953e6592ad860124b5c25f20fafcc70943',
                         'quantity': '5db3f7b6d393bb79b91a558ddd8ce873d7fc5357b2ffbfb5c74c5722074607c1'
                     }
                 }
 
                 var name = "Single";
-                var price = "49.00";
+                var price = "24.00";
                 var code = "1";
                 var quantity = 1;
                 var hmac = hmacs[name];
