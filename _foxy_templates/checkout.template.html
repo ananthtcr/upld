@@ -79,20 +79,24 @@
     <h4>Additional Information</h4>
     <div class="fc_inner">
         <div>
-            <input class="fc_required" type="text" name="name_first" value="">
+            <input required class="fc_required" type="text" name="name_first" value="">
             <label for="name_first">First Name</label>
+            <label class="fc_error" style="display: none;" for="name_first">Please enter first name</label>
         </div>
         <div>
-            <input class="fc_required" type="text" name="name_last" value="">
+            <input required class="fc_required" type="text" name="name_last" value="">
             <label for="name_last">Last Name</label>
+            <label class="fc_error" style="display: none;" for="name_last">Please enter last name</label>
         </div>
         <div>
-            <input class="fc_required" type="text" name="company" value="">
+            <input required class="fc_required" type="text" name="company" value="">
             <label for="company">Company</label>
+            <label class="fc_error" style="display: none;" for="company">Please enter company</label>
         </div>
         <div>
-            <input class="fc_required" type="text" name="domain" value="">
+            <input required class="fc_required" type="text" name="domain" value="">
             <label for="domain">Domain</label>
+            <label class="fc_error" style="display: none;" for="domain">Please enter domain</label>
         </div>
         <div>
             <input type="hidden" name="license_code" value="">

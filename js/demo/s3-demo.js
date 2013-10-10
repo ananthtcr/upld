@@ -52,8 +52,7 @@ $('#s3-demo-container').fineUploaderS3({
     }
 })
     .on('complete', function(event, id, name, response, xhr) {
-        var key = $(this).fineUploaderS3("getKey", id),
-            $fileEl = $(this).fineUploaderS3("getItemByFileId", id),
+        var $fileEl = $(this).fineUploaderS3("getItemByFileId", id),
             $viewBtn = $("<a>View</a>");
 
         if (response.success) {
