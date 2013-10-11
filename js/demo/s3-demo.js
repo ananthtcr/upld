@@ -1,5 +1,6 @@
 $('#s3-demo-container').fineUploaderS3({
     multiple: !qq.ios7(),
+    template: "simple-previews-template",
     debug: true,
     multiple: !qq.ios7(),
     request: {
@@ -7,25 +8,17 @@ $('#s3-demo-container').fineUploaderS3({
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"
     },
     signature: {
-        endpoint: "http://s3-demo.fineuploader.com/s3demo-cors.php"
+        endpoint: "http://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
     },
     uploadSuccess: {
-        endpoint: "http://s3-demo.fineuploader.com/s3demo-cors.php?success"
+        endpoint: "http://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php?success",
+        params: {
+            isBrowserPreviewCapable: qq.supportedFeatures.imagePreviews
+        }
     },
     iframeSupport: {
         localBlankPagePath: "/server/success.html"
     },
-    fileTemplate: '<li>' +
-        '<div class="qq-progress-bar"></div>' +
-        '<span class="qq-upload-spinner"></span>' +
-        '<span class="qq-upload-finished"></span>' +
-        '<span class="qq-upload-file"></span>' +
-        '<span class="qq-upload-size"></span>' +
-        '<button class="qq-upload-cancel btn btn-small">{cancelButtonText}</button>' +
-        '<button class="qq-upload-retry btn btn-small">{retryButtonText}</button>' +
-        '<button class="qq-upload-delete btn btn-small">{deleteButtonText}</button>' +
-        '<span class="qq-upload-status-text">{statusText}</span>' +
-        '</li>',
     cors: {
         expected: true
     },
@@ -41,7 +34,7 @@ $('#s3-demo-container').fineUploaderS3({
     deleteFile: {
         enabled: true,
         method: "POST",
-        endpoint: "http://s3-demo.fineuploader.com/s3demo-cors.php"
+        endpoint: "http://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
     },
     validation: {
         itemLimit: 5,
@@ -49,17 +42,26 @@ $('#s3-demo-container').fineUploaderS3({
     },
     messages: {
         unsupportedBrowser: "<h3>This demo is not functional in IE7 as IE7 has no support for CORS!</h3>"
+    },
+    thumbnails: {
+        placeholders: {
+            notAvailablePath: "/server/image_not_available.jpg",
+            waitingPath: "/server/image_loading.gif"
+        }
+    },
+    formatFileName: function(name) {
+        if (name !== undefined && name.length > 20) {
+            name = name.slice(0, 6) + '...' + name.slice(-8);
+        }
+        return name;
     }
 })
     .on('complete', function(event, id, name, response, xhr) {
         var $fileEl = $(this).fineUploaderS3("getItemByFileId", id),
-            $viewBtn = $("<a>View</a>");
+            $viewBtn = $fileEl.find(".view-btn");
 
         if (response.success) {
-            $viewBtn.addClass("btn btn-small");
+            $viewBtn.show();
             $viewBtn.attr("href", response.tempLink);
-            $viewBtn.attr("target", "_blank");
-
-            $fileEl.find(".qq-upload-status-text").before($viewBtn);
         }
     });
