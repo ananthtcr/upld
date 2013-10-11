@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <title>Fine Uploader | Customize</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Support portal for Fine Uploader">
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+        <![endif]-->
+
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/prettify.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <script src="js/prettify.js"></script>
+        <script src="js/jquery.tipsy.min.js"></script>
+    </head>
+    <body>
+        <div id="header"> </div>
+
+
+        <div class="jumbotron-small">
+            <div class="container">
+                <div id="navbar"></div>
+            </div>
+        </div>
+
+        <div class="container marketing">
+            <h1>Customize and download</h1>
+            </br>
+            <p>Customize Fine Uploader's look, server-type, and components to get your very own version.
+            </p>
+            <hr>
+            <div class="row-fluid">
+                <form action="http://fu-assembler.elasticbeanstalk.com/build" method="POST" class="form-horizontal">
+
+                    <label for="email">Licensholder email:</label>
+                        <input name="email" type="email" autofocus placeholder="Enter valid email address ...">
+
+                    <br>
+                    <small>Note: A valid email is required to build a custom copy of Fine Uploader. Your email address is automatically added to the list of verified emails after your <a href="http://fineuploader.com/purchase_form.html">purchase</a>.</small>
+                    <hr>
+
+                    <h2>jQuery</h2>
+                    <div class="row-fluid">
+                        <p>Select whether you would like to use the jQuery plugin version with Fine Uploader. The plugin makes it super easy to integrate Fine Uploader into any
+                        site already using jQuery.</p>
+
+                    <label class="checkbox" for="jquery">
+                        <input name="jquery" type="checkbox" checked>
+                        jQuery plugin: </label>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <p>The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</p>
+                    </div>
+
+                    <hr>
+
+                    <div class="row-fluid">
+                        <h2>Server</h2>
+
+                        <p>Select the service you are using as a backend. <a href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
+                        <a href="http://docs.fineuploader.com/branch/master/endpoint_handlers/amazon-s3.html">S3</a>
+                        will provide you with the code to send uploads directly to Amazon's Simple Storage Service.</p>
+
+                        <select name="endpoint">
+                            <option value="traditional">Traditional</option>
+                            <option value="s3">S3</option>
+                        </select>
+
+                    </div>
+
+                    <hr>
+
+                    <h2>User-interface</h2>
+                    <div class='row-fluid'>
+
+                        <p>Fine Uploader provides an option "UI-mode" which contains basic UI elements (such as a dynamic list of submitted files, coloring based on status, and more).
+                        Select whether you would like your custom build to include UI mode.</p>
+
+                        <label class="checkbox" for="ui">
+                            <input name="ui" type="checkbox" checked>UI Mode:
+                        </label>
+                        <br/>
+
+                    </div>
+                    <hr/>
+
+                    <br/>
+                    <br/>
+
+                    <button type="submit" class="btn btn-large">Build</button>
+                </form>
+            </div>
+            </br>
+        </div>
+
+        <div id="footer"></div>
+
+        <script>
+            window.prettyPrint && prettyPrint();
+            $('.dropdown-toggle').dropdown();
+            $.get('./navbar.html', function(data) {
+                $('#navbar').html(data);
+                if (window.location.hash == '') {
+                    $('#navbar').find('li').eq(0).addClass('active');
+                } else {
+                    $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
+                }
+            }); $.get('./header.html', function(data) {
+                $('#header').html(data);
+            });
+
+            $.get('./footer.html', function(data) { $('#footer').html(data); });
+
+            $(document).ready(function () {
+                $(document).on('click', '#navbar a', function() {
+                    if ($(this).attr('href').indexOf('./#') == 0) {
+                        $('#navbar li').removeClass('active');
+                        $(this).parent().addClass('active');
+                    }
+                });
+
+                $('a.tip').tipsy();
+            });
+        </script>
+    </body>
+</html>
+
