@@ -5,18 +5,12 @@
 <script>
   $(document).ready(function() {
     $('#thumbnail-fine-uploader').fineUploader({
+      template: "qq-simple-thumbnails-template",
       request: {
         endpoint: 'server/success.html'
       },
       validation: {
         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
-      },
-      text: {
-        uploadButton: 'Click or Drop'
-      }
-    }).on('complete', function(event, id, fileName, responseJSON) {
-      if (responseJSON.success) {
-        $(this).append('<img src="img/success.jpg" alt="' + fileName + '">');
       }
     });
   });

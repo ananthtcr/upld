@@ -85,6 +85,38 @@
             </div>
         </script>
 
+        <script type="text/template" id="qq-simple-thumbnails-template">
+            <div class="qq-uploader-selector qq-uploader">
+                <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                    <span>Drop files here to upload</span>
+                </div>
+                <div class="qq-upload-button-selector qq-upload-button">
+                    <div>Upload a file</div>
+                </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+                <ul class="qq-upload-list-selector qq-upload-list">
+                    <li>
+                        <div class="qq-progress-bar-container-selector">
+                            <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                        </div>
+                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                        <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale="true">
+                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                        <span class="qq-upload-file-selector qq-upload-file"></span>
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <span class="qq-upload-size-selector qq-upload-size"></span>
+                        <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                        <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+                        <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+                        <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                    </li>
+                </ul>
+            </div>
+        </script>
+
     </head>
 
     <body data-spy="scroll" data-target="#demoList">
@@ -107,10 +139,10 @@
                     <a class="brand" href="#">More demos</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
+                            <li><a href="#demo4">Image Previews</a></li>
                             <li><a href="#demo1">Manual Trigger</a></li>
                             <li><a href="#demo2">Server Failure</a></li>
                             <li><a href="#demo3">Various Options</a></li>
-                            <li><a href="#demo4">Image Thumbnails</a></li>
                             <li><a href="#demo5">File Number Limit</a></li>
                         </ul>
                     </div>
@@ -120,6 +152,34 @@
 
         <div class="container marketing">
             <div class="row-fluid">
+                <section id="demo4">
+                    <h1>Display Image Previews</h1>
+                    <p class="marketing-byline">In this demo, we're utilizing Fine Uploader 4.0's client-side image
+                    preview generation feature.  Note that client-side previews are only supported in modern browsers
+                    (not IE9 and older).  For more info, see the <a href="http://docs.fineuploader.com/features/thumbnails.html">thumbnail feature docs</a>.</p>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div id="thumbnail-fine-uploader" style="margin-bottom:20px;"></div>
+                            <p>This uploader is also restricted in</p>
+                            <ul>
+                                <li>allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>)</li>
+                            </ul>
+
+                            <p>This demo uses the default simple thumbnails template bundled with Fine Uploader UI.
+                                For details on customizing templates, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
+
+                        </div>
+
+                        <div class="span8">
+                            <pre>
+                                <code class="example" data-demo="jquery-display-thumbnails"></code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <hr id="demo" class="soften">
+
                 <section id="demo1">
                     <h1>Manually Trigger Uploads</h1>
                     <p class="marketing-byline">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling <code>uploadStoredFiles()</code> on your Fine Uploader instance.</p>
@@ -213,36 +273,6 @@
                         <div class="span8">
                             <pre>
                                 <code class="example" data-demo="jquery-various-options"></code>
-                            </pre>
-                        </div>
-                    </div>
-                </section>
-
-                <hr id="demo" class="soften">
-
-                <section id="demo4">
-                    <h1>Display Image Thumbnails</h1>
-                    <p class="marketing-byline">In this demo, we've used the onComplete callback to display thumbnails of the uploaded images after they have been uploaded to the server.</p>
-                    <div class="row-fluid">
-                        <div class="span4">
-                            <div id="thumbnail-fine-uploader" style="margin-bottom:20px;"></div>
-                            <p>Since the demos do not actually upload your files, the thumbnail is fake.  Please see
-                                feature requests <a href="https://github.com/Widen/fine-uploader/issues/868">#868</a>
-                                and <a href="https://github.com/Widen/fine-uploader/issues/869">#869</a> to track
-                                progress on native support for preview generation.</p>
-                            <p>This uploader is also restricted in</p>
-                            <ul>
-                                <li>allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>)</li>
-                            </ul>
-
-                            <p>This demo uses the default template bundled with Fine Uploader UI.
-                                For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
-
-                        </div>
-
-                        <div class="span8">
-                            <pre>
-                                <code class="example" data-demo="jquery-display-thumbnails"></code>
                             </pre>
                         </div>
                     </div>
