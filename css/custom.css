@@ -1128,3 +1128,21 @@ code.example
 .strike {
     text-decoration: line-through;
 }
+
+section.question {
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: larger;
+}
+section.question::before {
+    font-size: larger;
+    font-weight: bold;
+}
+
+section.answer {
+    padding-top: 7px;
+}
+section.answer::before {
+
+}
+

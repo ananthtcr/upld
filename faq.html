@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fine Uploader</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Payment thankyou page for Fine Uploader.">
+        <meta name="author" content="Widen">
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+        <link href="master/client/fineuploader.css" rel="stylesheet">
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+        <![endif]-->
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+        <![endif]-->
+
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/prettify.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <script src="js/prettify.js"></script>
+        <script src="js/jquery.tipsy.min.js"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="jumbotron-small" style="height:40px;">
+            <div class="container"></div>
+        </div>
+
+    <div class="container marketing">
+        <h1 style="text-align:center">Frequently Asked Questions</h1>
+
+        <!--
+        <hr id="demo" class="soften">
+
+        <p class="marketing-byline"></p>
+        -->
+
+        <div class="container">
+            <!--
+            <div class="row-fluid" style="margin-top:30px;">
+                <section class="question">
+                </section>
+
+                <section class="answer">
+                </section>
+            </div>
+            -->
+            <div class="row-fluid" style="margin-top:30px;">
+
+                <section class="question">
+                    Do I need to purchase a license for development, staging, testing, or any other non-production domains?
+                </section>
+
+                <section class="answer">
+                    Nope. Just purchase one license per public-facing, production domain and feel free to use, develop on, and test Fine Uploader
+                    within your current workflow.
+                </section>
+            </div>
+            <div class="row-fluid" style="margin-top:30px;">
+
+                <section class="question">
+                    What happens when the one year licensing period is over?
+                </section>
+
+                <section class="answer">
+                    After one year, you do not have to renew your license to continue using the software.
+                    You may continue to use any version released during your one-year license forever under the commercial license.
+                    However, you will not receive updates unless you renew.
+                </section>
+            </div>
+            <div class="row-fluid" style="margin-top:30px;">
+                <section class="question">
+                    Is supported included with my license purchase?
+                </section>
+
+                <section class="answer">
+                    Short answer: Yes.
+                    Support is handled on <a href="http://stackoverflow.com/questions/tagged/fine-uploader">StackOverflow</a> and is provided to any and all users of Fine Uploader.
+                    Before asking a question we ask that you please read over our <a href="http://docs.fineuploader.com/support.html">Support Guidelines</a>.
+                </section>
+            </div>
+            <div class="row-fluid" style="margin-top:30px;">
+                <section class="question">
+                    Why is Fine Uploader open-source, yet commercially licensed?
+                </section>
+
+                <section class="answer">
+                    The intent of our licensing model is to make Fine Uploader freely accessible to free open-source projects, while collecting money from commercial users.
+                    We put a good amount of time, resources, and money into this project, and the financial sustainability of the library is important in order for us to continue to
+                    provide quick support, new features, and maintenance. There are even more reasons for purchasing a license on our homepage.
+                </section>
+            </div>
+            <div class="row-fluid" style="margin-top:30px;">
+                <section class="question">
+                    What licensing plans do you offer for non-profit and/or educational institutions?
+                </section>
+
+                <section class="answer">
+                    We do offer a special discount for non-profit, and education licensing. For more information, please email
+                    <a href="mailto:licensing@fineuploader.com">licensing@fineuploader.com</a>
+                </section>
+            </div>
+            <div class="row-fluid" style="margin-top:30px;">
+                <section class="question">
+                    Do you have an OEM licensing option?
+                </section>
+
+                <section class="answer">
+                     Absolutely. For more information, please email <a href="mailto:licensing@fineuploader.com">licensing@fineuploader.com</a>
+                </section>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <hr>
+            <p>We hope that this FAQ answers any questions you may have about Fine Uploader. If that is not the case,
+            then, please, feel free to email <a href="mailto:licensing@fineuploader.com">licensing@fineuploader.com</a> with any
+            futher questions you may have.</p>
+        </div>
+    </div>
+        <div id="footer"></div>
+
+        <script>
+            window.prettyPrint && prettyPrint();
+            $('.dropdown-toggle').dropdown();
+            $.get('./navbar.html', function(data) {
+                $('#navbar').html(data);
+                if (window.location.hash == '') {
+                    $('#navbar').find('li').eq(0).addClass('active');
+                } else {
+                    $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
+                }
+            });
+            $.get('./header.html', function(data) {
+                $('#header').html(data);
+            });
+            $.get('./footer.html', function(data) {
+                $('#footer').html(data);
+            });
+
+            $(document).ready(function () {
+                $(document).on('click', '#navbar a', function() {
+                    if ($(this).attr('href').indexOf('./#') == 0) {
+                        $('#navbar li').removeClass('active');
+                        $(this).parent().addClass('active');
+                    }
+                });
+
+                $('a.tip').tipsy();
+            });
+        </script>
+    </body>
+</html>
