@@ -42,8 +42,8 @@ $('#s3-demo-container').fineUploaderS3({
     },
     thumbnails: {
         placeholders: {
-            notAvailablePath: "/server/image_not_available.jpg",
-            waitingPath: "/server/image_loading.gif"
+            notAvailablePath: "/server/not_available-generic.png",
+            waitingPath: "/server/waiting-generic.png"
         }
     },
     formatFileName: function(name) {
