@@ -3,7 +3,6 @@
   <i class="icon-upload icon-white"></i> Upload now
 </div>
 
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="fineuploader-{VERSION}.js"></script>
 
 <script type="text/template" id="qq-template-manual-noedit">
@@ -34,18 +33,18 @@
 </script>
 
 <script>
-  $(document).ready(function() {
-    var manualuploader = new qq.FineUploader({
-      element: document.getElementById('manual-fine-uploader'),
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      template: "qq-template-manual-noedit",
-      autoUpload: false
-    });
+    (function() {
+        var manualuploader = new qq.FineUploader({
+            element: document.getElementById('manual-fine-uploader'),
+            request: {
+                endpoint: 'server/handleUploads'
+            },
+            template: "qq-template-manual-noedit",
+            autoUpload: false
+        });
 
-    qq(document.getElementById("triggerUpload")).attach("click", function() {
-        manualuploader.uploadStoredFiles();
-    });
-  });
+        qq(document.getElementById("triggerUpload")).attach("click", function() {
+            manualuploader.uploadStoredFiles();
+        });
+    }());
 </script>

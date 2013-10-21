@@ -81,11 +81,6 @@
             },
 
             // optional feature
-            retry: {
-                showButton: true
-            },
-
-            // optional feature
             chunking: {
                 enabled: true
             },

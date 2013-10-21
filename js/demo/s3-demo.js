@@ -22,9 +22,6 @@ $('#s3-demo-container').fineUploaderS3({
     cors: {
         expected: true
     },
-    retry: {
-        showButton: true
-    },
     chunking: {
         enabled: true
     },
