@@ -24,6 +24,7 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
         <script src="js/prettify.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     </head>
     <body>
         <div id="header"> </div>
@@ -36,78 +37,96 @@
         </div>
 
         <div class="container marketing">
-            <h1>Customize and download</h1>
+            <h1>Customize and Download</h1>
             </br>
             <p>Customize Fine Uploader's look, server-type, and components to get your very own version.
             </p>
             <hr>
             <div class="row-fluid">
+                <form action="http://localhost:8000/build" method="POST" class="form form-horizontal">
+                <!--
                 <form action="http://fu-assembler.elasticbeanstalk.com/build" method="POST" class="form-horizontal">
+                -->
 
-                    <label for="email">Licensholder email:</label>
-                        <input name="email" type="email" autofocus required placeholder="Enter valid email address ...">
+                    <label for="email">Licensee email (required):</label>
+                    <input name="email" type="email" autofocus required placeholder="Enter valid email address ..."
+                        title="Please enter the email address associated with the licenseholder.">
+
+                    <br/>
 
                     <br>
-                    <small>Note: A valid email is required to build a custom copy of Fine Uploader. Your email address is automatically added to the list of verified emails after your <a href="http://fineuploader.com/purchase_form.html">purchase</a>.</small>
+                    <div class="alert alert-info">
+                    <small><strong>Note:</strong> A valid email is required to build a custom copy of Fine Uploader. Your email address is automatically added to the list of verified emails after your <a href="http://fineuploader.com/purchase_form.html">purchase</a>.</small>
+                    </div>
                     <hr>
 
-                    <h2>jQuery</h2>
+                    <h2>jQuery Plugin</h2>
                     <div class="row-fluid">
-                        <p>Select whether you would like to use the jQuery plugin version with Fine Uploader. The plugin makes it super easy to integrate Fine Uploader into any
-                        site already using jQuery.</p>
+                        <p style="font-size: 13px;">Select whether you would like to use the jQuery plugin version with Fine Uploader.</p>
 
                     <label class="checkbox" for="jquery">
                         <input name="jquery" type="checkbox" checked>
-                        jQuery plugin </label>
+                        jQuery Plugin (<a href="http://docs.fineuploader.com/integrating/jquery.html" target="_blank" class="info-link" title="Include the jQuery plugin version of Fine Uploader.">?</a>)</label>
                     </div>
 
+                    <br />
+
                     <div class="alert alert-info">
-                        <p>The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</p>
+                        <small><strong>Note:</strong> The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</small>
                     </div>
 
                     <hr>
 
                     <div class="row-fluid">
-                        <h2>Server</h2>
+                        <h2>Server Type</h2>
 
-                        <p>Select the service you are using as a backend. <a href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
-                        <a href="http://docs.fineuploader.com/branch/master/endpoint_handlers/amazon-s3.html">S3</a>
+                        <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
+                        <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
                         will provide you with the code to send uploads directly to Amazon's Simple Storage Service.</p>
+                    <label class="radio" for="ep_traditional">
+                        <input id="ep_traditional" type="radio" name="endpoint" value="traditional" checked />Traditional (<a href="http://docs.fineuploader.com/endpoint_handlers/traditional.html" target="_blank" class="info-link" title="Select if you plan to roll your own server.">?</a>)
+                    </label>
+                    <label class="radio" for="ep_s3">
+                        <input id="ep_s3" type="radio" name="endpoint" value="s3" />Amazon S3 (<a href="http://docs.fineuploader.com/endpoint_handlers/amazon-s3.html" target="_blank" class="info-link" title="Select if you plan to use Amazon's Simple Storage Service">?</a>)
+                    </label>
 
+                        <!--
                         <select name="endpoint">
                             <option value="traditional">Traditional</option>
                             <option value="s3">S3</option>
                         </select>
+                        -->
 
                     </div>
 
                     <hr>
 
-                    <h2>User-interface</h2>
+                    <h2>Optional Modules</h2>
+                    <p style="font-size: 13px;">The following modules are optional components of Fine Uploader, and my be included at your leisure.</p>
                     <div class='row-fluid'>
 
-                        <p>Fine Uploader provides an option "UI-mode" which contains basic UI elements (such as a dynamic list of submitted files, coloring based on status, and more).
-                        Select whether you would like your custom build to include UI mode.</p>
-
-                        <label class="checkbox" for="ui">
-                            <input name="ui" type="checkbox" checked>UI Mode
-                        </label>
-                        <label class="checkbox" for="paste">
-                            <input name="paste" type="checkbox" checked>Paste Support
-                        </label>
-                        <label class="checkbox" for="dnd">
-                            <input name="dnd" type="checkbox" checked>Drag 'n' Drop Support
-                        </label>
-                        <label class="checkbox" for="delete">
-                            <input name="delete" type="checkbox" checked>Delete file Support
-                        </label>
-                        <label class="checkbox" for="edit">
-                            <input name="edit" type="checkbox" checked>Edit filename Support
-                        </label>
-
-                        <label class="checkbox" for="image-previews">
-                            <input name="image-previews" type="checkbox" checked>Image Previews
-                        </label>
+                        <div class='span6'>
+                            <label class="checkbox" for="ui">
+                                <input name="ui" type="checkbox" checked>Basic UI (<a href="http://docs.fineuploader.com/api/options-ui.html" target="_blank" class="info-link" title="Provide basic UI elements such as a dynamic list of submitted files, coloring based on status, an upload button, and more.">?</a>)
+                            </label>
+                            <label class="checkbox" for="paste">
+                                <input name="paste" type="checkbox" checked>Upload via Paste (<a href="http://docs.fineuploader.com/features/paste-to-upload.html" target="_blank" class="info-link" title="Enable support for submitted images using paste from the ClipboardAPI.">?</a>)
+                            </label>
+                            <label class="checkbox" for="dnd">
+                                <input name="dnd" type="checkbox" checked>Upload via Drag 'n' Drop (<a href="http://docs.fineuploader.com/features/drag-and-drop.html" target="_blank" class="info-link" title="Enable support for submitting files by dragging and dropping.">?</a>)
+                            </label>
+                        </div>
+                        <div class='span6'>
+                            <label class="checkbox" for="image-previews">
+                                <input name="image-previews" type="checkbox" checked>Image Previews (<a href="http://docs.fineuploader.com/features/thumbnails.html" target="_blank" class="info-link" title="Enable support for client-side previews of images.">?</a>)
+                            </label>
+                            <label class="checkbox" for="delete">
+                                <input name="delete" type="checkbox" checked>Delete File Support (<a href="http://docs.fineuploader.com/features/delete.html" target="_blank" class="info-link" title="Allows users to delete files after they have been succesfully uploaded.">?</a>)
+                            </label>
+                            <label class="checkbox" for="edit">
+                                <input name="edit" type="checkbox" checked>Edit Filename Support (<a href="http://docs.fineuploader.com/features/filename-edit.html" target="_blank" class="info-link" title="Allows users to edit filenames before the upload occurs.">?</a>)
+                            </label>
+                        </div>
                         <br/>
 
                     </div>
@@ -116,7 +135,7 @@
                     <br/>
                     <br/>
 
-                    <button type="submit" class="btn btn-large">Build</button>
+                    <button type="submit" class="btn btn-large" style="width: 100%;">Build</button>
                 </form>
             </div>
             </br>
