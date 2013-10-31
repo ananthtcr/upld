@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>^^store_name^^ Checkout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Widen">
+        <link rel="stylesheet" href="https://store.fineuploader.com/themes/standard/styles.css" type="text/css" media="screen" charset="utf-8" />
+        <link href='https://store.fineuploader.com/cache.php?url=http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="https://store.fineuploader.com/cache.php?url=http://fineuploader.com/css/ie8.css" >
+        <![endif]-->
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="https://store.fineuploader.com/cache.php?url=http://fineuploader.com/css/ie7.css" >
+        <![endif]-->
+
+        <link href="https://store.fineuploader.com/cache.php?url=//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://store.fineuploader.com/cache.php?url=http://fineuploader.com/css/custom.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div id="header"></div>
+
+        <div class="container marketing">
+            ^^cart^^
+            ^^checkout^^
+        </div>
+
+        <div id="footer"></div>
+
+        <script src="https://store.fineuploader.com/cache.php?url=http://platform.twitter.com/widgets.js"></script>
+        <script src="https://store.fineuploader.com/cache.php?url=https:////netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            /* UUID GENERATOR
+             *
+             * Credit: http://ajaxian.com/archives/uuid-generator-in-javascript
+             * Date Found: 1-Aug-2013
+             *
+             */
+            /* randomUUID.js - Version 1.0
+             *
+             * Copyright 2008, Robert Kieffer
+             *
+             * This software is made available under the terms of the Open Software License
+             * v3.0 (available here: http://www.opensource.org/licenses/osl-3.0.php )
+             *
+             * The latest version of this file can be found at:
+             * http://www.broofa.com/Tools/randomUUID.js
+             *
+             * For more information, or to comment on this, please go to:
+             * http://www.broofa.com/blog/?p=151
+             */
+
+            /**
+             * Create and return a "version 4" RFC-4122 UUID string.
+             */
+            function randomUUID() {
+                var s = [], itoh = '0123456789ABCDEF';
+
+                // Make array of random hex digits. The UUID only has 32 digits in it, but we
+                // allocate an extra items to make room for the '-'s we'll be inserting.
+                for (var i = 0; i < 36; i++) s[i] = Math.floor(Math.random()*0x10);
+
+                // Conform to RFC-4122, section 4.4
+                s[14] = 4;  // Set 4 high bits of time_high field to version
+                s[19] = (s[19] & 0x3) | 0x8;  // Specify 2 high bits of clock sequence
+
+                // Convert to hex chars
+                for (var i = 0; i < 36; i++) s[i] = itoh[s[i]];
+
+                // Insert '-'s
+                s[8] = s[13] = s[18] = s[23] = '-';
+
+                return s.join('');
+            }
+        </script>
+
+        <script>
+            / * When DOM is ready, generate the UUID */
+            $(function() { $("input[name='license_code']").val(randomUUID());});
+        </script>
+
+
+    </body>
+</html>
+
+^^custom_begin^^
+<fieldset id="fc_custom_fields">
+    <h4>Additional Information</h4>
+    <div class="fc_inner">
+        <div>
+            <input required class="fc_required" type="text" name="name_first" value="">
+            <label for="name_first">First Name</label>
+            <label class="fc_error" style="display: none;" for="name_first">Please enter first name</label>
+        </div>
+        <div>
+            <input required class="fc_required" type="text" name="name_last" value="">
+            <label for="name_last">Last Name</label>
+            <label class="fc_error" style="display: none;" for="name_last">Please enter last name</label>
+        </div>
+        <div>
+            <input required class="fc_required" type="text" name="company" value="">
+            <label for="company">Company</label>
+            <label class="fc_error" style="display: none;" for="company">Please enter company</label>
+        </div>
+        <div>
+            <input required class="fc_required" type="text" name="domain" value="">
+            <label for="domain">Domain</label>
+            <label class="fc_error" style="display: none;" for="domain">Please enter domain</label>
+        </div>
+        <div>
+            <input type="hidden" name="license_code" value="">
+        </div>
+    </div>
+</fieldset>
+
+^^custom_end^^
+
