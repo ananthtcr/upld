@@ -1141,3 +1141,10 @@ section.answer::before {
 
 }
 
+.hero-unit {
+    line-height: 0px;
+    font-size: 14px;
+    padding: 30px;
+    padding-top: 10px;
+}
+
