@@ -8,8 +8,8 @@
         <meta name="author" content="Widen">
 
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
@@ -23,7 +23,7 @@
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://platform.twitter.com/widgets.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
 
@@ -34,9 +34,6 @@
         </script>
        <link rel="stylesheet" href="//cdn.foxycart.com/static/scripts/colorbox/1.3.23/style1_fc/colorbox.css?ver=1" type="text/css" media="screen" charset="utf-8" />
        <script src="//cdn.foxycart.com/fineuploader.com/foxycart.js?ver=2" type="text/javascript" charset="utf-8"></script>
-       <!--
-       <script src="//cdn.foxycart.com/store.fineuploader.com/foxycart.colorbox.js" type="text/javascript" charset="utf-8"></script>
-       -->
 
     </head>
     <body>
@@ -121,7 +118,7 @@
                                 <div class="row-fluid">
                                     <div id="incident-input" style="display: none;">
                                         <h5>How can we help? </h5>
-                                        <textarea style="width: 100%; height: 200px"></textarea>
+                                        <textarea max-length="1000" style="width: 100%; height: 200px"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -200,12 +197,16 @@
                         });
 
                         $input.val(incident);
-                        console.log($input.val());
+                        //console.log($input.val());
+                    }
+                    else {
+                        var $input = $el.find("input").filter(function() {
+                            return this.name.match(/incident/);
+                        });
+                        $input.val('');
                     }
 
                 });
-
-                //FC_UpdateCart('store.fineuploader.com');
 
                 $("input[name=__license]").change(function(e) {
                     toggle_license($(this));
@@ -214,20 +215,6 @@
                 $("input[name='__support']").change(function(e) {
                     toggle_support($(this));
                 });
-
-                //var $name, $price, $code, $quantity;
-                //$name = $("input").filter(function () {
-                //    return this.name.match(/name*/);
-                //});
-                //$price = $("input").filter(function () {
-                //    return this.name.match(/price*/);
-                //});
-                //$code = $("input").filter(function () {
-                //    return this.name.match(/code*/);
-                //});
-                //$quantity = $("input").filter(function () {
-                //    return this.name.match(/quantity*/);
-                //});
 
                 // HMAC format:
                 // code + name.value + value.value
@@ -245,23 +232,6 @@
                         'quantity': '332822063ce75c24ef1f2d1b40bf2df5f31e019fcfdd654d08b53f52c1479fad||open'
                     }
                 }
-
-                /*
-                var name = "Single"
-                  , price = "49.00"
-                  , code = "1"
-                  , quantity = 1
-                  , hmac = hmacs[name];
-
-                $name.attr('name', 'name'+"||"+hmac.name);
-                $name.val(name);
-                $price.attr('name', 'price'+"||"+hmac.price);
-                $price.val(price);
-                $code.attr('name', 'code'+"||"+hmac.code);
-                $code.val(code);
-                $quantity.attr('name', 'quantity'+"||"+hmac.quantity);
-                $quantity.val(quantity);
-                */
 
                 function toggle_support($el) {
                     var $form = $("#support-cart-submit");
@@ -301,18 +271,6 @@
                             });
                             $input.attr('name', form_key + "||" + hmac);
                             $input.val($el.val());
-
-                            /*
-                            jQuery.getJSON('https://' + storedomain + '/cart?' + fcc.session_get() + '&output=json&callback=?', function(cart) {
-                                var product_id = $.each(cart.products, function(index, product) {
-                                    if (product.code == code) { return product.id; }
-                                });
-                                jQuery.getJSON('https://' + storedomain + '/cart?' + fcc.session_get() + '&cart=update&quantity=' + $el.val() + '&id=' + product_id + '&output=json&callback=?', function(cart) {
-                                    console.log(cart);
-                                });
-
-                            });
-                            */
                         }
                         else {
                             $input = $form.find("input[name='" + form_key + "']")
@@ -320,47 +278,16 @@
                             $input.val($input.val() + "||" + hmac);
                         }
 
-                        console.log($input.attr('name') + ' : ' + $input.val());
-
                         if (value === 'quantity' && $input.val() <= 0) {
                             $form.find("input").each(function(index, el) {
                                 $(el).prop('disabled', true);
                             });
-                            console.log('reset');
                         } else {
                             $form.find("input:disabled").each(function(index, el) {
                                 $(el).prop('disabled', false);
                             });
                         }
                     });
-
-                    /*
-                    var cur_license = $("input[name=__license]:checked").val().split(',');
-                    var name = cur_license[0];
-                    var price = cur_license[1];
-                    var code = cur_license[2];
-                    var quantity = cur_license[3];
-                    var hmac = hmacs[name]
-                    if (price > 0) {
-                        $name.val(name);
-                        $name.attr('name', 'name'+"||"+hmac.name);
-                        $price.val(price);
-                        $price.attr('name', 'price'+"||"+hmac.price);
-                        $code.val(code);
-                        $code.attr('name', 'code'+"||"+hmac.code);
-                        $quantity.val(quantity);
-                        $quantity.attr('name', 'quantity'+"||"+hmac.quantity);
-                    } else {
-                        $name.val("");
-                        $name.attr('name', '')
-                        $price.val("0");
-                        $price.attr('name', 0);
-                        $code.val("0");
-                        $code.attr('name', '');
-                        $quantity.val("0");
-                        $quantity.attr('name', '');
-                    }
-                    */
                 }
 
             // Set initial state
