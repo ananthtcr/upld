@@ -9,8 +9,7 @@
 
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="source/fineuploader-4.0.3.min.css" rel="stylesheet">
+        <link href="source/fineuploader-4.1.0-2.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
@@ -27,7 +26,7 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
-        <script src="source/all.fineuploader-4.0.3.min.js"></script>
+        <script src="source/all.fineuploader-4.1.0-2.min.js"></script>
 
         <script type="text/template" id="qq-template">
             <div class="qq-uploader-selector qq-uploader">
@@ -113,6 +112,8 @@
                         <a class="qq-upload-cancel-selector btn-small btn-warning" href="#">Cancel</a>
                         <a class="qq-upload-retry-selector btn-small btn-info" href="#">Retry</a>
                         <a class="qq-upload-delete-selector btn-small btn-warning" href="#">Delete</a>
+                        <a class="qq-upload-pause-selector btn-small btn-info" href="#">Pause</a>
+                        <a class="qq-upload-continue-selector btn-small btn-info" href="#">Continue</a>
                         <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
                         <a class="view-btn btn-small btn-info hide" target="_blank">View</a>
                     </li>
@@ -135,7 +136,7 @@
                     <div class="arrow-down"></div>
                 </div>
 
-                <h1 class="inner-shadow">Fine Uploader <span class="orange">4.0</span></h1>
+                <h1 class="inner-shadow">Fine Uploader <span class="orange">4.1</span></h1>
                 <h2>File uploading <b>without</b> the hassle.</h2>
 
                 <div class="row-fluid mt60">
@@ -241,8 +242,9 @@
                             <li><a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/" target="_blank">Edit file names</a></li>
                             <li><a href="#s3-demo">Upload directly to Amazon S3</a></li>
                             <li><a href="http://docs.fineuploader.com/features/extra-buttons.html">Multiple upload buttons</a></li>
-                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/styling.html">Flexible templating system</a></li>
-                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/thumbnails.html">Image previews</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/styling.html">Flexible templating system</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/thumbnails.html">Image previews</a></li>
+                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/pause.html">Pause uploads</a></li>
                         </ul>
                     </div>
                 </div>
@@ -273,6 +275,7 @@
                                         <li><a href="http://docs.fineuploader.com/features/retry.html">Retry of failed uploads</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/chunking.html">Chunking</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/resume.html">Auto-resume of interrupted uploads</a></li>
+                                        <li><a href="http://docs.fineuploader.com/features/pause.html">Pause in-progress uploads</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/delete.html">Deleting an uploaded file</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/validation.html">Validation rules</a>
                                             <ul>
@@ -296,18 +299,19 @@
                             uploaded (since each chunk is 5 MiB): close or refresh the page, re-submit the file, and
                             watch Fine Uploader pick up from where it left off!
                         </ul></p>
-
-                        <br/>
-                        <i class="icon-arrow-down" style="margin-top:3px;"></i>
-                        <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
-                        <div id="s3-demo-container"></div>
                     </div>
 
-                    <div class="span6">
+                    <div class="span6" style="margin-bottom: -50px;">
                         <pre>
                             <code class="example" data-demo="s3-demo"></code>
                         </pre>
                     </div>
+                </div>
+
+                <div>
+                    <i class="icon-arrow-down" style="margin-top:3px;"></i>
+                    <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
+                    <div id="s3-demo-container"></div>
                 </div>
 
                 <hr class="hide" id="setup">
