@@ -1,5 +1,4 @@
 manualuploader = new qq.FineUploader({
-    multiple: !qq.ios7(),
     element: document.getElementById("manual-fine-uploader"),
     request: {
         endpoint: 'server/success.html'

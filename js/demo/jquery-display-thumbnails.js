@@ -1,5 +1,4 @@
 $('#thumbnail-fine-uploader').fineUploader({
-    multiple: !qq.ios7(),
     template: "qq-simple-thumbnails-template",
     request: {
         endpoint: 'server/success.html'

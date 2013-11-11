@@ -1,5 +1,4 @@
 var thumbnailuploader = new qq.FineUploader({
-    multiple: !qq.ios7(),
     template: "qq-simple-thumbnails-template",
     element: document.getElementById("thumbnail-fine-uploader"),
     request: {

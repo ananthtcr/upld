@@ -3,7 +3,6 @@ $(document).ready(function() {
     var $messages = $('#messages');
 
     var uploader = new qq.FineUploaderBasic({
-        multiple: !qq.ios7(),
         button: $fub[0],
         request: {
             endpoint: 'server/success.html'

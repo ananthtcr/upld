@@ -1,5 +1,4 @@
 var restricteduploader = new qq.FineUploader({
-    multiple: !qq.ios7(),
     element: document.getElementById("restricted-fine-uploader"),
     request: {
         endpoint: 'server/success.html'
