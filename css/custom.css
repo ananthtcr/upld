@@ -88,8 +88,7 @@ body
 .main-nav .navbar .nav > li > a
 {
     font-size:13px;
-    font-weight:bold;
-    color:#6c6c6c;
+    color:#FFFFFF;
     text-shadow:none;
 }
 .main-nav .navbar .nav > li > a:hover
@@ -380,16 +379,18 @@ hr.soften
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-    background: #66ccdd; /* fallback for non-supporting browsers */
-    background-image: -webkit-gradient(radial, 33% 25px, 0, center center, 141, from(#ddf3f7), to(#00abc7) ); /* old WebKit Syntax */
-    background-image: -webkit-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* New WebKit syntax */
-    background-image: -moz-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%);
-    background-image: -ms-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* IE10+ */
-    background-image: -o-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); /* Opera (13?) */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1F8FF', endColorstr='#00859b',GradientType=0 );
-    -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
-    -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
-    box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+    border: 1px solid #777777;
+    background: #66ccdd;  /* fallback for non-supporting browsers */
+    background-color: #00abc7;
+    /*background-image: -webkit-gradient(radial, 33% 25px, 0, center center, 141, from(#ddf3f7), to(#00abc7) ); *//* old WebKit Syntax */
+    /*background-image: -webkit-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); *//* New WebKit syntax */
+    /*background-image: -moz-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%);*/
+    /*background-image: -ms-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); *//* IE10+ */
+    /*background-image: -o-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); *//* Opera (13?) */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1F8FF', endColorstr='#00859b',GradientType=0 );*/
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 .jumbotron-small a
 {
@@ -476,12 +477,13 @@ hr.soften
 }
 .marketing h1
 {
-    margin: 40px 0 10px -4px;
-    font-size: 60px;
+    margin: 40px 0 20px 0px;
+    font-size: 40px;
     font-weight: 200;
     line-height: 1;
     letter-spacing: -1px;
     color: #00abc7;
+    text-align: center;
 }
 .marketing h2
 {
@@ -509,6 +511,7 @@ hr.soften
     font-weight: 300;
     line-height: 25px;
     color: #525252;
+    text-align: center;
 }
 .features img
 {

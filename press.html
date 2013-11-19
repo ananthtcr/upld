@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Fine Uploader | Press</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fine Uploader. A dependency-free, native browser upload tool.">
+    <meta name="author" content="Widen">
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+    <![endif]-->
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/jquery.tipsy.min.js"></script>
+</head>
+
+<body>
+<div id="header"></div>
+
+<div class="jumbotron-small">
+    <div class="container">
+        <div id="navbar"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="marketing">
+
+        <div class="row-fluid">
+            <div class="span8">
+                <br>
+                <h2>Press</h2>
+
+                <hr>
+
+                <time datetime="2012-02-17">February 17, 2012</time>
+                <h3>Article Title</h3>
+                <br>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+                <hr>
+
+                <time datetime="2012-02-17">February 17, 2012</time>
+
+                <h3>Article Title</h3>
+                <br>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+
+            <div class="span4">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                <h4>Official Press releases here?</h4>
+                <h5>I thought we could have a 'Press Kit' with the FineUploader logos and brand guidelines here
+                and link to a Smartimage Collection with all of these assets. Win Win. Thoughts?</h5>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+    window.prettyPrint && prettyPrint();
+    $('.dropdown-toggle').dropdown();
+    $.get('./navbar.html', function(data) {
+        $('#navbar').html(data);
+        if (window.location.hash == '') {
+            $('#navbar').find('li').eq(0).addClass('active');
+        } else {
+            $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
+        }
+    });
+    $.get('./footer.html', function(data) {
+        $('#footer').html(data);
+    });
+
+    $.get('./header.html', function(data) {
+        $('#header').html(data);
+    });
+</script>
+</body>
+</html>

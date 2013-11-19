@@ -9,7 +9,8 @@
 
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="source/fineuploader-4.1.0-5.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="source/fineuploader-4.0.3.min.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
@@ -26,7 +27,7 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
-        <script src="source/all.fineuploader-4.1.0-5.min.js"></script>
+        <script src="source/all.fineuploader-4.0.3.min.js"></script>
 
         <script type="text/template" id="qq-template">
             <div class="qq-uploader-selector qq-uploader">
@@ -112,8 +113,6 @@
                         <a class="qq-upload-cancel-selector btn-small btn-warning" href="#">Cancel</a>
                         <a class="qq-upload-retry-selector btn-small btn-info" href="#">Retry</a>
                         <a class="qq-upload-delete-selector btn-small btn-warning" href="#">Delete</a>
-                        <a class="qq-upload-pause-selector btn-small btn-info" href="#">Pause</a>
-                        <a class="qq-upload-continue-selector btn-small btn-info" href="#">Continue</a>
                         <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
                         <a class="view-btn btn-small btn-info hide" target="_blank">View</a>
                     </li>
@@ -125,79 +124,31 @@
     <body>
         <div id="header"></div>
 
-        <div class="jumbotron masthead">
+        <div class="jumbotron-small">
             <div class="container">
                 <div id="navbar"></div>
-
-                <div class="jquery-ribbon">
-                    <div class="square">
-                        <p><a href="#s3-demo">Now with <span>Image Preview</span></a></p>
-                    </div>
-                    <div class="arrow-down"></div>
-                </div>
-
-                <h1 class="inner-shadow">Fine Uploader <span class="orange">4.1</span></h1>
-                <h2>File uploading <b>without</b> the hassle.</h2>
-
-                <div class="row-fluid mt60">
-                    <div class="span4">
-                        <a class="lg_icon" href="downloads"><img src="img/download_icon_lg.png" /></a>
-                        <h3 class="push"><a href="downloads">Downloads</a></h3>
-                    </div>
-
-                    <div class="span4">
-                        <a class="lg_icon" href="http://docs.fineuploader.com"><img src="img/documentation_icon.png" /></a>
-                        <h3 class="push"><a href="http://docs.fineuploader.com">Documentation</a></h3>
-                    </div>
-
-                    <div class="span4">
-                        <a class="lg_icon" href="support"><img src="img/support_icon.png" /></a>
-                        <h3><a href="support">Support</a></h3>
-                    </div>
-                </div>
             </div>
         </div>
 
         <div class="container">
             <div class="marketing">
                 <h1>Introducing Fine Uploader</h1>
-                <p class="marketing-byline">Javascript plugin tool to give your users a smooth experience when uploading files to your website. </p>
+                <p class="marketing-byline">Javascript plugin tool to give your users a <span class="orange"><em>smooth experience</em></span> when uploading files to your website. </p>
                 <div class="row-fluid">
 
-                    <div class="span4 p8" style="padding-left:0px;">
-                        <h3>How it works</h3>
-                        <p>Displays progress bar while uploading files through XMLHttpRequest (AJAX) in modern browsers.  For other browsers, falls back to hidden-iframe-based uploads.</p>
-                    </div>
-
-                    <div class="span4 p8">
+                    <div class="span6 p8" style="padding-left: 0;">
                         <h3>Browser support</h3>
-                        <p>Does NOT require Flash, jQuery, or any external libraries.</p>
-                        <ul>
-                            <li>IE7+ (including IE10)</li>
-                            <li>Firefox</li>
-                            <li>Safari (OS X)</li>
-                            <li>Chrome (including iOS & Android)</li>
-                            <li>iOS6+</li>
-                            <li>Android</li>
-                            <li>Opera 15+</li></li>
-                        </ul>
+                        <p>Fine Uploader supports all major browsers and does not require Flash, jQuery, or any external libraries.</p>
                     </div>
 
-                    <div class="span4 p8">
+                    <div class="span6 p8">
                         <h3>Server support</h3>
-                        <p>Any available server technology. Common implementations with:</p>
-                        <ul>
-                            <li>ASP.NET</li>
-                            <li>ColdFusion</li>
-                            <li>Java</li>
-                            <li>Node.js</li>
-                            <li>Perl</li>
-                            <li>PHP</li>
-                            <li>Python</li>
-                            <li>Erlang</li>
-                            <li>Rails</li>
-                        </ul>
+                        <p>Use Fine Uploader with any server side technology.</p>
                     </div>
+
+                    <!--<div style="clear: both;">-->
+                        <!--<small id="footnote-1">[<a href="#citation-1">1</a>]: A bug in iOS7 in some cases prevents Fine Uploader from uploading .mov files. More details on a workaround are found on <a href="https://github.com/Widen/fine-uploader/issues/990">the issue tracker.</a></small>-->
+                    <!--</div>-->
                 </div>
 
                 <hr class="soften" id="features" style="margin-top:15px;">
@@ -238,9 +189,8 @@
                             <li><a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/" target="_blank">Edit file names</a></li>
                             <li><a href="#s3-demo">Upload directly to Amazon S3</a></li>
                             <li><a href="http://docs.fineuploader.com/features/extra-buttons.html">Multiple upload buttons</a></li>
-                            <li><a href="http://docs.fineuploader.com/features/styling.html">Flexible templating system</a></li>
-                            <li><a href="http://docs.fineuploader.com/features/thumbnails.html">Image previews</a></li>
-                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/pause.html">Pause uploads</a></li>
+                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/styling.html">Flexible templating system</a></li>
+                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/thumbnails.html">Image previews</a></li>
                         </ul>
                     </div>
                 </div>
@@ -271,7 +221,6 @@
                                         <li><a href="http://docs.fineuploader.com/features/retry.html">Retry of failed uploads</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/chunking.html">Chunking</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/resume.html">Auto-resume of interrupted uploads</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/pause.html">Pause in-progress uploads</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/delete.html">Deleting an uploaded file</a></li>
                                         <li><a href="http://docs.fineuploader.com/features/validation.html">Validation rules</a>
                                             <ul>
@@ -295,19 +244,18 @@
                             uploaded (since each chunk is 5 MiB): close or refresh the page, re-submit the file, and
                             watch Fine Uploader pick up from where it left off!
                         </ul></p>
+
+                        <br/>
+                        <i class="icon-arrow-down" style="margin-top:3px;"></i>
+                        <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
+                        <div id="s3-demo-container"></div>
                     </div>
 
-                    <div class="span6" style="margin-bottom: -50px;">
+                    <div class="span6">
                         <pre>
                             <code class="example" data-demo="s3-demo"></code>
                         </pre>
                     </div>
-                </div>
-
-                <div>
-                    <i class="icon-arrow-down" style="margin-top:3px;"></i>
-                    <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
-                    <div id="s3-demo-container"></div>
                 </div>
 
                 <hr class="hide" id="setup">
