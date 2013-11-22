@@ -126,7 +126,7 @@
     <body>
         <div id="header"></div>
 
-        <div class="jumbotron-small">
+        <div class="jumbotron-small fixed">
             <div class="container">
                 <div id="navbar"></div>
             </div>
@@ -134,14 +134,16 @@
 
         <div class="container">
             <div class="marketing">
-                <h1>Introducing Fine Uploader <span class="orange">4.0</span></h1>
-                <p class="marketing-byline">Javascript plugin tool to give your users a <span class="orange"><em>smooth experience</em></span> when uploading files to your website</p>
+                <header data-180="opacity: 0" data-0="opacity: 1" style="opacity: 1;">
+                    <h1><img src="img/fineuploader-header-logo.png" alt="Fine Uploader" class="header"/> <span class="orange version-number">4.0</span></h1>
+                    <h2>File uploading <span class="orange"><em>without</em></span> the hassle</h2>
+                </header>
 
                 <div class="spacer"></div>
                 <hr class="no-margin">
                 <hr class="no-margin">
 
-                <section class="browser-support">
+                <section id="support">
                     <div class="row-fluid container">
                         <div class="span6 p8 home-video right">
                             <img height="200" src="/img/browsers.png" alt="" style="margin-top:0px; width: 200px;"/>
@@ -184,12 +186,13 @@
 
         <hr class="no-margin">
         <hr class="no-margin">
+        <div class="spacer"></div>
 
         <div class="progress">
             <div id="progress" data-0="width:0%;background:hsl(8, 76%, 59%);" data-570="width:100%;background:hsl(8, 76%, 59%);" class="progress-bar" style="width: 27.719298245614034%; background-color: rgb(230, 92, 71);"></div>
         </div>
 
-        <section class="features-section marketing" id="features">
+        <section class="features-section marketing"  id="features">
             <div class="container">
                 <h1>Features</h1>
                 <p class="marketing-byline"><span class="orange"><em>Everything you need</em></span> in a file uploader</p>
@@ -456,15 +459,18 @@
         <hr class="no-margin">
         <hr class="no-margin">
 
-        <div class="marketing">
-            <div class="spacer"></div>
-            <div class="spacer"></div>
+        <section style="height:600px;">
+            <div class="marketing">
+                <div class="spacer"></div>
+                <div class="spacer"></div>
 
-            <p class="marketing-byline">Something something commercial licenses free-source.</p>
-            <div class="spacer"></div>
-            <div class="spacer"></div>
+                <h2>Something something commercial licenses free-source.</h2>
+                <a class="btn btn-large">purchase a license</a>
+                <div class="spacer"></div>
+                <div class="spacer"></div>
 
-        </div>
+            </div>
+        </section>
 
         <!--<h1>Upload Files Directly to Amazon S3</h1>-->
                 <!--<p class="marketing-byline">Fine Uploader has always supported uploading to your own server.-->
