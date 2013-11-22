@@ -6,12 +6,97 @@ body
     padding-top: 30px;
     font-family: 'Maven Pro', sans-serif;
     font-size: 14px;
-    background-color:#FCFCFA;
+    background-color:#FEFEFC;
     color:#525252 !important;
 }
 .container
 {
     width: 75%;
+}
+
+.features-section
+{
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: left !important;
+}
+.accordion-group.main-features a
+{
+    font-size: 17px;
+}
+.accordion-group.main-features .accordion-heading-features
+{
+    margin: 6px;
+}
+.accordion-inner-faq
+{
+    text-align: left;
+}
+.accordion-toggle-faq.collapsed
+{
+    font-size: 16px !important;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+ .accordion-toggle-faq
+{
+    font-size: 18px !important;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+h4, h5, h6
+{
+    color: #00abc7;
+    font-weight: 300;
+}
+.browser-support
+{
+    /*background-image: url("http://assets.aneventapart.com/_/img/noise.png");*/
+    /*background: rgb(252,252,250); *//* Old browsers */
+    /*background: -moz-linear-gradient(top,  rgba(252,252,250,1) 0%, rgba(158,232,250,1) 100%); *//* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,250,1)), color-stop(100%,rgba(158,232,250,1))); *//* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(top,  rgba(252,252,250,1) 0%,rgba(158,232,250,1) 100%); *//* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(top,  rgba(252,252,250,1) 0%,rgba(158,232,250,1) 100%); *//* Opera 11.10+ */
+    /*background: -ms-linear-gradient(top,  rgba(252,252,250,1) 0%,rgba(158,232,250,1) 100%); *//* IE10+ */
+    /*background: linear-gradient(to bottom,  rgba(252,252,250,1) 0%,rgba(158,232,250,1) 100%); *//* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfa', endColorstr='#9ee8fa',GradientType=0 ); *//* IE6-9 */
+
+}
+.server-support
+{
+    /*background-image: url("http://assets.aneventapart.com/_/img/noise.png");*/
+    /*background-color: #f3f3f3;*/
+    /*background: rgb(158,232,250); *//* Old browsers */
+    /*background: -moz-linear-gradient(top,  rgba(158,232,250,1) 0%, rgba(252,252,250,1) 100%); *//* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(158,232,250,1)), color-stop(100%,rgba(252,252,250,1))); *//* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(top,  rgba(158,232,250,1) 0%,rgba(252,252,250,1) 100%); *//* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(top,  rgba(158,232,250,1) 0%,rgba(252,252,250,1) 100%); *//* Opera 11.10+ */
+    /*background: -ms-linear-gradient(top,  rgba(158,232,250,1) 0%,rgba(252,252,250,1) 100%); *//* IE10+ */
+    /*background: linear-gradient(to bottom,  rgba(158,232,250,1) 0%,rgba(252,252,250,1) 100%); *//* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ee8fa', endColorstr='#fcfcfa',GradientType=0 ); *//* IE6-9 */
+
+}
+
+div.progress
+{
+    width: 50%;
+    margin: 20px auto;
+    height: 40px;
+}
+
+#progress {
+    height: 40px;
+    background: #444;
+    bottom: 0;
+    z-index: 1;
+}
+.featurette
+{
+    margin-bottom: 30px;
 }
 
 /* Header
@@ -32,6 +117,7 @@ body
 }
 #navbar
 {
+    width: 100%;
     float:left;
 }
 .navbar
@@ -74,7 +160,6 @@ body
 /* Main Nav */
 .main-nav
 {
-    position:relative;
     margin-left: -35px;
 }
 .main-nav .navbar-inner
@@ -93,7 +178,8 @@ body
 }
 .main-nav .navbar .nav > li > a:hover
 {
-    color:#f87436;
+    color:#FFFFFF;
+    background-color: #66ccdd;
 }
 .main-nav .navbar .nav .dropdown-menu > li > a
 {
@@ -105,7 +191,7 @@ body
 }
 .main-nav .navbar .nav .dropdown-menu > li > a:hover
 {
-    background-color: #f87436;
+    background-color: #e65c47;
     background-image:none;
     filter:progid:DXImageTransform.Microsoft.gradient(enabled=false); /*IE remove bootstrap filter */
     color:#FFF;
@@ -115,7 +201,7 @@ body
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle
 {
-    background-color: #f87436;
+    background-color: #e65c47;
     color:#fff !important;
 }
 .dropdown-menu .active > a,
@@ -187,7 +273,7 @@ body
     position:relative;
     width: 100px;
     height:65px;
-    background-color:#f87436;
+    background-color:#e65c47;
     box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.4);
 }
 .square a
@@ -198,11 +284,36 @@ body
 {
     border-left: 60px solid transparent;
     border-right: 60px solid transparent;
-    border-top: 40px solid #f87436;
+    border-top: 40px solid #e65c47;
 }
 .btn-small
 {
     font-size:13px;
+}
+
+.home-video
+{
+    width: 100%;
+    height: 150px;
+}
+
+.spacer
+{
+    height:40px;
+}
+@media (max-width: 767px)
+{
+    .spacer
+    {
+        height:20px;
+    }
+}
+.fixed
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Tweak navbar brand link to be super sleek
@@ -260,6 +371,10 @@ hr.soften
 {
     height: 1px;
     margin: 60px 0;
+}
+hr.no-margin
+{
+    margin: 0;
 }
 
 
@@ -352,10 +467,10 @@ hr.soften
 .btn
 {
     background-color: #f87436;
-    background-image: -moz-linear-gradient(center top , #f88d5a, #f87436);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f88d5a), to(#f87436));
-    background-image: -webkit-linear-gradient(top, #f88d5a, #f87436);
-    background-image: -ms-linear-gradient(top, #f88d5a, #f87436);
+    background-image: -moz-linear-gradient(center top , #f88d5a, #e65c47);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f88d5a), to(#e65c47));
+    background-image: -webkit-linear-gradient(top, #f88d5a, #e65c47);
+    background-image: -ms-linear-gradient(top, #f88d5a, #e65c47);
     color:#fff;
     text-shadow:none;
 }
@@ -365,7 +480,7 @@ hr.soften
 .btn.disabled,
 .btn[disabled]
 {
-    background-color: #f87436;
+    background-color: #e65c47;
     color:#fff;
 }
 .btn a:hover
@@ -374,7 +489,7 @@ hr.soften
 }
 .jumbotron-small
 {
-    position: relative;
+    z-index: 1;
     padding: 0px 0;
     color: #fff;
     text-align: center;
@@ -388,9 +503,9 @@ hr.soften
     /*background-image: -ms-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); *//* IE10+ */
     /*background-image: -o-radial-gradient(33% 25px, circle contain, #ddf3f7 0%, #00abc7 3000%); *//* Opera (13?) */
     /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1F8FF', endColorstr='#00859b',GradientType=0 );*/
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 .jumbotron-small a
 {
@@ -472,14 +587,14 @@ hr.soften
 -------------------------------------------------- */
 .marketing
 {
-    text-align: left;
+    text-align: center;
     color: #525252;
 }
 .marketing h1
 {
-    margin: 40px 0 20px 0px;
-    font-size: 40px;
-    font-weight: 200;
+    margin: 50px 0 12px 0px;
+    font-size: 60px;
+    font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
     color: #00abc7;
@@ -493,9 +608,8 @@ hr.soften
 }
 .marketing h3
 {
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size: 18px;
+    font-weight:300;
+    font-size: 24px;
     line-height: 22px;
     color: #00abc7;
 }
@@ -506,12 +620,12 @@ hr.soften
 }
 .marketing .marketing-byline
 {
-    margin-bottom: 40px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 300;
     line-height: 25px;
     color: #525252;
     text-align: center;
+    margin-bottom: 20px;
 }
 .features img
 {
@@ -523,14 +637,18 @@ hr.soften
     margin-top: 0px !important;
     float:left;
 }
+ul.features
+{
+    list-style: none;
+}
 .features
 {
-    margin-top: 35px;
+    margin-top: 15px;
 }
 .features li
 {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 6px 0;
+    font-size: 18px;
 }
 
 /* Footer
@@ -539,7 +657,6 @@ hr.soften
 .footer
 {
     padding: 70px 0;
-    margin-top: 70px;
     border-top: 1px solid #e5e5e5;
     background-color: #525252;
     color :#eee;
@@ -578,7 +695,7 @@ hr.soften
         margin-top: 3px !important;
     }
     .top-nav{
-        margin-top:-35px;
+        margin-top:-5px;
     }
     .container
     {
@@ -605,7 +722,7 @@ hr.soften
         width: 258px;
     }
     .top-nav{
-        margin-top:-35px;
+        margin-top:-5px;
     }
     .container
     {
@@ -646,7 +763,7 @@ hr.soften
 {
     .top-nav
     {
-        margin-top:-35px;
+        margin-top:-5px;
     }
     .masthead h1
     {
@@ -720,11 +837,6 @@ hr.soften
     }
     .bs-docs-sidenav.affix {
         top: 0;
-    }
-
-    .main-nav
-    {
-        max-width: 450px;
     }
     .lg_icon
     {
@@ -823,11 +935,6 @@ hr.soften
     }
     .footer p {
         margin-bottom: 9px;
-    }
-    .main-nav
-    {
-        margin-left:-20px;
-        max-width:300px;
     }
     .top-nav
     {
@@ -1064,8 +1171,6 @@ input, button, select, textarea
 {
     border-radius:4px;
     margin:20px auto !important;
-
-
 }
 .team ul
 {
@@ -1088,7 +1193,7 @@ input, button, select, textarea
 /* Global */
 .orange
 {
-    color: #f87436;
+    color: #e65c47;
 }
 .mt60
 {
@@ -1098,7 +1203,14 @@ input, button, select, textarea
 {
     padding:0px 20px 10px 20px;
 }
-
+.left
+{
+    float: left !important;
+}
+.right
+{
+    float: right !important;
+}
 pre
 {
     border: none;
@@ -1150,4 +1262,35 @@ section.answer::before {
     padding: 30px;
     padding-top: 10px;
 }
+
+/* Features */
+.accordion
+{
+    text-align: left;
+}
+.accordion-group
+{
+    border: none;
+}
+.collapse.in
+{
+    background-color: #FCFCFA;
+    border: 1px solid #e65c47;
+    margin:5px 0;
+    border-radius: 3px;
+    /*padding: 10px 10px 0;*/
+}
+.collapse.in p
+{
+   margin: 10px;
+}
+
+
+
+
+
+
+
+
+
 

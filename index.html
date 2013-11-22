@@ -27,6 +27,8 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
+        <script src="js/skrollr/skrollr.js"></script>
+        <script src="js/ui/ui-scripts.js"></script>
         <script src="source/all.fineuploader-4.0.3.min.js"></script>
 
         <script type="text/template" id="qq-template">
@@ -132,216 +134,482 @@
 
         <div class="container">
             <div class="marketing">
-                <h1>Introducing Fine Uploader</h1>
-                <p class="marketing-byline">Javascript plugin tool to give your users a <span class="orange"><em>smooth experience</em></span> when uploading files to your website. </p>
-                <div class="row-fluid">
+                <h1>Introducing Fine Uploader <span class="orange">4.0</span></h1>
+                <p class="marketing-byline">Javascript plugin tool to give your users a <span class="orange"><em>smooth experience</em></span> when uploading files to your website</p>
 
-                    <div class="span6 p8" style="padding-left: 0;">
-                        <h3>Browser support</h3>
-                        <p>Fine Uploader supports all major browsers and does not require Flash, jQuery, or any external libraries.</p>
+                <div class="spacer"></div>
+                <hr class="no-margin">
+                <hr class="no-margin">
+
+                <section class="browser-support">
+                    <div class="row-fluid container">
+                        <div class="span6 p8 home-video right">
+                            <img height="200" src="/img/browsers.png" alt="" style="margin-top:0px; width: 200px;"/>
+                            <!--<video width="315" height="250" preload="auto" poster="https://d31dn41p1pte1p.cloudfront.net/assets/homepage-video-poster-ce2d0c15874f1f5dcb946f019a2a9ede.png" loop="loop" id="StoreVideo" autoplay="autoplay">-->
+                                <!--<source type="video/mp4" src="https://d31dn41p1pte1p.cloudfront.net/assets/Store-19c12e36b1e28da5a5467251612f0e1e.mp4"></source>-->
+                                <!--<source type="video/webm" src="https://d31dn41p1pte1p.cloudfront.net/assets/Store.webmhd-bc8814e60ed689c52d3892a46138d371.webm"></source>-->
+                                <!--Your browser does not support the video tag.-->
+                            <!--</video>-->
+                        </div>
+
+                        <div class="span6 p8 left" style="padding-left: 0px; margin-top: 15px;">
+                            <h3>Browser support</h3>
+                            <p>Fine Uploader supports <a href="http://docs.fineuploader.com/branch/master/browser-support.html">all major browsers</a> and does <span class="orange"><em>not</em></span> require Flash, jQuery, or any external libraries.</p>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="span6 p8">
-                        <h3>Server support</h3>
-                        <p>Use Fine Uploader with any server side technology.</p>
+                <hr class="no-margin">
+                <hr class="no-margin">
+
+                <section class="server-support">
+                    <div class="row-fluid container">
+                        <div class="span6 p8 home-video">
+                            <!--<img src="http://4.bp.blogspot.com/-0kROZkvJ40o/UY5hWAxGTQI/AAAAAAAAAKE/h-tGRSKzZN0/s1600/4.png" alt="" style="height: 150px; margin-top: 25px;"/>-->
+                        </div>
+
+                        <div class="span6 p8" style="padding-left: 0px; margin-top: 20px;">
+                            <h3>Server support</h3>
+                            <p>Use Fine Uploader with <span class="orange"><em>any</em></span> server side technology.</p>
+                        </div>
                     </div>
 
                     <!--<div style="clear: both;">-->
                         <!--<small id="footnote-1">[<a href="#citation-1">1</a>]: A bug in iOS7 in some cases prevents Fine Uploader from uploading .mov files. More details on a workaround are found on <a href="https://github.com/Widen/fine-uploader/issues/990">the issue tracker.</a></small>-->
                     <!--</div>-->
-                </div>
+                </section>
 
-                <hr class="soften" id="features" style="margin-top:15px;">
-
-                <h1>Features</h1>
-
-                <div class="row-fluid" style="text-align: left;">
-                    <div class="span4 p8"  style="padding-left:0px;">
-                        <ul class="features">
-                            <li>Multiple file select, progress bar</li>
-                            <li><a href="http://docs.fineuploader.com/features/drag-and-drop.html">Drag-and-drop to upload</a></li>
-                            <li>Cancel uploads</li>
-                            <li>Auto and manual upload</li>
-                            <li>Customizable failure messages</li>
-                            <li>Auto/manual retry</li>
-                            <li><a href="http://docs.fineuploader.com/integrating/options/fineuploaderbasic.html#validation-option-properties" target="_blank">Multiple built-in validation rules</a></li>
-                            <li><a href="http://docs.fineuploader.com/features/validation.html">Custom validation rules</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="span4 p8">
-                        <ul class="features">
-                            <li>Over a dozen possible <a href="http://docs.fineuploader.com/api/callbacks.html" target="_blank">callbacks</a></li>
-                            <li><a href="http://blog.fineuploader.com/2012/12/09/setparams-is-now-much-more-useful-in-3-1/" target="_blank">Send parameters with each file</a></li>
-                            <li><a href="http://blog.fineuploader.com/2012/11/28/upload-folders-via-drag-drop-in-3-1/" target="_blank">Upload directories via drag & drop</a></li>
-                            <li>Submit files via the API</li>
-                            <li><a href="http://blog.fineuploader.com/2012/12/28/file-chunkingpartitioning-is-now-available-in-3-2/" target="_blank">File chunking/partitioning</a></li>
-                            <li><a href="http://blog.fineuploader.com/2013/01/01/resume-uploads-from-previous-sessions-in-3-2/" target="_blank">Resume previously failed/interrupted files</a></li>
-                            <li><a href="http://blog.fineuploader.com/2013/01/25/delete-an-uploaded-file-in-3-3/" target="_blank">Delete uploaded files</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="span4 p8">
-                        <ul class="features">
-                            <li><a href="http://blog.fineuploader.com/2013/01/31/cors-support-in-3-3/" target="_blank">CORS (cross-origin) support</a></li>
-                            <li><a href="http://blog.fineuploader.com/2013/03/04/upload-an-image-via-paste-in-3-4/" target="_blank">Paste to upload</a></li>
-                            <li><a href="http://blog.fineuploader.com/2013/05/09/upload-directly-via-a-camera-on-mobile-devices/" target="_blank">Upload from mobile camera</a></li>
-                            <li><a href="http://blog.fineuploader.com/2013/06/23/3-7-edit-override-file-names/" target="_blank">Edit file names</a></li>
-                            <li><a href="#s3-demo">Upload directly to Amazon S3</a></li>
-                            <li><a href="http://docs.fineuploader.com/features/extra-buttons.html">Multiple upload buttons</a></li>
-                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/styling.html">Flexible templating system</a></li>
-                            <li><img src="img/new.png"/><a href="http://docs.fineuploader.com/features/thumbnails.html">Image previews</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <hr class="soften" id="s3-demo">
-
-                <h1>Upload Files Directly to Amazon S3</h1>
-                <p class="marketing-byline">Fine Uploader has always supported uploading to your own server.
-                    Now you can remove the complexity and inefficiency of handling uploads on your local server by
-                    delegating to Amazon.  Upload files directly to Amazon's Simple Storage Service from your browser!</p>
-                <div class="row-fluid">
-                    <div class="span6" style="text-align: left;">
-                        <p>
-                            This is a fully-functional live demo that also includes the <a href="http://docs.fineuploader.com/features/thumbnails.html">native preview/thumbnail generation feature</a>.
-                            Here, you can try out Fine Uploader S3 by sending files to one of our S3 buckets!
-                            You can also download the file after a successful upload.
-                        </p>
-                        <p>
-                            This example demonstrates:
-                            <ul>
-                                <li>Use of a custom domain for an S3 bucket</li>
-                                <li>Sending an ajax request to your server when the file is in S3</li>
-                                <li>Enabling advanced features, such as
-                                    <ul>
-                                        <li><a href="http://docs.fineuploader.com/features/thumbnails.html">Client-side preview generation (newer browsers)</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/thumbnails.html">Server-generated thumbnail display (older browsers)</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/drag-and-drop.html">Drag & drop</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/retry.html">Retry of failed uploads</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/chunking.html">Chunking</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/resume.html">Auto-resume of interrupted uploads</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/delete.html">Deleting an uploaded file</a></li>
-                                        <li><a href="http://docs.fineuploader.com/features/validation.html">Validation rules</a>
-                                            <ul>
-                                                <li>Limit 5 "net" files per session</li>
-                                                <li>Max file size of 15 MB</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </p>
-                        <p>
-                            The server-side code for this demo was written in PHP.  You can view the actual server-side
-                            code for this example in the <a href="https://github.com/Widen/fine-uploader-server/tree/master/php/s3/s3demo-thumbnails.php" target="_blank">
-                            Fine Uploader Server Github repository</a>.
-                        </p>
-                        <p>Please read the <a href="http://wp.me/p3FpYP-3r" target="_blank">blog post on the Fine Uploader S3 module</a> for more details.</p>
-
-                        <p>Note: If you want to test the auto-resume feature, you must use any browser other than IE9
-                            and older or stock Android and submit a large file 6-15MB.  After at least 5MB have been
-                            uploaded (since each chunk is 5 MiB): close or refresh the page, re-submit the file, and
-                            watch Fine Uploader pick up from where it left off!
-                        </ul></p>
-
-                        <br/>
-                        <i class="icon-arrow-down" style="margin-top:3px;"></i>
-                        <h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>
-                        <div id="s3-demo-container"></div>
-                    </div>
-
-                    <div class="span6">
-                        <pre>
-                            <code class="example" data-demo="s3-demo"></code>
-                        </pre>
-                    </div>
-                </div>
-
-                <hr class="hide" id="setup">
-                <hr class="soften" id="jquery-wrapper-demo">
-
-                <h1>Minimal jQuery Demo</h1>
-                <p class="marketing-byline">Here we use default settings, default styles, and Fine Uploader’s optional jQuery wrapper.</p>
-                <div class="row-fluid">
-                    <div class="span6" style="text-align: left;">
-                        <div id="jquery-wrapped-fine-uploader"></div>
-                        </br></br>
-                        <p>In addition to the <a href="#demo">minimal out-of-the-box demo</a>, we include here Fine Uploader’s jQuery wrapper.</p>
-
-                        <p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.
-                            For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
-                    </div>
-
-                    <div class="span6">
-                        <pre>
-                            <code class="example" data-demo="jquery-minimal"></code>
-                        </pre>
-                    </div>
-                </div>
-
-                <hr class="soften" id="no-dep">
-
-                <h1>Minimal No-Dependency Demo</h1>
-                <p class="marketing-byline">Want to upload files to your own server?  You need only to include a CSS file,
-                    a JavaScript file, and handle the uploads on the server side according to the technology you are using.
-                    There are absolutely no other dependencies.</p>
-                <div class="row-fluid">
-                    <div class="span6" style="text-align: left;">
-                        <p>You can quickly set up an HTML page in order to use Fine Uploader:</p>
-                        <ol>
-                            <li>Download and unpack the <a href="downloads.html">latest version of Fine Uploader</a>.</li>
-                            <li>Use one of the provided server scripts, or write your own.</li>
-                            <li>Setup your HTML and javascript.</li>
-                            <li>Upload!</li>
-                        </ol>
-
-                        <p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.
-                            For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
-
-                        </br>
-                        <div id="fine-uploader"></div>
-                    </div>
-
-                    <div class="span6">
-                        <pre>
-                            <code class="example" data-demo="minimal"></code>
-                        </pre>
-                    </div>
-                </div>
-
-                <hr class="soften" id="bootstrap-demo">
-
-                <h1>Bootstrapped Minimal Demo</h1>
-                <p class="marketing-byline">Default settings, but we include support for Twitter Bootstrap.</p>
-                <div class="row-fluid">
-                    <div class="span6" style="text-align: left;">
-                        <div id="bootstrapped-fine-uploader"></div>
-                        <p style="margin-top:70px;">In order to style your uploader’s look, you can customize the template classes as you like.</p>
-                        <p>We use here both Fine Uploader and Twitter Bootstrap’s CSS and add some styling reset.</p>
-                    </div>
-
-                    <div class="span6">
-                        <pre>
-                            <code class="example" data-demo="bootstrapped-minimal"></code>
-                        </pre>
-                    </div>
-                </div>
-
-                <hr class="soften" id="more">
-
-                <h1>More demos</h1>
-                <p class="marketing-byline">Includes more features, and also shows how to customize Fine Uploader Core.</p>
-                <div class="row-fluid">
-                    <p>Head over one of the following pages to see how to customize further Fine Uploader.</p>
-                    <div class="span12" style="text-align:center; margin-top:20px;">
-                        <a href="./fine-uploader-demo.html" class="btn btn-large tip" title="The all-in-one drag-and-drop uploader">Fine Uploader<span class="legend"><br>The all-in-one drag-and-drop uploader</span></a>
-                        <a href="./fine-uploader-basic-demo.html" class="btn btn-large tip" title="No default UI.  You're in control!">Fine Uploader Core<span class="legend"><br>No default UI. You're in control!</span></a>
-                        <a href="./fine-uploader-with-jquery-wrapper-demo.html" class="btn btn-large tip" title="Leveraging the optional jQuery Wrapper">jQuery Optional Wrapper<span class="legend"><br>Leveraging the optional jQuery Wrapper</span></a>
-                    </div>
-                </div>
             </div>
         </div>
+
+        <hr class="no-margin">
+        <hr class="no-margin">
+
+        <div class="progress">
+            <div id="progress" data-0="width:0%;background:hsl(8, 76%, 59%);" data-570="width:100%;background:hsl(8, 76%, 59%);" class="progress-bar" style="width: 27.719298245614034%; background-color: rgb(230, 92, 71);"></div>
+        </div>
+
+        <section class="features-section marketing" id="features">
+            <div class="container">
+                <h1>Features</h1>
+                <p class="marketing-byline"><span class="orange"><em>Everything you need</em></span> in a file uploader</p>
+
+                <hr class="no-margin" style="border-top: 1px solid #ddd;">
+                <hr class="no-margin">
+
+                <div class="row-fluid" style="margin-top: 20px;">
+                    <div class="span4 featurette">
+                        <h3>Progress Bar</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                    <div class="span4 featurette">
+                        <h3>Drag and Drop</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                    <div class="span4 featurette">
+                        <h3>Retry Automatically or Manually</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="margin-top: 20px;">
+                    <div class="span4 featurette">
+                        <h3>Custom Validation Rules</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                    <div class="span4 featurette">
+                        <h3>File Chunking / Partitioning</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                    <div class="span4 featurette">
+                        <h3>Pause / Resume Uploads</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="margin-top: 20px;">
+                    <div class="span4 featurette">
+                        <h3>Delete Uploaded Files</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                    <div class="span4 featurette">
+                        <h3>Upload Directly to the Cloud</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                    <div class="span4 featurette">
+                        <h3>Media Previews</h3>
+                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
+                            bag Banksy keytar pop-up church-key banjo.</p>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+                <p class="marketing-byline">and <span class="orange"><em>more</em></span></p>
+
+                <div class="row-fluid" style="margin-top: 20px;">
+                    <div class="span4 p8 accordion"  style="padding-left:0px;">
+                        <div class="accordion-group">
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse4" class="accordion-toggle-faq collapsed">Auto and manual upload</a>
+                                <div id="collapse4" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse5" class="accordion-toggle-faq collapsed">Customizable failure messages</a>
+                                <div id="collapse5" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse6" class="accordion-toggle-faq collapsed">Auto/manual retry</a>
+                                <div id="collapse6" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse7" class="accordion-toggle-faq collapsed">Multiple built-in validation rules</a>
+                                <div id="collapse7" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse12" class="accordion-toggle-faq collapsed">Edit file names</a>
+                                <div id="collapse12" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="span4 p8 accordion">
+                        <div class="accordion-group">
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse13" class="accordion-toggle-faq collapsed">Over a dozen possible callbacks</a>
+                                <div id="collapse13" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse14" class="accordion-toggle-faq collapsed">Send parameters with each file</a>
+                                <div id="collapse14" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse15" class="accordion-toggle-faq collapsed">Upload directories via drag & drop</a>
+                                <div id="collapse15" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse8" class="accordion-toggle-faq collapsed">Custom validation rules</a>
+                                <div id="collapse8" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse9" class="accordion-toggle-faq collapsed">CORS (cross-origin) support</a>
+                                <div id="collapse9" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="span4 p8 accordion">
+                        <div class="accordion-group">
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse16" class="accordion-toggle-faq collapsed">Submit files via the API</a>
+                                <div id="collapse16" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse17" class="accordion-toggle-faq collapsed">File chunking/partitioning</a>
+                                <div id="collapse17" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse18" class="accordion-toggle-faq collapsed">Resume previously failed/interrupted files</a>
+                                <div id="collapse18" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse21" class="accordion-toggle-faq collapsed">Multiple upload buttons</a>
+                                <div id="collapse21" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Feature info here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+                <p style="font-size: 14px;"><a href="http://docs.fineuploader.com/#features">Visit the docs</a> for more in-depth information on features.</p>
+                <div class="spacer"></div>
+
+
+            </div>
+
+
+            <!--<div class="accordion-group main-features">-->
+            <!--<div class="accordion-heading-features">-->
+            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapseOne" class="accordion-toggle-faq collapsed">Multiple file selection</a>-->
+            <!--<div id="collapseOne" class="accordion-body collapse" style="height: 0px;">-->
+            <!--<div class="accordion-inner-faq">-->
+            <!--<p>Feature info here.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="accordion-heading-features">-->
+            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Flexible templating system</a>-->
+            <!--<div id="collapse22" class="accordion-body collapse" style="height: 0px;">-->
+            <!--<div class="accordion-inner-faq">-->
+            <!--<p>Feature info here.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="accordion-heading-features">-->
+            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse3" class="accordion-toggle-faq collapsed">Cancel uploads</a>-->
+            <!--<div id="collapse3" class="accordion-body collapse" style="height: 0px;">-->
+            <!--<div class="accordion-inner-faq">-->
+            <!--<p>Feature info here.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="accordion-heading-features">-->
+            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse10" class="accordion-toggle-faq collapsed">Paste to upload</a>-->
+            <!--<div id="collapse10" class="accordion-body collapse" style="height: 0px;">-->
+            <!--<div class="accordion-inner-faq">-->
+            <!--<p>Feature info here.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="accordion-heading-features">-->
+            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse11" class="accordion-toggle-faq collapsed">Upload from mobile camera</a>-->
+            <!--<div id="collapse11" class="accordion-body collapse" style="height: 0px;">-->
+            <!--<div class="accordion-inner-faq">-->
+            <!--<p>Feature info here.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+        </section>
+
+        <hr class="no-margin">
+        <hr class="no-margin">
+
+        <section style="height:850px; width: 100%; background-color: #e65c47;">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div style="margin: 200px auto">
+                <h2 style="color: #fff; text-align: center;font-size: 60px; font-weight: 300;">Sell our agile process <br><br> <em>and</em> software company credibility</h2>
+            </div>
+        </section>
+
+        <hr class="no-margin">
+        <hr class="no-margin">
+
+        <div class="marketing">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+
+            <p class="marketing-byline">Something something commercial licenses free-source.</p>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+
+        </div>
+
+        <!--<h1>Upload Files Directly to Amazon S3</h1>-->
+                <!--<p class="marketing-byline">Fine Uploader has always supported uploading to your own server.-->
+                    <!--Now you can remove the complexity and inefficiency of handling uploads on your local server by-->
+                    <!--delegating to Amazon.  Upload files directly to Amazon's Simple Storage Service from your browser!</p>-->
+                <!--<div class="row-fluid">-->
+                    <!--<div class="span6" style="text-align: left;">-->
+                        <!--<p>-->
+                            <!--This is a fully-functional live demo that also includes the <a href="http://docs.fineuploader.com/features/thumbnails.html">native preview/thumbnail generation feature</a>.-->
+                            <!--Here, you can try out Fine Uploader S3 by sending files to one of our S3 buckets!-->
+                            <!--You can also download the file after a successful upload.-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--This example demonstrates:-->
+                            <!--<ul>-->
+                                <!--<li>Use of a custom domain for an S3 bucket</li>-->
+                                <!--<li>Sending an ajax request to your server when the file is in S3</li>-->
+                                <!--<li>Enabling advanced features, such as-->
+                                    <!--<ul>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/thumbnails.html">Client-side preview generation (newer browsers)</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/thumbnails.html">Server-generated thumbnail display (older browsers)</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/drag-and-drop.html">Drag & drop</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/retry.html">Retry of failed uploads</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/chunking.html">Chunking</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/resume.html">Auto-resume of interrupted uploads</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/delete.html">Deleting an uploaded file</a></li>-->
+                                        <!--<li><a href="http://docs.fineuploader.com/features/validation.html">Validation rules</a>-->
+                                            <!--<ul>-->
+                                                <!--<li>Limit 5 "net" files per session</li>-->
+                                                <!--<li>Max file size of 15 MB</li>-->
+                                            <!--</ul>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--The server-side code for this demo was written in PHP.  You can view the actual server-side-->
+                            <!--code for this example in the <a href="https://github.com/Widen/fine-uploader-server/tree/master/php/s3/s3demo-thumbnails.php" target="_blank">-->
+                            <!--Fine Uploader Server Github repository</a>.-->
+                        <!--</p>-->
+                        <!--<p>Please read the <a href="http://wp.me/p3FpYP-3r" target="_blank">blog post on the Fine Uploader S3 module</a> for more details.</p>-->
+
+                        <!--<p>Note: If you want to test the auto-resume feature, you must use any browser other than IE9-->
+                            <!--and older or stock Android and submit a large file 6-15MB.  After at least 5MB have been-->
+                            <!--uploaded (since each chunk is 5 MiB): close or refresh the page, re-submit the file, and-->
+                            <!--watch Fine Uploader pick up from where it left off!-->
+                        <!--</ul></p>-->
+
+                        <!--<br/>-->
+                        <!--<i class="icon-arrow-down" style="margin-top:3px;"></i>-->
+                        <!--<h3 style="margin-top:-5px; display:inline; font-size:14px;">Try it out!</h3>-->
+                        <!--<div id="s3-demo-container"></div>-->
+                    <!--</div>-->
+
+                    <!--<div class="span6">-->
+                        <!--<pre>-->
+                            <!--<code class="example" data-demo="s3-demo"></code>-->
+                        <!--</pre>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<hr class="hide" id="setup">-->
+                <!--<hr class="soften" id="jquery-wrapper-demo">-->
+
+                <!--<h1>Minimal jQuery Demo</h1>-->
+                <!--<p class="marketing-byline">Here we use default settings, default styles, and Fine Uploader’s optional jQuery wrapper.</p>-->
+                <!--<div class="row-fluid">-->
+                    <!--<div class="span6" style="text-align: left;">-->
+                        <!--<div id="jquery-wrapped-fine-uploader"></div>-->
+                        <!--</br></br>-->
+                        <!--<p>In addition to the <a href="#demo">minimal out-of-the-box demo</a>, we include here Fine Uploader’s jQuery wrapper.</p>-->
+
+                        <!--<p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.-->
+                            <!--For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>-->
+                    <!--</div>-->
+
+                    <!--<div class="span6">-->
+                        <!--<pre>-->
+                            <!--<code class="example" data-demo="jquery-minimal"></code>-->
+                        <!--</pre>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<hr class="soften" id="no-dep">-->
+
+                <!--<h1>Minimal No-Dependency Demo</h1>-->
+                <!--<p class="marketing-byline">Want to upload files to your own server?  You need only to include a CSS file,-->
+                    <!--a JavaScript file, and handle the uploads on the server side according to the technology you are using.-->
+                    <!--There are absolutely no other dependencies.</p>-->
+                <!--<div class="row-fluid">-->
+                    <!--<div class="span6" style="text-align: left;">-->
+                        <!--<p>You can quickly set up an HTML page in order to use Fine Uploader:</p>-->
+                        <!--<ol>-->
+                            <!--<li>Download and unpack the <a href="downloads.html">latest version of Fine Uploader</a>.</li>-->
+                            <!--<li>Use one of the provided server scripts, or write your own.</li>-->
+                            <!--<li>Setup your HTML and javascript.</li>-->
+                            <!--<li>Upload!</li>-->
+                        <!--</ol>-->
+
+                        <!--<p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.-->
+                            <!--For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>-->
+
+                        <!--</br>-->
+                        <!--<div id="fine-uploader"></div>-->
+                    <!--</div>-->
+
+                    <!--<div class="span6">-->
+                        <!--<pre>-->
+                            <!--<code class="example" data-demo="minimal"></code>-->
+                        <!--</pre>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<hr class="soften" id="bootstrap-demo">-->
+
+                <!--<h1>Bootstrapped Minimal Demo</h1>-->
+                <!--<p class="marketing-byline">Default settings, but we include support for Twitter Bootstrap.</p>-->
+                <!--<div class="row-fluid">-->
+                    <!--<div class="span6" style="text-align: left;">-->
+                        <!--<div id="bootstrapped-fine-uploader"></div>-->
+                        <!--<p style="margin-top:70px;">In order to style your uploader’s look, you can customize the template classes as you like.</p>-->
+                        <!--<p>We use here both Fine Uploader and Twitter Bootstrap’s CSS and add some styling reset.</p>-->
+                    <!--</div>-->
+
+                    <!--<div class="span6">-->
+                        <!--<pre>-->
+                            <!--<code class="example" data-demo="bootstrapped-minimal"></code>-->
+                        <!--</pre>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<hr class="soften" id="more">-->
+
+                <!--<h1>More demos</h1>-->
+                <!--<p class="marketing-byline">Includes more features, and also shows how to customize Fine Uploader Core.</p>-->
+                <!--<div class="row-fluid">-->
+                    <!--<p>Head over one of the following pages to see how to customize further Fine Uploader.</p>-->
+                    <!--<div class="span12" style="text-align:center; margin-top:20px;">-->
+                        <!--<a href="./fine-uploader-demo.html" class="btn btn-large tip" title="The all-in-one drag-and-drop uploader">Fine Uploader<span class="legend"><br>The all-in-one drag-and-drop uploader</span></a>-->
+                        <!--<a href="./fine-uploader-basic-demo.html" class="btn btn-large tip" title="No default UI.  You're in control!">Fine Uploader Core<span class="legend"><br>No default UI. You're in control!</span></a>-->
+                        <!--<a href="./fine-uploader-with-jquery-wrapper-demo.html" class="btn btn-large tip" title="Leveraging the optional jQuery Wrapper">jQuery Optional Wrapper<span class="legend"><br>Leveraging the optional jQuery Wrapper</span></a>-->
+                    <!--</div>-->
+                <!--</div>-->
+
 
         <div id="footer"></div>
 
@@ -364,6 +632,20 @@
             $.get('./header.html', function(data) {
                 $('#header').html(data);
             });
+        </script>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                var s = skrollr.init({
+                    edgeStrategy: 'set',
+                    easing: {
+                        WTF: Math.random,
+                        inverted: function(p) {
+                            return 1-p;
+                        }
+                    }
+                });
+            }
         </script>
     </body>
 </html>
