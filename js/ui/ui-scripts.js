@@ -1,19 +1,30 @@
-//$(document).ready(function() {
+$(document).ready(function() {
 //    console.log('ready!');
-//    var num = 85; //number of pixels before modifying styles
+//    var num = 105; //number of pixels before modifying styles
 //
 //    $(window).bind('scroll', function () {
 //        if ($(window).scrollTop() > num) {
-//            $('.jumbotron-small').addClass('fixed');
+//            $('.demo-nav').addClass('fixed');
 //                console.log('it is fixed');
-//                $('body').css("padding-top", "71px");
+////                $('body').css("padding-top", "40px");
+//                $('.demo-nav').css("margin-top", "40px");
+//
 //
 //        } else {
-//            $('.jumbotron-small').removeClass('fixed');
-//            $('body').css({'padding-top' : '30px',
-//                           'height' : 'auto'
-//            });
+//            $('.demo-nav').removeClass('fixed');
+////            $('body').css({'padding-top' : '30px',
+////                           'height' : 'auto'
+////            });
+//            $('.demo-nav').css("margin-top", "0px");
 //        }
 //    });
-//});
-//
+    $( '.view-code a' ).click(function() {
+        var viewCode =  $(this).siblings('.source-view');
+
+        viewCode.animate({
+            opacity: "toggle",
+            height: "toggle"
+        });
+    });
+});
+
