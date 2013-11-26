@@ -26,5 +26,35 @@ $(document).ready(function() {
             height: "toggle"
         });
     });
+
+    (function () {
+        function on(target, eventName, listener) {
+            var method = 'addEventListener';
+            if (!target.addEventListener) {
+                method = 'attachEvent';
+                eventName = 'on' + eventName;
+            }
+
+            target[method](eventName, listener);
+        }
+        var activeTab = document.querySelector('.code-window.active'),
+            activeTabTrigger = document.querySelector('.activeTabTrigger');
+
+        on(document, 'click', function (event) {
+            var target = event.target || event.srcElement;
+            console.log(target);
+
+            if (!/\bcode-tab\b/.test(target.className)) {
+                return;
+            }
+            activeTab.className = activeTab.className.replace(/\b active\b/, '');
+            console.log(activeTab.className);
+            activeTabTrigger.className = activeTabTrigger.className.replace(/\bactiveTabTrigger\b/, '');
+            activeTab = document.getElementById(target.getAttribute('data-tab'));
+            activeTabTrigger = target;
+            activeTab.className += ' active';
+            activeTabTrigger.className += ' activeTabTrigger';
+        });
+    })();
 });
 
