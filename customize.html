@@ -26,10 +26,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     </head>
     <body>
-        <div id="header"> </div>
-
-
-        <div class="jumbotron-small">
+        <div class="jumbotron-small fixed">
             <div class="container">
                 <div id="navbar"></div>
             </div>
@@ -37,11 +34,12 @@
 
         <div class="container marketing">
             <h1>Customize and Download</h1>
+            <hr class="no-margin">
+            <hr class="no-margin">
             </br>
-            <p>Customize Fine Uploader's look, server-type, and components to get your very own version.
-            </p>
+            <h3 class="center">Customize Fine Uploader's <span class="orange"><em>look, server-type, and components</em></span> to get your very own version.</h3>
+            <div class="spacer"></div>
 
-            <hr>
             <div class="row-fluid">
                 <form action="http://assembler.fineuploader.com/build" method="POST" class="form-horizontal">
 
@@ -58,7 +56,7 @@
                     </div>
                     <hr>
 
-                    <h2>jQuery Plugin</h2>
+                    <h3>jQuery Plugin</h3>
                     <div class="row-fluid">
                         <p style="font-size: 13px;">Select whether you would like to use the jQuery plugin version with Fine Uploader.</p>
 
@@ -76,7 +74,7 @@
                     <hr>
 
                     <div class="row-fluid">
-                        <h2>Server Type</h2>
+                        <h3>Server Type</h3>
 
                         <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
                         <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
@@ -99,7 +97,7 @@
 
                     <hr>
 
-                    <h2>Optional Modules</h2>
+                    <h3>Optional Modules</h3>
                     <p style="font-size: 13px;">The following modules are optional components of Fine Uploader, and my be included at your leisure.</p>
                     <div class='row-fluid'>
 
@@ -136,7 +134,7 @@
                     <br/>
                     <br/>
 
-                    <button type="submit" class="btn btn-large" style="width: 100%;">Build</button>
+                    <button type="submit" class="btn btn-info btn-large">Build</button>
                 </form>
             </div>
             </br>

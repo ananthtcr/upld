@@ -124,8 +124,6 @@
 
     </head>
     <body class="home">
-        <div id="header"></div>
-
         <div class="jumbotron-small fixed">
             <div class="container">
                 <div id="navbar"></div>
@@ -154,7 +152,7 @@
                             <!--</video>-->
                         </div>
 
-                        <div class="span6 p8 left" style="padding-left: 0px; margin-top: 15px;">
+                        <div class="span6 p8 left" style="padding-left: 0px; margin-top: 25px;">
                             <h3>Browser support</h3>
                             <p>Fine Uploader supports <a href="http://docs.fineuploader.com/branch/master/browser-support.html">all major browsers</a> and does <span class="orange"><em>not</em></span> require Flash, jQuery, or any external libraries.</p>
                         </div>
@@ -167,11 +165,11 @@
                 <section class="server-support">
                     <div class="row-fluid container">
                         <div class="span6 p8 home-video">
-                            <img height="200" src="/img/browsers.png" alt="" style="margin-top:0px; width: 200px;"/>
+                            <img height="200" src="/img/server-support.png" alt="" style="margin-top:30px; width: 200px;"/>
                             <!--<img src="http://4.bp.blogspot.com/-0kROZkvJ40o/UY5hWAxGTQI/AAAAAAAAAKE/h-tGRSKzZN0/s1600/4.png" alt="" style="height: 150px; margin-top: 25px;"/>-->
                         </div>
 
-                        <div class="span6 p8" style="padding-left: 0px; margin-top: 40px;">
+                        <div class="span6 p8" style="padding-left: 0px; margin-top: 60px;">
                             <h3>Server support</h3>
                             <p>Use Fine Uploader with <span class="orange"><em>any</em></span> server side technology.</p>
                         </div>
@@ -188,14 +186,14 @@
         <!--<hr class="no-margin">-->
         <div class="spacer"></div>
 
-        <div class="progress">
+        <div class="progress" id="features">
             <div id="progress" data-0="width:0%;background:hsl(8, 76%, 59%);" data-530="width:100%;background:hsl(8, 76%, 59%);" class="progress-bar" style="width: 27.719298245614034%; background-color: rgb(230, 92, 71);"></div>
         </div>
 
-        <section class="features-section marketing"  id="features" data-0="margin-top:200px;" data-860="margin-top:-100px;">
-            <div class="container" data-230="opacity:1;" data-85="opacity:0;">
+        <section class="features-section marketing" data-0="margin-top:200px;" data-860="margin-top:0px;">
+            <div class="container" data-230="opacity:1;" data-85="opacity:0.3;">
                 <h1>Features</h1>
-                <p class="marketing-byline"><span class="orange"><em>Everything you need</em></span> in a file uploader</p>
+                <p class="marketing-byline  center"><span class="orange"><em>Everything you need</em></span> in a file uploader</p>
 
                 <hr class="no-margin" style="border-top: 1px solid #ddd;">
                 <hr class="no-margin">
@@ -203,54 +201,48 @@
                 <div class="row-fluid" style="margin-top: 20px;">
                     <div class="span4 featurette">
                         <h3>Progress Bar</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>A fully customizable progress bar is included in UI mode. Core users can build their own with the help of a friendly API.</p>
                     </div>
                     <div class="span4 featurette">
                         <h3>Drag and Drop</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Drag and drop files (and even folders in Chrome and Opera).
+                        </p>
                     </div>
                     <div class="span4 featurette">
-                        <h3>Retry Automatically or Manually</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <h3>Retry</h3>
+                        <p>Sometimes the network misbehaves. Fortunately, Fine Uploader can detect these sorts of disturbances and notify the user, or even automatically retry uploading the failed piece.
+                        </p>
                     </div>
                 </div>
 
                 <div class="row-fluid" style="margin-top: 20px;">
                     <div class="span4 featurette">
                         <h3>Custom Validation Rules</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Limit your users to a specific file type, size limit, number of files, image dimensions, or write your own custom validator.</p>                        </p>
                     </div>
                     <div class="span4 featurette">
                         <h3>File Chunking / Partitioning</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Splitting a file into smaller pieces allows for a more efficient overall upload, and powers some Fine Uploader features such as pausing, and resuming uploads.</p>
                     </div>
                     <div class="span4 featurette">
                         <h3>Pause / Resume Uploads</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Pause an in-progress upload when you know you are about to go offline, and safely resume them again right where you left off.</p>
                     </div>
                 </div>
 
                 <div class="row-fluid" style="margin-top: 20px;">
                     <div class="span4 featurette">
                         <h3>Delete Uploaded Files</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Fine Uploader can go the other way too. That is, it can delete files if, say, the user accidentally uploaded the wrong file.</p>
                     </div>
                     <div class="span4 featurette">
                         <h3>Upload Directly to the Cloud</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Fine Uploader can go the other way too. That is, it can delete files if, say, the user accidentally uploaded the wrong file.</p>
                     </div>
                     <div class="span4 featurette">
                         <h3>Media Previews</h3>
-                        <p>8-bit organic salvia Wes Anderson craft beer, fashion axe small batch jean shorts. Farm-to-table street art tote bag blog YOLO, fanny pack messenger
-                            bag Banksy keytar pop-up church-key banjo.</p>
+                        <p>Give your users an in-browser preview of images before they upload.
+                        </p>
                     </div>
                 </div>
 
@@ -263,7 +255,8 @@
                                 <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse4" class="accordion-toggle-faq collapsed">Auto and manual upload</a>
                                 <div id="collapse4" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Feature info here.</p>
+                                        <p>Fine Uploader can begin uploading files as soon as possible, or simply wait until for the user.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -276,10 +269,10 @@
                                 </div>
                             </div>
                             <div class="accordion-heading-features">
-                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse6" class="accordion-toggle-faq collapsed">Auto/manual retry</a>
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse6" class="accordion-toggle-faq collapsed">jQuery Plugin</a>
                                 <div id="collapse6" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Feature info here.</p>
+                                        <p>Use jQuery selectors and all the other fine features that it offers with Fine Uploader's completely optional jQuery plugin.</p>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +288,17 @@
                                 <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse12" class="accordion-toggle-faq collapsed">Edit file names</a>
                                 <div id="collapse12" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Feature info here.</p>
+                                        <p>Allow your users to change the names of the files they are uploading.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Flexible templating system</a>
+                                <div id="collapse22" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                         <p>Customize the layout simply and easily by editing HTML and CSS; no JavaScript!
+                                         </p>
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +344,17 @@
                                 <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse9" class="accordion-toggle-faq collapsed">CORS (cross-origin) support</a>
                                 <div id="collapse9" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Feature info here.</p>
+                                        <p>Fine Uploader makes handling cross-origin environments pain-free.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse3" class="accordion-toggle-faq collapsed">Cancel uploads</a>
+                                <div id="collapse3" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>Fine Uploader makes it simple and easy to cancel one or all of the currently uploading files.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -379,7 +392,16 @@
                                 <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse21" class="accordion-toggle-faq collapsed">Multiple upload buttons</a>
                                 <div id="collapse21" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Feature info here.</p>
+                                        <p>Support for complex web applications that may have multiple upload inputs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-heading-features">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse10" class="accordion-toggle-faq collapsed">Paste to upload</a>
+                                <div id="collapse10" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="accordion-inner-faq">
+                                        <p>With a browser that supports HTML5 Clipboard API and Fine Uploader one can easily enable users to upload files that they have copied onto their clipboard.</p>
                                     </div>
                                 </div>
                             </div>
@@ -405,33 +427,10 @@
             <!--</div>-->
             <!--</div>-->
 
-            <!--<div class="accordion-heading-features">-->
-            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Flexible templating system</a>-->
-            <!--<div id="collapse22" class="accordion-body collapse" style="height: 0px;">-->
-            <!--<div class="accordion-inner-faq">-->
-            <!--<p>Feature info here.</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
 
-            <!--<div class="accordion-heading-features">-->
-            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse3" class="accordion-toggle-faq collapsed">Cancel uploads</a>-->
-            <!--<div id="collapse3" class="accordion-body collapse" style="height: 0px;">-->
-            <!--<div class="accordion-inner-faq">-->
-            <!--<p>Feature info here.</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="accordion-heading-features">-->
-            <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse10" class="accordion-toggle-faq collapsed">Paste to upload</a>-->
-            <!--<div id="collapse10" class="accordion-body collapse" style="height: 0px;">-->
-            <!--<div class="accordion-inner-faq">-->
-            <!--<p>Feature info here.</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
+
+
+
             <!--<div class="accordion-heading-features">-->
             <!--<a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse11" class="accordion-toggle-faq collapsed">Upload from mobile camera</a>-->
             <!--<div id="collapse11" class="accordion-body collapse" style="height: 0px;">-->
@@ -448,20 +447,21 @@
         <hr class="no-margin">
 
         <section class="about-home marketing" data-1000="margin-top:0px;" data-1900="margin-top:-200px;">
-            <div class="container row-fluid" data-1000="opacity:0;" data-1400="opacity: 1">
+            <div class="container row-fluid" data-1000="opacity:0.3;" data-1400="opacity: 1">
                 <div class="span6">
                     <h2 style="color: #fff; text-align: center;font-size: 50px; font-weight: 300; line-height: 50px;">New version release <span><em>every</em></span> 4 weeks</h2>
-                    <br><br><br>
-                    <h3 style="color: #fff; text-align: center; line-height: 28px;margin-top: 30px;">FineUploader is always releasing new features thanks to its ongoing development process.</h3>
+                    <br><br>
+                    <h3 style="color: #fff; text-align: center; line-height: 28px;margin-top: 20px;">Fine Uploader is always releasing new features thanks to its ongoing development process.</h3>
 
                 </div>
 
                 <div class="span6" style="padding-left: 60px; margin-top: 20px;">
-                    <img src="img/fineuploader-graphic-white.png" alt="Fine Uploader Logo" style="height:125px; margin: -40px auto 40px;"/>
-                    <p style="text-align: left; color: #fff;">The FineUploader team answers support questions through StackOverflow.com using the fineuploader tag.  All questions are answered the same day
+                    <div class="fu-avatar-white"></div>
+                    <p style="text-align: left; color: #fff;">The Fine Uploader team answers support questions through StackOverflow.com using the fineuploader tag.  All questions are answered the same day
                     that they are asked and usually within 20 minutes.</p>
-
                     <p style="text-align: left; color: #fff;">FineUploader is backed by <a href="http://www.widen.com">Widen Enterprises</a>, a software company with more than x years of experience.</p>
+                    <!--<div class="fu-avatar-white" style="margin-top: 50px;"></div>-->
+
                 </div>
             </div>
         </section>
@@ -480,10 +480,10 @@
                 <div class="spacer"></div>
                 <div class="spacer"></div>
                 <div class="row-fluid container">
-                    <div class="span3"><a target="_blank" href="http://graphicdesignjunction.com/2013/07/a-better-way-to-manage-brand-files/" class="thumbnail"><img width="200" src="http://www.smartimage.com/wp-content/uploads/graphicdesign-logo.png" alt="graphicdesign-logo" itemprop="image" class="aligncenter mb0 size-full wp-image-3527"></a></div>
-                    <div class="span3"><a target="_blank" href="http://www.ourtuts.com/how-to-boost-your-brand-visibility-with-smartimage/" class="thumbnail"><img width="194" height="81" src="http://www.smartimage.com/wp-content/uploads/OurTutsLogo.png" alt="OurTutsLogo" itemprop="image" class="aligncenter mb0 size-full wp-image-3526"></a></div>
-                    <div class="span3"><a target="_blank" href="http://www.onextrapixel.com/2013/08/13/smartimage-management-of-brand-files-simplified/" class="thumbnail"><img width="114" height="67" class="aligncenter mb0 size-full wp-image-3908" alt="Onextrapixel" src="http://www.smartimage.com/wp-content/uploads/oxp.png"></a></div>
-                    <div class="span3"><a target="_blank" href="http://ibrandstudio.com/articles/content-access-made-easy" class="thumbnail"><img width="193" height="77" src="http://www.smartimage.com/wp-content/uploads/iBrandStudio.png" alt="iBrandStudio" itemprop="image" class="aligncenter mb0 size-full wp-image-3533"></a></div>
+                    <!--<div class="span3"><a target="_blank" href="http://graphicdesignjunction.com/2013/07/a-better-way-to-manage-brand-files/" class="thumbnail"><img width="200" src="http://www.smartimage.com/wp-content/uploads/graphicdesign-logo.png" alt="graphicdesign-logo" itemprop="image" class="aligncenter mb0 size-full wp-image-3527"></a></div>-->
+                    <!--<div class="span3"><a target="_blank" href="http://www.ourtuts.com/how-to-boost-your-brand-visibility-with-smartimage/" class="thumbnail"><img width="194" height="81" src="http://www.smartimage.com/wp-content/uploads/OurTutsLogo.png" alt="OurTutsLogo" itemprop="image" class="aligncenter mb0 size-full wp-image-3526"></a></div>-->
+                    <!--<div class="span3"><a target="_blank" href="http://www.onextrapixel.com/2013/08/13/smartimage-management-of-brand-files-simplified/" class="thumbnail"><img width="114" height="67" class="aligncenter mb0 size-full wp-image-3908" alt="Onextrapixel" src="http://www.smartimage.com/wp-content/uploads/oxp.png"></a></div>-->
+                    <!--<div class="span3"><a target="_blank" href="http://ibrandstudio.com/articles/content-access-made-easy" class="thumbnail"><img width="193" height="77" src="http://www.smartimage.com/wp-content/uploads/iBrandStudio.png" alt="iBrandStudio" itemprop="image" class="aligncenter mb0 size-full wp-image-3533"></a></div>-->
                 </div>
                 <div class="spacer"></div>
             </div>

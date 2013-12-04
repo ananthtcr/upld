@@ -1,19 +1,22 @@
 /* Body and structure
 -------------------------------------------------- */
+html
+{
+    position: relative;
+    min-height: 100%;
+}
 body
 {
     height: auto !important;
-    padding: 0;
-    position: relative;
-    padding-top: 50px;
+    padding-bottom: 330px;
     font-family: 'Maven Pro', sans-serif;
     font-size: 14px;
     background-color:#FEFEFC;
     color:#525252 !important;
+    margin: 50px 0 0;
 }
 body.demos
 {
-    padding-top: 60px;
 }
 .container
 {
@@ -45,6 +48,28 @@ body.demos
     width: 100%;
     background-color: #e65c47;
 }
+section.orange-bg
+{
+    margin-top: 20px;
+    background-color: #e65c47;
+    color: #fff;
+    box-shadow: 0 -1px 0px 0px #DDDDDD,
+    0 -2px 0px 1px #FFFFFF,
+    0 -1px 0px 3px #DDDDDD;
+}
+section.grey
+{
+    background: transparent;
+    background-color: #f5f5f5;
+    box-shadow: 0 -1px 0px 0px #DDDDDD,
+    0 -2px 0px 1px #FFFFFF,
+    0 -1px 0px 3px #DDDDDD;
+}
+
+.center
+{
+    text-align: center;
+}
 
 h4, h5, h6
 {
@@ -55,7 +80,7 @@ h4, h5, h6
 div.progress
 {
     width: 50%;
-    margin: 20px auto;
+    margin: 50px auto 0;
     height: 40px;
 }
 
@@ -72,6 +97,7 @@ div.progress
 {
     vertical-align: bottom;
 }
+
 .version-number
 {
     font-size: 90px;
@@ -139,13 +165,9 @@ div.progress
 .fixed
 {
     position: fixed;
-    top: 0;
+    top: 0px;
     width: 100%;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1) !important;
-}
-.demo-nav.fixed
-{
-    width: inherit;
 }
 .main-nav
 {
@@ -286,6 +308,7 @@ div.progress
 .btn-small
 {
     font-size:13px;
+    padding: 4px 10px 8px;
 }
 
 .home-video
@@ -587,9 +610,9 @@ hr.no-margin
 
 .demo-subnav
 {
-    margin-top: 0px;
+    margin-top: 16px;
     position: relative;
-    z-index: 1000;
+    z-index: 0;
     margin-bottom: 30px;
 }
 .demo-list .demo-title
@@ -603,10 +626,6 @@ section.demo-section
     margin-bottom: 40px;
     padding-top:60px;
     margin-top: -60px;
-}
-section.demo-section h3
-{
-    color: #e65c47;
 }
 .view-code
 {
@@ -640,7 +659,7 @@ i.icon-eye-open
 }
 .marketing p.demo-description
 {
-    font-size: 18px;
+    font-size: 17.5px;
     margin-bottom: 30px;
 }
 .code-tab
@@ -701,12 +720,11 @@ body.home .marketing
 }
 .marketing
 {
-    text-align: left;
     color: #525252;
 }
 .marketing h1
 {
-    margin: 50px 0 12px 0px;
+    margin: 30px 0 12px 0px;
     font-size: 60px;
     font-weight: 300;
     line-height: 1;
@@ -725,8 +743,12 @@ body.home .marketing
 {
     font-weight:300;
     font-size: 24px;
-    line-height: 22px;
+    line-height: 28px;
     color: #00abc7;
+}
+.marketing h4
+{
+    color: #e65c47;
 }
 .marketing p
 {
@@ -735,12 +757,12 @@ body.home .marketing
 }
 .marketing .marketing-byline
 {
-    font-size: 22px;
+    font-size: 17.5px;
     font-weight: 300;
-    line-height: 25px;
+    line-height: 20px;
     color: #525252;
-    text-align: center;
-    margin-bottom: 20px;
+    /*text-align: center;*/
+    margin: 10px 0;
 }
 .features img
 {
@@ -775,6 +797,12 @@ ul.features
     border-top: 1px solid #e5e5e5;
     background-color: #525252;
     color :#eee;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
 }
 .footer p
 {
@@ -1308,7 +1336,7 @@ input, button, select, textarea
 /* Global */
 .orange
 {
-    color: #e65c47;
+    color: #e65c47 !important;
 }
 .mt60
 {
@@ -1376,8 +1404,11 @@ section.answer::before {
 .hero-unit {
     line-height: 0px;
     font-size: 14px;
-    padding: 30px;
-    padding-top: 10px;
+    padding: 20px 30px;
+    background-color: #f5f5f5;
+    box-shadow: 0 -1px 0px 0px #DDDDDD,
+    0 -2px 0px 1px #FFFFFF,
+    0 -1px 0px 2px #DDDDDD;
 }
 
 /* Features */
@@ -1431,6 +1462,14 @@ section.answer::before {
 {
    margin: 10px;
 }
+.fu-avatar-white
+{
+    background-image: url('/img/fineuploader-avatar-white.png');
+    height:25px;
+    width: 400px;
+    margin-bottom: 50px;
+}
+
 
 
 

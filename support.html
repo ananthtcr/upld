@@ -25,10 +25,7 @@
         <script src="js/jquery.tipsy.min.js"></script>
     </head>
     <body>
-        <div id="header"> </div>
-
-
-        <div class="jumbotron-small">
+        <div class="jumbotron-small fixed">
             <div class="container">
                 <div id="navbar"></div>
             </div>
@@ -36,14 +33,17 @@
 
         <div class="container marketing">
             <h1>Support</h1>
-            </br>
+
+            <hr class="no-margin">
+            <hr class="no-margin">
+            <div class="spacer"></div>
+
             <div class="row-fluid">
                 <div class="span6">
-                    <div class="p8">
-                    <p>
-                        <b>For technical support questions, please use Stack Overflow</b>.
-                    </p>
-
+                    <h3>
+                        For technical support questions, <span class="orange"><em>please use Stack Overflow.</em></span>
+                    </h3>
+                    <br>
                     <p>
                         <a href="http://stackoverflow.com/users/486979/ray-nicholus">Ray Nicholus</a> and
                         <a href="http://stackoverflow.com/users/2405667/mfeltner">Mark Feltner</a> personally monitor the
@@ -62,15 +62,13 @@
                         Stack Overflow.  These types of posts will be removed by the moderators.  Questions that
                         do not include enough information to troubleshoot your issue will also be removed.
                     </p>
-                    </div>
                 </div>
 
                 <div class="span6">
-                    <div class="p8">
-                    <p>
-                        <b>For bug reports or feature requests, please use the Github project's issue tracker</b>.
-                    </p>
-
+                    <h3>
+                        For bug reports or feature requests, <span class="orange"><em>please use the Github project's issue tracker.</em></span>
+                    </h3>
+                    <br>
                     <p>
                         If you are confident that you have uncovered a bug in Fine Uploader, please provide specific details
                         about the bug, your version of Fine Uploader, your OS and browser, along with console messages from
@@ -82,13 +80,15 @@
                         <a href="https://github.com/Widen/fine-uploader/issues">issue tracker</a> is also the appropriate place to post such a request.  Be sure to explain your
                         request clearly and provide details regarding the intended use of such a feature.
                     </p>
-                    </div>
                 </div>
             </div>
             </br>
-            <p style="clear:both;">Please do not email Widen Enterprises with questions related to Fine Uploader.  If you have licensing
-            questions, please see our <a href="/faq">licensing FAQ</a>.  Otherwise, please see the above sections if you need to report a
-            bug, request a feature, or obtain technical support.</p>
+            </br>
+            <div class="hero-unit container center">
+                <p>Please <span class="orange"><em>do not</em></span> email Widen Enterprises with questions related to Fine Uploader.  If you have licensing
+                    questions, please see our <a href="/faq">licensing FAQ</a>.  Otherwise, please see the above sections if you need to report a
+                    bug, request a feature, or obtain technical support.</p>
+            </div>
         </div>
 
         <div id="footer"></div>
