@@ -18,25 +18,50 @@ $(document).ready(function() {
 //            $('.demo-subnav').css("margin-top", "0px");
 //        }
 //    });
-    $( '.view-code a' ).click(function() {
-        var viewCode =  $(this).siblings('.source-view');
-
-        viewCode.animate({
-            opacity: "toggle",
-            height: "toggle"
+    $('.view-code').each(function(index, el) {
+        var $viewCode = $(el),
+            toggleLink = $viewCode.children('a'),
+            sourceView = $viewCode.children('.source-view')
+            codeTabs = $(this).find('.code-tab');
+        
+        $(toggleLink).on('click', function() {
+            sourceView.animate({
+                opactiy: 'toggle',
+                height: 'toggle'
+            });
         });
+        
+        codeTabs.each(function(index, element) {
+            var $codeTab = $(element);
+            
+            $codeTab.on('click', function(event) {
+                var active = $codeTab.hasClass('activeTabTrigger');
+                if (active) return false;
+                else {
+                    var windowClassName = $codeTab.data('tab'),
+                        windowEl = $viewCode.find('#'+windowClassName);
+                    console.log(windowEl);
+                    
+                    sourceView.find('.activeTabTrigger').first().removeClass('activeTabTrigger');
+                    sourceView.find('.active').first().removeClass('active');
+                    
+                    $codeTab.addClass('activeTabTrigger');
+                    windowEl.addClass('active');
+                }
+            });
+          
+        });
+        
+        
+        // 1. Click the tab
+        // 2. Show relevant code
+        // 3. Disable tab
+       
     });
 
+    /*
     (function () {
-        function on(target, eventName, listener) {
-            var method = 'addEventListener';
-            if (!target.addEventListener) {
-                method = 'attachEvent';
-                eventName = 'on' + eventName;
-            }
 
-            target[method](eventName, listener);
-        }
         var activeTab = document.querySelector('.code-window.active'),
             activeTabTrigger = document.querySelector('.activeTabTrigger');
 
@@ -56,5 +81,6 @@ $(document).ready(function() {
             activeTabTrigger.className += ' activeTabTrigger';
         });
     })();
+    */
 });
 
