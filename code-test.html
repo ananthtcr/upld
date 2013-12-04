@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fine Uploader demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fine Uploader demo">
+    <meta name="author" content="Widen">
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+    <![endif]-->
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="source/fineuploader-4.1.0-5.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="js/ui/ui-scripts.js"></script>
+    <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
+    <script src="source/fineuploader-4.1.0-5.min.js"></script>
+    <script src="source/jquery.fineuploader-4.1.0-5.min.js"></script> <!-- jquery wrapper demo -->
+    <script src="source/all.fineuploader-4.0.3.min.js"></script>
+
+
+    <script type="text/template" id="qq-template">
+        <div class="qq-uploader-selector qq-uploader">
+            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                <span>Drop files here to upload</span>
+            </div>
+            <div class="qq-upload-button-selector qq-upload-button">
+                <div>Upload a file</div>
+            </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+            <ul class="qq-upload-list-selector qq-upload-list">
+                <li>
+                    <div class="qq-progress-bar-container-selector">
+                        <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                    </div>
+                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                    <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                    <span class="qq-upload-file-selector qq-upload-file"></span>
+                    <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                    <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                    <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+                    <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+                    <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+
+    <script type="text/template" id="qq-template-manual-noedit">
+        <div class="qq-uploader-selector qq-uploader">
+            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                <span>Drop files here to upload</span>
+            </div>
+            <div class="qq-upload-button-selector qq-upload-button">
+                <div>Upload a file</div>
+            </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+            <ul class="qq-upload-list-selector qq-upload-list">
+                <li>
+                    <div class="qq-progress-bar-container-selector">
+                        <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                    </div>
+                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                    <span class="qq-upload-file-selector qq-upload-file"></span>
+                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                    <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                    <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <script type="text/template" id="qq-simple-thumbnails-template">
+        <div class="qq-uploader-selector qq-uploader">
+            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                <span>Drop files here to upload</span>
+            </div>
+            <div class="qq-upload-button-selector qq-upload-button">
+                <div>Upload a file</div>
+            </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+            <ul class="qq-upload-list-selector qq-upload-list">
+                <li>
+                    <div class="qq-progress-bar-container-selector">
+                        <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                    </div>
+                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                    <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale>
+                    <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                    <span class="qq-upload-file-selector qq-upload-file"></span>
+                    <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                    <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                    <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+                    <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+                    <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <style>
+        .code-tab
+        {
+            padding: 10px;
+            background-color: #525252;
+            color: #FFFFFF;
+            z-index: 2;
+            position: relative;
+            cursor: pointer;
+            border-top: 1px solid #999;
+            border-left: 1px solid #999;
+            border-right: 1px solid #999;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        .code-tab.activeTabTrigger
+        {
+            background-color: #F4F4F4;
+            color: #525252;
+            font-weight: 400;
+            z-index: 2;
+            border-top: 1px solid #999;
+            border-left: 1px solid #999;
+            border-right: 1px solid #999;
+        }
+        .code-example .code-window
+        {
+            display: none;
+        }
+        .code-example .code-window.active
+        {
+            /*position: relative;*/
+            z-index: 1;
+            padding-left: 10px;
+            display: block;
+            background-color: #F4F4F4;
+            /*-moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);*/
+            /*-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);*/
+            /*box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);*/
+        }
+        pre
+        {
+
+        }
+
+    </style>
+</head>
+
+<body class="marketing">
+
+    <div class="jumbotron-small fixed">
+        <div class="container">
+            <div id="navbar"></div>
+        </div>
+    </div>
+
+    <h1>Code Test</h1>
+
+    <div class="container code-example">
+        <div class="code-tab activeTabTrigger" data-tab="jquery-tab" style="display: inline;">jQuery</div>
+        <div class="code-tab" data-tab="no-dependencies-tab" style="display: inline;">No Dependencies</div>
+
+        <pre id="jquery-tab" class="code-window active" style="margin-top:8px;">
+            <code class="example" data-demo="jquery-manual-trigger"></code>
+        </pre>
+
+        <pre id="no-dependencies-tab" class="code-window" style="margin-top:8px;">
+            <code class="example" data-demo="manual-trigger"></code>
+        </pre>
+    </div>
+
+    <script>
+        (function () {
+            function on(target, eventName, listener) {
+                var method = 'addEventListener';
+                if (!target.addEventListener) {
+                    method = 'attachEvent';
+                    eventName = 'on' + eventName;
+                }
+
+                target[method](eventName, listener);
+            }
+            var activeTab = document.querySelector('.code-window.active'),
+                activeTabTrigger = document.querySelector('.activeTabTrigger');
+
+            on(document, 'click', function (event) {
+                var target = event.target || event.srcElement;
+                console.log(target);
+
+                if (!/\bcode-tab\b/.test(target.className)) {
+                    return;
+                }
+                activeTab.className = activeTab.className.replace(/\b active\b/, '');
+                console.log(activeTab.className);
+                activeTabTrigger.className = activeTabTrigger.className.replace(/\bactiveTabTrigger\b/, '');
+                activeTab = document.getElementById(target.getAttribute('data-tab'));
+                activeTabTrigger = target;
+                activeTab.className += ' active';
+                activeTabTrigger.className += ' activeTabTrigger';
+            });
+        })();
+    </script>
+
+
+
+
+
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+
+    <div id="footer"></div>
+
+<script>
+    $.get('./navbar.html', function(data) {
+        $('#navbar').html(data);
+        $('#navbar').find('li.dropdown').addClass('active')
+                .find('li').eq(0).addClass('active');
+
+        window.prettyPrint && prettyPrint();
+        $('.dropdown-toggle').dropdown();
+
+        $(document).ready(function() {
+            /* Inspiration from:
+             -----------------
+             http://www.mybloggerlab.com/2012/03/make-your-old-site-navigation-bar.html */
+            var offset, aboveHeight;
+            var $menu = $('#menu');
+            var $jumbotron = $('#jumbotron');
+            var $demoList = $('#demoList');
+
+            function offsetSubMenu() {
+                if ($menu.css('position') == 'fixed') {
+                    offset = $menu.outerHeight();
+                    aboveHeight = $jumbotron.outerHeight() - 10;
+                } else {
+                    offset = 0;
+                    aboveHeight = $menu.outerHeight() + $jumbotron.outerHeight();
+                }
+
+                if ($(window).scrollTop() > aboveHeight){
+                    $demoList.css({"position": "fixed", "top": offset + "px"});
+                } else {
+                    $demoList.css({"position": "relative", "top": "0"});
+                }
+            }
+
+            offsetSubMenu();
+
+            $(window).resize(function() {
+                offsetSubMenu();
+            });
+
+            $(window).scroll(function() {
+                offsetSubMenu();
+            });
+        });
+    });
+
+    $.get('./header.html', function(data) {
+        $('#header').html(data);
+    });
+    $.get('./footer.html', function(data) {
+        $('#footer').html(data);
+    });
+</script>
+</body>
+</html>

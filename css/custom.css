@@ -48,6 +48,11 @@ body.demos
     width: 100%;
     background-color: #e65c47;
 }
+.about-home a
+{
+    color: #FFEEAA;
+
+}
 section.orange-bg
 {
     margin-top: 20px;
@@ -1467,7 +1472,7 @@ section.answer::before {
     background-image: url('/img/fineuploader-avatar-white.png');
     height:25px;
     width: 400px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 
