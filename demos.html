@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Fine Uploader demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fine Uploader demo">
+    <meta name="description" content="Fine Uploader demos">
     <meta name="author" content="Widen">
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 
@@ -18,7 +18,8 @@
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="source/fineuploader-4.1.0-5.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
+    <!--<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">-->
+    <link rel="stylesheet" href="http://jmblog.github.com/color-themes-for-highlightjs/css/themes/tomorrow.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://platform.twitter.com/widgets.js"></script>
@@ -122,7 +123,7 @@
     </script>
 </head>
 
-<body class="demos">
+<body>
     <div class="jumbotron-small fixed">
         <div class="container">
             <div id="navbar"></div>
@@ -205,15 +206,15 @@
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
                         <div class="source-view">
-                            <div class="code-example" style="margin-top: 20px;">
+                            <div class="code-example">
                                 <div class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-basic" style="display: inline;">Core</div>
                                 <div class="code-tab" data-tab="jquery-tab-basic" style="display: inline;">jQuery</div>
 
-                                <pre id="no-dependencies-tab-basic" class="code-window active" style="margin-top:8px;">
+                                <pre id="no-dependencies-tab-basic" class="code-window active" style="margin-top:9px;">
                                     <code class="example" data-demo="minimal"></code>
                                 </pre>
 
-                                <pre id="jquery-tab-basic" class="code-window" style="margin-top:8px;">
+                                <pre id="jquery-tab-basic" class="code-window" style="margin-top:9px;">
                                     <code class="example" data-demo="jquery-minimal"></code>
                                 </pre>
                             </div>
@@ -240,9 +241,20 @@
 
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
-                        <pre class="source-view">
-                            <code class="example" data-demo="jquery-display-thumbnails"></code>
-                        </pre>
+                        <div class="source-view">
+                            <div class="code-example">
+                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-display-images">jQuery</div>
+                                <div class="code-tab" data-tab="no-dependencies-tab-display-images">No Dependencies</div>
+
+                                <pre id="jquery-tab-display-images" class="code-window active">
+                                    <code class="example" data-demo="jquery-display-thumbnails"></code>
+                                </pre>
+
+                                <pre id="no-dependencies-tab-display-images" class="code-window">
+                                    <code class="example xml" data-demo="display-thumbnails"></code>
+                                </pre>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                 </section>
@@ -260,15 +272,14 @@
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
                         <div class="source-view">
-                            <div class="code-example" style="margin-top: 20px;">
-                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-manually-trigger-uploads" style="display: inline;">jQuery</div>
-                                <div class="code-tab" data-tab="no-dependencies-tab-manually-trigger-uploads" style="display: inline;">Core</div>
+                            <div class="code-example">
+                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-manually-trigger-uploads" >jQuery</div>
+                                <div class="code-tab" data-tab="no-dependencies-tab-manually-trigger-uploads">No Dependencies</div>
 
-                                <pre id="jquery-tab-manually-trigger-uploads" class="code-window active" style="margin-top:8px;">
+                                <pre id="jquery-tab-manually-trigger-uploads" class="code-window active">
                                     <code class="example" data-demo="jquery-manual-trigger"></code>
                                 </pre>
-
-                                <pre id="no-dependencies-tab-manually-trigger-uploads" class="code-window" style="margin-top:8px;">
+                                <pre id="no-dependencies-tab-manually-trigger-uploads" class="code-window" >
                                     <code class="example" data-demo="manual-trigger"></code>
                                 </pre>
                             </div>
@@ -291,9 +302,19 @@
 
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
-                        <pre class="source-view">
-                            <code class="example" data-demo="edit-file"></code>
-                        </pre>
+                        <div class="source-view">
+                            <div class="code-example">
+                                <!--<div class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-edit-filenames">Core</div>-->
+                                <div class="code-tab" data-tab="jquery-tab-edit-filenames" >jQuery</div>
+
+                                <pre id="jquery-tab-edit-filenames" class="code-window active">
+                                    <code class="example" data-demo="jquery-edit-file"></code>
+                                </pre>
+                                <pre id="no-dependencies-tab-edit-filenames" class="code-window">
+                                    <code class="example" data-demo="edit-file"></code>
+                                </pre>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                 </section>
@@ -315,9 +336,19 @@
 
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
-                        <pre class="source-view">
-                            <code class="example" data-demo="jquery-various-options"></code>
-                        </pre>
+                        <div class="source-view">
+                            <div class="code-example">
+                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-various-options" >jQuery</div>
+                                <div class="code-tab" data-tab="no-dependencies-tab-various-options">No Dependencies</div>
+
+                                 <pre id="jquery-tab-various-options" class="code-window active">
+                                    <code class="example" data-demo="jquery-various-options"></code>
+                                </pre>
+                                <pre id="no-dependencies-tab-various-options" class="code-window">
+                                    <code class="example xml" data-demo="various-options"></code>
+                                </pre>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                 </section>
@@ -332,9 +363,19 @@
 
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
-                        <pre class="source-view">
-                            <code class="example" data-demo="jquery-limit-files"></code>
-                        </pre>
+                        <div class="source-view">
+                            <div class="code-example">
+                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-uploaded-files" >jQuery</div>
+                                <div class="code-tab " data-tab="no-dependencies-tab-uploaded-files">No Dependencies</div>
+
+                                <pre id="jquery-tab-uploaded-files" class="code-window active">
+                                    <code class="example" data-demo="jquery-limit-files"></code>
+                                </pre>
+                                <pre id="no-dependencies-tab-uploaded-files" class="code-window">
+                                    <code class="example xml" data-demo="limit-files"></code>
+                                </pre>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                 </section>
@@ -349,9 +390,15 @@
 
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
-                        <pre class="source-view">
-                            <code class="example" data-demo="bootstrapped-minimal"></code>
-                        </pre>
+                        <div class="source-view">
+                            <div class="code-example">
+                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-bootstrapped">jQuery</div>
+
+                                <pre id="jquery-tab-bootstrapped" class="code-window active">
+                                    <code class="example" data-demo="bootstrapped-minimal"></code>
+                                </pre>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                 </section>
@@ -409,9 +456,20 @@
 
                     <div class="view-code">
                         <a><i class="icon-eye-open"></i>View Code</a>
-                        <pre class="source-view">
-                            <code class="example" data-demo="s3-demo"></code>
-                        </pre>
+                        <div class="source-view">
+                            <div class="code-example">
+                                <div class="code-tab activeTabTrigger" data-tab="jquery-tab-amazon" >jQuery</div>
+                                <div class="code-tab" data-tab="no-dependencies-tab-amazon">No Dependencies</div>
+
+                                <pre id="jquery-tab-amazon" class="code-window active">
+                                    <code class="example" data-demo="s3-demo"></code>
+                                </pre>
+
+                                <pre id="no-dependencies-tab-amazon" class="code-window">
+                                    <code class="example" data-demo="s3-demo"></code>
+                                </pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
