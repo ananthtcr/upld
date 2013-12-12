@@ -634,6 +634,10 @@ body.home .marketing
     {
         left: 0;
     }
+    .marketing-text
+    {
+        padding-left: 0 !important;
+    }
 }
 
 /* Landscape phones
