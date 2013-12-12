@@ -19,34 +19,10 @@ body
 {
     width: 75%;
 }
-.support
-{
-    z-index: 1;
-    width: 100%;
-}
-.center
-{
-    text-align: center;
-}
-
 h4, h5, h6
 {
     color: #00abc7;
     font-weight: 300;
-}
-
-div.progress
-{
-    width: 50%;
-    margin: 50px auto 0;
-    height: 40px;
-}
-
-#progress {
-    height: 40px;
-    background: #444;
-    bottom: 0;
-    z-index: 1;
 }
 
 /* Header
@@ -62,10 +38,6 @@ div.progress
     font-weight: bold;
     position: relative;
     top: 9px;
-}
-.bs-docs-social-buttons li
-{
-    margin: 0px -20px 10px 0px;
 }
 .nav-logo
 {
@@ -205,23 +177,9 @@ button.btn-navbar
     font-size:13px;
     padding: 4px 10px 8px;
 }
-
-.home-video
-{
-    width: 100%;
-    height: 150px;
-}
-
 .spacer
 {
     height:40px;
-}
-@media (max-width: 767px)
-{
-    .spacer
-    {
-        height:20px;
-    }
 }
 
 /* Sections
@@ -239,21 +197,33 @@ section > ul li
 }
 
 /* Separators (hr) */
-.bs-docs-separator
-{
-    margin: 40px 0 39px;
-}
+/*.bs-docs-separator*/
+/*{*/
+    /*margin: 40px 0 39px;*/
+/*}*/
 
-/* Faded out hr */
-hr.soften
-{
-    height: 1px;
-    margin: 60px 0;
-}
 hr.no-margin
 {
     margin: 0;
-}.features-section
+}
+/* HOME PAGE UPLOADER BAR -------
+ ------------------------------*/
+div.progress
+{
+    width: 50%;
+    margin: 50px auto 0;
+    height: 40px;
+}
+
+#progress {
+    height: 40px;
+    background: #444;
+    bottom: 0;
+    z-index: 1;
+}
+/* ----------------------------*/
+
+.features-section
  {
      background: transparent;
      background-color: #f5f5f5;
@@ -267,29 +237,6 @@ hr.no-margin
      0 -1px 0px 3px #DDDDDD;
 
  }
-/*.features img*/
-/*{*/
-    /*display: block;*/
-    /*margin: 0 auto 30px;*/
-/*}*/
-/*.progressBar*/
-/*{*/
-    /*margin-top: 0px !important;*/
-    /*float:left;*/
-/*}*/
-/*ul.features*/
-/*{*/
-    /*list-style: none;*/
-/*}*/
-/*.features*/
-/*{*/
-    /*margin-top: 15px;*/
-/*}*/
-/*.features li*/
-/*{*/
-    /*margin: 6px 0;*/
-    /*font-size: 18px;*/
-/*}*/
 .about-home
 {
     padding: 100px 0 200px;
@@ -302,6 +249,11 @@ hr.no-margin
 {
     color: #FFEEAA;
 
+}
+section.support
+{
+    z-index: 1;
+    width: 100%;
 }
 section.orange-bg
 {
@@ -343,7 +295,8 @@ section.web-marketing
     }
 }
 
-
+/* BUTTONS -------------------
+----------------------------*/
 .btn
 {
     background-color: #f87436;
@@ -366,7 +319,8 @@ section.web-marketing
 .btn a:hover
 {
     color:#fff;
-}
+}/*------------------------------*/
+
 .jumbotron-small
 {
     z-index: 1000;
@@ -395,16 +349,14 @@ section.web-marketing
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
-
 .btn-large
 {
     font-size: 24px;
 }
-
-.legend
-{
-    display: none;
-}
+/*.legend*/
+/*{*/
+    /*display: none;*/
+/*}*/
 
 /* DEMOS
 -------------------------------------------------- */
@@ -504,7 +456,6 @@ i.icon-eye-open
 }
 .code-example .code-window.active
 {
-    /*position: relative;*/
     z-index: 1;
     padding: 0 10px;
     display: block;
@@ -561,7 +512,6 @@ body.home .marketing
     font-weight: 300;
     line-height: 20px;
     color: #525252;
-    /*text-align: center;*/
     margin: 10px 0;
 }
 
@@ -609,131 +559,12 @@ body.home .marketing
 
 /* Desktop large
 ------------------------- */
-@media (min-width: 1281px) {
-    .openSource > .btn
-    {
-        margin-top: 3px !important;
-    }
-    .top-nav{
-        margin-top:-5px;
-    }
-    .container
-    {
-        max-width: 1024px;
-    }
-    .masthead h1
-    {
-        margin-top:80px;
-    }
-    .getStarted > form
-    {
-        margin-top:0px !important;
-    }
-    .noDependency .btn
-    {
-        margin-top:22px !important;
-    }
-}
 @media (min-width: 1200px) {
-    .bs-docs-container {
-        max-width: 970px;
-    }
-    .bs-docs-sidenav {
-        width: 258px;
-    }
-    .top-nav{
-        margin-top:-5px;
-    }
     .container
     {
         max-width: 1024px;
     }
-    .masthead h1
-    {
-        margin-top:80px;
-    }
-
-    /*Aligning Buttons on Downloads Page*/
-    .purchase > .btn
-    {
-        margin-top:3px;
-        margin-bottom:0px;
-    }
-    .openSource > .btn
-    {
-        margin-top:27px;
-    }
-    .jQueryDownload .btn
-    {
-        margin-top:22px;
-    }
 }
-@media (min-width: 1024px)
-{
-    .top-nav
-    {
-        margin-top:-35px;
-    }
-    .getStarted > form
-    {
-        margin-top:34px;
-    }
-}
-@media (min-width: 981px) and (max-width: 1024px)
-{
-    .top-nav
-    {
-        margin-top:-5px;
-    }
-    .masthead h1
-    {
-        margin-top:80px;
-    }
-
-    /*Aligning Buttons on Downloads Page*/
-    .purchase > .btn
-    {
-        margin-top:3px;
-    }
-    .openSource > .btn
-    {
-        margin-top: 9px;
-    }
-}
-
-/* Desktop
-------------------------- */
-@media (max-width: 980px) {
-    /* Unfloat brand */
-    body > .navbar-fixed-top .brand {
-        float: left;
-        margin-left: 0;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    /* Inline-block quick links for more spacing */
-    .quick-links li {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    /* When affixed, space properly */
-    .bs-docs-sidenav {
-        top: 0;
-        margin-top: 30px;
-        margin-right: 0;
-    }
-    .top-nav
-    {
-        margin-top:-5px;
-    }
-    .masthead h1
-    {
-        text-align:center;
-    }
-}
-
 /* Tablet to desktop
 ------------------------- */
 @media (min-width: 768px) and (max-width: 980px) {
@@ -741,50 +572,6 @@ body.home .marketing
     body {
         padding-top: 0;
     }
-
-    /* Widen masthead and social buttons to fill body padding */
-    .jumbotron {
-        margin-top: -10px; /* Offset bottom margin on .navbar */
-    }
-    .masthead{
-        padding:0;
-    }
-
-    /* Adjust sidenav width */
-    .bs-docs-sidenav {
-        width: 166px;
-        margin-top: 20px;
-    }
-    .bs-docs-sidenav.affix {
-        top: 0;
-    }
-    .lg_icon
-    {
-        float:none;
-    }
-    .jumbotron h3
-    {
-        font-size:20px;
-    }
-
-    /* Aligning Buttons on Downloads Page */
-    .purchase > .btn
-    {
-        margin-top:3px;
-    }
-    .openSource > .btn
-    {
-        margin-top: 8px;
-    }
-    .getStarted input.btn.btn-small[type="submit"]
-    {
-        margin-top: 20px;
-    }
-    .getStarted > form
-    {
-        margin-top:40px;
-    }
-
 }
 
 /* Tablet
@@ -794,56 +581,13 @@ body.home .marketing
     body {
         padding-top: 0;
     }
-
-    /* Widen masthead and social buttons to fill body padding */
-    .jumbotron {
-        padding: 40px 20px;
-        margin-top:   -10px; /* Offset bottom margin on .navbar */
-        margin-right: -20px;
-        margin-left:  -20px;
-    }
-    .masthead{
-        padding:0px 0px 40px 0px;
-    }
-    .masthead h1 {
-        font-size: 5em;
-        text-align:center;
-    }
-    .masthead h2 {
-        font-size: 32px;
-        text-align:center;
-    }
-    .masthead p,
-    .masthead .btn {
-        font-size: 16px;
-    }
-    .legend {
-        font-size: small;
-        font-style: italic;
-        display: inline;
-    }
     .marketing .span4 {
         margin-bottom: 40px;
-    }
-
-    .bs-docs-social {
-        margin: 0 -20px;
     }
 
     /* Space out the show-grid examples */
     .show-grid [class*="span"] {
         margin-bottom: 5px;
-    }
-
-    /* Sidenav */
-    .bs-docs-sidenav {
-        width: auto;
-        margin-bottom: 20px;
-    }
-    .bs-docs-sidenav.affix {
-        position: static;
-        width: auto;
-        top: 0;
     }
 
     /* Unfloat the back to top link in footer */
@@ -856,33 +600,25 @@ body.home .marketing
     .footer p {
         margin-bottom: 9px;
     }
-    .top-nav
-    {
-        margin-right:-15px;
-    }
     .terms-conditions-copy
     {
         width:100% !important;
     }
-    .p8
+    .license-holder-div
     {
-        padding-bottom:30px !important;
-        padding-left:0px !important;
+        border: none !important;
     }
-    .purchase
+    .team-image
     {
-        border-right:none !important;
-        border-bottom:1px solid #ddd;
+        margin-left: 0px !important;
     }
-    .getStarted
+    .team ul
     {
-        border-right:none !important;
-        border-bottom:1px solid #ddd;
+        text-align:left;
     }
-    .jQueryDownload
+    .spacer
     {
-        border-right:none !important;
-        border-bottom: 1px solid #ddd;
+        height:20px;
     }
 }
 
@@ -899,53 +635,10 @@ body.home .marketing
         display: block;
     }
 
-    /* Downsize the jumbotrons */
-    .masthead h1 {
-        font-size: 54px;
-    }
-    .masthead h2{
-        font-size: 22px;
-    }
-    .jumbotron p,
-    .jumbotron .btn {
-        font-size: 16px;
-    }
-    .jumbotron .btn {
-        display: block;
-        margin: 20px auto;
-    }
-
-    .legend {
-        font-size: small;
-        font-style: italic;
-        display: inline;
-    }
-
-    /* center align subhead text like the masthead */
-    .subhead h1,
-    .subhead p {
-        text-align: center;
-    }
-
     /* Marketing on home */
     .marketing h1 {
         font-size: 40px;
         color: #00abc7;
-    }
-
-    /* center example sites */
-    .example-sites {
-        margin-left: 0;
-    }
-    .example-sites > li {
-        float: none;
-        display: block;
-        max-width: 280px;
-        margin: 0 auto 18px;
-        text-align: center;
-    }
-    .example-sites .thumbnail > img {
-        max-width: 270px;
     }
 
     /* Do our best to make tables work in narrow viewports */
@@ -954,7 +647,6 @@ body.home .marketing
         word-wrap: break-word;
         word-break: break-all;
     }
-
     /* Modal example */
     .modal-example .modal {
         position: relative;
@@ -963,7 +655,6 @@ body.home .marketing
         bottom: auto;
         left: auto;
     }
-
     /* Unfloat the back to top in footer to prevent odd text wrapping */
     .footer .pull-right {
         float: none;
@@ -975,11 +666,6 @@ body.home .marketing
     }
 }
 @media (max-width: 550px) {
-    .jquery-ribbon
-    {
-        display:none;
-    }
-
     .terms-conditions-copy
     {
         text-align:left !important;
@@ -1010,28 +696,13 @@ UL.features LI IMG
 
 /* DOWNLOADS PAGE
 ----------------------*/
-.submit
-{
-    padding: 5px 8px 4px 8px;
-}
 input, button, select, textarea
 {
     font-family: 'Maven Pro', sans-serif;
 }
-@media (max-width: 767px)
-{
-    .license-holder-div
-    {
-        border: none !important;
-    }
-}
-.small-link
-{
-    font-size: 12px;
-    margin-top:14px;
-    display:block
-}
-/* Terms and Conditions */
+
+/* Terms and Conditions
+-----------------------------*/
 .terms-conditions-copy
 {
     width:70%;
@@ -1086,19 +757,9 @@ input, button, select, textarea
     margin-left:0px;
     text-align:center;
 }
-@media (max-width: 767px)
-{
-    .team-image
-    {
-        margin-left: 0px !important;
-    }
-    .team ul
-    {
-        text-align:left;
-    }
-}
 
-/* Global */
+/* Global
+---------------------------*/
 .orange
 {
     color: #e65c47 !important;
@@ -1106,10 +767,6 @@ input, button, select, textarea
 .white
 {
     color: #ffffff !important;
-}
-.mt60
-{
-    margin-top: 60px;
 }
 .p8
 {
@@ -1126,6 +783,10 @@ input, button, select, textarea
 .right
 {
     float: right !important;
+}
+.center
+{
+    text-align: center;
 }
 pre
 {
@@ -1174,7 +835,8 @@ section.answer::before {
 
 }
 
-/* Features */
+/* Features
+------------------------*/
 .featurette
 {
     margin-bottom: 0px;
