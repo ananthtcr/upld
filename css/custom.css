@@ -406,26 +406,6 @@ section.web-marketing
     display: none;
 }
 
-/* Subhead (other pages)*/
-/*------------------------- */
-/*.subhead*/
-/*{*/
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-/*}*/
-/*.subhead h1*/
-/*{*/
-    /*font-size: 60px;*/
-/*}*/
-/*.subhead p*/
-/*{*/
-    /*margin-bottom: 20px;*/
-/*}*/
-/*.subhead .navbar*/
-/*{*/
-    /*display: none;*/
-/*}*/
-
 /* DEMOS
 -------------------------------------------------- */
 .marketing.demo-list
@@ -466,11 +446,6 @@ section.demo-section
     cursor: pointer;
     font-size: 16px;
 }
-/*.view-code pre code.example*/
-/*{*/
-    /*border-radius: 4px;*/
-    /*border: 1px solid #999999;*/
-/*}*/
 div.source-view
 {
     margin-top: -3px;
@@ -1043,6 +1018,13 @@ input, button, select, textarea
 {
     font-family: 'Maven Pro', sans-serif;
 }
+@media (max-width: 767px)
+{
+    .license-holder-div
+    {
+        border: none !important;
+    }
+}
 .small-link
 {
     font-size: 12px;
@@ -1121,6 +1103,10 @@ input, button, select, textarea
 {
     color: #e65c47 !important;
 }
+.white
+{
+    color: #ffffff !important;
+}
 .mt60
 {
     margin-top: 60px;
@@ -1128,6 +1114,10 @@ input, button, select, textarea
 .p8
 {
     padding:0px 20px 10px 20px;
+}
+.pb40
+{
+    padding-bottom: 40px;
 }
 .left
 {
@@ -1182,16 +1172,6 @@ section.answer {
 }
 section.answer::before {
 
-}
-
-.hero-unit {
-    line-height: 0px;
-    font-size: 14px;
-    padding: 20px 30px;
-    background-color: #f5f5f5;
-    box-shadow: 0 -1px 0px 0px #DDDDDD,
-    0 -2px 0px 1px #FFFFFF,
-    0 -1px 0px 2px #DDDDDD;
 }
 
 /* Features */
@@ -1251,6 +1231,19 @@ section.answer::before {
     height:25px;
     max-width: 420px;
     margin-bottom: 30px;
+}
+
+/* BOOTSTRAP OVERRIDE ---------
+-----------------------------*/
+
+.hero-unit {
+    line-height: 0px;
+    font-size: 14px;
+    padding: 20px 30px;
+    background-color: #f5f5f5;
+    box-shadow: 0 -1px 0px 0px #DDDDDD,
+    0 -2px 0px 1px #FFFFFF,
+    0 -1px 0px 2px #DDDDDD;
 }
 
 

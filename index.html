@@ -22,6 +22,10 @@
         <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
 
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+        <![endif]-->
+
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://platform.twitter.com/widgets.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -134,7 +138,7 @@
             <div class="marketing">
                 <header data-180="opacity: 0" data-0="opacity: 1" style="opacity: 1;">
                     <h1><img src="img/fineuploader-header-logo.png" alt="Fine Uploader" class="header"/> <span class="orange version-number">4.1</span></h1>
-                    <h2>File uploading <span class="orange"><em>without</em></span> the hassle</h2>
+                    <h2>File uploading <span class="orange">without</span> the hassle</h2>
                 </header>
 
                 <div class="spacer"></div>
@@ -182,8 +186,6 @@
             </div>
         </section>
 
-        <!--<hr class="no-margin">-->
-        <!--<hr class="no-margin">-->
         <div class="spacer"></div>
 
         <div class="progress" id="features">
@@ -193,9 +195,9 @@
         <section class="features-section marketing" data-0="margin-top:140px;" data-860="margin-top:0px;">
             <div class="container" data-230="opacity:1;" data-85="opacity:0.3;">
                 <h1>Features</h1>
-                <p class="marketing-byline  center"><span class="orange"><em>Everything you need</em></span> in a file uploader</p>
+                <p class="marketing-byline  center"><span class="orange">Everything you need</span> in a file uploader</p>
 
-                <hr class="no-margin" style="border-top: 1px solid #ddd;">
+                <hr class="no-margin">
                 <hr class="no-margin">
 
                 <div class="row-fluid" style="margin-top: 20px;">
@@ -217,7 +219,7 @@
 
                 <div class="row-fluid" style="margin-top: 20px;">
                     <div class="span4 featurette">
-                        <h3>Custom Validation Rules</h3>
+                        <h3>Validators </h3>
                         <p>Limit your users to a specific file type, size limit, number of files, image dimensions, or write your own custom validator.</p>                        </p>
                     </div>
                     <div class="span4 featurette">
@@ -233,14 +235,14 @@
                 <div class="row-fluid" style="margin-top: 20px;">
                     <div class="span4 featurette">
                         <h3>Delete Uploaded Files</h3>
-                        <p>Fine Uploader can go the other way too. That is, it can delete files if, say, the user accidentally uploaded the wrong file.</p>
+                        <p>Upload the wrong file? Use this feature to delete what you don't need.</p>
                     </div>
                     <div class="span4 featurette">
                         <h3>Upload to the Cloud</h3>
-                        <p>Fine Uploader can go the other way too. That is, it can delete files if, say, the user accidentally uploaded the wrong file.</p>
+                        <p>Send files directly to Amazon’s Simple Storage Service to minimize backend code and scale with the number of users.</p>
                     </div>
                     <div class="span4 featurette">
-                        <h3>Media Previews</h3>
+                        <h3>Image Previews</h3>
                         <p>Give your users an in-browser preview of images before they upload.
                         </p>
                     </div>
@@ -252,11 +254,10 @@
                     <div class="span4 p8 accordion"  style="padding-left:0px;">
                         <div class="accordion-group">
                             <div class="accordion-heading-features">
-                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse4" class="accordion-toggle-faq collapsed">Auto and manual upload</a>
-                                <div id="collapse4" class="accordion-body collapse" style="height: 0px;">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapseOne" class="accordion-toggle-faq collapsed">Multiple file selection</a>
+                                <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Fine Uploader can begin uploading files as soon as possible, or simply wait until for the user.
-                                        </p>
+                                        <p>Select more than one file at a time.</p>
                                     </div>
                                 </div>
                             </div>
@@ -285,7 +286,7 @@
                                 <!--</div>-->
                             <!--</div>-->
                             <div class="accordion-heading-features">
-                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Flexible templating system</a>
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Simple to Style and Customize</a>
                                 <div id="collapse22" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
                                          <p>Customize the layout simply and easily by editing HTML and CSS; no JavaScript!
@@ -294,10 +295,11 @@
                                 </div>
                             </div>
                             <div class="accordion-heading-features">
-                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapseOne" class="accordion-toggle-faq collapsed">Multiple file selection</a>
-                                <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
+                                <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse4" class="accordion-toggle-faq collapsed">Auto and manual upload</a>
+                                <div id="collapse4" class="accordion-body collapse" style="height: 0px;">
                                     <div class="accordion-inner-faq">
-                                        <p>Select more than one file at a time.</p>
+                                        <p>Fine Uploader can begin uploading files as soon as possible, or simply wait until for the user.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -425,7 +427,7 @@
                 </div>
 
                 <div class="spacer"></div>
-                <p class="marketing" style="font-size: 22px;"><a href="http://docs.fineuploader.com/#features">Visit the docs</a> for more in-depth information on features.</p>
+                <p class="marketing" style="font-size: 22px;"><a href="http://docs.fineuploader.com/#features">Visit the docs</a> for more feature information</p>
                 <div class="spacer"></div>
             </div>
         </section>
@@ -436,9 +438,9 @@
         <section class="about-home marketing" data-1000="margin-top:0px;" data-1880="margin-top:-200px;">
             <div class="container row-fluid" data-1000="opacity:0.3;" data-1400="opacity: 1">
                 <div class="span6">
-                    <h2 style="color: #fff; text-align: center;font-size: 50px; font-weight: 300; line-height: 50px;">New version release <span><em>every</em></span> 4 weeks</h2>
+                    <h2 style="color: #fff; text-align: center;font-size: 50px; font-weight: 300; line-height: 50px; margin-top: 20px;">We're agile.</h2>
                     <br><br>
-                    <h3 style="color: #fff; text-align: center; line-height: 28px;margin-top: 40px;">Fine Uploader is always releasing new features thanks to its ongoing development process.</h3>
+                    <h3 style="color: #fff; text-align: center; line-height: 28px;margin-top: 40px;">With our iterative development process, Fine Uploader is committed to adding robust features on a consistent release cycle.</h3>
 
                 </div>
 
@@ -452,6 +454,7 @@
                     <!--that they are asked and usually within 20 minutes.</p>-->
                     <!--<p style="text-align: left; color: #fff;">FineUploader is backed by <a href="http://www.widen.com">Widen Enterprises</a>, a software company with more than x years of experience.</p>-->
                     <!--<div class="fu-avatar-white" style="margin-top: 50px;"></div>-->
+                    <p class="white" style="text-align: left; margin-left: 5px;">Here are a few other reasons to choose Fine Uploader: </p>
                     <ul style="text-align: left; color: white; font-size: 13px;">
                         <li>Backed by a long-standing <a target="_blank" target="_blank" href="http://widen.com">reputable software company</a>.</li>
                         <li>Supported better than any other upload tool in existence.  The development team responds to your
@@ -523,7 +526,7 @@
                         </div>
                     </div>
                 </section>
-
+                <div style="background-color: #f3f3f3; height: 25px; margin-top: -5px;"></div>
             </div>
         </section>
 
