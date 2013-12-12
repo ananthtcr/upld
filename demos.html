@@ -38,7 +38,7 @@
             <div class="qq-upload-drop-area-selector qq-upload-drop-area span12" qq-hide-dropzone>
                 <span>Drop files here to upload</span>
             </div>
-            <div class="qq-upload-button-selector qq-upload-button btn btn-success" style="width: 50%;">
+            <div class="qq-upload-button-selector qq-upload-button btn btn-success bootstrap-demo-button" style="width: 50%;">
                 <div><i class="icon-upload icon-white"></i> Test me now and upload a file</div>
             </div>
                 <span class="qq-drop-processing-selector qq-drop-processing">
@@ -370,7 +370,7 @@
                                 <div class="code-tab" data-tab="no-dependencies-tab-edit-filenames">No Dependencies</div>
 
                                 <pre id="jquery-tab-edit-filenames" class="code-window active">
-                                    <code data-demo="jquery-edit-file"></code>
+                                    <code class="example" data-demo="jquery-edit-file"></code>
                                 </pre>
                                 <pre id="no-dependencies-tab-edit-filenames" class="code-window">
                                     <code class="example" data-demo="edit-file"></code>
@@ -458,7 +458,7 @@
                                 <div class="code-tab" data-tab="no-dependencies-tab-bootstrapped">No Dependencies</div>
 
                                 <pre id="jquery-tab-bootstrapped" class="code-window active">
-                                    <code data-demo="jquery-bootstrapped-minimal"></code>
+                                    <code class="example" data-demo="jquery-bootstrapped-minimal"></code>
                                 </pre>
                                 <pre id="no-dependencies-tab-bootstrapped" class="code-window">
                                     <code class="example" data-demo="bootstrapped-minimal"></code>
@@ -525,15 +525,15 @@
                         <div class="source-view">
                             <div class="code-example">
                                 <div class="code-tab activeTabTrigger" data-tab="jquery-tab-amazon" >jQuery</div>
-                                <div class="code-tab" data-tab="no-dependencies-tab-amazon">No Dependencies</div>
+                                <!--<div class="code-tab" data-tab="no-dependencies-tab-amazon">No Dependencies</div>-->
 
                                 <pre id="jquery-tab-amazon" class="code-window active">
-                                    <code data-demo="jquery-s3-demo"></code>
-                                </pre>
-
-                                <pre id="no-dependencies-tab-amazon" class="code-window">
                                     <code class="example" data-demo="s3-demo"></code>
                                 </pre>
+
+                                <!--<pre id="no-dependencies-tab-amazon" class="code-window">-->
+                                    <!--<code class="example" data-demo="s3-demo"></code>-->
+                                <!--</pre>-->
                             </div>
                         </div>
                     </div>
@@ -546,129 +546,6 @@
         <hr class="no-margin">
         <hr class="no-margin">
         <div class="spacer"></div>
-
-
-        <!--<div class="row-fluid">-->
-        <!--<section id="demo4">-->
-        <!--<h1>Display Image Previews</h1>-->
-        <!--<p class="marketing-byline">In this demo, we're utilizing Fine Uploader 4's client-side image-->
-        <!--preview generation feature.  Note that client-side previews are only supported in modern browsers-->
-        <!--(not IE9 and older).  For more info, see the <a href="http://docs.fineuploader.com/features/thumbnails.html">thumbnail feature docs</a>.</p>-->
-        <!--<div class="row-fluid">-->
-        <!--<div class="span4">-->
-        <!--<div id="thumbnail-fine-uploader" style="margin-bottom:20px;"></div>-->
-        <!--<p>This uploader is also restricted in</p>-->
-        <!--<ul>-->
-        <!--<li>allowed extensions (<code>jpeg</code>, <code>jpg</code>, <code>gif</code>, and <code>png</code>)</li>-->
-        <!--</ul>-->
-
-        <!--<p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/simple-thumbnails.html">default simple thumbnails template</a> bundled with Fine Uploader UI.-->
-        <!--For details on customizing templates, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>-->
-
-        <!--</div>-->
-
-        <!--<div class="span8">-->
-        <!--<pre>-->
-        <!--<code class="example" data-demo="display-thumbnails"></code>-->
-        <!--</pre>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</section>-->
-
-        <!--<hr id="demo" class="soften">-->
-
-        <!--<section id="demo1">-->
-        <!--<h1>Manually Trigger Uploads</h1>-->
-        <!--<p class="marketing-byline">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling <code>uploadStoredFiles()</code> on your Fine Uploader instance.</p>-->
-        <!--<div class="row-fluid">-->
-        <!--<div class="span4">-->
-        <!--<div id="manual-fine-uploader"></div>-->
-        <!--<div id="triggerUpload" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 10px;">-->
-        <!--<i class="icon-upload icon-white"></i> Upload now-->
-        <!--</div>-->
-        <!--<p>Since we need to catch click events on an HTML element, we will be using jQuery to handle events and selectors for the sake of simplicity.</p>-->
-        <!--<p>You can obviously take it further with the <a href="./fine-uploader-with-jquery-wrapper-demo.html">optional jQuery wrapper demos</a>.</p>-->
-        <!--</div>-->
-
-        <!--<div class="span8">-->
-        <!--<pre>-->
-        <!--<code class="example" data-demo="manual-trigger"></code>-->
-        <!--</pre>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</section>-->
-
-        <!--<hr id="demo" class="soften">-->
-
-        <!--<section id="demo2">-->
-        <!--<h1>See Server Failure Messages</h1>-->
-        <!--<p class="marketin-byline">If your server returns a response that includes a reason property, such as <code>{"error": "unsupported file type"}</code> you can display the error message next to the failed file.</p>-->
-        <!--<div class="row-fluid">-->
-        <!--<div class="span4">-->
-        <!--<div id="failed-fine-uploader"></div>-->
-
-        <!--<p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.-->
-        <!--For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>-->
-        <!--</div>-->
-
-        <!--<div class="span8">-->
-        <!--<pre>-->
-        <!--<code class="example" data-demo="failure-message"></code>-->
-        <!--</pre>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</section>-->
-
-        <!--<hr id="demo" class="soften">-->
-
-        <!--<section id="demo3">-->
-        <!--<h1>Various Options</h1>-->
-        <!--<p class="marketing-byline">There are various options available to you when using Fine Uploader. In this demo, we've used a small subset of these options. To see all available options and their usage, please refer to <a href="http://docs.fineuploader.com">Fine Uploader documentation</a> on the Github repository.</p>-->
-        <!--<div class="row-fluid">-->
-        <!--<div class="span4">-->
-        <!--<div id="restricted-fine-uploader" style="margin-bottom:20px;"></div>-->
-        <!--<p>We are implementing the following options in this demo:</p>-->
-        <!--<ul>-->
-        <!--<li>restriction to one file upload/selection at once (may not select multiple files),</li>-->
-        <!--<li>restriction to <code>jpeg</code>, <code>jpg</code>, and <code>txt</code> files,</li>-->
-        <!--<li>restriction to a maximum file size of 50 kB,</li>-->
-        <!--<li>custom error display handler instead of the default alert box.</li>-->
-        <!--</ul>-->
-
-        <!--<p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.-->
-        <!--For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>-->
-
-        <!--</div>-->
-
-        <!--<div class="span8">-->
-        <!--<pre>-->
-        <!--<code class="example" data-demo="various-options"></code>-->
-        <!--</pre>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</section>-->
-
-        <!--<hr id="demo" class="soften">-->
-
-        <!--<section id="demo5">-->
-        <!--<h1>Limit Number of Uploaded Items</h1>-->
-        <!--<p class="marketing-byline">In this demo, we are using the <code>itemLimit</code> validation option to enforce a maximum item limit.</p>-->
-        <!--<div class="row-fluid">-->
-        <!--<div class="span4">-->
-        <!--<div id="filelimit-fine-uploader" style="margin-bottom:20px;"></div>-->
-        <!--<p>This demo uses the <a href="https://github.com/Widen/fine-uploader/blob/master/client/html/templates/default.html">default template</a> bundled with Fine Uploader UI.-->
-        <!--For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>-->
-
-        <!--</div>-->
-
-        <!--<div class="span8">-->
-        <!--<pre>-->
-        <!--<code class="example" data-demo="limit-files"></code>-->
-        <!--</pre>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</section>-->
-        <!--</div>-->
     </div>
 
         <div id="footer"></div>

@@ -321,7 +321,15 @@ section.web-marketing
 .btn a:hover
 {
     color:#fff;
-}/*------------------------------*/
+}
+.bootstrap-demo-button:hover
+{
+    background-color: #f87436;
+    background-image: -webkit-linear-gradient(top, #f87436, #f87436);
+    background-image: -moz-linear-gradient(top, #f87436, #f87436)
+
+}
+/*------------------------------*/
 
 .jumbotron-small
 {
@@ -621,6 +629,10 @@ body.home .marketing
     .spacer
     {
         height:20px;
+    }
+    .jumbotron-small
+    {
+        left: 0;
     }
 }
 
