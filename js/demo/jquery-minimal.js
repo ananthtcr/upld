@@ -6,7 +6,6 @@ $(document).ready(function () {
         }
     });
 
-    $('a.tip').tipsy();
 
     $('#jquery-wrapped-fine-uploader').fineUploader({
         request: {
