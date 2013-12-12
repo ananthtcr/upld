@@ -60,3 +60,11 @@
     position:relative !important;
     z-index:0 !important;
 }
+.footer
+{
+    position: relative !important;
+}
+div.progress
+{
+    display: none;
+}
