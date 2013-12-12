@@ -1,11 +1,9 @@
-<div id="manual-fine-uploader"></div>
-<div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
-  <i class="icon-upload icon-white"></i> Upload now
-</div>
+<!-- Fine Uploader CSS
+====================================================================== -->
+<link href="assets/fineuploader.css" rel="stylesheet">
 
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="jquery.fineuploader-{VERSION}.js"></script>
-
+<!-- Fine Uploader template
+====================================================================== -->
 <script type="text/template" id="qq-template-manual-noedit">
     <div class="qq-uploader-selector qq-uploader">
         <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
@@ -33,6 +31,21 @@
     </div>
 </script>
 
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="manual-fine-uploader"></div>
+<div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
+  Upload now
+</div>
+
+
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
 <script>
   $(document).ready(function() {
     var manualuploader = $('#manual-fine-uploader').fineUploader({

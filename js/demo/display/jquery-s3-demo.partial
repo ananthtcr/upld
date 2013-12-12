@@ -72,7 +72,7 @@ $(document).ready(function () {
                 endpoint: "/s3demo.php"
             },
 
-            // OPTIONAL: An endopint for Fine Uploader to POST to
+            // OPTIONAL: An endpoint for Fine Uploader to POST to
             // after the file has been successfully uploaded.
             // Server-side, we can declare this upload a failure
             // if something is wrong with the file.

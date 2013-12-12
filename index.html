@@ -20,7 +20,6 @@
         <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css" >
         <![endif]-->
-
         <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
         <![endif]-->
@@ -30,105 +29,10 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
         <script src="js/jquery.tipsy.min.js"></script>
-        <script src="source/all.fineuploader-4.1.0-13.min.js"></script>
         <script src="js/skrollr/skrollr.js"></script>
         <script src="js/ui/ui-scripts.js"></script>
-        <script src="source/all.fineuploader-4.0.3.min.js"></script>
-
-        <script type="text/template" id="qq-template">
-            <div class="qq-uploader-selector qq-uploader">
-                <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
-                    <span>Drop files here to upload</span>
-                </div>
-                <div class="qq-upload-button-selector qq-upload-button">
-                    <div>Upload a file</div>
-                </div>
-                <span class="qq-drop-processing-selector qq-drop-processing">
-                    <span>Processing dropped files...</span>
-                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
-                </span>
-                <ul class="qq-upload-list-selector qq-upload-list">
-                    <li>
-                        <div class="qq-progress-bar-container-selector">
-                            <div class="qq-progress-bar-selector qq-progress-bar"></div>
-                        </div>
-                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
-                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
-                        <span class="qq-upload-file-selector qq-upload-file"></span>
-                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
-                        <span class="qq-upload-size-selector qq-upload-size"></span>
-                        <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
-                        <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
-                        <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
-                        <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
-                    </li>
-                </ul>
-            </div>
-        </script>
-
-        <script type="text/template" id="qq-template-bootstrap">
-            <div class="qq-uploader-selector qq-uploader span12">
-                <div class="qq-upload-drop-area-selector qq-upload-drop-area span12" qq-hide-dropzone>
-                    <span>Drop files here to upload</span>
-                </div>
-                <div class="qq-upload-button-selector qq-upload-button btn btn-success" style="width: auto;">
-                    <div><i class="icon-upload icon-white"></i> Test me now and upload a file</div>
-                </div>
-                <span class="qq-drop-processing-selector qq-drop-processing">
-                    <span>Processing dropped files...</span>
-                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
-                </span>
-                <ul class="qq-upload-list-selector qq-upload-list" style="margin-top: 10px; text-align: center;">
-                    <li>
-                        <div class="qq-progress-bar-container-selector">
-                            <div class="qq-progress-bar-selector qq-progress-bar"></div>
-                        </div>
-                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
-                        <span class="qq-upload-file-selector qq-upload-file"></span>
-                        <span class="qq-upload-size-selector qq-upload-size"></span>
-                        <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
-                        <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
-                    </li>
-                </ul>
-            </div>
-        </script>
-
-        <script type="text/template" id="simple-previews-template">
-            <div class="qq-uploader-selector qq-uploader">
-                <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
-                    <span>Drop files here to upload</span>
-                </div>
-                <div class="qq-upload-button-selector qq-upload-button">
-                    <div>Upload a file</div>
-                </div>
-                <span class="qq-drop-processing-selector qq-drop-processing">
-                    <span>Processing dropped files...</span>
-                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
-                </span>
-                <ul class="qq-upload-list-selector qq-upload-list">
-                    <li>
-                        <div class="qq-progress-bar-container-selector">
-                            <div class="qq-progress-bar-selector qq-progress-bar"></div>
-                        </div>
-                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
-                        <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale>
-                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
-                        <span class="qq-upload-file-selector qq-upload-file"></span>
-                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
-                        <span class="qq-upload-size-selector qq-upload-size"></span>
-                        <a class="qq-upload-cancel-selector btn-small btn-warning" href="#">Cancel</a>
-                        <a class="qq-upload-retry-selector btn-small btn-info" href="#">Retry</a>
-                        <a class="qq-upload-delete-selector btn-small btn-warning" href="#">Delete</a>
-                        <a class="qq-upload-pause-selector btn-small btn-info" href="#">Pause</a>
-                        <a class="qq-upload-continue-selector btn-small btn-info" href="#">Continue</a>
-                        <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
-                        <a class="view-btn btn-small btn-info hide" target="_blank">View</a>
-                    </li>
-                </ul>
-            </div>
-        </script>
-
     </head>
+
     <body class="home">
         <div class="jumbotron-small fixed">
             <div class="container">
@@ -144,23 +48,16 @@
                 </header>
 
                 <div class="spacer"></div>
-                <!--<hr class="no-margin">-->
-                <!--<hr class="no-margin">-->
 
                 <section>
                     <div class="row-fluid container">
                         <div class="span6 p8 right">
                             <img height="200" src="/img/browsers.png" alt="" style="margin-top:0px; width: 200px;"/>
-                            <!--<video width="315" height="250" preload="auto" poster="https://d31dn41p1pte1p.cloudfront.net/assets/homepage-video-poster-ce2d0c15874f1f5dcb946f019a2a9ede.png" loop="loop" id="StoreVideo" autoplay="autoplay">-->
-                                <!--<source type="video/mp4" src="https://d31dn41p1pte1p.cloudfront.net/assets/Store-19c12e36b1e28da5a5467251612f0e1e.mp4"></source>-->
-                                <!--<source type="video/webm" src="https://d31dn41p1pte1p.cloudfront.net/assets/Store.webmhd-bc8814e60ed689c52d3892a46138d371.webm"></source>-->
-                                <!--Your browser does not support the video tag.-->
-                            <!--</video>-->
                         </div>
 
                         <div class="span6 p8 left" style="padding-left: 0px; margin-top: 25px;">
                             <h3>Browser support</h3>
-                            <p>Fine Uploader supports <a href="http://docs.fineuploader.com/branch/master/browser-support.html">all major browsers</a> and does <span class="orange"><em>not</em></span> require Flash, jQuery, or any external libraries.</p>
+                            <p>Fine Uploader supports <a href="http://docs.fineuploader.com/branch/master/browser-support.html">all major browsers</a> and does <span class="orange">not</span> require Flash, jQuery, or any external libraries.</p>
                         </div>
                     </div>
                 </section>
@@ -172,12 +69,11 @@
                     <div class="row-fluid container">
                         <div class="span6 p8">
                             <img height="200" src="/img/server-support.png" alt="" style="margin-top:30px; width: 200px;"/>
-                            <!--<img src="http://4.bp.blogspot.com/-0kROZkvJ40o/UY5hWAxGTQI/AAAAAAAAAKE/h-tGRSKzZN0/s1600/4.png" alt="" style="height: 150px; margin-top: 25px;"/>-->
                         </div>
 
                         <div class="span6 p8" style="padding-left: 0px; margin-top: 60px;">
                             <h3>Server support</h3>
-                            <p>Use Fine Uploader with <span class="orange"><em>any</em></span> server side technology.</p>
+                            <p>Use Fine Uploader with <span class="orange">any</span> server side technology.</p>
                         </div>
                     </div>
 
@@ -222,7 +118,7 @@
                 <div class="row-fluid" style="margin-top: 20px;">
                     <div class="span4 featurette">
                         <h3>Validators </h3>
-                        <p>Limit your users to a specific file type, size limit, number of files, image dimensions, or write your own custom validator.</p>                        </p>
+                        <p>Limit your users to a specific file type, size limit, number of files, image dimensions, or write your own custom validator.</p>
                     </div>
                     <div class="span4 featurette">
                         <h3>File Chunking / Partitioning</h3>
@@ -452,10 +348,6 @@
                             <div class="fu-avatar-white"></div>
                         </div>
                     </div>
-                    <!--<p style="text-align: left; color: #fff;">The Fine Uploader team answers support questions through StackOverflow.com using the fineuploader tag.  All questions are answered the same day-->
-                    <!--that they are asked and usually within 20 minutes.</p>-->
-                    <!--<p style="text-align: left; color: #fff;">FineUploader is backed by <a href="http://www.widen.com">Widen Enterprises</a>, a software company with more than x years of experience.</p>-->
-                    <!--<div class="fu-avatar-white" style="margin-top: 50px;"></div>-->
                     <p class="white" style="text-align: left; margin-left: 5px;">Here are a few other reasons to choose Fine Uploader: </p>
                     <ul style="text-align: left; color: white; font-size: 13px;">
                         <li>Backed by a long-standing <a target="_blank" target="_blank" href="http://widen.com">reputable software company</a>.</li>
@@ -473,7 +365,7 @@
         <hr class="no-margin">
         <hr class="no-margin">
 
-        <section class="web-marketing" style="width: 100%; background-color: #fcfcfa;" data-1400="margin-top:0px;" data-2150="margin-top:-200px;">
+        <section class="web-marketing" data-1400="margin-top:0px;" data-2150="margin-top:-200px;">
             <div class="marketing">
                 <div class="spacer"></div>
 
@@ -487,14 +379,14 @@
                     <div class="row-fluid container" style="margin-top: 20px;" >
                         <div class="span6">
                             <p style="font-family: 'Helvetica Neue',Helvetica,Ubuntu,arial,sans-serif; color: #00AAAA; font-size: 24px; font-weight: bold;">
-                                <a href="http://javascriptweekly.com/archive/154.html" target="_blank" style="text-decoration: none; color: #00AAAA;">
-                                    JavaScript<img src="img/javascript-weekly-cog.png" alt="Javascript Weekly Cog" style="height: 24px; margin: 0px 5px;"/>Weekly</a>
+                            <a href="http://javascriptweekly.com/archive/154.html" target="_blank" style="text-decoration: none; color: #00AAAA;">
+                                JavaScript<img src="img/javascript-weekly-cog.png" alt="Javascript Weekly Cog" style="height: 24px; margin: 0px 5px;"/>Weekly</a>
                         </div>
 
                         <div class="span6">
                             <p style="font-family: Helvetica,Arial,sans-serif; font-size: 24px; font-weight: 600; color: #404040; text-shadow: 1px 1px #FFFFFF;">
-                                <a href="http://dailyjs.com/2013/08/20/jquery-roundup/" target="_blank" style="color: #404040; text-decoration: none;">
-                                    <img src="img/dailyjs-logo.gif" alt="Daily JS logo" style="height: 24px; vertical-align: top; margin-right: 5px;"/>DailyJS</a>
+                            <a href="http://dailyjs.com/2013/08/20/jquery-roundup/" target="_blank" style="color: #404040; text-decoration: none;">
+                                <img src="img/dailyjs-logo.gif" alt="Daily JS logo" style="height: 24px; vertical-align: top; margin-right: 5px;"/>DailyJS</a>
                         </div>
                     </div>
 

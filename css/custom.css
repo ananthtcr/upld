@@ -277,6 +277,8 @@ section.web-marketing
 {
     z-index: 4;
     position: relative;
+    width: 100%;
+    background-color: #fcfcfa;
 }
 
 @media (max-width: 899px)
