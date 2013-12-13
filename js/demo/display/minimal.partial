@@ -1,6 +1,26 @@
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script type="text/javascript">
+  function createUploader() {
+    var uploader = new qq.FineUploader({
+      element: document.getElementById('fine-uploader'),
+      request: {
+        endpoint: 'server/handleUploads'
+      }
+    });
+  }
+
+  window.onload = createUploader;
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -33,28 +53,4 @@
       </li>
     </ul>
   </div>
-</script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="fine-uploader"></div>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script type="text/javascript">
-  function createUploader() {
-    var uploader = new qq.FineUploader({
-      element: document.getElementById('fine-uploader'),
-      request: {
-        endpoint: 'server/handleUploads'
-      }
-    });
-  }
-
-  window.onload = createUploader;
 </script>

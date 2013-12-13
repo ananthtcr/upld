@@ -1,3 +1,26 @@
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  $(document).ready(function() {
+    var uploader = $("#bootstrapped-fine-uploader").fineUploader({
+      element: $('#bootstrapped-fine-uploader'),
+      request: {
+          endpoint: 'server/handleUploads'
+      },
+      template: 'qq-template-bootstrap',
+      classes: {
+          success: 'alert alert-success',
+          fail: 'alert alert-error'
+      }
+    });
+  });
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
@@ -17,6 +40,10 @@
       display: inline;
   }
 </style>
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="bootstrapped-fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -45,31 +72,4 @@
       </li>
     </ul>
   </div>
-</script>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="bootstrapped-fine-uploader"></div>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  $(document).ready(function() {
-    var uploader = $("#bootstrapped-fine-uploader").fineUploader({
-      element: $('#bootstrapped-fine-uploader'),
-      request: {
-          endpoint: 'server/handleUploads'
-      },
-      template: 'qq-template-bootstrap',
-      classes: {
-          success: 'alert alert-success',
-          fail: 'alert alert-error'
-      }
-    });
-  });
 </script>

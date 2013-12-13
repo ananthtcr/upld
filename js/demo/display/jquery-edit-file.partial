@@ -1,6 +1,31 @@
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#jquery-wrapped-fine-uploader').fineUploader({
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      autoUpload: false,
+      editFilename: {
+        enabled: true
+      }
+    });
+  });
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="jquery-wrapped-fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -34,29 +59,3 @@
     </ul>
   </div>
 </script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="jquery-wrapped-fine-uploader"></div>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  $(document).ready(function () {
-    $('#jquery-wrapped-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      autoUpload: false,
-      editFilename: {
-        enabled: true
-      }
-    });
-  });
-</script>
-

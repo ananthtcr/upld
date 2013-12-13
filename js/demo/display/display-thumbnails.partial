@@ -1,6 +1,36 @@
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+function createUploader() {
+    var thumbnailuploader = new qq.FineUploader({
+      element: document.getElementById('thumbnail-fine-uploader'),
+      template: "qq-simple-thumbnails-template",
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      thumbnails: {
+          placeholders: {
+            waitingPath: "assets/waiting-generic.png",
+            notAvailablePath: "assets/not_available-generic.png"
+          }
+      },
+      validation: {
+          allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+      }
+    });
+  }
+
+  window.onload = createUploader;
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="thumbnail-fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -35,34 +65,3 @@
     </ul>
   </div>
 </script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="thumbnail-fine-uploader"></div>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-function createUploader() {
-    var thumbnailuploader = new qq.FineUploader({
-      element: document.getElementById('thumbnail-fine-uploader'),
-      template: "qq-simple-thumbnails-template",
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      thumbnails: {
-          placeholders: {
-            waitingPath: "assets/waiting-generic.png",
-            notAvailablePath: "assets/not_available-generic.png"
-          }
-      },
-      validation: {
-          allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
-      }
-    });
-  }
-
-  window.onload = createUploader;
-</script>
-

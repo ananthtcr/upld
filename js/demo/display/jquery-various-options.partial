@@ -1,6 +1,36 @@
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#restricted-fine-uploader').fineUploader({
+      request: {
+        endpoint: 'server/success.html'
+      },
+      multiple: false,
+      validation: {
+        allowedExtensions: ['jpeg', 'jpg', 'txt'],
+        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
+      },
+      showMessage: function(message) {
+        // Using Bootstrap's classes
+        $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
+      }
+    });
+  });
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="restricted-fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -34,34 +64,3 @@
     </ul>
   </div>
 </script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="restricted-fine-uploader"></div>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#restricted-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/success.html'
-      },
-      multiple: false,
-      validation: {
-        allowedExtensions: ['jpeg', 'jpg', 'txt'],
-        sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
-      },
-      showMessage: function(message) {
-        // Using Bootstrap's classes
-        $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
-      }
-    });
-  });
-</script>
-
