@@ -4,7 +4,7 @@
 <script>
   function createUploader() {
     var uploader = new qq.FineUploader({
-      element: document.getElementById('jquery-wrapped-fine-uploader'),
+      element: document.getElementById('fine-uploader'),
       request: {
         endpoint: 'server/handleUploads'
       },
@@ -24,7 +24,7 @@
 
 <!-- Fine Uploader DOM Element
 ====================================================================== -->
-<div id="jquery-wrapped-fine-uploader"></div>
+<div id="fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->

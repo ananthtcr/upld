@@ -2,7 +2,7 @@
 ====================================================================== -->
 <script src="assets/fineuploader.js"></script>
 <script>
-    (function() {
+    function createUploader() {
         var restricteduploader = new qq.FineUploader({
             element: document.getElementById("restricted-fine-uploader"),
             request: {
@@ -14,7 +14,9 @@
                 sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
             }
         });
-    }());
+    }
+
+    window.onload = createUploader();
 </script>
 
 <!-- Fine Uploader CSS

@@ -1,7 +1,4 @@
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script><!-- Fine Uploader JS
-
+<!-- Fine Uploader JS
 ====================================================================== -->
 <script src="assets/fineuploader.js"></script>
 <script>
