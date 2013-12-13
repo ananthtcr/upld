@@ -1,6 +1,30 @@
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  function createUploader() {
+      var filelimituploader = new qq.FineUploader({
+      element: document.getElementById('filelimit-fine-uploader'),
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      validation: {
+        itemLimit: 3
+      }
+    });
+  }
+
+  window.onload = createUploader();
+
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="filelimit-fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -34,32 +58,3 @@
       </ul>
   </div>
 </script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="filelimit-fine-uploader"></div>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  function createUploader() {
-      var filelimituploader = new qq.FineUploader({
-      element: document.getElementById('filelimit-fine-uploader'),
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      validation: {
-        itemLimit: 3
-      } 
-    });
-  }
-  
-  window.onload = createUploader();
-
-</script>
-

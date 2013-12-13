@@ -1,6 +1,35 @@
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  function createUploader() {
+    var manualuploader = new qq.FineUploader({
+      element: document.getElementById('manual-fine-uploader'),
+      request: {
+          endpoint: 'server/handleUploads'
+      },
+      template: "qq-template-manual-noedit",
+      autoUpload: false
+    });
+
+    qq(document.getElementById("triggerUpload")).attach("click", function() {
+      manualuploader.uploadStoredFiles();
+    });
+  };
+
+  window.onload = createUploader();
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="manual-fine-uploader"></div>
+<div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
+  <i class="icon-upload icon-white"></i> Upload now
+</div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -30,38 +59,3 @@
         </ul>
     </div>
 </script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="manual-fine-uploader"></div>
-<div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
-  <i class="icon-upload icon-white"></i> Upload now
-</div>
-
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  function createUploader() {
-    var manualuploader = new qq.FineUploader({
-      element: document.getElementById('manual-fine-uploader'),
-      request: {
-          endpoint: 'server/handleUploads'
-      },
-      template: "qq-template-manual-noedit",
-      autoUpload: false
-    });
-
-    qq(document.getElementById("triggerUpload")).attach("click", function() {
-      manualuploader.uploadStoredFiles();
-    });
-  };
-
-  window.onload = createUploader();
-</script>
-

@@ -1,6 +1,37 @@
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#thumbnail-fine-uploader').fineUploader({
+      template: "qq-simple-thumbnails-template",
+      thumbnails: {
+          placeholders: {
+            waitingPath: "assets/waiting-generic.png",
+            notAvailablePath: "assets/not_available-generic.png"
+          }
+      },
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      validation: {
+          allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+      }
+    });
+  });
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="thumbnail-fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -35,35 +66,3 @@
     </ul>
   </div>
 </script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="thumbnail-fine-uploader"></div>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#thumbnail-fine-uploader').fineUploader({
-      template: "qq-simple-thumbnails-template",
-      thumbnails: {
-          placeholders: {
-            waitingPath: "assets/waiting-generic.png",
-            notAvailablePath: "assets/not_available-generic.png"
-          }
-      },
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      validation: {
-          allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
-      }
-    });
-  });
-</script>
-

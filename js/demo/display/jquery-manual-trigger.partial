@@ -1,6 +1,36 @@
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  $(document).ready(function() {
+    var manualuploader = $('#manual-fine-uploader').fineUploader({
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      template: "qq-template-manual-noedit",
+      autoUpload: false
+    });
+
+    $('#triggerUpload').click(function() {
+      manualuploader.fineUploader('uploadStoredFiles');
+    });
+  });
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="manual-fine-uploader"></div>
+<div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
+  Upload now
+</div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -29,35 +59,4 @@
             </li>
         </ul>
     </div>
-</script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="manual-fine-uploader"></div>
-<div id="triggerUpload" class="btn btn-primary" style="margin-top: 10px;">
-  Upload now
-</div>
-
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  $(document).ready(function() {
-    var manualuploader = $('#manual-fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      template: "qq-template-manual-noedit",
-      autoUpload: false
-    });
-
-    $('#triggerUpload').click(function() {
-      manualuploader.fineUploader('uploadStoredFiles');
-    });
-  });
 </script>

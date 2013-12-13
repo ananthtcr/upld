@@ -1,6 +1,30 @@
+<!-- jQuery
+====================================================================== -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Fine Uploader JS
+====================================================================== -->
+<script src="assets/fineuploader.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#fine-uploader').fineUploader({
+      request: {
+        endpoint: 'server/handleUploads'
+      },
+      validation: {
+        itemLimit: 3
+      }
+    });
+  });
+</script>
+
 <!-- Fine Uploader CSS
 ====================================================================== -->
 <link href="assets/fineuploader.css" rel="stylesheet">
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<div id="fine-uploader"></div>
 
 <!-- Fine Uploader template
 ====================================================================== -->
@@ -33,29 +57,5 @@
           </li>
       </ul>
   </div>
-</script>
-
-<!-- Fine Uploader DOM Element
-====================================================================== -->
-<div id="fine-uploader"></div>
-
-<!-- jQuery
-====================================================================== -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
-<!-- Fine Uploader JS
-====================================================================== -->
-<script src="assets/fineuploader.js"></script>
-<script>
-  $(document).ready(function () {
-    $('#fine-uploader').fineUploader({
-      request: {
-        endpoint: 'server/handleUploads'
-      },
-      validation: {
-        itemLimit: 3
-      }
-    });
-  });
 </script>
 
