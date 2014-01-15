@@ -73,12 +73,12 @@
 
                     <hr>
 
-                    <div class="row-fluid">
+                    <div id="server-type-section" class="row-fluid">
                         <h3>Server Type</h3>
 
                         <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
                         <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
-                        will provide you with the code to send uploads directly to Amazon's Simple Storage Service.</p>
+                        will provide you with the code to send uploads directly to Amazon's Simple Storage Service (S3). Select the <a target="_blank" href="http://docs.fineuploader.com/features/no-server-uploads.html">Serverless S3</a> optional module below to support fully client-side S3 uploading.</p>
                     <label class="radio" for="ep_traditional">
                         <input id="ep_traditional" type="radio" name="endpoint" value="traditional" checked />Traditional (<a href="http://docs.fineuploader.com/endpoint_handlers/traditional.html" target="_blank" class="info-link" title="Select if you plan to roll your own server.">?</a>)
                     </label>
@@ -114,6 +114,9 @@
                             <label class="checkbox" for="dnd">
                                 <input name="image-validation" type="checkbox" checked>Image Validation (<a href="http://docs.fineuploader.com/features/validation.html" target="_blank" class="info-link" title="Enable support for validating image files before uploading.">?</a>)
                             </label>
+                            <label class="checkbox" for="serverless-s3">
+                                <input name="serverless-s3" type="checkbox">Serverless S3 (<a href="http://docs.fineuploader.com/features/no-server-uploads.html" target="_blank" class="info-link" title="Send uploads directly to Amazon S3 purely client-side, and without the need for an intermediary server.">?</a>)
+                            </label>
                         </div>
                         <div class='span6'>
                             <label class="checkbox" for="image-previews">
@@ -124,6 +127,9 @@
                             </label>
                             <label class="checkbox" for="edit">
                                 <input name="edit" type="checkbox" checked>Edit Filename Support (<a href="http://docs.fineuploader.com/features/filename-edit.html" target="_blank" class="info-link" title="Allows users to edit filenames before the upload occurs.">?</a>)
+                            </label>
+                            <label class="checkbox" for="initial-filelist">
+                                <input name="initial-filelist" type="checkbox" checked>Upload Sessions (<a href="http://docs.fineuploader.com/features/session.html" target="_blank" class="info-link" title="Repopulate the user's file upload list with previously uploaded files.">?</a>)
                             </label>
                         </div>
                         <br/>
@@ -164,6 +170,29 @@
                         $('#navbar li').removeClass('active');
                         $(this).parent().addClass('active');
                     }
+                });
+
+
+                $("label[for='serverless-s3']").hide();
+
+                $("input[name='endpoint']").change(function() {
+                    var $el = $(this),
+                        $serverless_label = $("label[for='serverless-s3']"),
+                        $serverless_checkbox = $("input[name='serverless-s3']");
+
+                    if ($el.prop('checked') && $el.val() === 's3') {
+                        $serverless_label.show();
+                    }
+                    else if ($el.prop('checked') && $el.val() === 'traditional') {
+                        $serverless_checkbox.prop('checked', false);
+                        $serverless_label.hide();
+                    }
+                    //if ($(this).prop('checked') !== 'checked') {
+                    //    $("input[name='serverless-s3']").prop('checked', true);
+                    //}
+                    //else {
+                    //    $("input[name='serverless-s3']").prop('checked', false);
+                    //}
                 });
 
                 $('a.tip').tipsy();

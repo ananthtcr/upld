@@ -19,7 +19,7 @@
     <![endif]-->
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="source/fineuploader-4.1.1.min.css" rel="stylesheet">
+    <link href="source/fineuploader-4.2.0.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">-->
     <link rel="stylesheet" href="http://jmblog.github.com/color-themes-for-highlightjs/css/themes/tomorrow.css">
@@ -29,9 +29,9 @@
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="js/ui/ui-scripts.js"></script>
     <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
-    <script src="source/fineuploader-4.1.1.min.js"></script>
-    <script src="source/jquery.fineuploader-4.1.1.min.js"></script> <!-- jquery wrapper demo -->
-    <script src="source/all.fineuploader-4.1.1.min.js"></script>
+    <script src="source/fineuploader-4.2.0.min.js"></script>
+    <script src="source/jquery.fineuploader-4.2.0.min.js"></script> <!-- jquery wrapper demo -->
+    <script src="source/all.fineuploader-4.2.0.min.js"></script>
 
     <script type="text/template" id="qq-template-bootstrap">
         <div class="qq-uploader-selector qq-uploader span12">
@@ -193,35 +193,10 @@
         </div>
     </div>
 
-    <!--<div id="" class="navbar fixed" style="width: 100%; margin-top: 40px; left: 0; z-index: 100;">-->
-        <!--<div class="navbar-inner demo-nav">-->
-            <!--<div class="container">-->
-                <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#demoList .nav-collapse">-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
-                <!--<a class="brand">demos</a>-->
-                <!--<div class="nav-collapse collapse">-->
-                    <!--<ul class="nav">-->
-                        <!--<li><a href="#demo-jquery">Image Previews</a></li>-->
-                        <!--<li><a href="#demo-bootstrapped">Bootstrapped</a></li>-->
-                        <!--<li><a href="#demo-s3">Amazon S3</a></li>-->
-                        <!--<li><a href="#demo4">Basic</a></li>-->
-                        <!--<li><a href="#demo3">Fine-Uploader</a></li>-->
-                        <!--<li><a href="#demo5">Core</a></li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
     <div class="container marketing demo-list">
 
         <hgroup class="center">
             <h1>Demos</h1>
-            <hr class="no-margin">
-            <hr class="no-margin">
             <div class="spacer"></div>
 
             <h3 style="margin-top: 0;">FineUploader is the <span class="orange">easiest</span> javascript file uploader library to set up.</h3>
@@ -473,9 +448,11 @@
                     <h3 class="demo-title">Upload Files Directly to Amazon S3</h3>
                     <p class="demo-description">Fine Uploader has always supported uploading to your own server.
                         Now you can remove the complexity and inefficiency of handling uploads on your local server by
-                        delegating to Amazon.  Upload files directly to Amazon's Simple Storage Service from your browser!</p>
+                        delegating to Amazon.  Upload files directly to Amazon's Simple Storage Service from your browser!
+                        Want to upload to S3 without any server-side code at all?  Have a look at <a href="https://fineuploader-s3-client-demo.s3.amazonaws.com/index.html">
+                        our S3 no-server demo</a> instead!</p>
                     <div style="text-align: left;">
-                        <p>This is a fully-functional live demo that also includes the <a href="http://docs.fineuploader.com/features/thumbnails.html">native preview/thumbnail generation feature</a>.
+                        <p>Below is a fully-functional live demo that also includes the <a href="http://docs.fineuploader.com/features/thumbnails.html">native preview/thumbnail generation feature</a>.
                             Here, you can try out Fine Uploader S3 by sending files to one of our S3 buckets!
                             You can also download the file after a successful upload.</p>
                         <p>This example demonstrates:
@@ -525,27 +502,15 @@
                         <div class="source-view">
                             <div class="code-example">
                                 <div class="code-tab activeTabTrigger" data-tab="jquery-tab-amazon" >jQuery</div>
-                                <!--<div class="code-tab" data-tab="no-dependencies-tab-amazon">No Dependencies</div>-->
-
                                 <pre id="jquery-tab-amazon" class="code-window active">
                                     <code class="example" data-demo="s3-demo"></code>
                                 </pre>
-
-                                <!--<pre id="no-dependencies-tab-amazon" class="code-window">-->
-                                    <!--<code class="example" data-demo="s3-demo"></code>-->
-                                <!--</pre>-->
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
-
-        <div class="spacer"></div>
-        <hr class="no-margin">
-        <hr class="no-margin">
-        <hr class="no-margin">
-        <div class="spacer"></div>
     </div>
 
         <div id="footer"></div>
