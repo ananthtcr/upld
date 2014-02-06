@@ -85,6 +85,9 @@
                     <label class="radio" for="ep_s3">
                         <input id="ep_s3" type="radio" name="endpoint" value="s3" />Amazon S3 (<a href="http://docs.fineuploader.com/endpoint_handlers/amazon-s3.html" target="_blank" class="info-link" title="Select if you plan to use Amazon's Simple Storage Service">?</a>)
                     </label>
+                    <label class="radio" for="ep_azure">
+                        <input id="ep_azure" type="radio" name="endpoint" value="azure" />Windows Azure (<a href="http://docs.fineuploader.com/features/azure.html" target="_blank" class="info-link" title="Select if you plan to use Microsoft's Windows Azure Blob Storage (Note: the Traditional module is included by default with Azure because -- ironically -- Azure does not have support for IE9 and below.">?</a>)
+                    </label>
 
                         <!--
                         <select name="endpoint">
@@ -111,11 +114,11 @@
                             <label class="checkbox" for="dnd">
                                 <input name="dnd" type="checkbox" checked>Upload via Drag 'n' Drop (<a href="http://docs.fineuploader.com/features/drag-and-drop.html" target="_blank" class="info-link" title="Enable support for submitting files by dragging and dropping.">?</a>)
                             </label>
-                            <label class="checkbox" for="dnd">
+                            <label class="checkbox" for="image-validation">
                                 <input name="image-validation" type="checkbox" checked>Image Validation (<a href="http://docs.fineuploader.com/features/validation.html" target="_blank" class="info-link" title="Enable support for validating image files before uploading.">?</a>)
                             </label>
-                            <label class="checkbox" for="serverless-s3">
-                                <input name="serverless-s3" type="checkbox">Serverless S3 (<a href="http://docs.fineuploader.com/features/no-server-uploads.html" target="_blank" class="info-link" title="Send uploads directly to Amazon S3 purely client-side, and without the need for an intermediary server.">?</a>)
+                            <label class="checkbox" for="form-support">
+                                <input name="form-support" type="checkbox" checked>Integrate with Pre-existing Form (<a href="http://docs.fineuploader.com/features/forms.html" target="_blank" class="info-link" title="Integrate with an existing HTML form.">?</a>)
                             </label>
                         </div>
                         <div class='span6'>
@@ -130,6 +133,9 @@
                             </label>
                             <label class="checkbox" for="initial-filelist">
                                 <input name="initial-filelist" type="checkbox" checked>Upload Sessions (<a href="http://docs.fineuploader.com/features/session.html" target="_blank" class="info-link" title="Repopulate the user's file upload list with previously uploaded files.">?</a>)
+                            </label>
+                            <label class="checkbox" for="serverless-s3">
+                                <input name="serverless-s3" type="checkbox">Serverless S3 (<a href="http://docs.fineuploader.com/features/no-server-uploads.html" target="_blank" class="info-link" title="Send uploads directly to Amazon S3 purely client-side, and without the need for an intermediary server.">?</a>)
                             </label>
                         </div>
                         <br/>
@@ -183,7 +189,7 @@
                     if ($el.prop('checked') && $el.val() === 's3') {
                         $serverless_label.show();
                     }
-                    else if ($el.prop('checked') && $el.val() === 'traditional') {
+                    else if ($el.prop('checked') && $el.val() !== 's3') {
                         $serverless_checkbox.prop('checked', false);
                         $serverless_label.hide();
                     }
