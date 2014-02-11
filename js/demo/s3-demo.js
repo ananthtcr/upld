@@ -2,7 +2,7 @@ $('#s3-demo-container').fineUploaderS3({
     template: "simple-previews-template",
     debug: true,
     request: {
-        endpoint: "upload.fineuploader.com",
+        endpoint: "http://upload.fineuploader.com",
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"
     },
     signature: {
