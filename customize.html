@@ -150,13 +150,26 @@
                     <br/>
                     <br/>
 
-                    <button type="submit" class="btn btn-info btn-large">Build</button>
+                    <button type="submit" id="build-btn" class="btn btn-info btn-large">Build</button>
                 </form>
             </div>
             </br>
         </div>
 
         <div id="footer"></div>
+
+		<div id="error-modal" class="modal hide fade" role="dialog">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Server Type Required to Continue</h3>
+			</div>
+			<div class="modal-body">
+				<p>It appears you have not selected a server type. Please select at least one to contiune generating your customized Fine Uploader package.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+		</div>
 
         <script>
             window.prettyPrint && prettyPrint();
@@ -197,6 +210,18 @@
 						$serverless_checkbox.prop('checked', false);
 						$serverless_label.hide();
 					}
+				});
+
+				$("#customize-form").submit(function(event) {
+					// do not allow users to continue if they have not selected
+					// a valid endpoint.
+					var error = !($("#server-type-section input[type='checkbox']:checked").length > 0);
+
+					if (error) {
+						$("#error-modal").modal();
+						return false;
+					}
+					return true;
 				});
 
                 $('a.tip').tipsy();
