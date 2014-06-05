@@ -223,6 +223,19 @@ div.progress
     z-index: 1;
 }
 /* ----------------------------*/
+.fineuploader-php-section
+{
+    padding: 40px 0 260px;
+    width: 100%;
+    background-color: #00ABC7;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #777777;
+}
+/*.fineuploader-php-section input*/
+/*{*/
+    /*width: 100%;*/
+/*}*/
 
 .features-section
  {
@@ -233,6 +246,7 @@ div.progress
      text-align: left !important;
      padding-bottom: 130px;
      z-index: 2;
+    position: relative;
      box-shadow: 0 -1px 0px 0px #DDDDDD,
      0 -2px 0px 1px #FFFFFF,
      0 -1px 0px 3px #DDDDDD;
