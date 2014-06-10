@@ -230,7 +230,7 @@ div.progress
     background-color: #00ABC7;
     position: relative;
     z-index: 1;
-    border: 1px solid #777777;
+    border-top: 1px solid #777777;
 }
 /*.fineuploader-php-section input*/
 /*{*/
@@ -332,6 +332,11 @@ section.web-marketing
 {
     background-color: #e65c47;
     color:#fff;
+}
+.btn.btn-primary:active, .btn.btn-primary:focus
+
+{
+    background-color: #e65c47;
 }
 .btn a:hover
 {

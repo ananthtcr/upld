@@ -35,6 +35,13 @@
                 document.write('<script type="text/javascript" src="js/skrollr/skrollr.js"><\/script>');
             }
         </script>
+        <script type="text/javascript">
+            function clearForm() {
+                document.getElementById("inputName").value = '';
+                document.getElementById("inputCompany").value = '';
+                document.getElementById("inputEmail").value = '';
+            }
+        </script>
     </head>
 
     <body class="home">
@@ -96,7 +103,7 @@
 
             <div class="spacer"></div>
 
-            <section class="fineuploader-php-section" data-0="margin-top: 150px;" data-600="margin-top:0px;">
+            <section class="fineuploader-php-section">
                 <h3 class="center white">Coming Soon From Fine Uploader</h3>
                 <br>
 
@@ -119,21 +126,25 @@
                             file size/type limits, file chunking, optional user authentication and more.
                         </p>
                     </div>
+
                     <div class="span4">
                         <p class="white">Are you interested in trialing Fine Uploader PHP? We’d love to hear from you!</p>
                         <script type="text/javascript">var submitted=false;</script>
-                        <iframe name="form_submit_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/php-beta.html';}"></iframe>
-                        <form action="https://docs.google.com/forms/d/19qDtSAwvmpPZ7OIMlAsNuSGsLDveuqLfwlQrJGiF09U/formResponse?embedded=true" method="post"
-                              target="form_submit_iframe" id="ss-form" onsubmit="submitted=true;">
+                        <iframe name="form_submit_iframe" id="hidden_iframe" style="display:none;"
+                                onload="if(submitted) {$('#fineuploader-php-modal').modal('show');}">
+                        </iframe>
+                        <form id="#fineuploader-php-form" method="post" action="https://docs.google.com/forms/d/19qDtSAwvmpPZ7OIMlAsNuSGsLDveuqLfwlQrJGiF09U/formResponse?embedded=true"
+                              target="form_submit_iframe" id="ss-form" onsubmit="submitted=true; JavaScript:clearForm()">
 
-                            <input type="text" name="entry.1881897947" value="" placeholder="Name">
+                            <input id="inputName" type="text" name="entry.1881897947" value="" placeholder="Name" required="required">
 
-                            <input type="text" name="entry.2097764986" value="" placeholder="Company">
+                            <input id="inputCompany" type="text" name="entry.2097764986" value="" placeholder="Company">
 
-                            <input type="text" name="entry.200805974" value="" placeholder="Email">
+                            <input id="inputEmail" type="email" name="entry.200805974" value="" placeholder="Email" required>
                             <br/>
 
-                            <input class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit">
+                            <input class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit" href="#fineuploader-php-modal">
+
                         </form>
                     </div>
                 </div>
@@ -338,11 +349,6 @@
                     </div>
 
                     <div class="span6 marketing-text" style="padding-left: 60px; margin-top: 20px;">
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <div class="fu-avatar-white"></div>
-                            </div>
-                        </div>
                         <p class="white" style="text-align: left; margin-left: 5px;">Here are a few other reasons to choose Fine Uploader: </p>
                         <ul style="text-align: left; color: white; font-size: 13px;">
                             <li>Backed by a long-standing <a target="_blank" target="_blank" href="http://widen.com">reputable software company</a>.</li>
@@ -435,6 +441,17 @@
             </section>
             <div style="clear:both"></div>
             <div id="footer"></div>
+        </div>
+
+        <div id="fineuploader-php-modal" class="modal hide fade">
+            <div class="modal-header" hidden="true">
+            </div>
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top: -10px;">&times;</button>
+
+                <h4 class="center">Thanks for your interest in our new product!</h4>
+                <p class="center">We'll be in touch about our beta launch.</p>
+            </div>
         </div>
 
 
