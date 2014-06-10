@@ -1,497 +1,436 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="utf-8">
-        <title>Fine Uploader</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Fine Uploader. A dependency-free, native browser upload tool.">
-        <meta name="author" content="Widen">
+<head>
+    <meta charset="utf-8">
+    <title>Fine Uploader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fine Uploader. A dependency-free, native browser upload tool.">
+    <meta name="author" content="Widen">
 
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/custom.css" rel="stylesheet">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/magula.min.css">
 
-        <!--[if IE 8]>
-        <link rel="stylesheet" type="text/css" href="css/ie8.css" >
-        <![endif]-->
-        <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" href="css/ie7.css" >
-        <![endif]-->
-        <!--[if lt IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-        <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css" >
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie7.css" >
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
 
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="http://platform.twitter.com/widgets.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
-        <script src="js/jquery.tipsy.min.js"></script>
-        <script src="js/modernizr.custom.js"></script>
-        <script src="js/ui/ui-scripts.js"></script>
-        <script type="text/javascript">
-            if (!Modernizr.touch) {
-                document.write('<script type="text/javascript" src="js/skrollr/skrollr.js"><\/script>');
-            }
-        </script>
-        <script type="text/javascript">
-            function clearForm() {
-                document.getElementById("inputName").value = '';
-                document.getElementById("inputCompany").value = '';
-                document.getElementById("inputEmail").value = '';
-            }
-        </script>
-    </head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
+    <script src="js/jquery.tipsy.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/ui/ui-scripts.js"></script>
+    <script type="text/javascript">
+        if (!Modernizr.touch) {
+            document.write('<script type="text/javascript" src="js/skrollr/skrollr.js"><\/script>');
+        }
+    </script>
+</head>
 
-    <body class="home">
-        <div class="jumbotron-small fixed">
-            <div class="container">
-                <div id="navbar"></div>
+<body class="home">
+<div class="jumbotron-small fixed">
+    <div class="container">
+        <div id="navbar"></div>
+    </div>
+</div>
+
+<div id="skrollr-body">
+<section class="container support">
+    <div class="marketing">
+        <header data-180="opacity: 0" data-0="opacity: 1" style="opacity: 1;">
+            <h1><img src="img/fineuploader-header-logo.png" alt="Fine Uploader" class="header"/> <span class="orange version-number">5.0</span></h1>
+            <h2>File uploading <span class="orange">without</span> the hassle</h2>
+
+        </header>
+
+        <div class="spacer"></div>
+
+        <section>
+            <div class="row-fluid container">
+                <div class="span6 p8 right">
+                    <img height="200" src="/img/browsers.png" alt="" style="margin-top:0px; width: 200px;"/>
+                </div>
+
+                <div class="span6 p8 left" style="padding-left: 0px; margin-top: 25px;">
+                    <h3>Browser support</h3>
+                    <p>Fine Uploader supports <a href="http://docs.fineuploader.com/branch/master/browser-support.html">all major browsers</a> and does <span class="orange">not</span> require Flash, jQuery, or any external libraries.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="no-margin">
+        <hr class="no-margin">
+
+        <section class="server-support">
+            <div class="row-fluid container">
+                <div class="span6 p8">
+                    <img height="200" src="/img/server-support.png" alt="" style="margin-top:30px; width: 200px;"/>
+                </div>
+
+                <div class="span6 p8" style="padding-left: 0px; margin-top: 60px;">
+                    <h3>Server support</h3>
+                    <p>Use Fine Uploader with <span class="orange">any</span> server side technology.</p>
+                </div>
+            </div>
+
+            <!--<div style="clear: both;">-->
+            <!--<small id="footnote-1">[<a href="#citation-1">1</a>]: A bug in iOS7 in some cases prevents Fine Uploader from uploading .mov files. More details on a workaround are found on <a href="https://github.com/Widen/fine-uploader/issues/990">the issue tracker.</a></small>-->
+            <!--</div>-->
+        </section>
+    </div>
+</section>
+
+<div class="spacer"></div>
+
+<div class="progress">
+    <div id="progress" data-0="width:0%;background:hsl(8, 76%, 59%);" data-530="width:100%;background:hsl(8, 76%, 59%);" class="progress-bar" style="width: 27.719298245614034%; background-color: rgb(230, 92, 71);"></div>
+</div>
+<div id="features" style="margin-bottom: 40px;"></div>
+<section class="features-section marketing" data-0="margin-top:140px;" data-860="margin-top:0px;">
+    <div class="container" data-230="opacity:1;" data-85="opacity:0.3;">
+        <h1>Features</h1>
+        <p class="marketing-byline  center"><span class="orange">Everything you need</span> in a JavaScript file upload library</p>
+
+        <hr class="no-margin">
+        <hr class="no-margin">
+
+        <div class="row-fluid" style="margin-top: 20px;">
+            <div class="span4 featurette">
+                <h3>Progress Bar</h3>
+                <p>A fully customizable progress bar is included in UI mode. Core users can build their own with the help of a friendly API.</p>
+            </div>
+            <div class="span4 featurette">
+                <h3>Drag and Drop</h3>
+                <p>Drag and drop files (and even folders in Chrome and Opera) straight from your desktop.
+                </p>
+            </div>
+            <div class="span4 featurette">
+                <h3>Retry</h3>
+                <p>Sometimes the network misbehaves. Fortunately, Fine Uploader can detect these sorts of disturbances and notify the user, or even automatically retry uploading the failed piece.
+                </p>
             </div>
         </div>
 
-        <div id="skrollr-body">
-            <section class="container support">
-                <div class="marketing">
-                    <header data-180="opacity: 0" data-0="opacity: 1" style="opacity: 1;">
-                        <h1><img src="img/fineuploader-header-logo.png" alt="Fine Uploader" class="header"/> <span class="orange version-number">5.0</span></h1>
-                        <h2>File uploading <span class="orange">without</span> the hassle</h2>
+        <div class="row-fluid" style="margin-top: 20px;">
+            <div class="span4 featurette">
+                <h3>Validators </h3>
+                <p>Limit your users to a specific file type, size limit, number of files, image dimensions, or write your own custom validator.</p>
+            </div>
+            <div class="span4 featurette">
+                <h3>File Chunking / Partitioning</h3>
+                <p>Splitting a file into smaller pieces allows for a more efficient overall upload, and powers some Fine Uploader features such as pausing, and resuming uploads.  Fine Uploader can also upload multiple chunks for the same file concurrently.</p>
+            </div>
+            <div class="span4 featurette">
+                <h3>Pause / Resume Uploads</h3>
+                <p>Pause an in-progress upload when you know you are about to go offline, and safely resume them again right where you left off.</p>
+            </div>
+        </div>
 
-                    </header>
+        <div class="row-fluid" style="margin-top: 20px;">
+            <div class="span4 featurette">
+                <h3>Delete Uploaded Files</h3>
+                <p>Upload the wrong file? Use this feature to delete what you don't need.</p>
+            </div>
+            <div class="span4 featurette">
+                <h3>Upload to the Cloud</h3>
+                <p>Send files directly to Amazon’s Simple Storage Service (S3) or Microsoft Azure's Blob Storage service to minimize backend code and scale with the number of users.  You can even optionally bypass your local server entirely with S3.</p>
+            </div>
+            <div class="span4 featurette">
+                <h3>Image Previews & Scaling</h3>
+                <p>Give your users an in-browser preview of images before they upload.  You can even have scaled versions of images generated and uploaded automatically, keeping EXIF data intact.
+                </p>
+            </div>
+        </div>
 
-                    <div class="spacer"></div>
+        <div class="spacer"></div>
 
-                    <section>
-                        <div class="row-fluid container">
-                            <div class="span6 p8 right">
-                                <img height="200" src="/img/browsers.png" alt="" style="margin-top:0px; width: 200px;"/>
-                            </div>
-
-                            <div class="span6 p8 left" style="padding-left: 0px; margin-top: 25px;">
-                                <h3>Browser support</h3>
-                                <p>Fine Uploader supports <a href="http://docs.fineuploader.com/branch/master/browser-support.html">all major browsers</a> and does <span class="orange">not</span> require Flash, jQuery, or any external libraries.</p>
+        <div class="row-fluid" style="margin-top: 20px;">
+            <div class="span4 p8 accordion"  style="padding-left:0px;">
+                <div class="accordion-group">
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapseOne" class="accordion-toggle-faq collapsed">Multiple file selection</a>
+                        <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Select more than one file at a time.</p>
                             </div>
                         </div>
-                    </section>
-
-                    <hr class="no-margin">
-                    <hr class="no-margin">
-
-                    <section class="server-support">
-                        <div class="row-fluid container">
-                            <div class="span6 p8">
-                                <img height="200" src="/img/server-support.png" alt="" style="margin-top:30px; width: 200px;"/>
-                            </div>
-
-                            <div class="span6 p8" style="padding-left: 0px; margin-top: 60px;">
-                                <h3>Server support</h3>
-                                <p>Use Fine Uploader with <span class="orange">any</span> server side technology.</p>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse6" class="accordion-toggle-faq collapsed">jQuery Plugin</a>
+                        <div id="collapse6" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Use jQuery selectors and all the other fine features that it offers with Fine Uploader's completely optional jQuery plugin.</p>
                             </div>
                         </div>
-
-                        <!--<div style="clear: both;">-->
-                            <!--<small id="footnote-1">[<a href="#citation-1">1</a>]: A bug in iOS7 in some cases prevents Fine Uploader from uploading .mov files. More details on a workaround are found on <a href="https://github.com/Widen/fine-uploader/issues/990">the issue tracker.</a></small>-->
-                        <!--</div>-->
-                    </section>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Simple to Style and Customize</a>
+                        <div id="collapse22" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Customize the layout simply and easily by editing HTML and CSS; no JavaScript!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse4" class="accordion-toggle-faq collapsed">Auto and manual upload</a>
+                        <div id="collapse4" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Fine Uploader can begin uploading files as soon as possible, or simply wait until for the user.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-
-            <div class="progress">
-                <div id="progress" data-0="width:0%;background:hsl(8, 76%, 59%);" data-530="width:100%;background:hsl(8, 76%, 59%);" class="progress-bar" style="width: 27.719298245614034%; background-color: rgb(230, 92, 71);"></div>
             </div>
 
+            <div class="span4 accordion">
+                <div class="accordion-group">
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse9" class="accordion-toggle-faq collapsed">CORS (cross-origin) support</a>
+                        <div id="collapse9" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Fine Uploader makes handling cross-origin environments pain-free.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse3" class="accordion-toggle-faq collapsed">Cancel uploads</a>
+                        <div id="collapse3" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Fine Uploader makes it simple and easy to cancel one or all of the currently uploading files.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse12" class="accordion-toggle-faq collapsed">Edit file names</a>
+                        <div id="collapse12" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Allow your users to change the names of the files they are uploading.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#initialList" data-toggle="collapse" href="#collapse13" class="accordion-toggle-faq collapsed">Provide initial list of files</a>
+                        <div id="collapse13" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Ask Fine Uploader to display an initial list of files uploaded in a previous session.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="span4 accordion">
+                <div class="accordion-group">
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse21" class="accordion-toggle-faq collapsed">Multiple upload buttons</a>
+                        <div id="collapse21" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Support for complex web applications that may have multiple upload inputs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse10" class="accordion-toggle-faq collapsed">Paste to upload</a>
+                        <div id="collapse10" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>With a browser that supports HTML5 Clipboard API and Fine Uploader one can easily enable users to upload files that they have copied onto their clipboard.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse11" class="accordion-toggle-faq collapsed">Upload from mobile camera</a>
+                        <div id="collapse11" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Take a picture and upload it immediately afterward.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-heading-features">
+                        <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse23" class="accordion-toggle-faq collapsed">Integate with an existing form</a>
+                        <div id="collapse23" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner-faq">
+                                <p>Easily add the ability to upload files to an existing HTML form.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+        <p class="marketing" style="font-size: 22px;"><a href="http://docs.fineuploader.com/#features">Visit the docs</a> for more feature information</p>
+        <div class="spacer"></div>
+    </div>
+</section>
+
+<hr class="no-margin">
+<hr class="no-margin">
+
+<section class="about-home marketing" data-1000="margin-top:0px;" data-1880="margin-top:-200px;">
+    <div class="container row-fluid" data-1000="opacity:0.3;" data-1400="opacity: 1">
+        <div class="span6">
+            <h2 style="color: #fff; text-align: center;font-size: 50px; font-weight: 300; line-height: 50px; margin-top: 20px;">We're agile.</h2>
+            <br><br>
+            <h3 style="color: #fff; text-align: center; line-height: 28px;margin-top: 40px;">With our iterative development process, Fine Uploader is committed to adding robust features on a consistent release cycle.</h3>
+
+        </div>
+
+        <div class="span6 marketing-text" style="padding-left: 60px; margin-top: 20px;">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="fu-avatar-white"></div>
+                </div>
+            </div>
+            <p class="white" style="text-align: left; margin-left: 5px;">Here are a few other reasons to choose Fine Uploader: </p>
+            <ul style="text-align: left; color: white; font-size: 13px;">
+                <li>Backed by a long-standing <a target="_blank" target="_blank" href="http://widen.com">reputable software company</a>.</li>
+                <li>Supported better than any other upload tool in existence.  The development team responds to your
+                    <a target="_blank" href="/support">support questions</a> with prompt and detailed answers.</li>
+                <li>Flexible enough to fit into your typical or completely atypical web app.</li>
+                <li>Connected to the community.  We give high priority to <a target="_blank" href="/support">feature requests</a> and the highest possible priority to <a target="_blank" href="/support">bug reports</a>.</li>
+                <li>An important part of the <a target="_blank" href="http://opensource.org/">open source movement</a>.  Our source code is readily accessible for inspection <a target="_blank" href="https://github.com/Widen/fine-uploader">via Github</a>, and we attempt to educate through our code and <a target="_blank" href="http://blog.fineuploader.com">blog</a>.</li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<hr class="no-margin">
+<hr class="no-margin">
+
+<section class="web-marketing" data-1400="margin-top:0px;" data-2150="margin-top:-200px;">
+    <div class="marketing">
+        <div class="spacer"></div>
+
+        <h4><a href="purchase_form.html">Commercial licenses</a> are available for purchase from our website.</h4>
+        <div class="spacer"></div>
+
+        <section class="grey">
+            <h2>Applications using Fine Uploader</h2>
+            </br>
+            <div class="row-fluid container">
+                <div class="span4">
+                    <a href="http://smartimage.com"><img src="img/smartimage.png" alt="Smartimage" style="width: 250px; margin-bottom: 50px;"/></a>
+                </div>
+                <div class="span4">
+                    <a href="https://probinder.com/home"><img src="img/probinder-logo.png" alt="ProBinder" style="width: 200px; margin-top: 30px;"/></a>
+                </div>
+                <div class="span4">
+                    <a href="http://www.dfstudio.com/blog/2013/11/df-studio-updates-october-2013/" target="_blank"><img src="img/DF_Studio.png" alt="DF Studio" style="width: 200px; margin-top: 20px;"/></a>
+                </div>
+            </div>
+            <div class="row-fluid container">
+                <div class="span4">
+                    <a href="https://www.fastfig.com/"><img src="img/fastfig-logo.png" alt="FastFig" style="margin-top: 20px;"/></a>
+                </div>
+                <div class="span4">
+                    <a href="http://flocknote.com"><img src="img/flocknote-logo.png" alt="Flocknote" style="margin-top: 30px;"/></a>
+                </div>
+                <div class="span4">
+                    <a href="http://www.storyboardthat.com/"><img src="img/storyboard-logo.png" alt="Storyboard That" /></a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="spacer"></div>
+                <hr class="no-margin">
+                <hr class="no-margin">
+                <div class="spacer"></div>
+            </div>
+
+            <h3>Around the Web</h3>
+            </br>
+
+            <div class="row-fluid container" style="margin-top: 20px;" >
+                <div class="span6">
+                    <p style="font-family: 'Helvetica Neue',Helvetica,Ubuntu,arial,sans-serif; color: #00AAAA; font-size: 24px; font-weight: bold;">
+                        <a href="http://javascriptweekly.com/archive/154.html" target="_blank" style="text-decoration: none; color: #00AAAA;">
+                            JavaScript<img src="img/javascript-weekly-cog.png" alt="Javascript Weekly Cog" style="height: 24px; margin: 0px 5px;"/>Weekly</a>
+                </div>
+
+                <div class="span6">
+                    <p style="font-family: Helvetica,Arial,sans-serif; font-size: 24px; font-weight: 600; color: #404040; text-shadow: 1px 1px #FFFFFF;">
+                        <a href="http://dailyjs.com/2013/08/20/jquery-roundup/" target="_blank" style="color: #404040; text-decoration: none;">
+                            <img src="img/dailyjs-logo.gif" alt="Daily JS logo" style="height: 24px; vertical-align: top; margin-right: 5px;"/>DailyJS</a>
+                </div>
+            </div>
+
+            <div class="row-fluid container" style="margin-top: 20px;" >
+                <div class="span4">
+                    <a href="http://designscrazed.com/html5-jquery-file-upload-scripts/" target="_blank"><img src="http://designscrazed.com/wp-content/uploads/2013/11/dclogo.png" alt="design crazed"/></a>
+                </div>
+                <div class="span4">
+                    <a href="http://www.queness.com/post/11434/7-javascript-ajax-file-upload-plugins" target="_blank"><img src="img/queness-logo.png" alt="Queness" style="height: 70px;"/></a>
+                </div>
+                <div class="span4">
+                    <a href="https://twitter.com/smashingmag/status/282529764957376512" target="_blank"><img src="img/smashing-magazine.png" alt="smashing magazine" style="height: 56px; margin-bottom: 60px;"/></a>
+                </div>
+            </div>
             <div class="spacer"></div>
 
-            <section class="fineuploader-php-section">
-                <h3 class="center white">Coming Soon From Fine Uploader</h3>
-                <br>
-
-                <div class="row-fluid container">
-                    <div class="span4">
-                        <img src="img/FineUploader_PHP.png" style="vertical-align: text-bottom; margin-bottom: 6px; margin-top: -10px"/>
-                        <br>
-                        <h5 class="white" style="font-size: 17px; margin-bottom: 20px;">A pre-integrated PHP file upload product!</h5>
-                        <p class="white">
-                            Fine Uploader PHP is designed for folks who
-                            want an upload solution that can be implemented out of the box in minutes without writing infrastructure or custom code.
-                        </p>
-                    </div>
-                    <div class="span4">
-                        <p class="white">Powered by Fine Uploader technology, Fine Uploader PHP allows you to choose between attractive default themes or fully
-                            customize the user interface for ultimate brand alignment.
-                        </p>
-                        <p class="white">
-                            Fine Uploader PHP is stacked with must-have features like upload progress bar, drag and drop, image previews,
-                            file size/type limits, file chunking, optional user authentication and more.
-                        </p>
-                    </div>
-
-                    <div class="span4">
-                        <p class="white">Are you interested in trialing Fine Uploader PHP? We’d love to hear from you!</p>
-                        <script type="text/javascript">var submitted=false;</script>
-                        <iframe name="form_submit_iframe" id="hidden_iframe" style="display:none;"
-                                onload="if(submitted) {$('#fineuploader-php-modal').modal('show');}">
-                        </iframe>
-                        <form id="#fineuploader-php-form" method="post" action="https://docs.google.com/forms/d/19qDtSAwvmpPZ7OIMlAsNuSGsLDveuqLfwlQrJGiF09U/formResponse?embedded=true"
-                              target="form_submit_iframe" id="ss-form" onsubmit="submitted=true; JavaScript:clearForm()">
-
-                            <input id="inputName" type="text" name="entry.1881897947" value="" placeholder="Name" required="required">
-
-                            <input id="inputCompany" type="text" name="entry.2097764986" value="" placeholder="Company">
-
-                            <input id="inputEmail" type="email" name="entry.200805974" value="" placeholder="Email" required>
-                            <br/>
-
-                            <input class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit" href="#fineuploader-php-modal">
-
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <div id="features" style="margin-top: -300px; padding-top: 300px;"></div>
-            <section class="features-section marketing" data-0="margin-top:-50px;" data-990="margin-top:-270px;">
-                <div class="container" data-230="opacity:1;" data-85="opacity:0.3;">
-                    <h1>Features</h1>
-                    <p class="marketing-byline  center"><span class="orange">Everything you need</span> in a JavaScript file upload library</p>
-
-                    <hr class="no-margin">
-                    <hr class="no-margin">
-
-                    <div class="row-fluid" style="margin-top: 20px;">
-                        <div class="span4 featurette">
-                            <h3>Progress Bar</h3>
-                            <p>A fully customizable progress bar is included in UI mode. Core users can build their own with the help of a friendly API.</p>
-                        </div>
-                        <div class="span4 featurette">
-                            <h3>Drag and Drop</h3>
-                            <p>Drag and drop files (and even folders in Chrome and Opera) straight from your desktop.
-                            </p>
-                        </div>
-                        <div class="span4 featurette">
-                            <h3>Retry</h3>
-                            <p>Sometimes the network misbehaves. Fortunately, Fine Uploader can detect these sorts of disturbances and notify the user, or even automatically retry uploading the failed piece.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row-fluid" style="margin-top: 20px;">
-                        <div class="span4 featurette">
-                            <h3>Validators </h3>
-                            <p>Limit your users to a specific file type, size limit, number of files, image dimensions, or write your own custom validator.</p>
-                        </div>
-                        <div class="span4 featurette">
-                            <h3>File Chunking / Partitioning</h3>
-                            <p>Splitting a file into smaller pieces allows for a more efficient overall upload, and powers some Fine Uploader features such as pausing, and resuming uploads.  Fine Uploader can also upload multiple chunks for the same file concurrently.</p>
-                        </div>
-                        <div class="span4 featurette">
-                            <h3>Pause / Resume Uploads</h3>
-                            <p>Pause an in-progress upload when you know you are about to go offline, and safely resume them again right where you left off.</p>
-                        </div>
-                    </div>
-
-                    <div class="row-fluid" style="margin-top: 20px;">
-                        <div class="span4 featurette">
-                            <h3>Delete Uploaded Files</h3>
-                            <p>Upload the wrong file? Use this feature to delete what you don't need.</p>
-                        </div>
-                        <div class="span4 featurette">
-                            <h3>Upload to the Cloud</h3>
-                            <p>Send files directly to Amazon’s Simple Storage Service (S3) or Microsoft Azure's Blob Storage service to minimize backend code and scale with the number of users.  You can even optionally bypass your local server entirely with S3.</p>
-                        </div>
-                        <div class="span4 featurette">
-                            <h3>Image Previews & Scaling</h3>
-                            <p>Give your users an in-browser preview of images before they upload.  You can even have scaled versions of images generated and uploaded automatically, keeping EXIF data intact.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spacer"></div>
-
-                    <div class="row-fluid" style="margin-top: 20px;">
-                        <div class="span4 p8 accordion"  style="padding-left:0px;">
-                            <div class="accordion-group">
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapseOne" class="accordion-toggle-faq collapsed">Multiple file selection</a>
-                                    <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Select more than one file at a time.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse6" class="accordion-toggle-faq collapsed">jQuery Plugin</a>
-                                    <div id="collapse6" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Use jQuery selectors and all the other fine features that it offers with Fine Uploader's completely optional jQuery plugin.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse22" class="accordion-toggle-faq collapsed">Simple to Style and Customize</a>
-                                    <div id="collapse22" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                             <p>Customize the layout simply and easily by editing HTML and CSS; no JavaScript!
-                                             </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse4" class="accordion-toggle-faq collapsed">Auto and manual upload</a>
-                                    <div id="collapse4" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Fine Uploader can begin uploading files as soon as possible, or simply wait until for the user.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="span4 accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse9" class="accordion-toggle-faq collapsed">CORS (cross-origin) support</a>
-                                    <div id="collapse9" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Fine Uploader makes handling cross-origin environments pain-free.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse3" class="accordion-toggle-faq collapsed">Cancel uploads</a>
-                                    <div id="collapse3" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Fine Uploader makes it simple and easy to cancel one or all of the currently uploading files.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse12" class="accordion-toggle-faq collapsed">Edit file names</a>
-                                    <div id="collapse12" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Allow your users to change the names of the files they are uploading.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#initialList" data-toggle="collapse" href="#collapse13" class="accordion-toggle-faq collapsed">Provide initial list of files</a>
-                                    <div id="collapse13" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Ask Fine Uploader to display an initial list of files uploaded in a previous session.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="span4 accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse21" class="accordion-toggle-faq collapsed">Multiple upload buttons</a>
-                                    <div id="collapse21" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Support for complex web applications that may have multiple upload inputs.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse10" class="accordion-toggle-faq collapsed">Paste to upload</a>
-                                    <div id="collapse10" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>With a browser that supports HTML5 Clipboard API and Fine Uploader one can easily enable users to upload files that they have copied onto their clipboard.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse11" class="accordion-toggle-faq collapsed">Upload from mobile camera</a>
-                                    <div id="collapse11" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Take a picture and upload it immediately afterward.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-heading-features">
-                                    <a data-parent="#accordionFAQ" data-toggle="collapse" href="#collapse23" class="accordion-toggle-faq collapsed">Integate with an existing form</a>
-                                    <div id="collapse23" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner-faq">
-                                            <p>Easily add the ability to upload files to an existing HTML form.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="spacer"></div>
-                    <p class="marketing" style="font-size: 22px;"><a href="http://docs.fineuploader.com/#features">Visit the docs</a> for more feature information</p>
-                    <div class="spacer"></div>
-                </div>
-            </section>
-
-            <hr class="no-margin">
-            <hr class="no-margin">
-
-            <section class="about-home marketing" data-1000="margin-top:0px;" data-1880="margin-top:-180px;">
-                <div class="container row-fluid" data-1000="opacity:0.3;" data-1400="opacity: 1">
-                    <div class="span6">
-                        <h2 style="color: #fff; text-align: center;font-size: 50px; font-weight: 300; line-height: 50px; margin-top: 20px;">We're agile.</h2>
-                        <br><br>
-                        <h3 style="color: #fff; text-align: center; line-height: 28px;margin-top: 40px;">With our iterative development process, Fine Uploader is committed to adding robust features on a consistent release cycle.</h3>
-
-                    </div>
-
-                    <div class="span6 marketing-text" style="padding-left: 60px; margin-top: 20px;">
-                        <p class="white" style="text-align: left; margin-left: 5px;">Here are a few other reasons to choose Fine Uploader: </p>
-                        <ul style="text-align: left; color: white; font-size: 13px;">
-                            <li>Backed by a long-standing <a target="_blank" target="_blank" href="http://widen.com">reputable software company</a>.</li>
-                            <li>Supported better than any other upload tool in existence.  The development team responds to your
-                                <a target="_blank" href="/support">support questions</a> with prompt and detailed answers.</li>
-                            <li>Flexible enough to fit into your typical or completely atypical web app.</li>
-                            <li>Connected to the community.  We give high priority to <a target="_blank" href="/support">feature requests</a> and the highest possible priority to <a target="_blank" href="/support">bug reports</a>.</li>
-                            <li>An important part of the <a target="_blank" href="http://opensource.org/">open source movement</a>.  Our source code is readily accessible for inspection <a target="_blank" href="https://github.com/Widen/fine-uploader">via Github</a>, and we attempt to educate through our code and <a target="_blank" href="http://blog.fineuploader.com">blog</a>.</li>
-                        </ul>
-
-                    </div>
-                </div>
-            </section>
-
-            <hr class="no-margin">
-            <hr class="no-margin">
-
-            <section class="web-marketing" data-1400="margin-top:0px;" data-2150="margin-top:-200px;">
-                <div class="marketing">
-                    <div class="spacer"></div>
-
-                    <h4><a href="purchase_form.html">Commercial licenses</a> are available for purchase from our website.</h4>
-                    <div class="spacer"></div>
-
-                <section class="grey">
-                    <h2>Applications using Fine Uploader</h2>
-                    </br>
-                    <div class="row-fluid container">
-                        <div class="span4">
-                            <a href="http://smartimage.com"><img src="img/smartimage.png" alt="Smartimage" style="width: 250px; margin-bottom: 50px;"/></a>
-                        </div>
-                        <div class="span4">
-                            <a href="https://probinder.com/home"><img src="img/probinder-logo.png" alt="ProBinder" style="width: 200px; margin-top: 30px;"/></a>
-                        </div>
-                        <div class="span4">
-                            <a href="http://www.dfstudio.com/blog/2013/11/df-studio-updates-october-2013/" target="_blank"><img src="img/DF_Studio.png" alt="DF Studio" style="width: 200px; margin-top: 20px;"/></a>
-                        </div>
-                    </div>
-                    <div class="row-fluid container">
-                        <div class="span4">
-                            <a href="https://www.fastfig.com/"><img src="img/fastfig-logo.png" alt="FastFig" style="margin-top: 20px;"/></a>
-                        </div>
-                        <div class="span4">
-                            <a href="http://flocknote.com"><img src="img/flocknote-logo.png" alt="Flocknote" style="margin-top: 30px;"/></a>
-                        </div>
-                        <div class="span4">
-                            <a href="http://www.storyboardthat.com/"><img src="img/storyboard-logo.png" alt="Storyboard That" /></a>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="spacer"></div>
-                        <hr class="no-margin">
-                        <hr class="no-margin">
-                        <div class="spacer"></div>
-                    </div>
-
-                    <h3>Around the Web</h3>
-                    </br>
-
-                    <div class="row-fluid container" style="margin-top: 20px;" >
-                        <div class="span6">
-                            <p style="font-family: 'Helvetica Neue',Helvetica,Ubuntu,arial,sans-serif; color: #00AAAA; font-size: 24px; font-weight: bold;">
-                            <a href="http://javascriptweekly.com/archive/154.html" target="_blank" style="text-decoration: none; color: #00AAAA;">
-                                JavaScript<img src="img/javascript-weekly-cog.png" alt="Javascript Weekly Cog" style="height: 24px; margin: 0px 5px;"/>Weekly</a>
-                        </div>
-
-                        <div class="span6">
-                            <p style="font-family: Helvetica,Arial,sans-serif; font-size: 24px; font-weight: 600; color: #404040; text-shadow: 1px 1px #FFFFFF;">
-                            <a href="http://dailyjs.com/2013/08/20/jquery-roundup/" target="_blank" style="color: #404040; text-decoration: none;">
-                                <img src="img/dailyjs-logo.gif" alt="Daily JS logo" style="height: 24px; vertical-align: top; margin-right: 5px;"/>DailyJS</a>
-                        </div>
-                    </div>
-
-                    <div class="row-fluid container" style="margin-top: 20px;" >
-                        <div class="span4">
-                            <a href="http://designscrazed.com/html5-jquery-file-upload-scripts/" target="_blank"><img src="http://designscrazed.com/wp-content/uploads/2013/11/dclogo.png" alt="design crazed"/></a>
-                        </div>
-                        <div class="span4">
-                            <a href="http://www.queness.com/post/11434/7-javascript-ajax-file-upload-plugins" target="_blank"><img src="img/queness-logo.png" alt="Queness" style="height: 70px;"/></a>
-                        </div>
-                        <div class="span4">
-                            <a href="https://twitter.com/smashingmag/status/282529764957376512" target="_blank"><img src="img/smashing-magazine.png" alt="smashing magazine" style="height: 56px; margin-bottom: 60px;"/></a>
-                        </div>
-                    </div>
-                    <div class="spacer"></div>
-
-                    </section>
-                </div>
-            </section>
-            <div style="clear:both"></div>
-            <div id="footer"></div>
-        </div>
-
-        <div id="fineuploader-php-modal" class="modal hide fade">
-            <div class="modal-header" hidden="true">
-            </div>
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top: -10px;">&times;</button>
-
-                <h4 class="center">Thanks for your interest in our new product!</h4>
-                <p class="center">We'll be in touch about our beta launch.</p>
-            </div>
-        </div>
+        </section>
+    </div>
+</section>
+<div style="clear:both"></div>
+<div id="footer"></div>
+</div>
 
 
-        <script>
-            window.prettyPrint && prettyPrint();
-            $('.dropdown-toggle').dropdown();
-            $.get('./navbar.html', function(data) {
-                $('#navbar').html(data);
-                if (window.location.hash == '') {
-                    $('#navbar').find('li').eq(0).addClass('active');
-                } else {
-                    $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
-                }
-            });
+<script>
+    window.prettyPrint && prettyPrint();
+    $('.dropdown-toggle').dropdown();
+    $.get('./navbar.html', function(data) {
+        $('#navbar').html(data);
+        if (window.location.hash == '') {
+            $('#navbar').find('li').eq(0).addClass('active');
+        } else {
+            $('#navbar').find('a[href$="' + window.location.hash + '"]').parent().addClass('active');
+        }
+    });
 
-            $.get('./footer.html', function(data) {
-                $('#footer').html(data);
-            });
+    $.get('./footer.html', function(data) {
+        $('#footer').html(data);
+    });
 
-            $.get('./header.html', function(data) {
-                $('#header').html(data);
-            });
-        </script>
+    $.get('./header.html', function(data) {
+        $('#header').html(data);
+    });
+</script>
 
-        <script type="text/javascript">
-            window.onload = function() {
-                var s = skrollr.init({
-                    edgeStrategy: 'set',
-                    easing: {
-                        WTF: Math.random,
-                        inverted: function(p) {
-                            return 1-p;
-                        }
-                    }
-                });
-
-                if (screen.width >= 767) {
-                    $('.progress').show();
+<script type="text/javascript">
+    window.onload = function() {
+        var s = skrollr.init({
+            edgeStrategy: 'set',
+            easing: {
+                WTF: Math.random,
+                inverted: function(p) {
+                    return 1-p;
                 }
             }
-        </script>
-    </body>
+        });
+
+        if (screen.width >= 767) {
+            $('.progress').show();
+        }
+    }
+</script>
+</body>
 </html>
