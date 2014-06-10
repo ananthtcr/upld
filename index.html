@@ -35,6 +35,13 @@
             document.write('<script type="text/javascript" src="js/skrollr/skrollr.js"><\/script>');
         }
     </script>
+    <script type="text/javascript">
+        function clearForm() {
+            document.getElementById("inputName").value = '';
+            document.getElementById("inputCompany").value = '';
+            document.getElementById("inputEmail").value = '';
+        }
+    </script>
 </head>
 
 <body class="home">
@@ -90,13 +97,62 @@
     </div>
 </section>
 
-<div class="spacer"></div>
-
 <div class="progress">
     <div id="progress" data-0="width:0%;background:hsl(8, 76%, 59%);" data-530="width:100%;background:hsl(8, 76%, 59%);" class="progress-bar" style="width: 27.719298245614034%; background-color: rgb(230, 92, 71);"></div>
 </div>
-<div id="features" style="margin-bottom: 40px;"></div>
-<section class="features-section marketing" data-0="margin-top:140px;" data-860="margin-top:0px;">
+
+<div class="spacer"></div>
+
+<section class="fineuploader-php-section">
+    <h3 class="center white">Coming Soon From Fine Uploader</h3>
+    <br>
+
+    <div class="row-fluid container">
+        <div class="span4">
+            <img src="img/FineUploader_PHP.png" style="vertical-align: text-bottom; margin-bottom: 6px; margin-top: -10px"/>
+            <br>
+            <h5 class="white" style="font-size: 17px; margin-bottom: 20px;">A pre-integrated PHP file upload product!</h5>
+            <p class="white">
+                Fine Uploader PHP is designed for folks who
+                want an upload solution that can be implemented out of the box in minutes without writing infrastructure or custom code.
+            </p>
+        </div>
+        <div class="span4">
+            <p class="white">Powered by Fine Uploader technology, Fine Uploader PHP allows you to choose between attractive default themes or fully
+                customize the user interface for ultimate brand alignment.
+            </p>
+            <p class="white">
+                Fine Uploader PHP is stacked with must-have features like upload progress bar, drag and drop, image previews,
+                file size/type limits, file chunking, optional user authentication and more.
+            </p>
+        </div>
+
+        <div class="span4">
+            <p class="white">Are you interested in trialing Fine Uploader PHP? We’d love to hear from you!</p>
+
+            <script type="text/javascript">var submitted=false;</script>
+            <iframe name="form_submit_iframe" id="hidden_iframe" style="display:none;"
+            onload="if(submitted) {$('#fineuploader-php-modal').modal('show'); clearForm();}">
+            </iframe>
+            <form id="#fineuploader-php-form" method="post" action="https://docs.google.com/forms/d/19qDtSAwvmpPZ7OIMlAsNuSGsLDveuqLfwlQrJGiF09U/formResponse?embedded=true"
+                target="form_submit_iframe" id="ss-form" onsubmit="submitted=true;">
+
+                <input id="inputName" type="text" name="entry.1881897947" value="" placeholder="Name" required="required">
+
+                <input id="inputCompany" type="text" name="entry.2097764986" value="" placeholder="Company">
+
+                <input id="inputEmail" type="email" name="entry.200805974" value="" placeholder="Email" required>
+                <br/>
+
+                <input class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit" href="#fineuploader-php-modal">
+
+            </form>
+        </div>
+    </div>
+</section>
+
+<div id="features" style="margin-top: -300px; padding-top: 300px;"></div>
+<section class="features-section marketing" data-0="margin-top:-50px;" data-990="margin-top:-270px;">
     <div class="container" data-230="opacity:1;" data-85="opacity:0.3;">
         <h1>Features</h1>
         <p class="marketing-byline  center"><span class="orange">Everything you need</span> in a JavaScript file upload library</p>
@@ -284,7 +340,7 @@
 <hr class="no-margin">
 <hr class="no-margin">
 
-<section class="about-home marketing" data-1000="margin-top:0px;" data-1880="margin-top:-200px;">
+<section class="about-home marketing" data-1000="margin-top:0px;" data-1880="margin-top:-180px;">
     <div class="container row-fluid" data-1000="opacity:0.3;" data-1400="opacity: 1">
         <div class="span6">
             <h2 style="color: #fff; text-align: center;font-size: 50px; font-weight: 300; line-height: 50px; margin-top: 20px;">We're agile.</h2>
@@ -294,11 +350,6 @@
         </div>
 
         <div class="span6 marketing-text" style="padding-left: 60px; margin-top: 20px;">
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="fu-avatar-white"></div>
-                </div>
-            </div>
             <p class="white" style="text-align: left; margin-left: 5px;">Here are a few other reasons to choose Fine Uploader: </p>
             <ul style="text-align: left; color: white; font-size: 13px;">
                 <li>Backed by a long-standing <a target="_blank" target="_blank" href="http://widen.com">reputable software company</a>.</li>
@@ -391,6 +442,17 @@
 </section>
 <div style="clear:both"></div>
 <div id="footer"></div>
+</div>
+
+<div id="fineuploader-php-modal" class="modal hide fade">
+    <div class="modal-header" hidden="true">
+    </div>
+    <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top: -10px;">&times;</button>
+
+        <h4 class="center">Thanks for your interest in our new product!</h4>
+        <p class="center">We'll be in touch about our beta launch.</p>
+    </div>
 </div>
 
 
