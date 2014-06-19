@@ -971,6 +971,10 @@ ul.ss-choices
 {
     max-width: 400px;
 }
+.fu-survey .ss-q-title
+{
+    font-weight: 600;
+}
 
 
 
