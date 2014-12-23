@@ -39,53 +39,27 @@
             <div class="spacer"></div>
 
             <div class="row-fluid">
-                <form action="http://assembler.fineuploader.com/build" method="POST" class="form-horizontal">
-
-
-                    <label for="email">Licensee email (required):</label>
-                    <input name="email" type="email" autofocus required placeholder="Enter valid email address ..."
-                        title="Please enter the email address associated with the licenseholder.">
-
-                    <br/>
-
-                    <br>
-                    <div class="alert alert-info">
-                    <small><strong>Note:</strong> A valid email is required to build a custom copy of Fine Uploader. Your email address is automatically added to the list of verified emails after your <a href="http://fineuploader.com/purchase_form.html">purchase</a>.</small>
-                    </div>
-                    <hr>
-
-                    <h3>jQuery Plugin</h3>
-                    <div class="row-fluid">
-                        <p style="font-size: 13px;">Select whether you would like to use the jQuery plugin version with Fine Uploader.</p>
-
-                    <label class="checkbox" for="jquery">
-                        <input name="jquery" type="checkbox" checked>
-                        jQuery Plugin (<a href="http://docs.fineuploader.com/integrating/jquery.html" target="_blank" class="info-link" title="Include the jQuery plugin version of Fine Uploader.">?</a>)</label>
-                    </div>
-
-                    <br />
-
-                    <div class="alert alert-info">
-                        <small><strong>Note:</strong> The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</small>
-                    </div>
-
-                    <hr>
+                <form id="customize-form" class="form-horizontal">
 
                     <div id="server-type-section" class="row-fluid">
                         <h3>Server Type</h3>
 
-                        <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
-                        <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
-                        will provide you with the code to send uploads directly to Amazon's Simple Storage Service (S3). Select the <a target="_blank" href="http://docs.fineuploader.com/features/no-server-uploads.html">Serverless S3</a> optional module below to support fully client-side S3 uploading.</p>
-                    <label class="checkbox" for="ep_traditional">
-                        <input id="ep_traditional" type="checkbox" name="traditional-endpoint" checked />Traditional (<a href="http://docs.fineuploader.com/endpoint_handlers/traditional.html" target="_blank" class="info-link" title="Select if you plan to roll your own server.">?</a>)
-                    </label>
-                    <label class="checkbox" for="ep_s3">
-                        <input id="ep_s3" type="checkbox" name="s3-endpoint"/>Amazon S3 (<a href="http://docs.fineuploader.com/endpoint_handlers/amazon-s3.html" target="_blank" class="info-link" title="Select if you plan to use Amazon's Simple Storage Service">?</a>)
-                    </label>
-                    <label class="checkbox" for="ep_azure">
-                        <input id="ep_azure" type="checkbox" name="azure-endpoint"/>Windows Azure (<a href="http://docs.fineuploader.com/features/azure.html" target="_blank" class="info-link" title="Select if you plan to use Microsoft's Windows Azure Blob Storage (Note: the Traditional module is included by default with Azure because -- ironically -- Azure does not have support for IE9 and below.">?</a>)
-                    </label>
+                        <fieldset id="ep_fieldset">
+                            <legend>
+                                <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
+                                <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
+                                will provide you with the code to send uploads directly to Amazon's Simple Storage Service (S3), and includes the <a target="_blank" href="http://docs.fineuploader.com/features/no-server-uploads.html">Serverless S3</a> module to support fully client-side S3 uploading.</p>
+                            </legend>
+                            <label class="radio" for="ep_traditional">
+                                <input id="ep_traditional" type="radio" name="endpoint" value="" checked /><a href="http://docs.fineuploader.com/endpoint_handlers/traditional.html" target="_blank" class="info-link" title="Select if you plan to roll your own server.">Traditional</a>
+                            </label>
+                            <label class="radio" for="ep_s3">
+                                <input id="ep_s3" type="radio" name="endpoint" value="s3"/><a href="http://docs.fineuploader.com/endpoint_handlers/amazon-s3.html" target="_blank" class="info-link" title="Select if you plan to use Amazon's Simple Storage Service">Amazon S3</a>
+                            </label>
+                            <label class="radio" for="ep_azure">
+                                <input id="ep_azure" type="radio" name="endpoint" value="azure"/><a href="http://docs.fineuploader.com/features/azure.html" target="_blank" class="info-link" title="Select if you plan to use Microsoft's Windows Azure Blob Storage (Note: the Traditional module is included by default with Azure because -- ironically -- Azure does not have support for IE9 and below.">Windows Azure</a>
+                            </label>
+                        </fieldset>
 
                         <!--
                         <select name="endpoint">
@@ -96,51 +70,52 @@
 
                     </div>
 
+                    <h3>jQuery Plugin</h3>
+                    <div class="row-fluid">
+
+                        <fieldset id="jquery_fieldset">
+                            <legend>
+                                <p style="font-size: 13px;">Select whether you would like to use the jQuery plugin version with Fine Uploader.</p>
+                            </legend>
+                            <label class="checkbox" for="jquery">
+                                <input name="jquery" type="checkbox">
+                                <a href="http://docs.fineuploader.com/integrating/jquery.html" target="_blank" class="info-link" title="Include the jQuery plugin version of Fine Uploader.">jQuery Plugin</a>
+                            </label>
+                        </fieldset>
+                    </div>
+
+                    <br />
+
+                    <div class="alert alert-info">
+                        <small><strong>Note:</strong> The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</small>
+                    </div>
+
+
                     <hr>
 
-                    <h3>Optional Modules</h3>
-                    <p style="font-size: 13px;">The following modules are optional components of Fine Uploader, and may be included at your leisure.</p>
+                    <h3>Included Features</h3>
+                    <!--
+                    <p style="font-size: 13px;">The following modules are components of Fine Uploader, and may be used at your leisure.</p>
+                    -->
                     <div class='row-fluid'>
 
                         <div class='span6'>
-                            <label class="checkbox" for="ui">
-                                <input name="ui" type="checkbox" checked>Basic UI (<a href="http://docs.fineuploader.com/api/options-ui.html" target="_blank" class="info-link" title="Provide basic UI elements such as a dynamic list of submitted files, coloring based on status, an upload button, and more.">?</a>)
-                            </label>
-                            <label class="checkbox" for="paste">
-                                <input name="paste" type="checkbox" checked>Upload via Paste (<a href="http://docs.fineuploader.com/features/paste-to-upload.html" target="_blank" class="info-link" title="Enable support for submitted images using paste from the ClipboardAPI.">?</a>)
-                            </label>
-                            <label class="checkbox" for="dnd">
-                                <input name="dnd" type="checkbox" checked>Upload via Drag 'n' Drop (<a href="http://docs.fineuploader.com/features/drag-and-drop.html" target="_blank" class="info-link" title="Enable support for submitting files by dragging and dropping.">?</a>)
-                            </label>
-                            <label class="checkbox" for="image-previews">
-                                <input name="image-previews" type="checkbox" checked>Image Previews (<a href="http://docs.fineuploader.com/features/thumbnails.html" target="_blank" class="info-link" title="Enable support for client-side previews of images.">?</a>)
-                            </label>
-                            <label class="checkbox" for="image-scaling">
-                                <input name="image-scaling" type="checkbox" checked>Image Scaling (<a href="http://docs.fineuploader.com/features/scaling.html" target="_blank" class="info-link" title="Scale images on the client before sending them the server.">?</a>)
-                            </label>
-                            <label class="checkbox" for="image-validation">
-                                <input name="image-validation" type="checkbox" checked>Image Validation (<a href="http://docs.fineuploader.com/features/validation.html" target="_blank" class="info-link" title="Enable support for validating image files before uploading.">?</a>)
-                            </label>
+                            <ul>
+                                <li><a href="http://docs.fineuploader.com/api/options-ui.html" target="_blank" class="info-link" title="Provide basic UI elements such as a dynamic list of submitted files, coloring based on status, an upload button, and more.">Basic UI</a></li>
+                                <li><a href="http://docs.fineuploader.com/features/paste-to-upload.html" target="_blank" class="info-link" title="Enable support for submitted images using paste from the ClipboardAPI.">Upload via Paste</a></li>
+                                <li><a href="http://docs.fineuploader.com/features/drag-and-drop.html" target="_blank" class="info-link" title="Enable support for submitting files by dragging and dropping.">Upload via Drag 'n' Drop</a></li>
+                                <li><a href="http://docs.fineuploader.com/features/thumbnails.html" target="_blank" class="info-link" title="Enable support for client-side previews of images.">Image Previews</a></li>
+                                <li><a href="http://docs.fineuploader.com/features/scaling.html" target="_blank" class="info-link" title="Scale images on the client before sending them the server.">Image Scaling</a></li>
+                                <li><a href="http://docs.fineuploader.com/features/validation.html" target="_blank" class="info-link" title="Enable support for validating image files before uploading.">Image Validation</a></li>
+                            </ul>
                         </div>
                         <div class='span6'>
-                            <label class="checkbox" for="form-support">
-                                <input name="form-support" type="checkbox" checked>Integrate with Pre-existing Form (<a href="http://docs.fineuploader.com/features/forms.html" target="_blank" class="info-link" title="Integrate with an existing HTML form.">?</a>)
-                            </label>
-                            <label class="checkbox" for="delete">
-                                <input name="delete" type="checkbox" checked>Delete File Support (<a href="http://docs.fineuploader.com/features/delete.html" target="_blank" class="info-link" title="Allows users to delete files after they have been succesfully uploaded.">?</a>)
-                            </label>
-                            <label class="checkbox" for="edit">
-                                <input name="edit" type="checkbox" checked>Edit Filename Support (<a href="http://docs.fineuploader.com/features/filename-edit.html" target="_blank" class="info-link" title="Allows users to edit filenames before the upload occurs.">?</a>)
-                            </label>
-                            <label class="checkbox" for="initial-filelist">
-                                <input name="initial-filelist" type="checkbox" checked>Upload Sessions (<a href="http://docs.fineuploader.com/features/session.html" target="_blank" class="info-link" title="Repopulate the user's file upload list with previously uploaded files.">?</a>)
-                            </label>
-                            <label class="checkbox" for="total-progress-reporting">
-                                <input name="total-progress-reporting" type="checkbox" checked>Total Progress (<a href="http://docs.fineuploader.com/features/progress-bars.html#total-progress" target="_blank" class="info-link" title="Track aggregate progress of all uploading files.">?</a>)
-                            </label>
-                            <label class="checkbox" for="serverless-s3">
-                                <input name="serverless-s3" type="checkbox">Serverless S3 (<a href="http://docs.fineuploader.com/features/no-server-uploads.html" target="_blank" class="info-link" title="Send uploads directly to Amazon S3 purely client-side, and without the need for an intermediary server.">?</a>)
-                            </label>
+                            <li><a href="http://docs.fineuploader.com/features/forms.html" target="_blank" class="info-link" title="Integrate with an existing HTML form.">Integrate with Pre-existing Form</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/delete.html" target="_blank" class="info-link" title="Allows users to delete files after they have been succesfully uploaded.">Delete File Support</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/filename-edit.html" target="_blank" class="info-link" title="Allows users to edit filenames before the upload occurs.">Edit Filename Support</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/session.html" target="_blank" class="info-link" title="Repopulate the user's file upload list with previously uploaded files.">Upload Sessions</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/progress-bars.html#total-progress" target="_blank" class="info-link" title="Track aggregate progress of all uploading files.">Total Progress</a></li>
+                            <li><a href="http://docs.fineuploader.com/features/no-server-uploads.html" target="_blank" class="info-link" title="Send uploads directly to Amazon S3 purely client-side, and without the need for an intermediary server.">Serverless S3</a></li>
                         </div>
                         <br/>
 
@@ -171,6 +146,7 @@
 			</div>
 		</div>
 
+        <script src="js/customize.js" type="text/javascript"></script>
         <script>
             window.prettyPrint && prettyPrint();
             $('.dropdown-toggle').dropdown();
@@ -195,34 +171,6 @@
                     }
                 });
 
-
-                $("label[for='serverless-s3']").hide();
-
-				$("input[name='s3-endpoint']").change(function() {
-					var $el = $(this),
-						$serverless_label = $("label[for='serverless-s3']"),
-						$serverless_checkbox = $("input[name='serverless-s3']");
-
-					if ($el.prop('checked')) {
-						$serverless_label.show();
-					}
-					else {
-						$serverless_checkbox.prop('checked', false);
-						$serverless_label.hide();
-					}
-				});
-
-				$("#customize-form").submit(function(event) {
-					// do not allow users to continue if they have not selected
-					// a valid endpoint.
-					var error = !($("#server-type-section input[type='checkbox']:checked").length > 0);
-
-					if (error) {
-						$("#error-modal").modal();
-						return false;
-					}
-					return true;
-				});
 
                 $('a.tip').tipsy();
             });
