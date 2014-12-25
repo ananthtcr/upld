@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-    var BASE_URL = 'http://s3.amazonaws.com',
-        BUCKET = 'releases.fineuploader.com',
+    var BASE_URL = 'http://releases.fineuploader.com',
         VERSION = '5.1.0-12';
 
     $("#customize-form").submit(function(e) {
@@ -21,7 +20,7 @@ $(document).ready(function(){
         });
 
 
-        var url = BASE_URL + '/' + BUCKET + '/' + VERSION + '/' + endpoint + jquery + base;
+        var url = BASE_URL + '/' + VERSION + '/' + endpoint + jquery + base;
         $("<iframe>")
             .hide()
             .prop("src", url)
