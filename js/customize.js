@@ -1,33 +1,25 @@
 $(document).ready(function(){
-
     var BASE_URL = 'http://releases.fineuploader.com',
-        VERSION = '5.1.0-12';
+        version = '5.1.0-12';
 
-    $("#customize-form").submit(function(e) {
+        updateDownloadUrl = function() {
+            var base = 'fineuploader-' + version + '.zip',
+                endpoint = '',
+                jquery = '';
 
-        var jquery = '',
-            endpoint = '',
-            base = 'fineuploader-' + VERSION + '.zip';
-
-        $("#jquery_fieldset").find("input[type='checkbox']:checked").each(function(i, checkbox){
-            jquery = 'jquery.';
-        });
-
-        $("#ep_fieldset").find("input[type='radio']:checked").each(function(i, radio){
-            if (radio.value) {
-                endpoint = radio.value + '.';
+            if ($("#jquery_fieldset input[name='jquery']").is(':checked')) {
+                jquery = 'jquery.';
             }
-        });
 
+            $("#ep_fieldset").find("input[type='radio']:checked").each(function() {
+                if (this.value) {
+                    endpoint = this.value + '.';
+                }
+            });
 
-        var url = BASE_URL + '/' + VERSION + '/' + endpoint + jquery + base;
-        $("<iframe>")
-            .hide()
-            .prop("src", url)
-            .appendTo("body");
+            $('#build-btn').attr('href', BASE_URL + '/' + version + '/' + endpoint + jquery + base);
+        };
 
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-    });
+    updateDownloadUrl();
+    $('#customize-form').change(updateDownloadUrl);
 });
