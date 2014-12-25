@@ -832,7 +832,7 @@ input, button, select, textarea
 {
     text-align: center;
 }
-pre
+pre:not(.license)
 {
     border: none;
     background-color: inherit;
@@ -976,6 +976,11 @@ ul.ss-choices
     font-weight: 600;
 }
 
+.license-frame
+{
+    width: 100%;
+    height: 100%;
+}
 
 
 
