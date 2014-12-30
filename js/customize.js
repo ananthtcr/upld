@@ -20,6 +20,8 @@ $(document).ready(function(){
             $('#build-btn').attr('href', BASE_URL + '/' + version + '/' + endpoint + jquery + base);
         };
 
+
+    document.getElementById('build-btn').innerHTML += ' ' + version;
     updateDownloadUrl();
     $('#customize-form').change(updateDownloadUrl);
 });
