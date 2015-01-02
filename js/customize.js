@@ -3,7 +3,7 @@ $(document).ready(function(){
         version = '5.1.1';
 
         updateDownloadUrl = function() {
-            var base = 'fineuploader-' + version + '.zip',
+            var base = 'fine-uploader-' + version + '.zip',
                 endpoint = '',
                 jquery = '';
 
