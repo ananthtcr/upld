@@ -5,7 +5,7 @@
 
 <!-- Fine Uploader JS
 ====================================================================== -->
-<script src="assets/fineuploader.js"></script>
+<script src="assets/fine-uploader.js"></script>
 <script>
   $(document).ready(function() {
     var uploader = $("#bootstrapped-fine-uploader").fineUploader({
@@ -24,7 +24,7 @@
 
 <!-- Fine Uploader CSS
 ====================================================================== -->
-<link href="assets/fineuploader.css" rel="stylesheet">
+<link href="assets/fine-uploader.css" rel="stylesheet">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
 
 <style>

@@ -1,6 +1,6 @@
 <!-- Fine Uploader JS
 ====================================================================== -->
-<script src="assets/fineuploader.js"></script>
+<script src="assets/fine-uploader.js"></script>
 <script>
   function createUploader() {
     var uploader = new qq.FineUploader({
@@ -21,7 +21,7 @@
 
 <!-- Fine Uploader CSS
 ====================================================================== -->
-<link href="assets/fineuploader.css" rel="stylesheet">
+<link href="assets/fine-uploader.css" rel="stylesheet">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
 <style>
   /* For the bootstrapped demos */

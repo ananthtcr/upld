@@ -1,6 +1,6 @@
 <!-- Fine Uploader JS
 ====================================================================== -->
-<script src="assets/fineuploader.js"></script>
+<script src="assets/fine-uploader.js"></script>
 <script>
   function createUploader() {
       var filelimituploader = new qq.FineUploader({
@@ -20,7 +20,7 @@
 
 <!-- Fine Uploader CSS
 ====================================================================== -->
-<link href="assets/fineuploader.css" rel="stylesheet">
+<link href="assets/fine-uploader.css" rel="stylesheet">
 
 <!-- Fine Uploader DOM Element
 ====================================================================== -->

@@ -4,7 +4,7 @@
 
 <!-- Fine Uploader JS
 ====================================================================== -->
-<script src="assets/fineuploader.js"></script>
+<script src="assets/fine-uploader.js"></script>
 <script>
   $(document).ready(function() {
     $('#thumbnail-fine-uploader').fineUploader({
@@ -27,7 +27,7 @@
 
 <!-- Fine Uploader CSS
 ====================================================================== -->
-<link href="assets/fineuploader.css" rel="stylesheet">
+<link href="assets/fine-uploader.css" rel="stylesheet">
 
 <!-- Fine Uploader DOM Element
 ====================================================================== -->
