@@ -131,14 +131,17 @@
             <form id="#fineuploader-php-form" method="post" action="https://docs.google.com/forms/d/19qDtSAwvmpPZ7OIMlAsNuSGsLDveuqLfwlQrJGiF09U/formResponse?embedded=true"
                 target="form_submit_iframe" id="ss-form" onsubmit="submitted=true;">
 
-                <input id="inputName" type="text" name="entry.1881897947" value="" placeholder="Name" required="required">
+                <input id="inputName" type="text" name="entry.1881897947" value="" placeholder="Name" required />
 
                 <input id="inputCompany" type="text" name="entry.2097764986" value="" placeholder="Company">
 
-                <input id="inputEmail" type="email" name="entry.200805974" value="" placeholder="Email" required>
+                <input id="inputEmail" type="email" name="entry.200805974" value="" placeholder="Email" required />
+
                 <br/>
 
                 <input class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit" href="#fineuploader-php-modal">
+
+                <a style="opacity: .9; color: white;" onclick="$('#fineuploader-php-modal').modal('show');"><small>I've already signed up!</small></a>
 
             </form>
         </div>
@@ -439,13 +442,20 @@
 </div>
 
 <div id="fineuploader-php-modal" class="modal hide fade">
-    <div class="modal-header" hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="center">Access to the Fine Uploader PHP Beta</h4>
     </div>
     <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top: -10px;">&times;</button>
-
-        <h4 class="center">Thanks for your interest in our new product!</h4>
-        <p class="center">We'll be in touch about our beta launch.</p>
+        <div class="row-fluid">
+            <div class="span6">
+                <p class="center"><a href="https://s3.amazonaws.com/fine-uploader-php/releases/fine-uploader-php-0.1.8.zip"><i class="icon-download-alt"></i> Get the Download</a></p>
+            </div>
+            <div class="span6">
+                <p class="center"><a href="https://github.com/FineUploader/fine-uploader-php-docs/wiki/Installation-Guide"><i class="icon-book"></i> Read the Install Guide</a></p>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 
