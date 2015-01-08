@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var BASE_URL = 'http://releases.fineuploader.com',
-        version = '5.1.2';
+        version = '5.1.3';
 
         updateDownloadUrl = function() {
             var base = 'fine-uploader-' + version + '.zip',
