@@ -349,6 +349,10 @@ section.web-marketing
     background-image: -moz-linear-gradient(top, #f87436, #f87436)
 
 }
+.btn-link:focus
+{
+    outline: none;
+}
 /*------------------------------*/
 
 .jumbotron-small

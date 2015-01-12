@@ -9,8 +9,8 @@ $(document).ready(function() {
 
     $('.view-code').each(function(index, el) {
         var $viewCode = $(el),
-            toggleLink = $viewCode.children('a'),
-            sourceView = $viewCode.children('.source-view')
+            toggleLink = $viewCode.children('BUTTON:first'),
+            sourceView = $viewCode.children('.source-view'),
             codeTabs = $(this).find('.code-tab');
         
         $(toggleLink).on('click', function() {
@@ -37,6 +37,12 @@ $(document).ready(function() {
                     windowEl.addClass('active');
                 }
             });
+
+            $codeTab.keydown(function(event) {
+                if (event.which === 13) {
+                    $(this).click();
+                }
+            })
         });
     });
 
