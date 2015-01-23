@@ -1,6 +1,7 @@
 $('#failed-fine-uploader').fineUploader({
     request: {
-        endpoint: 'server/failure.html'
+        endpoint: 'server/failure.html',
+        method: 'GET' // Only for the gh-pages demo website due to Github Pages limitations
     },
     failedUploadTextDisplay: {
         mode: 'custom',
@@ -8,6 +9,5 @@ $('#failed-fine-uploader').fineUploader({
         responseProperty: 'error',
         enableTooltip: true
     },
-    debug: true,
-    demoMode: true // Undocumented -> Only for the gh-pages demo website
+    debug: true
 });

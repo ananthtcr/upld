@@ -1,6 +1,7 @@
 $('#restricted-fine-uploader').fineUploader({
     request: {
-        endpoint: 'server/success.html'
+        endpoint: 'server/success.html',
+        method: 'GET' // Only for the gh-pages demo website due to Github Pages limitations
     },
     multiple: false,
     validation: {
@@ -11,6 +12,5 @@ $('#restricted-fine-uploader').fineUploader({
         // Using Bootstrap's classes and jQuery selector and DOM manipulation
         $('#restricted-fine-uploader').append('<div class="alert alert-error">' + message + '</div>');
     },
-    debug: true,
-    demoMode: true // Undocumented -> Only for the gh-pages demo website
+    debug: true
 });

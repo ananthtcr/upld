@@ -1,13 +1,13 @@
 var btuploader = new qq.FineUploader({
     element: document.getElementById('bootstrapped-fine-uploader'),
     request: {
-        endpoint: 'server/success.html'
+        endpoint: 'server/success.html',
+        method: 'GET' // Only for the gh-pages demo website due to Github Pages limitations
     },
     template: "qq-template-bootstrap",
     classes: {
         success: 'alert alert-success',
         fail: 'alert alert-error'
     },
-    debug: true,
-    demoMode: true // Undocumented -> Only for the gh-pages demo website
+    debug: true
 });
