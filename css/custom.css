@@ -986,6 +986,9 @@ ul.ss-choices
     height: 100%;
 }
 
+.licenses .price { font-weight: bold; }
+.licenses LABEL .title { padding-left: 10px; }
+.licenses LABEL INPUT { margin-bottom: 0; }
 
 
 
