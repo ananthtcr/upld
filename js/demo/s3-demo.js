@@ -1,6 +1,6 @@
-$('#s3-demo-container').fineUploaderS3({
-    template: "simple-previews-template",
+var s3Uploader = new qq.s3.FineUploader({
     debug: true,
+    element: document.getElementById('fine-uploader'),
     request: {
         endpoint: "upload.fineuploader.com",
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"
@@ -35,28 +35,21 @@ $('#s3-demo-container').fineUploaderS3({
         itemLimit: 5,
         sizeLimit: 15000000
     },
-    messages: {
-        unsupportedBrowser: "<h3>This demo is not functional in IE7 as IE7 has no support for CORS!</h3>"
-    },
     thumbnails: {
         placeholders: {
             notAvailablePath: "/server/not_available-generic.png",
             waitingPath: "/server/waiting-generic.png"
         }
     },
-    formatFileName: function(name) {
-        if (name !== undefined && name.length > 20) {
-            name = name.slice(0, 6) + '...' + name.slice(-8);
-        }
-        return name;
-    }
-})
-    .on('complete', function(event, id, name, response, xhr) {
-        var $fileEl = $(this).fineUploaderS3("getItemByFileId", id),
-            $viewBtn = $fileEl.find(".view-btn");
+    callbacks: {
+        onComplete: function(id, name, response) {
+            var fileEl = this.getItemByFileId(id),
+                viewBtn = fileEl.getElementsByClassName("view-btn")[0];
 
-        if (response.success) {
-            $viewBtn.show();
-            $viewBtn.attr("href", response.tempLink);
+            if (response.success) {
+                qq(viewBtn).removeClass('qq-hide');
+                viewBtn.setAttribute("href", response.tempLink);
+            }
         }
-    });
+    }
+});
