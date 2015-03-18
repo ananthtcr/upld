@@ -1,5 +1,6 @@
 var thumbnailuploader = new qq.FineUploader({
-    element: document.getElementById("thumbnail-fine-uploader"),
+    element: document.getElementById("fine-uploader-gallery"),
+    template: 'qq-template-gallery',
     request: {
         endpoint: '/server/success.html',
         method: 'GET' // Only for the gh-pages demo website due to Github Pages limitations
