@@ -44,12 +44,10 @@ var s3Uploader = new qq.s3.FineUploader({
     },
     callbacks: {
         onComplete: function(id, name, response) {
-            var fileEl = this.getItemByFileId(id),
-                viewBtn = fileEl.getElementsByClassName("view-btn")[0];
+            var previewLink = qq(this.getItemByFileId(id)).getByClass('preview-link')[0];
 
             if (response.success) {
-                qq(viewBtn).removeClass('qq-hide');
-                viewBtn.setAttribute("href", response.tempLink);
+                previewLink.setAttribute("href", response.tempLink)
             }
         }
     }

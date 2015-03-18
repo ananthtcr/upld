@@ -13,6 +13,7 @@ var restricteduploader = new qq.FineUploader({
     },
     validation: {
         allowedExtensions: ['jpeg', 'jpg', 'txt'],
+        itemLimit: 3,
         sizeLimit: 51200 // 50 kB = 50 * 1024 bytes
     },
     debug: true
