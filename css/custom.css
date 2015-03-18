@@ -218,6 +218,11 @@ div.progress
     display: none;
 }
 
+.progress + .spacer
+{
+    padding: 40px 0 150px;
+}
+
 #progress {
     height: 40px;
     background: #444;
