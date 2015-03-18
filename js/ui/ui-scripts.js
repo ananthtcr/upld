@@ -1,12 +1,4 @@
 $(document).ready(function() {
-    var maybeDisplayPhpDownloadModal = function() {
-        if (location.hash.indexOf('php-download') === 1) {
-            $('#fineuploader-php-modal').modal('show').on('hidden', function() {
-                location.hash = '';
-            });
-        }
-    };
-
     $('.view-code').each(function(index, el) {
         var $viewCode = $(el),
             toggleLink = $viewCode.children('BUTTON:first'),
@@ -48,10 +40,5 @@ $(document).ready(function() {
 
     $('.nav li a').on('click',function(){
         $('.nav-collapse').collapse('hide');
-    });
-
-    maybeDisplayPhpDownloadModal();
-    $(window).on('hashchange', function() {
-        maybeDisplayPhpDownloadModal();
     });
 });
