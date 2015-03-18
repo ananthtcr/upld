@@ -1,6 +1,7 @@
 var s3Uploader = new qq.s3.FineUploader({
     debug: true,
-    element: document.getElementById('fine-uploader'),
+    element: document.getElementById('fine-uploader-s3'),
+    template: 'qq-template-s3',
     request: {
         endpoint: "upload.fineuploader.com",
         accessKey: "AKIAJB6BSMFWTAXC5M2Q"

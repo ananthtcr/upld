@@ -280,8 +280,6 @@
                         </div>
                     </script>
 
-                    <title>Fine Uploader Gallery UI</title>
-                    </head>
                     <div id="fine-uploader-gallery"></div>
                     <script src="/js/demo/display-thumbnails.js"></script>
                     <!--END GALLERY DEMO CODE-->
@@ -435,7 +433,67 @@
                         </div>
                     </div>
 
-                    <!--<iframe src="/demo/validation.html" height="600"></iframe>-->
+                    <!--start validation demo code-->
+                    <script type="text/template" id="qq-template-validation">
+                        <div class="qq-uploader-selector qq-uploader" qq-drop-area-text="Drop files here">
+                            <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+                                <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+                            </div>
+                            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                                <span class="qq-upload-drop-area-text-selector"></span>
+                            </div>
+                            <div class="qq-upload-button-selector qq-upload-button">
+                                <div>Select files</div>
+                            </div>
+                            <span class="qq-drop-processing-selector qq-drop-processing">
+                                <span>Processing dropped files...</span>
+                                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                            </span>
+                            <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
+                                <li>
+                                    <div class="qq-progress-bar-container-selector">
+                                        <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
+                                    </div>
+                                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                                    <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale>
+                                    <span class="qq-upload-file-selector qq-upload-file"></span>
+                                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                                    <button class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
+                                    <button class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
+                                    <button class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
+                                    <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                                </li>
+                            </ul>
+
+                            <dialog class="qq-alert-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <div class="qq-dialog-buttons">
+                                    <button class="qq-cancel-button-selector">Close</button>
+                                </div>
+                            </dialog>
+
+                            <dialog class="qq-confirm-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <div class="qq-dialog-buttons">
+                                    <button class="qq-cancel-button-selector">No</button>
+                                    <button class="qq-ok-button-selector">Yes</button>
+                                </div>
+                            </dialog>
+
+                            <dialog class="qq-prompt-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <input type="text">
+                                <div class="qq-dialog-buttons">
+                                    <button class="qq-cancel-button-selector">Cancel</button>
+                                    <button class="qq-ok-button-selector">Ok</button>
+                                </div>
+                            </dialog>
+                        </div>
+                    </script>
+                    <div id="fine-uploader-validation"></div>
+                    <script src="/js/demo/validation.js"></script>
+                    <!--end validation demo code-->
+
                 </section>
 
                 <section id="amazon-demo" class="demo-section">
@@ -506,7 +564,80 @@
                         </div>
                     </div>
 
-                    <!--<iframe src="/demo/s3.html" height="600"></iframe>-->
+                    <!--start s3 demo code-->
+                    <script type="text/template" id="qq-template-s3">
+                        <div class="qq-uploader-selector qq-uploader" qq-drop-area-text="Drop files here">
+                            <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+                                <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+                            </div>
+                            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                                <span class="qq-upload-drop-area-text-selector"></span>
+                            </div>
+                            <div class="qq-upload-button-selector qq-upload-button">
+                                <div>Select files</div>
+                            </div>
+                            <span class="qq-drop-processing-selector qq-drop-processing">
+                                <span>Processing dropped files...</span>
+                                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                            </span>
+                            <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
+                                <li>
+                                    <div class="qq-progress-bar-container-selector">
+                                        <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
+                                    </div>
+                                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                                    <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale>
+                                    <span class="qq-upload-file-selector qq-upload-file"></span>
+                                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                                    <button class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
+                                    <button class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
+                                    <button class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
+                                    <a class="view-btn qq-btn qq-hide" target="_blank" aria-live="assertive">View</a>
+                                    <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                                </li>
+                            </ul>
+
+                            <dialog class="qq-alert-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <div class="qq-dialog-buttons">
+                                    <button class="qq-cancel-button-selector">Close</button>
+                                </div>
+                            </dialog>
+
+                            <dialog class="qq-confirm-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <div class="qq-dialog-buttons">
+                                    <button class="qq-cancel-button-selector">No</button>
+                                    <button class="qq-ok-button-selector">Yes</button>
+                                </div>
+                            </dialog>
+
+                            <dialog class="qq-prompt-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <input type="text">
+                                <div class="qq-dialog-buttons">
+                                    <button class="qq-cancel-button-selector">Cancel</button>
+                                    <button class="qq-ok-button-selector">Ok</button>
+                                </div>
+                            </dialog>
+                        </div>
+                    </script>
+
+                    <style>
+                        .qq-upload-success .view-btn {
+                            display: inline;
+                            text-decoration: none;
+                            background-color: #00ABC7;
+                            color: white;
+                            font-size: 12px;
+                            padding: 6px;
+                        }
+                    </style>
+
+                    <div id="fine-uploader-s3"></div>
+                    <script src="/js/demo/s3-demo.js"></script>
+                    <!--end s3 demo code-->
+
                 </section>
             </div>
         </div>
