@@ -630,5 +630,17 @@
             $('#footer').html(data);
         });
     </script>
+
+    <script>
+        $('pre code.example').each(function() {
+            var $demoCode = $(this);
+            $.get('/js/demo/display/' + $demoCode.data('demo') + ".partial", function(data) {
+                $demoCode.text(data);
+                if (!qq.ie8()) {
+                    hljs.highlightBlock($demoCode[0]);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
