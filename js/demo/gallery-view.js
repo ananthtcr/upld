@@ -1,4 +1,4 @@
-var thumbnailuploader = new qq.FineUploader({
+var galleryUploader = new qq.FineUploader({
     element: document.getElementById("fine-uploader-gallery"),
     template: 'qq-template-gallery',
     request: {

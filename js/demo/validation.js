@@ -1,4 +1,4 @@
-var restricteduploader = new qq.FineUploader({
+var restrictedUploader = new qq.FineUploader({
     element: document.getElementById("fine-uploader-validation"),
     template: 'qq-template-validation',
     request: {

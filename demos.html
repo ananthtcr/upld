@@ -92,24 +92,6 @@
 
                     <p>Note: File bytes are not actually being sent to the server for this demo due to limitations of the GitHub Pages server.</p>
 
-                    <div class="view-code">
-                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
-                        <div class="source-view">
-                            <ul role="tablist" class="code-example">
-                                <li role="tab" aria-controls="no-dependencies-tab-display-images" tabindex="0" id="no-dependencies-tab-display-images-control" class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-display-images">No Dependencies</li>
-                                <li role="tab" aria-controls="jquery-tab-display-images" tabindex="0" id="jquery-tab-display-images-control" class="code-tab" data-tab="jquery-tab-display-images">jQuery</li>
-
-                                <pre role="tabpanel" aria-labelledby="no-dependencies-tab-display-images-control" id="no-dependencies-tab-display-images" class="code-window active">
-                                    <code class="example xml" data-demo="display-thumbnails"></code>
-                                </pre>
-                                <pre role="tabpanel" aria-labelledby="jquery-tab-display-images-control" id="jquery-tab-display-images" class="code-window">
-                                    <code class="example" data-demo="jquery-display-thumbnails"></code>
-                                </pre>
-                            </ul>
-                        </div>
-                    </div>
-
-
                     <!--START GALLERY DEMO CODE-->
                     <script type="text/template" id="qq-template-gallery">
                         <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
@@ -189,8 +171,27 @@
                     </script>
 
                     <div id="fine-uploader-gallery"></div>
-                    <script src="/js/demo/display-thumbnails.js"></script>
+                    <script src="/js/demo/gallery-view.js"></script>
                     <!--END GALLERY DEMO CODE-->
+
+                    <div class="view-code">
+                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
+                        <div class="source-view">
+                            <ul role="tablist" class="code-example">
+                                <li role="tab" aria-controls="no-dependencies-tab-gallery-view" tabindex="0" id="no-dependencies-tab-gallery-view-control" class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-gallery-view">No Dependencies</li>
+                                <li role="tab" aria-controls="jquery-tab-gallery-view" tabindex="0" id="jquery-tab-gallery-view-control" class="code-tab" data-tab="jquery-tab-gallery-view">jQuery</li>
+
+                                <pre role="tabpanel" aria-labelledby="no-dependencies-tab-gallery-view-control" id="no-dependencies-tab-gallery-view" class="code-window active">
+                                    <code class="example xml" data-demo="gallery-view"></code>
+                                </pre>
+                                <pre role="tabpanel" aria-labelledby="jquery-tab-gallery-view-control" id="jquery-tab-gallery-view" class="code-window">
+                                    <code class="example" data-demo="jquery-gallery-view"></code>
+                                </pre>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
 
                 </section>
 
@@ -199,23 +200,6 @@
                     <p class="demo-description">The default behavior of Fine Uploader is to immediately attempt to upload files as they are selected. One option allows you to simply queue all files, and then start uploading at a later time by calling <code>uploadStoredFiles()</code> on your Fine Uploader instance.  You can also easily allow your users to edit the names of each submitted file before uploading.</p>
                     <p class="demo-description">This Fine Uploader instance below also demonstrates the <a href="http://docs.fineuploader.com/branch/master/features/filename-edit.html">edit file name feature</a>, which allows you to edit the name of any file before it is uploaded, simply by clicking on the "pencil" icon.</p>
                     <p>Note: File bytes are not actually being sent to the server for this demo due to limitations of the GitHub Pages server.</p>
-
-                    <div class="view-code">
-                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
-                        <div class="source-view">
-                            <ul role="tablist" class="code-example">
-                                <li role="tab" aria-controls="no-dependencies-tab-display-images" tabindex="0" id="no-dependencies-tab-manually-trigger-uploads-control" class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-manually-trigger-uploads">No Dependencies</li>
-                                <li role="tab" aria-controls="jquery-tab-display-images" tabindex="0" id="jquery-tab-manually-trigger-uploads-control" class="code-tab" data-tab="jquery-tab-manually-trigger-uploads">jQuery</li>
-
-                                <pre role="tabpanel" aria-labelledby="no-dependencies-tab-manually-trigger-uploads-control" id="no-dependencies-tab-manually-trigger-uploads" class="code-window active">
-                                    <code class="example" data-demo="manual-trigger"></code>
-                                </pre>
-                                <pre role="tabpanel" aria-labelledby="jquery-tab-manually-trigger-uploads-control" id="jquery-tab-manually-trigger-uploads" class="code-window">
-                                    <code class="example" data-demo="jquery-manual-trigger"></code>
-                                </pre>
-                            </ul>
-                        </div>
-                    </div>
 
                     <!--start manual trigger demo code-->
                     <script type="text/template" id="qq-template-manual-trigger">
@@ -307,6 +291,26 @@
                     <script src="/js/demo/manual-trigger.js"></script>
                     <!--end manual trigger demo code-->
 
+                    <div class="view-code">
+                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
+                        <div class="source-view">
+                            <ul role="tablist" class="code-example">
+                                <li role="tab" aria-controls="no-dependencies-tab-manually-trigger-uploads" tabindex="0" id="no-dependencies-tab-manually-trigger-uploads-control" class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-manually-trigger-uploads">No Dependencies</li>
+                                <li role="tab" aria-controls="jquery-tab-manually-trigger-uploads" tabindex="0" id="jquery-tab-manually-trigger-uploads-control" class="code-tab" data-tab="jquery-tab-manually-trigger-uploads">jQuery</li>
+
+                                <pre role="tabpanel" aria-labelledby="no-dependencies-tab-manually-trigger-uploads-control" id="no-dependencies-tab-manually-trigger-uploads" class="code-window active">
+                                    <code class="example" data-demo="manual-trigger"></code>
+                                </pre>
+                                <pre role="tabpanel" aria-labelledby="jquery-tab-manually-trigger-uploads-control" id="jquery-tab-manually-trigger-uploads" class="code-window">
+                                    <code class="example" data-demo="jquery-manual-trigger"></code>
+                                </pre>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
                 </section>
 
                 <section id="validation" class="demo-section">
@@ -323,23 +327,6 @@
                         For details, see the <a href="http://docs.fineuploader.com/features/styling.html">styling documentation</a>.</p>
 
                     <p>Note: File bytes are not actually being sent to the server for this demo due to limitations of the GitHub Pages server.</p>
-
-                    <div class="view-code">
-                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
-                        <div class="source-view">
-                            <ul role="tablist" class="code-example">
-                                <li role="tab" aria-controls="no-dependencies-tab-various-options" id="no-dependencies-tab-various-options-control" tabindex="0" class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-various-options">No Dependencies</li>
-                                <li role="tab" aria-controls="jquery-tab-various-options" id="jquery-tab-various-options-control" tabindex="0" class="code-tab" data-tab="jquery-tab-various-options" >jQuery</li>
-
-                                <pre role="tabpanel" aria-labelledby="no-dependencies-tab-various-options-control" id="no-dependencies-tab-various-options" class="code-window active">
-                                    <code class="example xml" data-demo="various-options"></code>
-                                </pre>
-                                 <pre role="tabpanel" aria-labelledby="jquery-tab-various-options-control" id="jquery-tab-various-options" class="code-window">
-                                    <code class="example" data-demo="jquery-various-options"></code>
-                                </pre>
-                            </ul>
-                        </div>
-                    </div>
 
                     <!--start validation demo code-->
                     <script type="text/template" id="qq-template-validation">
@@ -402,6 +389,25 @@
                     <script src="/js/demo/validation.js"></script>
                     <!--end validation demo code-->
 
+                    <div class="view-code">
+                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
+                        <div class="source-view">
+                            <ul role="tablist" class="code-example">
+                                <li role="tab" aria-controls="no-dependencies-tab-validation" id="no-dependencies-tab-validation-control" tabindex="0" class="code-tab activeTabTrigger" data-tab="no-dependencies-tab-validation">No Dependencies</li>
+                                <li role="tab" aria-controls="jquery-tab-validation" id="jquery-tab-validation-control" tabindex="0" class="code-tab" data-tab="jquery-tab-validation" >jQuery</li>
+
+                                <pre role="tabpanel" aria-labelledby="no-dependencies-tab-validation-control" id="no-dependencies-tab-validation" class="code-window active">
+                                    <code class="example xml" data-demo="validation"></code>
+                                </pre>
+                                 <pre role="tabpanel" aria-labelledby="jquery-tab-validation-control" id="jquery-tab-validation" class="code-window">
+                                    <code class="example" data-demo="jquery-validation"></code>
+                                </pre>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
+
                 </section>
 
                 <section id="amazon-demo" class="demo-section">
@@ -453,23 +459,6 @@
                             </ul></p>
 
                         <br/>
-                    </div>
-
-                    <div class="view-code">
-                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
-                        <div class="source-view">
-                            <ul role="tablist" class="code-example">
-                                <li role="tab" tabindex="0" aria-controls="nodep-tab-amazon" id="nodep-tab-amazon-control" class="code-tab activeTabTrigger" data-tab="nodep-tab-amazon">No Dependencies</li>
-                                <li role="tab" tabindex="0" aria-controls="jquery-tab-amazon" id="jquery-tab-amazon-control" class="code-tab" data-tab="jquery-tab-amazon">jQuery</li>
-
-                                <pre role="tabpanel" aria-labelledby="nodep-tab-amazon-control" id="nodep-tab-amazon" class="code-window active">
-                                    <code class="example" data-demo="s3-demo"></code>
-                                </pre>
-                                <pre role="tabpanel" aria-labelledby="jquery-tab-amazon-control" id="jquery-tab-amazon" class="code-window">
-                                    <code class="example" data-demo="jquery-s3-demo"></code>
-                                </pre>
-                            </ul>
-                        </div>
                     </div>
 
                     <!--start s3 demo code-->
@@ -563,6 +552,25 @@
                     <div id="fine-uploader-s3"></div>
                     <script src="/js/demo/s3-demo.js"></script>
                     <!--end s3 demo code-->
+
+                    <div class="view-code">
+                        <button class="btn-link"><i class="icon-eye-open"></i>View Code</button>
+                        <div class="source-view">
+                            <ul role="tablist" class="code-example">
+                                <li role="tab" tabindex="0" aria-controls="nodep-tab-amazon" id="nodep-tab-amazon-control" class="code-tab activeTabTrigger" data-tab="nodep-tab-amazon">No Dependencies</li>
+                                <li role="tab" tabindex="0" aria-controls="jquery-tab-amazon" id="jquery-tab-amazon-control" class="code-tab" data-tab="jquery-tab-amazon">jQuery</li>
+
+                                <pre role="tabpanel" aria-labelledby="nodep-tab-amazon-control" id="nodep-tab-amazon" class="code-window active">
+                                    <code class="example" data-demo="s3-demo"></code>
+                                </pre>
+                                <pre role="tabpanel" aria-labelledby="jquery-tab-amazon-control" id="jquery-tab-amazon" class="code-window">
+                                    <code class="example" data-demo="jquery-s3-demo"></code>
+                                </pre>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
 
                 </section>
             </div>

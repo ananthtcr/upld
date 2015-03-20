@@ -1,4 +1,4 @@
-manualuploader = new qq.FineUploader({
+var manualUploader = new qq.FineUploader({
     element: document.getElementById('fine-uploader-manual-trigger'),
     template: 'qq-template-manual-trigger',
     request: {
@@ -16,5 +16,5 @@ manualuploader = new qq.FineUploader({
 });
 
 qq(document.getElementById("trigger-upload")).attach("click", function() {
-    manualuploader.uploadStoredFiles();
+    manualUploader.uploadStoredFiles();
 });
