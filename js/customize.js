@@ -1,15 +1,25 @@
 $(document).ready(function(){
     var BASE_URL = 'http://releases.fineuploader.com',
-        version = '5.2.2';
+        version = '5.3.0';
 
         updateDownloadUrl = function() {
             var base = 'fine-uploader-' + version + '.zip',
                 endpoint = '',
                 jquery = '';
 
-            if ($("#jquery_fieldset input[name='jquery']").is(':checked')) {
-                jquery = 'jquery.';
+            if ($('#ep_all').prop('checked')) {
+                $("#jquery_fieldset input[name='jquery']")
+                    .prop('disabled', true)
+                    .prop('checked', false);
             }
+            else {
+                $("#jquery_fieldset input[name='jquery']").prop('disabled', false);
+
+                if ($("#jquery_fieldset input[name='jquery']").is(':checked')) {
+                    jquery = 'jquery.';
+                }
+            }
+
 
             $("#ep_fieldset").find("input[type='radio']:checked").each(function() {
                 if (this.value) {
