@@ -41,4 +41,17 @@ $(document).ready(function() {
     $('.nav li a').on('click',function(){
         $('.nav-collapse').collapse('hide');
     });
+
+
+    /* table column/row highlighting */
+    var allCells = $(".table-highlight td");
+
+    allCells.on("mouseover", function() {
+        var el = $(this), pos = el.index();
+        el.parent().find("th, td").addClass("highlight");
+        allCells.filter(":nth-child(" + (pos + 1) + ")").addClass("highlight");
+    })
+    .on("mouseout", function() {
+        allCells.removeClass("highlight");
+    });
 });
