@@ -68,3 +68,7 @@ div.progress
     width: 22px;
     height: 22px;
 }
+.ribbon-wrapper-green
+{
+    display: none;
+}
