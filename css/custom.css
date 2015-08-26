@@ -1296,6 +1296,11 @@ ul.ss-choices
 
 
 /* Sale wrapper */
+.name-container
+{
+    white-space: nowrap;
+}
+
 .ribbon-wrapper-green {
     width: 85px;
     height: 88px;
