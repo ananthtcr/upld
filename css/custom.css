@@ -283,6 +283,13 @@ div.progress
 
 /* Feature Comparison Section
 -------------------------------------------------- */
+#feature-chart
+{
+    display: block;
+    position: relative;
+    top: -160px;
+    visibility: hidden;
+}
 .feature-comparison
 {
     z-index: 3;
