@@ -205,15 +205,22 @@ button.btn-navbar
 {
     height: 40px;
 }
-.probinder
+
+.logos.container
 {
-    width: 200px;
-    margin-top: 30px;
+  margin-bottom: 50px;
 }
-.smartimage
+.logos img
 {
-    width: 250px;
-    margin-bottom: 50px;
+  width: 250px;
+}
+.logos .flocknote
+{
+  padding-top: 30px;
+}
+.logos .probinder
+{
+  padding-top: 5px;
 }
 
 /* Sections
@@ -1276,7 +1283,7 @@ ul.ss-choices
 }
 .fu-survey input[type="checkbox"]
 {
-    margin-top: -4px;    
+    margin-top: -4px;
 }
 .fu-survey input[type="radio"]
 {
@@ -1362,5 +1369,3 @@ ul.ss-choices
 .ribbon-green:after {
     right: 0;
 }
-
-
