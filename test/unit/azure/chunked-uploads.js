@@ -143,7 +143,7 @@ describe("azure chunked upload tests", function() {
                     assert.ok(!uploadRequest.requestHeaders["x-ms-meta-qqfilename"]);
                     assert.equal(uploadRequest.method, "PUT");
                     assert.equal(uploadRequest.url, expectedSasUri + "&comp=block&blockid=" + encodeURIComponent(btoa("00000")));
-                    uploadRequest.respond(201, null, null);
+                    uploadRequest.respond(201);
 
                     // signature request for upload part 2
                     assert.equal(fileTestHelper.getRequests().length, 3);
@@ -160,7 +160,7 @@ describe("azure chunked upload tests", function() {
                     assert.ok(!uploadRequest.requestHeaders["x-ms-meta-qqfilename"]);
                     assert.equal(uploadRequest.method, "PUT");
                     assert.equal(uploadRequest.url, expectedSasUri + "&comp=block&blockid=" + encodeURIComponent(btoa("00001")));
-                    uploadRequest.respond(201, null, null);
+                    uploadRequest.respond(201);
 
                     // signature request for put block list
                     assert.equal(fileTestHelper.getRequests().length, 5);
@@ -178,7 +178,7 @@ describe("azure chunked upload tests", function() {
                     assert.equal(putBlockListRequest.url, expectedSasUri + "&comp=blocklist");
                     assert.equal(putBlockListRequest.requestHeaders["x-ms-blob-content-type"], "image/jpeg");
                     assert.equal(putBlockListRequest.requestHeaders["x-ms-meta-qqfilename"], uploader.getName(0));
-                    putBlockListRequest.respond(201, null, null);
+                    putBlockListRequest.respond(201);
 
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_SUCCESSFUL);
                 });
@@ -220,7 +220,7 @@ describe("azure chunked upload tests", function() {
 
                     // failing signature request for upload part 1
                     assert.equal(signatureRequestPurl.param("bloburi"), testContainerEndpoint + "/" + uploader.getBlobName(0));
-                    signatureRequest.respond(500, null, null);
+                    signatureRequest.respond(500);
                     assert.equal(fileTestHelper.getRequests().length, 1);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_FAILED);
                     uploader.retry(0);
@@ -237,7 +237,7 @@ describe("azure chunked upload tests", function() {
                     assert.equal(fileTestHelper.getRequests().length, 3);
                     uploadRequest = fileTestHelper.getRequests()[2];
                     assert.equal(uploadRequest.url, expectedSasUri + "&comp=block&blockid=" + encodeURIComponent(btoa("00000")));
-                    uploadRequest.respond(404, null, null);
+                    uploadRequest.respond(404);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_FAILED);
                     uploader.retry(0);
                     assert.equal(fileTestHelper.getRequests().length, 4);
@@ -253,14 +253,14 @@ describe("azure chunked upload tests", function() {
                     assert.equal(fileTestHelper.getRequests().length, 5);
                     uploadRequest = fileTestHelper.getRequests()[4];
                     assert.equal(uploadRequest.url, expectedSasUri + "&comp=block&blockid=" + encodeURIComponent(btoa("00000")));
-                    uploadRequest.respond(201, null, null);
+                    uploadRequest.respond(201);
 
                     // failing signature request for upload part 2
                     assert.equal(fileTestHelper.getRequests().length, 6);
                     signatureRequest = fileTestHelper.getRequests()[5];
                     signatureRequestPurl = purl(signatureRequest.url);
                     assert.equal(signatureRequestPurl.param("bloburi"), testContainerEndpoint + "/" + uploader.getBlobName(0));
-                    signatureRequest.respond(500, null, null);
+                    signatureRequest.respond(500);
                     assert.equal(fileTestHelper.getRequests().length, 6);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_FAILED);
                     uploader.retry(0);
@@ -277,7 +277,7 @@ describe("azure chunked upload tests", function() {
                     assert.equal(fileTestHelper.getRequests().length, 8);
                     uploadRequest = fileTestHelper.getRequests()[7];
                     assert.equal(uploadRequest.url, expectedSasUri + "&comp=block&blockid=" + encodeURIComponent(btoa("00001")));
-                    uploadRequest.respond(404, null, null);
+                    uploadRequest.respond(404);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_FAILED);
                     uploader.retry(0);
                     assert.equal(fileTestHelper.getRequests().length, 9);
@@ -294,14 +294,14 @@ describe("azure chunked upload tests", function() {
                     uploadRequest = fileTestHelper.getRequests()[9];
                     assert.equal(uploadRequest.method, "PUT");
                     assert.equal(uploadRequest.url, expectedSasUri + "&comp=block&blockid=" + encodeURIComponent(btoa("00001")));
-                    uploadRequest.respond(201, null, null);
+                    uploadRequest.respond(201);
 
                     // failing signature request for put block list
                     assert.equal(fileTestHelper.getRequests().length, 11);
                     signatureRequest = fileTestHelper.getRequests()[10];
                     signatureRequestPurl = purl(signatureRequest.url);
                     assert.equal(signatureRequestPurl.param("bloburi"), testContainerEndpoint + "/" + uploader.getBlobName(0));
-                    signatureRequest.respond(500, null, null);
+                    signatureRequest.respond(500);
                     assert.equal(fileTestHelper.getRequests().length, 11);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_FAILED);
                     uploader.retry(0);
@@ -319,7 +319,7 @@ describe("azure chunked upload tests", function() {
                     putBlockListRequest = fileTestHelper.getRequests()[12];
                     assert.equal(putBlockListRequest.url, expectedSasUri + "&comp=blocklist");
                     assert.equal(putBlockListRequest.requestHeaders["x-ms-blob-content-type"], "image/jpeg");
-                    putBlockListRequest.respond(404, null, null);
+                    putBlockListRequest.respond(404);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_FAILED);
                     uploader.retry(0);
                     assert.equal(fileTestHelper.getRequests().length, 14);
@@ -336,7 +336,7 @@ describe("azure chunked upload tests", function() {
                     putBlockListRequest = fileTestHelper.getRequests()[14];
                     assert.equal(putBlockListRequest.url, expectedSasUri + "&comp=blocklist");
                     assert.equal(putBlockListRequest.requestHeaders["x-ms-blob-content-type"], "image/jpeg");
-                    putBlockListRequest.respond(201, null, null);
+                    putBlockListRequest.respond(201);
 
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_SUCCESSFUL);
                 });

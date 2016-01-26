@@ -76,7 +76,7 @@ qq.traditional.XhrUploadHandler = function(spec, proxy) {
 
         isErrorUploadResponse = function(xhr, response) {
             return qq.indexOf([200, 201, 202, 203, 204], xhr.status) < 0 ||
-                !response.success ||
+                response.success === false ||
                 response.reset;
         },
 
@@ -100,7 +100,9 @@ qq.traditional.XhrUploadHandler = function(spec, proxy) {
 
             try {
                 log(qq.format("Received response status {} with body: {}", xhr.status, xhr.responseText));
-                response = JSON.parse(xhr.responseText);
+                if (xhr.responseText.length && xhr.getResponseHeader("Content-Type").indexOf("application/json") === 0) {
+                    response = JSON.parse(xhr.responseText);
+                }
             }
             catch (error) {
                 upload && log("Error when attempting to parse xhr response text (" + error.message + ")", "error");

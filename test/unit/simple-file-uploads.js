@@ -62,7 +62,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(request.method, "PUT", "Wrong request method");
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(200);
 
                 done();
             });
@@ -83,7 +83,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 1, "Wrong # of requests");
 
-                fileTestHelper.getRequests()[0].respond(201, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(201);
             });
         });
 
@@ -102,7 +102,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 1, "Wrong # of requests");
 
-                fileTestHelper.getRequests()[0].respond(202, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(202);
             });
         });
 
@@ -121,7 +121,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 1, "Wrong # of requests");
 
-                fileTestHelper.getRequests()[0].respond(203, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(203);
             });
         });
 
@@ -140,7 +140,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 1, "Wrong # of requests");
 
-                fileTestHelper.getRequests()[0].respond(204, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(204);
             });
         });
 
@@ -159,7 +159,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 1, "Wrong # of requests");
 
-                fileTestHelper.getRequests()[0].respond(204, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(204);
             });
         });
 
@@ -193,7 +193,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(request.method, "POST", "Wrong request method");
                 assert.equal(request.url, testUploadEndpoint, "Wrong request url");
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(200);
             });
         });
 
@@ -222,7 +222,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(request.method, "POST", "Wrong request method");
                 assert.equal(request.url, testUploadEndpoint, "Wrong request url");
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(200);
             });
         });
 
@@ -248,7 +248,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(request.method, "POST", "Wrong request method");
                 assert.equal(purlUrl.attr("path"), testUploadEndpoint, "Wrong request url");
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(200);
             });
         });
 
@@ -322,7 +322,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 uploader.addFiles(blob);
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true, newUuid: newUuid}));
+                fileTestHelper.getRequests()[0].respond(200, {"Content-Type": "application/json"}, JSON.stringify({newUuid: newUuid}));
             });
         });
 
@@ -414,7 +414,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 fileTestHelper.mockXhr();
 
                 uploader.addFiles(blob);
-                fileTestHelper.getRequests()[0].respond(500, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(500);
             });
         });
 

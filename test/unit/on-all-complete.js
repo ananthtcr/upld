@@ -43,10 +43,10 @@ if (qqtest.canDownloadFileAsBlob) {
                     !autoUpload && uploader.uploadStoredFiles();
 
                     if (success) {
-                        fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                        fileTestHelper.getRequests()[0].respond(200);
                     }
                     else {
-                        fileTestHelper.getRequests()[0].respond(400, null, null);
+                        fileTestHelper.getRequests()[0].respond(400);
                     }
                 });
             },
@@ -65,12 +65,12 @@ if (qqtest.canDownloadFileAsBlob) {
                         onUpload: function(id) {
                             if (success) {
                                 setTimeout(function() {
-                                    fileTestHelper.getRequests()[id].respond(200, null, JSON.stringify({success: true}));
+                                    fileTestHelper.getRequests()[id].respond(200);
                                 }, 0);
                             }
                             else {
                                 setTimeout(function() {
-                                    fileTestHelper.getRequests()[id].respond(400, null, null);
+                                    fileTestHelper.getRequests()[id].respond(400);
                                 }, 0);
                             }
                         },
@@ -172,12 +172,12 @@ if (qqtest.canDownloadFileAsBlob) {
                     onUpload: function(id) {
                         if (id === failId) {
                             setTimeout(function() {
-                                fileTestHelper.getRequests()[id].respond(400, null, null);
+                                fileTestHelper.getRequests()[id].respond(400);
                             }, 0);
                         }
                         else {
                             setTimeout(function() {
-                                fileTestHelper.getRequests()[id].respond(200, null, JSON.stringify({success: true}));
+                                fileTestHelper.getRequests()[id].respond(200);
                             }, 0);
                         }
                     },
@@ -218,7 +218,7 @@ if (qqtest.canDownloadFileAsBlob) {
                     },
                     onUpload: function(id) {
                         setTimeout(function() {
-                            fileTestHelper.getRequests()[id].respond(200, null, JSON.stringify({success: true}));
+                            fileTestHelper.getRequests()[id].respond(200);
                         }, 0);
                     },
                     onAllComplete: function(succeeded, failed) {
@@ -283,7 +283,7 @@ if (qqtest.canDownloadFileAsBlob) {
                     },
                     onUpload: function(id) {
                         setTimeout(function() {
-                            fileTestHelper.getRequests()[id].respond(200, null, JSON.stringify({success: true}));
+                            fileTestHelper.getRequests()[id].respond(200);
                         }, 0);
                     },
                     onAllComplete: function(succeeded, failed) {

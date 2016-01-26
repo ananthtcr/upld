@@ -264,7 +264,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 setTimeout(function() {
                     var uploadRequest = fileTestHelper.getRequests()[1];
-                    uploadRequest.respond(201, null, null);
+                    uploadRequest.respond(201);
                 }, 0);
             });
         });
@@ -397,7 +397,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                     uploadSuccessRequest = fileTestHelper.getRequests()[2];
                     assert.equal(uploadSuccessRequest.method, "PATCH");
-                    uploadSuccessRequest.respond(200, null, null);
+                    uploadSuccessRequest.respond(200);
                     assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_SUCCESSFUL);
                     done();
                 }, 0);

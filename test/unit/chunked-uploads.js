@@ -53,7 +53,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                             setTimeout(function () {
                                 var request = fileTestHelper.getRequests()[fileTestHelper.getRequests().length - 1];
-                                request.respond(200, null, JSON.stringify({success: true, testParam: "testVal"}));
+                                request.respond(200, {"Content-Type": "application/json"}, JSON.stringify({testParam: "testVal"}));
                             }, 10);
                         },
                         onUploadChunkSuccess: function (id, chunkData, response, xhr) {
@@ -147,15 +147,15 @@ if (qqtest.canDownloadFileAsBlob) {
                                     if (restartAfterFailure) {
                                         chunksSent = 0;
                                         chunksSucceeded = 0;
-                                        request.respond(500, null, JSON.stringify({reset: true, testParam: "testVal"}));
+                                        request.respond(500, {"Content-Type": "application/json"}, JSON.stringify({reset: true, testParam: "testVal"}));
                                     }
                                     else {
                                         chunksSent--;
-                                        request.respond(500, null, JSON.stringify({testParam: "testVal"}));
+                                        request.respond(500, {"Content-Type": "application/json"}, JSON.stringify({testParam: "testVal"}));
                                     }
                                 }
                                 else {
-                                    request.respond(200, null, JSON.stringify({success: true, testParam: "testVal"}));
+                                    request.respond(200, {"Content-Type": "application/json"}, JSON.stringify({testParam: "testVal"}));
                                 }
                             }, 10);
                         },
@@ -253,7 +253,7 @@ if (qqtest.canDownloadFileAsBlob) {
                         qq.each(fileTestHelper.getRequests(), function(idx, req) {
                             if (!req.ack && (!endpoint || endpoint === req.url)) {
                                 req.ack = true;
-                                req.respond(200, null, JSON.stringify({success: true, testParam: "testVal"}));
+                                req.respond(200, {"Content-Type": "application/json"}, JSON.stringify({testParam: "testVal"}));
                             }
                         });
                     }, 10);
@@ -335,7 +335,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 qqtest.downloadFileAsBlob("up.jpg", "image/jpeg").then(function (blob) {
                     fileTestHelper.mockXhr();
                     uploader.addFiles({name: "test", blob: blob});
-                    fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                    fileTestHelper.getRequests()[0].respond(200, null, null);
                 });
             }
 

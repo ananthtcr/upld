@@ -622,7 +622,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(uploadSuccessRequestParsedBody.bucket, testBucketName);
                 assert.equal(uploadSuccessRequestParsedBody.etag, "123");
 
-                uploadSuccessRequest.respond(200, null, null);
+                uploadSuccessRequest.respond(200);
                 assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_SUCCESSFUL);
 
                 done();
@@ -644,7 +644,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 var uploadSuccessRequest;
 
                 signatureRequest.respond(200, null, JSON.stringify({policy: "thepolicy", signature: "thesignature"}));
-                uploadRequest.respond(200, null, null);
+                uploadRequest.respond(200);
 
                 uploadSuccessRequest = fileTestHelper.getRequests()[2];
                 assert.equal(uploadSuccessRequest.url, uploadSuccessUrl);
@@ -671,11 +671,11 @@ if (qqtest.canDownloadFileAsBlob) {
                 var uploadSuccessRequest, uploadSuccessRequestParsedBody;
 
                 signatureRequest.respond(200, null, JSON.stringify({policy: "thepolicy", signature: "thesignature"}));
-                uploadRequest.respond(200, null, null);
+                uploadRequest.respond(200);
 
                 uploadSuccessRequest = fileTestHelper.getRequests()[2];
                 assert.equal(uploadSuccessRequest.method, "PUT");
-                uploadSuccessRequest.respond(200, null, null);
+                uploadSuccessRequest.respond(200);
                 assert.equal(uploader.getUploads()[0].status, qq.status.UPLOAD_SUCCESSFUL);
 
                 done();

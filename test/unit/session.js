@@ -51,7 +51,7 @@ describe("file list initialization tests", function() {
             /* jshint eqnull:true */
             assert.ok(purl(request.url).param("qqtimestamp") != null, "cache buster query param missing");
 
-            request.respond(200, null, JSON.stringify(expectedSessionResponse));
+            request.respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse));
 
             assert.equal(uploader.getUploads().length, 2, "wrong number of pre-populated uploads recorded");
             assert.equal(uploader.getUploads({status: qq.status.UPLOAD_SUCCESSFUL}).length, 2, "wrong status for one or more recorded files");
@@ -117,7 +117,7 @@ describe("file list initialization tests", function() {
             );
 
             setTimeout(function() {
-                fileHelper.getRequests()[0].respond(200, null, JSON.stringify(expectedSessionResponse));
+                fileHelper.getRequests()[0].respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse));
             }, 0);
         });
     }
@@ -150,7 +150,7 @@ describe("file list initialization tests", function() {
 
         setTimeout(function() {
             request = fileHelper.getRequests()[0];
-            request.respond(200, null, JSON.stringify(expectedSessionResponse));
+            request.respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse));
             assert.equal(uploader.getUploads().length, 0, "wrong number of pre-populated uploads recorded");
         }, 0);
     });
@@ -174,7 +174,7 @@ describe("file list initialization tests", function() {
 
         setTimeout(function() {
             request = fileHelper.getRequests()[0];
-            request.respond(400, null, "[]");
+            request.respond(400, {"Content-Type": "application/json"}, "[]");
             assert.equal(uploader.getUploads().length, 0, "wrong number of pre-populated uploads recorded");
         }, 0);
     });
@@ -198,7 +198,7 @@ describe("file list initialization tests", function() {
 
         setTimeout(function() {
             request = fileHelper.getRequests()[0];
-            request.respond(200, null, "hi");
+            request.respond(200, {"Content-Type": "application/json"}, "hi");
             assert.equal(uploader.getUploads().length, 0, "wrong number of pre-populated uploads recorded");
         }, 0);
     });
@@ -244,14 +244,14 @@ describe("file list initialization tests", function() {
 
         setTimeout(function() {
             request = fileHelper.getRequests()[0];
-            request.respond(200, null, JSON.stringify(expectedSessionResponse1));
+            request.respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse1));
             assert.equal(uploader.getUploads().length, 1, "wrong number of pre-populated uploads recorded");
 
             uploader.reset();
             setTimeout(function() {
                 assert.equal(fileHelper.getRequests().length, 2, "wrong number of requests");
                 request = fileHelper.getRequests()[1];
-                request.respond(200, null, JSON.stringify(expectedSessionResponse2));
+                request.respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse2));
                 assert.equal(uploader.getUploads().length, 1, "wrong number of pre-populated uploads recorded");
             }, 0);
         }, 0);
@@ -293,7 +293,7 @@ describe("file list initialization tests", function() {
 
         setTimeout(function() {
             request = fileHelper.getRequests()[0];
-            request.respond(200, null, JSON.stringify(expectedSessionResponse));
+            request.respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse));
 
             uploader.deleteFile(0);
             assert.equal(fileHelper.getRequests().length, 2, "1st delete request did not register");
@@ -365,7 +365,7 @@ describe("file list initialization tests", function() {
 
             setTimeout(function() {
                 request = fileHelper.getRequests()[0];
-                request.respond(200, null, JSON.stringify(expectedSessionResponse));
+                request.respond(200, {"Content-Type": "application/json"}, JSON.stringify(expectedSessionResponse));
                 assert.equal(uploader.getUploads().length, 1, "wrong number of pre-populated uploads recorded");
             }, 0);
         }

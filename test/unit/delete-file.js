@@ -110,7 +110,7 @@ if (qqtest.canDownloadFileAsBlob) {
                                 assert.equal(deleteRequest.requestHeaders.two, expectedHeaders.two, "Wrong 'two' header");
                             }
 
-                            deleteRequest.respond(successful ? 200 : 500, null, null);
+                            deleteRequest.respond(successful ? 200 : 500);
                         }
                         else {
                             /* jshint eqnull:true */
@@ -167,7 +167,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 1, "Wrong # of requests");
                 request = fileTestHelper.getRequests()[0];
-                request.respond(200, null, JSON.stringify({success: true}));
+                request.respond(200);
             });
         }
 

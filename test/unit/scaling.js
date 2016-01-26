@@ -9,7 +9,7 @@ if (qq.supportedFeatures.scaling) {
                     qq.each(fileTestHelper.getRequests(), function(idx, req) {
                         if (!req.ack) {
                             req.ack = true;
-                            req.respond(200, null, JSON.stringify({success: true}));
+                            req.respond(200);
                         }
                     });
                 }, 10);
@@ -310,7 +310,7 @@ if (qq.supportedFeatures.scaling) {
                                     assert.equal(parentSize, undefined);
                                 }
 
-                                req.respond(200, null, JSON.stringify({success: true}));
+                                req.respond(200);
                             }, 10);
                         },
                         onAllComplete: function(successful, failed) {
@@ -358,7 +358,7 @@ if (qq.supportedFeatures.scaling) {
 
                                 assert.equal(file.type, expectedOutputTypes[id]);
 
-                                req.respond(200, null, JSON.stringify({success: true}));
+                                req.respond(200);
                             }, 10);
                         }
                     }
@@ -558,7 +558,7 @@ if (qq.supportedFeatures.scaling) {
                                     actualType = req.requestBody.fields.qqfile.type;
 
                                 assert.equal(actualType, expectedScaledBlobType[id], "(" + id + ") Scaled blob type (" + actualType + ")  is incorrect.  Expected " + expectedScaledBlobType[id]);
-                                req.respond(200, null, JSON.stringify({success: true}));
+                                req.respond(200);
                             }, 10);
                         },
                         onAllComplete: function(successful, failed) {
@@ -646,7 +646,7 @@ if (qq.supportedFeatures.scaling) {
                                 });
 
 
-                                req.respond(200, null, JSON.stringify({success: true}));
+                                req.respond(200);
                             }, 10);
                         },
                         onAllComplete: function(successful, failed) {
@@ -813,7 +813,7 @@ if (qq.supportedFeatures.scaling) {
                                     assert.fail(null, null, name + " does not contains EXIF data, unexpectedly");
                                 }
                             });
-                            req.respond(200, null, JSON.stringify({success: true}));
+                            req.respond(200);
                         }, 10);
                     }
                 }

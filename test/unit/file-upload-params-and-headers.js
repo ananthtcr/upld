@@ -68,7 +68,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(mpe ? requestParams.one : purlUrl.param("one"), theparams.one, "'one' param value incorrect");
                 assert.equal(mpe ? requestParams.thefunc : purlUrl.param("thefunc"), theparams.thefunc(), "'thefunc' param value incorrect");
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(200);
             });
         }
 
@@ -90,7 +90,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(request.requestHeaders.one, headers.one, "Wrong 'one' header");
                 assert.equal(request.requestHeaders.two, headers.two, "Wrong 'two' header");
 
-                fileTestHelper.getRequests()[0].respond(200, null, JSON.stringify({success: true}));
+                fileTestHelper.getRequests()[0].respond(200);
             });
         }
 

@@ -91,7 +91,7 @@ if (qqtest.canDownloadFileAsBlob) {
                 assert.equal(deleteFileRequest.method, "DELETE");
                 assert.equal(deleteFileRequest.url, "http://sasuri.com");
 
-                deleteFileRequest.respond(202, null, null);
+                deleteFileRequest.respond(202);
 
                 assert.equal(uploader.getUploads()[0].status, qq.status.DELETED);
                 assert.deepEqual(actualCallbackOrder, expectedCallbackOrder);
@@ -122,7 +122,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 uploader.deleteFile(0);
                 deleteFileSignatureRequest = fileTestHelper.getRequests()[2];
-                deleteFileSignatureRequest.respond(500, null, null);
+                deleteFileSignatureRequest.respond(500);
 
                 assert.equal(fileTestHelper.getRequests().length, 3);
                 assert.equal(uploader.getUploads()[0].status, qq.status.DELETE_FAILED);
@@ -157,7 +157,7 @@ if (qqtest.canDownloadFileAsBlob) {
 
                 assert.equal(fileTestHelper.getRequests().length, 4);
                 deleteFileRequest = fileTestHelper.getRequests()[3];
-                deleteFileRequest.respond(500, null, null);
+                deleteFileRequest.respond(500);
 
                 assert.equal(uploader.getUploads()[0].status, qq.status.DELETE_FAILED);
             });

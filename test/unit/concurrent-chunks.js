@@ -14,7 +14,7 @@ if (qqtest.canDownloadFileAsBlob) {
                     qq.each(fileTestHelper.getRequests(), function(idx, req) {
                         if (!req.ack && (!endpoint || endpoint === req.url)) {
                             req.ack = true;
-                            req.respond(200, null, JSON.stringify({success: true, testParam: "testVal"}));
+                            req.respond(200, {"Content-Type": "application/json"}, JSON.stringify({testParam: "testVal"}));
                         }
                     });
                 }, 10);
@@ -158,7 +158,7 @@ if (qqtest.canDownloadFileAsBlob) {
                                         parsedBody = purl("http://example.com?" + req.requestBody).param();
                                         assert.equal(parsedBody.test_param, "test");
 
-                                        req.respond(500, null, JSON.stringify({error: "oops", otherstuff: "foobar"}));
+                                        req.respond(500, {"Content-Type": "application/json"}, JSON.stringify({error: "oops", otherstuff: "foobar"}));
                                     }
                                 });
                             }, 10);
