@@ -174,7 +174,7 @@ var uploader = new qq.FineUploader({
                 fileItem = this.getItemByFileId(id);
 
             if (response.success) {
-                var viewBtn = qq(fileItem).getByClass("view-btn")[0];
+                var viewBtn = fileItem.querySelector(".view-btn");
 
                 viewBtn.setAttribute("href", serverPathToFile);
                 qq(viewBtn).removeClass("hide");

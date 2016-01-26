@@ -236,7 +236,7 @@ qq.Templating = function(spec) {
         },
 
         getFile = function(id) {
-            return fileBatch.map[id] || qq(fileList).getFirstByClass(FILE_CLASS_PREFIX + id);
+            return fileBatch.map[id] || fileList.querySelector("." + FILE_CLASS_PREFIX + id);
         },
 
         getFilename = function(id) {
@@ -273,7 +273,7 @@ qq.Templating = function(spec) {
         },
 
         getTemplateEl = function(context, cssClass) {
-            return context && qq(context).getFirstByClass(cssClass);
+            return context && context.querySelector("." + cssClass);
         },
 
         getThumbnail = function(id) {
@@ -378,12 +378,12 @@ qq.Templating = function(spec) {
             scriptHtml = qq.trimStr(scriptHtml);
             tempTemplateEl = document.createElement("div");
             tempTemplateEl.appendChild(qq.toElement(scriptHtml));
-            uploaderEl = qq(tempTemplateEl).getFirstByClass(selectorClasses.uploader);
+            uploaderEl = tempTemplateEl.querySelector("." + selectorClasses.uploader);
 
             // Don't include the default template button in the DOM
             // if an alternate button container has been specified.
             if (options.button) {
-                defaultButton = qq(tempTemplateEl).getFirstByClass(selectorClasses.button);
+                defaultButton = tempTemplateEl.querySelector("." + selectorClasses.button);
                 if (defaultButton) {
                     qq(defaultButton).remove();
                 }
@@ -395,13 +395,13 @@ qq.Templating = function(spec) {
             // to support layouts where the drop zone is also a container for visible elements,
             // such as the file list.
             if (!qq.DragAndDrop || !qq.supportedFeatures.fileDrop) {
-                dropProcessing = qq(tempTemplateEl).getFirstByClass(selectorClasses.dropProcessing);
+                dropProcessing = tempTemplateEl.querySelector("." + selectorClasses.dropProcessing);
                 if (dropProcessing) {
                     qq(dropProcessing).remove();
                 }
             }
 
-            dropArea = qq(tempTemplateEl).getFirstByClass(selectorClasses.drop);
+            dropArea = tempTemplateEl.querySelector("." + selectorClasses.drop);
 
             // If DnD is not available then remove
             // it from the DOM as well.
@@ -424,13 +424,13 @@ qq.Templating = function(spec) {
                 }
             }
             else if (qq(uploaderEl).hasAttribute(DROPZPONE_TEXT_ATTR) && dropArea) {
-                dropTextEl = qq(dropArea).getFirstByClass(selectorClasses.dropText);
+                dropTextEl = dropArea.querySelector("." + selectorClasses.dropText);
                 dropTextEl && qq(dropTextEl).remove();
             }
 
             // Ensure the `showThumbnails` flag is only set if the thumbnail element
             // is present in the template AND the current UA is capable of generating client-side previews.
-            thumbnail = qq(tempTemplateEl).getFirstByClass(selectorClasses.thumbnail);
+            thumbnail = tempTemplateEl.querySelector("." + selectorClasses.thumbnail);
             if (!showThumbnails) {
                 thumbnail && qq(thumbnail).remove();
             }
@@ -443,10 +443,10 @@ qq.Templating = function(spec) {
             }
             showThumbnails = showThumbnails && thumbnail;
 
-            isEditElementsExist = qq(tempTemplateEl).getByClass(selectorClasses.editFilenameInput).length > 0;
-            isRetryElementExist = qq(tempTemplateEl).getByClass(selectorClasses.retry).length > 0;
+            isEditElementsExist = tempTemplateEl.querySelectorAll("." + selectorClasses.editFilenameInput).length > 0;
+            isRetryElementExist = tempTemplateEl.querySelectorAll("." + selectorClasses.retry).length > 0;
 
-            fileListNode = qq(tempTemplateEl).getFirstByClass(selectorClasses.list);
+            fileListNode = tempTemplateEl.querySelector("." + selectorClasses.list);
             /*jshint -W116*/
             if (fileListNode == null) {
                 throw new Error("Could not find the file list container in the template!");
@@ -576,7 +576,7 @@ qq.Templating = function(spec) {
                 progressBarSelector = id == null ? selectorClasses.totalProgressBar : selectorClasses.progressBar;
 
             if (bar && !qq(bar).hasClass(progressBarSelector)) {
-                bar = qq(bar).getFirstByClass(progressBarSelector);
+                bar = bar.querySelector("." + progressBarSelector);
             }
 
             if (bar) {

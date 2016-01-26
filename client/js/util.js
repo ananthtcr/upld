@@ -98,31 +98,6 @@ var qq = function(element) {
             return this;
         },
 
-        getByClass: function(className, first) {
-            var candidates,
-                result = [];
-
-            if (first && element.querySelector) {
-                return element.querySelector("." + className);
-            }
-            else if (element.querySelectorAll) {
-                return element.querySelectorAll("." + className);
-            }
-
-            candidates = element.getElementsByTagName("*");
-
-            qq.each(candidates, function(idx, val) {
-                if (qq(val).hasClass(className)) {
-                    result.push(val);
-                }
-            });
-            return first ? result[0] : result;
-        },
-
-        getFirstByClass: function(className) {
-            return qq(element).getByClass(className, true);
-        },
-
         children: function() {
             var children = [],
                 child = element.firstChild;

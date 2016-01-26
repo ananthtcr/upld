@@ -149,21 +149,6 @@ sure to wrap any elements before calling these methods on them.
 ]
 ) }}
 
-{{ api_method("qq.getByClass", "getByClass (className)", "Returns an array of all descendants of this element that contain a specific class name.",
-[
-    {
-        "name": "className",
-        "type": "String",
-        "description": "The name of the class to look for in each element."
-    }
-],
-[
-    {
-        "type": "Array",
-        "description": "An array of `HTMLElements`"
-    }
-]) }}
-
 {{ api_method("qq.hasClass", "hasClass (className)", "Returns `true` if the element has the class name",
 [
     {

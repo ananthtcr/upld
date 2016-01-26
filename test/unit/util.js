@@ -95,48 +95,7 @@ describe("util.js", function () {
 
             assert.ok(!$(el).hasClass("derp"), "class should have been removed from the element");
         });
-    }); // hasClass
-
-    describe("getByClass", function () {
-        it("gets a list of elements by class", function () {
-            var results, q;
-
-            results = [];
-            $fixture.empty();
-            q = qq($fixture[0]);
-            $fixture.append("<div class='foo'></div>");
-            $fixture.append("<div class='bar'></div>");
-            $fixture.append("<div class='foo bar'></div>");
-
-            results = q.getByClass("foo");
-
-            assert.equal(results.length, 2, "getting the wrong number of classes");
-
-            results = q.getByClass("bar");
-
-            assert.equal(results.length, 2, "getting the wrong number of classes");
-        });
-
-    }); // getByClass
-
-    describe("getFirstByClass", function () {
-        it("gets the first element that matches a specific class", function () {
-            var result, q;
-
-            $fixture.empty();
-            q = qq($fixture[0]);
-            $fixture.append("<div class='foo one'></div>");
-            $fixture.append("<div class='bar two'></div>");
-            $fixture.append("<div class='foo bar three'></div>");
-
-            result = q.getFirstByClass("foo");
-            assert.ok(qq(result).hasClass("one"), "wrong element");
-
-            result = q.getFirstByClass("bar");
-            assert.ok(qq(result).hasClass("two"), "wrong element");
-        });
-
-    });
+    }); // removeClass
 
     describe("children", function () {
         it("returns a list of children of an element", function () {
