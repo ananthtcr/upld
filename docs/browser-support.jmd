@@ -9,7 +9,7 @@ Currently, Fine Uploader supports the following browsers:
 * Internet Explorer 8+
 * Firefox
 * Chrome
-* Chrome mobile (iOS & Android)
+* Chrome mobile (Android only)
 * Opera 15+
 * Android 2.3.x+
 * iOS 6+
@@ -56,26 +56,6 @@ Note: Any features not listed here are supported in all browsers.
             <td>{{ label('√', "success") }}</td>
             <td>{{ label('√', "success") }}</td>
             <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-        </tr>
-        <tr>
-            <td>Chrome iOS 6+</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}<a style="font-size: 24px" href="#ios-multiple">*</a></td>
-            <td>{{ label('-', "") }}</td>
-            <td>{{ label('-', "") }}</td>
-            <td>{{ label('-', "") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('-', "") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('√', "success") }}</td>
-            <td>{{ label('x', "important") }}</td>
             <td>{{ label('√', "success") }}</td>
             <td>{{ label('√', "success") }}</td>
             <td>{{ label('√', "success") }}</td>
@@ -408,7 +388,7 @@ Feature     | Description
 
 ## iOS (iPhone, iPad, iPod, etc) Browsers
 
-Fine Uploader supports mobile Safari and mobile Chrome found on iOS 6+. One caveat to take into
+Fine Uploader supports mobile Safari on iOS 6+. One caveat to take into
 account is that iOS saves all image files on the camera roll is "image.jpg".
 Ensure that your server is saving files with some sort of unique identifier appended to the path
 because otherwise your iOS users will be overwriting each others' images.

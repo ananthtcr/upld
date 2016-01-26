@@ -135,8 +135,7 @@ alert("The `chunking.success.endpoint` option **only** applies to traditional up
         ("messages.retryFailTooManyItemsError", "retryFailTooManyItemsError", "Text passed to the error event handler if a retry attempt is declared a failed due to a violation of [the `validation.itemLimit` rule](#validation.itemLimit).", "String", "Retry failed - you have reached your file limit.",),
         ("messages.sizeError", "sizeError", "Text passed to the error event handler if a submitted item is too large.", "String", "{file} is too large, maximum file size is {sizeLimit}.",),
         ("messages.tooManyItemsError", "tooManyItemsError", "Text passed to the error event handler if a submit is ignored due to a violation of [the `validation.itemLimit` rules](#validation.itemLimit).", "String", "Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.",),
-        ("messages.typeError", "typeError", "Text passed to the error event handler if an invalid file type is detected.", "String", "{file} has an invalid extension. Valid extension(s): {extensions}.",),
-        ("messages.unsupportedBrowserIos8Safari", "unsupportedBrowserIos8Safari", "Message displayed if the browser is iOS8 Safari and the corresponding workarounds option is not disabled.", "String", "Unrecoverable error - this browser does not permit file uploading of any kind due to serious bugs in iOS8 Safari.  Please use iOS8 Chrome until Apple fixes these issues.",),
+        ("messages.typeError", "typeError", "Text passed to the error event handler if an invalid file type is detected.", "String", "{file} has an invalid extension. Valid extension(s): {extensions}.",)
     )
 )
 }}
@@ -232,14 +231,6 @@ alert("The `chunking.success.endpoint` option **only** applies to traditional up
 )
 }}
 
-{{ api_parent_option("workarounds", "workarounds", "Flags that enable or disable workarounds for browser-specific bugs.",
-    (
-        ("workarounds.iosEmptyVideos", "iosEmptyVideos", "Ensures all `<input type='file'>` elements tracked by Fine Uploader do NOT contain a `multiple` attribute to work around an issue present in iOS7 & 8 that otherwise results in 0-sized uploaded videos.", "Boolean", "true",),
-        ("workarounds.ios8BrowserCrash", "ios8BrowserCrash", "Ensures all `<input type='file'>` elements tracked by Fine Uploader always have a `multiple` attribute present.  This only applies to iOS8 Chrome and iOS8 UIWebView, and is put in place to work around an issue that causes the browser to crash when a file input element does not contain a `multiple` attribute inside of a UIWebView container created by an iOS8 app compiled with and iOS7 SDK.", "Boolean", "false",),
-        ("workarounds.ios8SafariUploads", "ios8SafariUploads", "Disables Fine Uploader and displays a message to the user in iOS 8.0.0 Safari.  Due to serious bugs in iOS 8.0.0 Safari, uploading is not possible.  This was apparently fixed in subsequent builds of iOS8, so this workaround only targets 8.0.0.", "Boolean", "true",)
-    )
-)
-}}
 </div>
 </div>
 

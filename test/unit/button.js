@@ -30,8 +30,7 @@ describe("button.js", function () {
 
         var button = new qq.UploadButton({
             element: $fixture.find("#foo")[0],
-            multiple: true,
-            ios8BrowserCrashWorkaround: false
+            multiple: true
         });
 
         var input = button.getInput();
@@ -67,11 +66,7 @@ describe("button.js", function () {
             var input;
             var button = new qq.UploadButton({
                 element: $button[0],
-                multiple: false,
-                workarounds: {
-                    ios8BrowserCrash: false,
-                    iosEmptyVideos: false
-                }
+                multiple: false
             });
 
             input = button.getInput();

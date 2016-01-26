@@ -132,9 +132,6 @@ qq(window).attach("load", function() {
                 notAvailablePath: "/client/placeholders/not_available-generic.png"
             }
         },
-        workarounds: {
-            ios8BrowserCrash: false
-        },
         callbacks: {
             onError: errorHandler,
             onUpload: function(id, filename) {

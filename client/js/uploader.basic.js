@@ -79,8 +79,7 @@
                 minHeightImageError: "Image is not tall enough.",
                 minWidthImageError: "Image is not wide enough.",
                 retryFailTooManyItems: "Retry failed - you have reached your file limit.",
-                onLeave: "The files are being uploaded, if you leave now the upload will be canceled.",
-                unsupportedBrowserIos8Safari: "Unrecoverable error - this browser does not permit file uploading of any kind due to serious bugs in iOS8 Safari.  Please use iOS8 Chrome until Apple fixes these issues."
+                onLeave: "The files are being uploaded, if you leave now the upload will be canceled."
             },
 
             retry: {
@@ -206,12 +205,6 @@
 
                 // metadata about each requested scaled version
                 sizes: []
-            },
-
-            workarounds: {
-                iosEmptyVideos: true,
-                ios8SafariUploads: true,
-                ios8BrowserCrash: false
             }
         };
 

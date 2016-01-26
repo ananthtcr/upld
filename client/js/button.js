@@ -31,9 +31,7 @@ qq.UploadButton = function(o) {
             name: "qqfile",
 
             // Called when the browser invokes the onchange handler on the `<input type="file">`
-            onChange: function(input) {},
-
-            ios8BrowserCrashWorkaround: false
+            onChange: function(input) {}
         },
         input, buttonId;
 
@@ -116,20 +114,11 @@ qq.UploadButton = function(o) {
         setMultiple: function(isMultiple, optInput) {
             var input = optInput || this.getInput();
 
-            // Temporary workaround for bug in in iOS8 UIWebView that causes the browser to crash
-            // before the file chooser appears if the file input doesn't contain a multiple attribute.
-            // See #1283.
-            if (options.ios8BrowserCrashWorkaround && qq.ios8() && (qq.iosChrome() || qq.iosSafariWebView())) {
+            if (isMultiple) {
                 input.setAttribute("multiple", "");
             }
-
             else {
-                if (isMultiple) {
-                    input.setAttribute("multiple", "");
-                }
-                else {
-                    input.removeAttribute("multiple");
-                }
+                input.removeAttribute("multiple");
             }
         },
 

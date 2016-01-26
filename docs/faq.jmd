@@ -59,6 +59,13 @@ These are all required to give you the best possible experience.
 Apple doesn't appear to be interested in maintaining Safari for Windows anymore either.  Switch to Chrome.
 
 <br/>
+**Q:** Why isn't Chrome on iOS supported?
+
+**A:** It _was_ supported at one point, but support was removed as of Fine Uploader 6.0. Chrome for iOS
+is a very buggy browser and Google does not seem interested in making it usable on iOS, based on the
+number of serious long-standing bugs. Safari is a far superior browser on iOS.
+
+<br/>
 **Q:** Why isn't folder drag & drop uploading supported in any browser other than Chrome 21+ & Opera 15+?
 
 **A:** Chrome 21 was the first browser version to implement the HTML5 Filesystem API.  This is required to handle dropped folders.

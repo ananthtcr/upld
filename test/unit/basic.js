@@ -43,18 +43,14 @@ describe("uploader.basic.js", function () {
             button: $button[0]
         });
 
-        assert.equal(qq(getFileInput($button)).hasAttribute("multiple"), qq.supportedFeatures.ajaxUploading && !qq.ios());
+        assert.equal(qq(getFileInput($button)).hasAttribute("multiple"), qq.supportedFeatures.ajaxUploading);
     });
 
     it("Excludes the multiple attribute on the file input element if requested", function() {
         var uploader = new qq.FineUploaderBasic({
             element: $fixture[0],
             button: $button[0],
-            multiple: false,
-            workarounds: {
-                ios8BrowserCrash: false,
-                iosEmptyVideos: false
-            }
+            multiple: false
         });
 
         assert.ok(!qq(getFileInput($button)).hasAttribute("multiple"));
@@ -64,10 +60,6 @@ describe("uploader.basic.js", function () {
         var uploader = new qq.FineUploaderBasic({
             element: $fixture[0],
             button: $button[0],
-            workarounds: {
-                ios8BrowserCrash: false,
-                iosEmptyVideos: false
-            },
             validation: {
                 allowedExtensions: ["gif", "mov"]
             },

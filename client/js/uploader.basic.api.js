@@ -12,8 +12,6 @@
         },
 
         addFiles: function(data, params, endpoint) {
-            this._maybeHandleIos8SafariWorkaround();
-
             var batchId = this._storedIds.length === 0 ? qq.getUniqueId() : this._currentBatchId,
 
                 processBlob = qq.bind(function(blob) {
@@ -603,15 +601,6 @@
 
             function allowMultiple() {
                 if (qq.supportedFeatures.ajaxUploading) {
-                    // Workaround for bug in iOS7+ (see #1039)
-                    if (self._options.workarounds.iosEmptyVideos &&
-                        qq.ios() &&
-                        !qq.ios6() &&
-                        self._isAllowedExtension(allowedExtensions, ".mov")) {
-
-                        return false;
-                    }
-
                     if (spec.multiple === undefined) {
                         return self._options.multiple;
                     }
@@ -630,8 +619,7 @@
                 acceptFiles: acceptFiles,
                 onChange: function(input) {
                     self._onInputChange(input);
-                },
-                ios8BrowserCrashWorkaround: this._options.workarounds.ios8BrowserCrash
+                }
             });
 
             this._disposeSupport.addDisposer(function() {
@@ -1217,17 +1205,6 @@
                 setTimeout(function() {
                     self._onAllComplete(self._succeededSinceLastAllComplete, self._failedSinceLastAllComplete);
                 }, 0);
-            }
-        },
-
-        _maybeHandleIos8SafariWorkaround: function() {
-            var self = this;
-
-            if (this._options.workarounds.ios8SafariUploads && qq.ios800() && qq.iosSafari()) {
-                setTimeout(function() {
-                    window.alert(self._options.messages.unsupportedBrowserIos8Safari);
-                }, 0);
-                throw new qq.Error(this._options.messages.unsupportedBrowserIos8Safari);
             }
         },
 

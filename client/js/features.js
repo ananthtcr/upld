@@ -131,7 +131,7 @@ qq.supportedFeatures = (function() {
 
     supportsUploadProgress = (function() {
         if (supportsAjaxFileUploading) {
-            return !qq.androidStock() && !qq.iosChrome();
+            return !qq.androidStock();
         }
         return false;
     }());
