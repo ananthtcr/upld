@@ -30,28 +30,6 @@ var qq = function(element) {
             return this;
         },
 
-        contains: function(descendant) {
-            // The [W3C spec](http://www.w3.org/TR/domcore/#dom-node-contains)
-            // says a `null` (or ostensibly `undefined`) parameter
-            // passed into `Node.contains` should result in a false return value.
-            // IE7 throws an exception if the parameter is `undefined` though.
-            if (!descendant) {
-                return false;
-            }
-
-            // compareposition returns false in this case
-            if (element === descendant) {
-                return true;
-            }
-
-            if (element.contains) {
-                return element.contains(descendant);
-            } else {
-                /*jslint bitwise: true*/
-                return !!(descendant.compareDocumentPosition(element) & 8);
-            }
-        },
-
         /**
          * Insert this element before elementB.
          */

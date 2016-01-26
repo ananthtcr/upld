@@ -79,22 +79,6 @@ sure to wrap any elements before calling these methods on them.
     }
 ]) }}
 
-{{ api_method("qq.contains", "contains (element)", "Returns `true` if the element contains the passed element.",
-[
-    {
-        "name": "element",
-        "type": "HTMLElement",
-        "description": "An HTMLElement or an already wrapped `qq` object."
-    }
-],
-[
-    {
-        "type": "Boolean",
-        "description": "The result of the contains test."
-    }
-]
-) }}
-
 {{ api_method("qq.hasAttribute", "hasAttribute (attributeName)", "Returns `true` if the attribute exists on the element and the value of the attribute is not 'false' case-insensitive.",
 [
     {

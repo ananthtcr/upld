@@ -454,7 +454,7 @@ qq.UploadDropZone = function(o) {
 
             var relatedTarget = document.elementFromPoint(e.clientX, e.clientY);
             // do not fire when moving a mouse over a descendant
-            if (qq(this).contains(relatedTarget)) {
+            if (this.contains(relatedTarget)) {
                 return;
             }
 

@@ -30,41 +30,6 @@ describe("util.js", function () {
         });
     }); // detach
 
-    describe("contains", function () {
-        it("returns true if the element contains itself", function () {
-            $fixture.append("<div id='foo'></div>");
-            $el = $fixture.find("#foo");
-            el = $el[0];
-
-            assert.ok(qq(el).contains(el), "the element should contain itself");
-        });
-
-        it("return true if the element contains the descendant", function () {
-            $fixture.append("<div id='foo'></div>");
-            $el = $fixture.find("#foo");
-            el = $el[0];
-
-            assert.ok(qq($fixture[0]).contains(el), "$el is a descendant of $fixture");
-        });
-
-        it("returns false if the element does not contain the descendant", function () {
-            $fixture.append("<div id='foo'></div>");
-            $el = $fixture.find("#bar");
-            el = $el[0];
-
-            assert.ok(!qq($fixture[0]).contains(el), "$el is not a descendant of $fixture");
-        });
-
-        it("#887 - accounts for IE7 bug in Node.contains", function () {
-            $fixture.append("<div id='foo'></div>");
-            $el = $fixture.find("#foo");
-            el = $el[0];
-
-            assert.ok(!qq(el).contains(null), "should return false when passed a `null` parameter");
-            assert.ok(!qq(el).contains(undefined), "should return false when passed an `undefined` parameter");
-        });
-    }); // contains
-
     describe("insertBefore", function () {
         it("inserts an element before another", function () {
             var elB, $elB;
