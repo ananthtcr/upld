@@ -60,27 +60,6 @@ describe("button.js", function () {
         assert.equal(button.getInput().getAttribute(qq.UploadButton.BUTTON_ID_ATTR_NAME), buttonId);
     });
 
-    it("sets and removes hover class", function() {
-        var hoverclass = "qq-upload-button-hover";
-        var $button = $fixture.appendTo("<div id='button'></div>");
-
-        var button = new qq.UploadButton({
-            element: $button[0],
-            hoverClass: hoverclass
-        });
-
-        $button.simulate("mouseenter", function (e) {
-            var classes = $(this).attr("class").split(" ");
-            assert.ok($.inArray(hoverclass, classes));
-
-            $button.simulate("mouseleave", function (e) {
-                classes = $(this).attr("class").split(" ");
-                assert.ok(!$.inArray(hoverclass, classes));
-            });
-        });
-
-    });
-
     if (qq.supportedFeatures.ajaxUploading) {
         it("sets multiple attribute", function () {
             var $button = $fixture.appendTo("<div></div>");

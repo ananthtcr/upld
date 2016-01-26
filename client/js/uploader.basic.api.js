@@ -631,8 +631,6 @@
                 onChange: function(input) {
                     self._onInputChange(input);
                 },
-                hoverClass: this._options.classes.buttonHover,
-                focusClass: this._options.classes.buttonFocus,
                 ios8BrowserCrashWorkaround: this._options.workarounds.ios8BrowserCrash
             });
 

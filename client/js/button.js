@@ -3,11 +3,7 @@
 /**
  * This module represents an upload or "Select File(s)" button.  It's job is to embed an opaque `<input type="file">`
  * element as a child of a provided "container" element.  This "container" element (`options.element`) is used to provide
- * a custom style for the `<input type="file">` element.  The ability to change the style of the container element is also
- * provided here by adding CSS classes to the container on hover/focus.
- *
- * TODO Eliminate the mouseover and mouseout event handlers since the :hover CSS pseudo-class should now be
- * available on all supported browsers.
+ * a custom style for the `<input type="file">` element.
  *
  * @param o Options to override the default values
  */
@@ -37,12 +33,7 @@ qq.UploadButton = function(o) {
             // Called when the browser invokes the onchange handler on the `<input type="file">`
             onChange: function(input) {},
 
-            ios8BrowserCrashWorkaround: false,
-
-            // **This option will be removed** in the future as the :hover CSS pseudo-class is available on all supported browsers
-            hoverClass: "qq-upload-button-hover",
-
-            focusClass: "qq-upload-button-focus"
+            ios8BrowserCrashWorkaround: false
         },
         input, buttonId;
 
@@ -103,21 +94,6 @@ qq.UploadButton = function(o) {
 
         disposeSupport.attach(input, "change", function() {
             options.onChange(input);
-        });
-
-        // **These event handlers will be removed** in the future as the :hover CSS pseudo-class is available on all supported browsers
-        disposeSupport.attach(input, "mouseover", function() {
-            qq(options.element).addClass(options.hoverClass);
-        });
-        disposeSupport.attach(input, "mouseout", function() {
-            qq(options.element).removeClass(options.hoverClass);
-        });
-
-        disposeSupport.attach(input, "focus", function() {
-            qq(options.element).addClass(options.focusClass);
-        });
-        disposeSupport.attach(input, "blur", function() {
-            qq(options.element).removeClass(options.focusClass);
         });
 
         return input;

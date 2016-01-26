@@ -37,23 +37,19 @@ Uploader UI to track/address the associated template element."""
 #### default.html
 
 The "default" template bundled with Fine Uploader contains, more or less, a very basic UI for Fine Uploader. There are
-no thumbnails/previews generated when using this template. You may use the legacy fine-uploader.css file or the new/modern
-fine-uploader-new.css file.
+no thumbnails/previews generated when using this template. Please use the fine-uploader.css file.
 
-This template also renders a visible drop zone, but only with the fine-uploader-new.css file. The fine-uploader-new.css
-file will include a customizable "drop files" message in the background of the drop zone if the current browser supports
-file dropping.
+This template also renders a visible drop zone. The fine-uploader.css file will include a customizable
+"drop files" message in the background of the drop zone if the current browser supports file dropping.
 
 #### simple-thumbnails.html
 
 This template is similar to "default", except it will render previews of images and placeholders for non-previewable images
 (provided you make preview images accessible via the `template.placeholders` option). There are several instances of this
-template in use (both customized and non-customized) at http://fineuploader.com/demos. You may use the legacy fine-uploader.css
-file or the new/modern fine-uploader-new.css file.
+template in use (both customized and non-customized) at http://fineuploader.com/demos. Please use the fine-uploader.css file.
 
-This template also renders a visible drop zone, but only with the fine-uploader-new.css file. The fine-uploader-new.css
-file will include a customizable "drop files" message in the background of the drop zone if the current browser supports
-file dropping.
+This template also renders a visible drop zone. The fine-uploader.css file will include a customizable
+"drop files" message in the background of the drop zone if the current browser supports file dropping.
 
 #### gallery.html
 
@@ -62,7 +58,7 @@ on http://fineuploader.com/demo. The S3 example notably uses a modified version 
 fine-uploader-gallery.css file, and you also must be sure to include all ".gif" files packaged with the uploader.
 The gallery view uses icons to represent buttons (such as retry/pause/continue/delete/cancel) in almost all cases.
 
-Like the fine-uploader-new.css file, the fine-uploader-gallery.css file will include a "drop files" message in the background
+Like the fine-uploader.css file, the fine-uploader-gallery.css file will include a "drop files" message in the background
 of the visible drop zone if the current browser supports file dropping.
 
 When using the fine-uploader-gallery.css file, you *must* ensure that the container element for your template contains a
@@ -207,10 +203,6 @@ elements dynamically/on-demand.  The following `classes` option properties exist
 
 {{ classes_table(
     (
-        ("buttonFocus", "qq-upload-button-focus", "Added to any upload button tracked by Fine Uploader when the
-        button receives focus."),
-        ("buttonHover", "qq-upload-button-hover", "Added to any upload button tracked by Fine Uploader when a
-        mouse cursor hovers over the button."),
         ("dropActive", "qq-upload-drop-area-active", "Added to the drop area container when an item
         has entered the drop zone."),
         ("editable", "qq-editable", "Added to the file name element when the file name may be edited."),

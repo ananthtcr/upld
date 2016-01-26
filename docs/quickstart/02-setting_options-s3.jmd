@@ -110,7 +110,7 @@ Now our Fine Uploader page should look something like this:
 ```html
 <html>
   <head>
-      <link href="fine-uploader-{{ PKG['version']|e }}-new.css" rel="stylesheet" type="text/css"/>
+      <link href="fine-uploader-{{ PKG['version']|e }}.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
 

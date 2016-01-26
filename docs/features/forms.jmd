@@ -83,7 +83,7 @@ file that integrates Fine Uploader into an existing form:
 <html>
     <head>
         <script src="fine-uploader.js"</script>
-        <link href="fine-uploader-new.css">
+        <link href="fine-uploader.css">
         <script type="text/template" id="qq-template">
             <div class="qq-uploader-selector qq-uploader" qq-drop-area-text="Drop files here">
                 <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">

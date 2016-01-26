@@ -90,11 +90,6 @@
                 preventRetryResponseProperty: "preventRetry"
             },
 
-            classes: {
-                buttonHover: "qq-upload-button-hover",
-                buttonFocus: "qq-upload-button-focus"
-            },
-
             chunking: {
                 enabled: false,
                 concurrent: {
