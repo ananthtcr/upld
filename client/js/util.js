@@ -65,20 +65,36 @@ var qq = function(element) {
         },
 
         hasClass: function(name, considerParent) {
-            var re = new RegExp("(^| )" + name + "( |$)");
-            return re.test(element.className) || !!(considerParent && re.test(element.parentNode.className));
+            var regex;
+
+            if (element.classList) {
+                return element.classList.contains(name) ||
+                    !!(element.parentNode && element.parentNode.classList.contains(name));
+            }
+            regex = new RegExp("(^| )" + name + "( |$)");
+            return regex.test(element.className) || !!(considerParent && regex.test(element.parentNode.className));
         },
 
         addClass: function(name) {
-            if (!qq(element).hasClass(name)) {
+            if (element.classList) {
+                element.classList.add(name);
+            }
+            else if (!qq(element).hasClass(name)) {
                 element.className += " " + name;
             }
             return this;
         },
 
         removeClass: function(name) {
-            var re = new RegExp("(^| )" + name + "( |$)");
-            element.className = element.className.replace(re, " ").replace(/^\s+|\s+$/g, "");
+            var regex;
+
+            if (element.classList) {
+                element.classList.remove(name);
+            }
+            else {
+                regex = new RegExp("(^| )" + name + "( |$)");
+                element.className = element.className.replace(regex, " ").replace(/^\s+|\s+$/g, "");
+            }
             return this;
         },
 
