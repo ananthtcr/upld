@@ -40,9 +40,7 @@ qq.FormUploadHandler = function(spec) {
 
         var iframe = document.getElementById(handler._getIframeName(id));
         if (iframe) {
-            // To cancel request set src to something else.  We use src="javascript:false;"
-            // because it doesn't trigger ie6 prompt on https
-            /* jshint scripturl:true */
+            // To cancel request set src to something else.
             iframe.setAttribute("src", "javascript:false;");
 
             qq(iframe).remove();

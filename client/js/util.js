@@ -45,7 +45,7 @@ var qq = function(element) {
 
         /**
          * Sets styles for an element.
-         * Fixes opacity in IE6-8.
+         * Fixes opacity in IE8.
          */
         css: function(styles) {
             /*jshint eqnull: true*/
