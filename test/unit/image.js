@@ -3,7 +3,6 @@ describe("image.js", function() {
     "use strict";
 
     var imageGenerator,
-        isIe7 = navigator.userAgent.indexOf("MSIE 7") !== -1,
         isIe8 = navigator.userAgent.indexOf("MSIE 8") !== -1,
         canvasSupported = (function() {
             var elem = document.createElement("canvas");
@@ -38,7 +37,7 @@ describe("image.js", function() {
         });
     }
 
-    if (!isIe7 && !isIe8) {
+    if (!isIe8) {
         describe("isCrossOrigin", function() {
             it("ensures a cross-origin URL is properly identified", function() {
                 assert.ok(!imageGenerator._testing.isCrossOrigin(window.location.href));

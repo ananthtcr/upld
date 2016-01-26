@@ -440,24 +440,14 @@ qq.s3.util = qq.s3.util || (function() {
                 var targetAnchorContainer = document.createElement("div"),
                     targetAnchor;
 
-                if (qq.ie7()) {
-                    // Note that we must make use of `innerHTML` for IE7 only instead of simply creating an anchor via
-                    // `document.createElement('a')` and setting the `href` attribute.  The latter approach does not allow us to
-                    // obtain an absolute URL in IE7 if the `endpoint` is a relative URL.
-                    targetAnchorContainer.innerHTML = "<a href='" + successRedirectUrl + "'></a>";
-                    targetAnchor = targetAnchorContainer.firstChild;
-                    return targetAnchor.href;
-                }
-                else {
-                    // IE8 and IE9 do not seem to derive an absolute URL from a relative URL using the `innerHTML`
-                    // approach above, so we'll just create an anchor this way and set it's `href` attribute.
-                    // Due to yet another quirk in IE8 and IE9, we have to set the `href` equal to itself
-                    // in order to ensure relative URLs will be properly parsed.
-                    targetAnchor = document.createElement("a");
-                    targetAnchor.href = successRedirectUrl;
-                    targetAnchor.href = targetAnchor.href;
-                    return targetAnchor.href;
-                }
+                // IE8 and IE9 do not seem to derive an absolute URL from a relative URL using the `innerHTML`
+                // approach above, so we'll just create an anchor this way and set it's `href` attribute.
+                // Due to yet another quirk in IE8 and IE9, we have to set the `href` equal to itself
+                // in order to ensure relative URLs will be properly parsed.
+                targetAnchor = document.createElement("a");
+                targetAnchor.href = successRedirectUrl;
+                targetAnchor.href = targetAnchor.href;
+                return targetAnchor.href;
             }
         },
 

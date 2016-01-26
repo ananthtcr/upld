@@ -491,10 +491,6 @@ var qq = function(element) {
             navigator.userAgent.indexOf("Trident") !== -1;
     };
 
-    qq.ie7 = function() {
-        return navigator.userAgent.indexOf("MSIE 7") !== -1;
-    };
-
     qq.ie8 = function() {
         return navigator.userAgent.indexOf("MSIE 8") !== -1;
     };

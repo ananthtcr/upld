@@ -86,10 +86,6 @@ qq.UploadButton = function(o) {
             opacity: 0
         });
 
-        // Setting the file input's height to 100% in IE7 causes
-        // most of the visible button to be unclickable.
-        !qq.ie7() && qq(input).css({height: "100%"});
-
         options.element.appendChild(input);
 
         disposeSupport.attach(input, "change", function() {
