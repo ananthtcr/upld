@@ -39,12 +39,7 @@ qq.FormUploadHandler = function(spec) {
         }
 
         var iframe = document.getElementById(handler._getIframeName(id));
-        if (iframe) {
-            // To cancel request set src to something else.
-            iframe.setAttribute("src", "javascript:false;");
-
-            qq(iframe).remove();
-        }
+        iframe && qq(iframe).remove();
     }
 
     /**
