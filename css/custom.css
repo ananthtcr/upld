@@ -41,6 +41,12 @@ IFRAME { border: none !important; }
 
 /* Header
 -------------------------------------------------- */
+header > * {
+    transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+
 .header
 {
     vertical-align: bottom;
