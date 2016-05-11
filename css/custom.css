@@ -1188,7 +1188,7 @@ section.answer
 {
     border: none;
 }
-.accordion-group .accordion-heading-features a
+.accordion-group .accordion-heading-features a.accordion-toggle-faq
 {
     position: relative;
     text-decoration: none;
@@ -1196,12 +1196,12 @@ section.answer
     font-size: 18px !important;
     line-height: 26px;
 }
-.accordion-group .accordion-heading-features a:hover
+.accordion-group .accordion-heading-features a.accordion-toggle-faq:hover
 {
     color: #7CA6AD;
     text-decoration: underline;
 }
-.accordion-group .accordion-heading-features a.collapsed:after
+.accordion-group .accordion-heading-features a.accordion-toggle-faq.collapsed:after
 {
     content: '';
     position: absolute;
@@ -1211,7 +1211,7 @@ section.answer
     top: 6px;
     right: -18px;
 }
-.accordion-group .accordion-heading-features a:after
+.accordion-group .accordion-heading-features a.accordion-toggle-faq:after
 {
     content: '';
     position: absolute;
