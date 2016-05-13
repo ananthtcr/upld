@@ -96,6 +96,7 @@ IFRAME { border: none !important; }
 {
     color: #FFFFFF !important;
     text-shadow: none;
+    font-size: 18px;
 }
 .main-nav .navbar .nav > li > a:hover
 {
