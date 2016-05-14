@@ -32,62 +32,76 @@
             <hr class="no-margin">
             <hr class="no-margin">
             </br>
-            <h3 class="center">Download a copy of Fine Uploader based on your requirements.</h3>
+            <h3 class="center">You have two options to download a copy of Fine Uploader</h3>
             <div class="spacer"></div>
 
             <div class="row-fluid">
-                <form id="customize-form" class="form-horizontal">
+                <section>
+                    <h2>Option 1: Download from npm (preferred)</h2>
 
-                    <div id="server-type-section" class="row-fluid">
-                        <h3>Server Type</h3>
+                    <p>To download the latest version of Fine Uploader from <a href="https://www.npmjs.com/package/fine-uploader">npm</a>
+                    simply type <code>npm install fine-uploader</code> inside of your project folder. Of course,
+                    you can also include fine-uploader among all of your other project dependencies inside of a <a href="https://docs.npmjs.com/files/package.json">package.json</a>
+                    file as well. If you prefer that approach instead, simply run <code>npm install</code> after adding an entry for fine-uploader.</p>
+                </section>
 
-                        <fieldset id="ep_fieldset">
-                            <legend>
-                                <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
-                                <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
-                                will provide you with the code to send uploads directly to Amazon's Simple Storage Service (S3), and includes the <a target="_blank" href="http://docs.fineuploader.com/features/no-server-uploads.html">Serverless S3</a> module to support fully client-side S3 uploading.</p>
-                            </legend>
-                            <label class="radio">
-                                <input id="ep_traditional" type="radio" name="endpoint" value="" checked />Traditional
-                            </label>
-                            <label class="radio">
-                                <input id="ep_s3" type="radio" name="endpoint" value="s3"/>Amazon S3
-                            </label>
-                            <label class="radio">
-                                <input id="ep_azure" type="radio" name="endpoint" value="azure"/>Windows Azure
-                            </label>
-                            <label class="radio">
-                                <input id="ep_all" type="radio" name="endpoint" value="all"/>Windows Azure + Amazon S3 + Traditional
-                            </label>
-                        </fieldset>
+                <div class="spacer"></div>
 
-                    </div>
+                <section>
+                    <h2>Option 2: Download from the web</h2>
+                    <form id="customize-form" class="form-horizontal">
 
-                    <h3>jQuery Plugin</h3>
-                    <div class="row-fluid">
+                        <div id="server-type-section" class="row-fluid">
+                            <h3>Server Type</h3>
 
-                        <fieldset id="jquery_fieldset">
-                            <legend>
-                                <p style="font-size: 13px;">Select whether you would like to use the jQuery plugin version with Fine Uploader.</p>
-                            </legend>
-                            <label class="checkbox">
-                                <input name="jquery" type="checkbox">jQuery Plugin
-                            </label>
-                        </fieldset>
-                    </div>
+                            <fieldset id="ep_fieldset">
+                                <legend>
+                                    <p style="font-size: 13px;">Select the service you are using as a backend. <a target="_blank" href="http://docs.fineuploader.com/branch/master/endpoint_handlers/traditional.html">Traditional</a> assumes you will be implementing your own upload server, and
+                                        <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3</a>
+                                        will provide you with the code to send uploads directly to Amazon's Simple Storage Service (S3), and includes the <a target="_blank" href="http://docs.fineuploader.com/features/no-server-uploads.html">Serverless S3</a> module to support fully client-side S3 uploading.</p>
+                                </legend>
+                                <label class="radio">
+                                    <input id="ep_traditional" type="radio" name="endpoint" value="" checked />Traditional
+                                </label>
+                                <label class="radio">
+                                    <input id="ep_s3" type="radio" name="endpoint" value="s3"/>Amazon S3
+                                </label>
+                                <label class="radio">
+                                    <input id="ep_azure" type="radio" name="endpoint" value="azure"/>Windows Azure
+                                </label>
+                                <label class="radio">
+                                    <input id="ep_all" type="radio" name="endpoint" value="all"/>Windows Azure + Amazon S3 + Traditional
+                                </label>
+                            </fieldset>
 
-                    <br />
+                        </div>
 
-                    <div class="alert alert-info">
-                        <small><strong>Note:</strong> The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</small>
-                    </div>
+                        <h3>jQuery Plugin</h3>
+                        <div class="row-fluid">
 
-                    <br/>
-                    <br/>
+                            <fieldset id="jquery_fieldset">
+                                <legend>
+                                    <p style="font-size: 13px;">Select whether you would like to use the jQuery plugin version with Fine Uploader.</p>
+                                </legend>
+                                <label class="checkbox">
+                                    <input name="jquery" type="checkbox">jQuery Plugin
+                                </label>
+                            </fieldset>
+                        </div>
 
-                    <a id="build-btn" class="btn btn-info btn-large" href="#" aria-live="assertive">Download</a>
-                    <a class="btn btn-info btn-large" href="http://blog.fineuploader.com/category/changelog/">Read Change Log</a>
-                </form>
+                        <br />
+
+                        <div class="alert alert-info">
+                            <small><strong>Note:</strong> The jQuery plugin's syntax is a bit different from the non-jQuery uploader. Be sure to read <a href="http://docs.fineuploader.com/branch/master/integrating/jquery.html">the manual</a>!</small>
+                        </div>
+
+                        <br/>
+                        <br/>
+
+                        <a id="build-btn" class="btn btn-info btn-large" href="#" aria-live="assertive">Download</a>
+                        <a class="btn btn-info btn-large" href="http://blog.fineuploader.com/category/changelog/">Read Change Log</a>
+                    </form>
+                </section>
             </div>
             </br>
         </div>
